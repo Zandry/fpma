@@ -13,3 +13,11 @@ html{
     font-size: 20px;
     text-rendering: optimizeLegibility; /*lecture facile*/
 }
+
+/*les contenus seront organisés en rangés qu'on appelera row*/
+.row{
+    max-width: 1140px; /*Largeur max en valeur absolue px*/
+    /*on veut centrer le contenu du row
+    /*pour centrer un conteneur dans un autre conteneur, on met margin-left=auto et margin-right=auto*/
+    margin: 0 auto 0 auto; /*top right bottom left*/
+}
