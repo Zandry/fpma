@@ -6,4 +6,10 @@
 
 html{
     background-color: #FFF;
+    color: #555;
+    /*première font est Lato et si non disponible Arial et sinon n'importe quel sans-serif fera l'affaire*/
+    font-family: 'Lato','Arial', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility; /*lecture facile*/
 }
