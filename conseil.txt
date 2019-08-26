@@ -1,0 +1,31 @@
+ - Define the goal of the project (selling, giving tutorial, selling services)
+    - define the audience (users, public, kids)
+
+2   - plan your contents carefully (content first approach)
+    - define the navigation
+    - define the site structure (sitemap)
+    
+3   - sketch ideas before designing (pencils and papers)
+    
+4   - start design and develop your site (html/css) --> design in the browser
+
+5   - Optimize for performance and SEO
+
+6   - launch the site (web server)
+
+7   - site maintenance 
+
+
+
+PREPARATION DE LA STRUCTURE DU SITE:
+Folder  --> resources (css/img/js)
+        --> vendors (css/img/js)
+        
+        
+Create the HTML structure (html de base et lien avec le CSS)
+
+
+RESPONSIVE WEB DESIGN (3 ingredients)
+- fluid grid (all layout elements are sized in relative units like % instead of absolute units like px)
+- flexible images (sized in %)
+- media queries (size different according to width)
