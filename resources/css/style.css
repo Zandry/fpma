@@ -24,4 +24,5 @@ html{
 
 header{
     background: url(img/kt.jpg); /*test pas OK pour l'instant*/
+    height: 100vh;
 }
