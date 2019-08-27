@@ -21,3 +21,7 @@ html{
     /*pour centrer un conteneur dans un autre conteneur, on met margin-left=auto et margin-right=auto*/
     margin: 0 auto 0 auto; /*top right bottom left*/
 }
+
+header{
+    background: url(img/kt.jpg); /*test pas OK pour l'instant*/
+}
