@@ -26,3 +26,7 @@ header{
     background: url(img/kt.jpg); /*test pas OK pour l'instant*/
     height: 100vh;
 }
+
+h1{
+    margin: 0; /*permet d'enlever l'espace en dessus du header à cause de normalize.css*/
+}
