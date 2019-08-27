@@ -23,7 +23,9 @@ html{
 }
 
 header{
-    background: url(img/kt.jpg); /*test pas OK pour l'instant*/
+    background: url(img/kt.gif);
+    background-size: cover;  /*affiche l'image sur toute sa largeur*/
+    background-position: center;
     height: 100vh;
 }
 
