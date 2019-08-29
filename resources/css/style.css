@@ -44,3 +44,13 @@ h1{
     text-transform: uppercase;
     word-spacing: 3px;
 }
+
+.btn{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none; /*pour enlever les décorations*/
+}
+.btn-full{
+    background-color: #e67e22;
+}
