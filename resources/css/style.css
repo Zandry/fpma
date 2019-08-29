@@ -38,4 +38,9 @@ header{
 
 h1{
     margin: 0; /*permet d'enlever l'espace en dessus du header à cause de normalize.css*/
+    color: #FFF;
+    font-size: 240%;
+    font-weight: 300;
+    text-transform: uppercase;
+    word-spacing: 3px;
 }
