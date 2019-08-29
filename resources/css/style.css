@@ -23,10 +23,17 @@ html{
 }
 
 header{
-    background: linear-gradient(rgba(0, 0, 0, 0.7)), url(img/kt.gif);
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/bible.png);
     background-size: cover;  /*affiche l'image sur toute sa largeur*/
     background-position: center;
     height: 100vh;
+}
+.bible-text-box{
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 h1{
