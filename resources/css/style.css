@@ -56,11 +56,6 @@ h1{
     
 }
 
-.btn:active,
-.btn:hover{
-    background-color: #cf6d17;
-}
-
 .btn-full:link,
 .btn-full:visited{
     background-color: #e67e22;/*#2A4C89*/
@@ -68,13 +63,24 @@ h1{
     color: #FFF;
 }
 
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 1px solid #e67e22;
+    color: #FFF /* Je mets mon couleur de text en blanc(#e67e22;)*/
+}
+
+.btn:active,
+.btn:hover{
+    background-color: #cf6d17;
+}
+
 .btn-full:active,
 .btn-full:hover{
     background-color: #cf6d17;
 }
 
-.btn-ghost:link,
-.btn-ghost:visited{
-    border: 1px solid #e67e22;
-    color: #FFF /* Je mets mon couleur de text en blanc(#e67e22;)*/
+.btn-ghost:active,
+.btn-ghost:hover{
+    border: 1px solid #cf6d17;
+    color: #2A4C89; /*je mets en bleu quand la souris passe*/
 }
