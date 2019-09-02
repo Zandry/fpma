@@ -140,6 +140,7 @@ NAVIGATION
     text-transform: uppercase;
     font-size: 90%;
     border-bottom: 1px solid transparent;
+    transition: border-botton 0.2s;
 }
 
 .main-nav li a:hover,
