@@ -53,7 +53,7 @@ h1{
     font-weight: 300;
     text-decoration: none; /*pour enlever les décorations*/
     border-radius: 200px;
-    
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
 }
 
 .btn-full:link,
