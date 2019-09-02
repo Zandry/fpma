@@ -135,6 +135,7 @@ NAVIGATION
 
 .main-nav li a:link,
 .main-nav li a:visited{
+    padding: 8px 0;
     color: #FFF;
     text-decoration: none;
     text-transform: uppercase;
