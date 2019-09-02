@@ -23,7 +23,7 @@ html{
 }
 
 header{
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/bible.png);
+    background: linear-gradient(rgba(0, 0, 206, 0.7), rgba(0, 206, 0, 0.7)), url(img/bible.png);
     background-size: cover;  /*affiche l'image sur toute sa largeur*/
     background-position: center;
     height: 100vh;
@@ -37,7 +37,8 @@ header{
 }
 
 h1{
-    margin: 0; /*permet d'enlever l'espace en dessus du header à cause de normalize.css*/
+    margin-top: 0; /*permet d'enlever l'espace en dessus du header à cause de normalize.css*/
+    margin-bottom: 20px;
     color: #FFF;
     font-size: 240%;
     font-weight: 300;
@@ -50,7 +51,14 @@ h1{
     padding: 10px 30px;
     font-weight: 300;
     text-decoration: none; /*pour enlever les décorations*/
+    border-radius: 200px;
 }
 .btn-full{
-    background-color: #e67e22;
+    background-color: #e67e22;/*#2A4C89*/
+    border: 1px solid #e67e22;
+    color: #FFF;
+}
+.btn-ghost{
+    border: 1px solid #e67e22;
+    color: #e67e22;
 }
