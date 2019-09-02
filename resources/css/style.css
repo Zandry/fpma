@@ -53,6 +53,12 @@ h1{
     font-weight: 300;
     text-decoration: none; /*pour enlever les décorations*/
     border-radius: 200px;
+    
+}
+
+.btn:active,
+.btn:hover{
+    background-color: #cf6d17;
 }
 
 .btn-full:link,
@@ -62,8 +68,13 @@ h1{
     color: #FFF;
 }
 
+.btn-full:active,
+.btn-full:hover{
+    background-color: #cf6d17;
+}
+
 .btn-ghost:link,
 .btn-ghost:visited{
     border: 1px solid #e67e22;
-    color: #e67e22;
+    color: #FFF /* Je mets mon couleur de text en blanc(#e67e22;)*/
 }
