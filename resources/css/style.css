@@ -112,3 +112,8 @@ header{
     float: right;
     list-style: none;
 }
+
+.main-nav li{
+    display: inline;
+    margin-left: 40px;
+}
