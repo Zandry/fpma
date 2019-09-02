@@ -29,3 +29,5 @@ RESPONSIVE WEB DESIGN (3 ingredients)
 - fluid grid (all layout elements are sized in relative units like % instead of absolute units like px)
 - flexible images (sized in %)
 - media queries (size different according to width)
+
+Consiel: BIG HEADLINES OR TITLE then DECREASE FONT -WEIGHT

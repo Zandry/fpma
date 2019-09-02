@@ -23,12 +23,65 @@ html{
 }
 
 header{
-    background: linear-gradient(rgba(0, 0, 0, 0.7)), url(img/kt.gif);
+    background: linear-gradient(rgba(0, 0, 206, 0.7), rgba(0, 206, 0, 0.7)), url(img/bible.png);
     background-size: cover;  /*affiche l'image sur toute sa largeur*/
     background-position: center;
     height: 100vh;
 }
+.bible-text-box{
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 h1{
-    margin: 0; /*permet d'enlever l'espace en dessus du header à cause de normalize.css*/
+    margin-top: 0; /*permet d'enlever l'espace en dessus du header à cause de normalize.css*/
+    margin-bottom: 20px;
+    color: #FFF;
+    font-size: 240%;
+    font-weight: 300;
+    text-transform: uppercase;
+    word-spacing: 3px;
+}
+
+.btn:link,
+.btn:visited{
+    display: inline-block;
+    padding: 10px 30px;
+    font-weight: 300;
+    text-decoration: none; /*pour enlever les décorations*/
+    border-radius: 200px;
+    transition: background-color 0.2s, border 0.2s, color 0.2s;
+    margin-right: 15px;
+}
+
+.btn-full:link,
+.btn-full:visited{
+    background-color: #e67e22;/*#2A4C89*/
+    border: 1px solid #e67e22;
+    color: #FFF;
+}
+
+.btn-ghost:link,
+.btn-ghost:visited{
+    border: 1px solid #e67e22;
+    color: #FFF /* Je mets mon couleur de text en blanc(#e67e22;)*/
+}
+
+.btn:active,
+.btn:hover{
+    background-color: #cf6d17;
+}
+
+.btn-full:active,
+.btn-full:hover{
+    background-color: #cf6d17;
+}
+
+.btn-ghost:active,
+.btn-ghost:hover{
+    border: 1px solid #cf6d17;
+    color: #2A4C89; /*je mets en bleu quand la souris passe*/
 }
