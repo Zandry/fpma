@@ -56,31 +56,31 @@ h1{
 
 .btn-full:link,
 .btn-full:visited{
-    background-color: #4169E1;/*#2A4C89*/
-    border: 1px solid #4169E1;
-    color: #FFF;
+    background-color: #fedc00;/*#2A4C89*/
+    border: 1px solid #bc8e05;
+    color: #000;
 }
 
 .btn-ghost:link,
 .btn-ghost:visited{
-    border: 1px solid #4169E1;
-    color: #FFF /* Je mets mon couleur de text en blanc(#e67e22;)*/
+    border: 1px solid #fedc00;
+    color: #000 /* Je mets mon couleur de text en blanc(#e67e22;)*/
 }
 
 .btn:active,
 .btn:hover{
-    background-color: #4191E1;
+    background-color: #bc8e05;
 }
 
 .btn-full:active,
 .btn-full:hover{
-    background-color: #4191E1;
+    background-color: #bc8e05;
 }
 
 .btn-ghost:active,
 .btn-ghost:hover{
-    border: 1px solid #4191E1;
-    color: #FFFFFF; /*je mets en bleu quand la souris passe*/
+    border: 1px solid #bc8e05;
+    color: #000; /*je mets en bleu quand la souris passe*/
 }
 
 /***************************************************************
@@ -89,7 +89,7 @@ HEADER
 ****************************************************************/
 
 header{
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(img/bible3.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/bible3.jpg);
     background-size: cover;  /*affiche l'image sur toute sa largeur*/
     background-position: center;
     height: 100vh;
