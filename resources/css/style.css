@@ -35,6 +35,11 @@ COMPOSANTS REUTILISABLES
 section{
     padding: 80px 0;
 }
+
+.box{
+    padding: 1%;
+}
+
 /*********************EN TETE***********************/
 
 h1,h2{
