@@ -31,3 +31,6 @@ RESPONSIVE WEB DESIGN (3 ingredients)
 - media queries (size different according to width)
 
 Consiel: BIG HEADLINES OR TITLE then DECREASE FONT -WEIGHT
+
+PROBLEME aprèce cette étape: les texte des titres h3 ne tiennent plus sur une ligne
+
