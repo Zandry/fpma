@@ -37,14 +37,34 @@ section{
 }
 /*********************EN TETE***********************/
 
+h1,h2{
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 h1{
     margin-top: 0; /*permet d'enlever l'espace en dessus du header à cause de normalize.css*/
     margin-bottom: 20px;
     color: #FFF;
     font-size: 240%;
-    font-weight: 300;
-    text-transform: uppercase;
     word-spacing: 3px;
+}
+
+h2{
+    font-size: 180%; /*taille en relative(%) pour être responsive à la taille du parent html*/
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2:after{
+    display: block;
+    height: 2px;
+    background-color: #8bc701;
+    content: "";
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 30px;
 }
 
 .btn:link,
@@ -152,5 +172,5 @@ NAVIGATION
 
 .main-nav li a:hover,
 .main-nav li a:active{
-    border-bottom: 1px solid #8bc701;
+    border-bottom: 1px solid #fedc00;
 }
