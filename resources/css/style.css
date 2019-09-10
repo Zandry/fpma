@@ -78,12 +78,20 @@ h2:after{
     margin-top: 30px;
 }
 
+/***********************PARAGRAPHS*****************/
 .section1-paragraph1{
     line-height: 140%;
     width: 70%;
     margin-left: 15%;
     margin-right: 15%;
 }
+
+.box p{
+    font-size: 90%;
+    line-height: 145%;
+}
+
+/*************BOUTONS*************/
 
 .btn:link,
 .btn:visited{
