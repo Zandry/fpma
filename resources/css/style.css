@@ -45,7 +45,6 @@ section{
 h1,h2,h3{
     font-weight: 300;
     text-transform: uppercase;
-    letter-spacing: 1px;
 }
 h1{
     margin-top: 0; /*permet d'enlever l'espace en dessus du header à cause de normalize.css*/
@@ -53,6 +52,7 @@ h1{
     color: #FFF;
     font-size: 240%;
     word-spacing: 3px;
+    letter-spacing: 1px;
 }
 
 h2{
@@ -60,6 +60,7 @@ h2{
     word-spacing: 2px;
     text-align: center;
     margin-bottom: 30px;
+    letter-spacing: 1px;
 }
 
 h3{
