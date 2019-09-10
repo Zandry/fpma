@@ -93,7 +93,7 @@ h2:after{
 
 /***************ICONS*************/
 .icon-big{
-    font-size: 350%;
+    font-size: 200%; /*nahenako kely nenah ny taille ny icon*/
     display: block;
     color: #8bc701;
 }
