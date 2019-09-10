@@ -67,6 +67,13 @@ h2:after{
     margin-top: 30px;
 }
 
+.section1-paragraph1{
+    line-height: 140%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
 .btn:link,
 .btn:visited{
     display: inline-block;
