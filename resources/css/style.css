@@ -91,6 +91,12 @@ h2:after{
     line-height: 145%;
 }
 
+/***************ICONS*************/
+.icon-big{
+    font-size: 350%;
+    display: block;
+    color: #8bc701;
+}
 /*************BOUTONS*************/
 
 .btn:link,
