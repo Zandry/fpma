@@ -50,37 +50,37 @@ h1{
     font-weight: 300;
     text-decoration: none; /*pour enlever les décorations*/
     border-radius: 200px;
-    transition: background-color 0.2s, border 0.2s, color 0.2s;
+    transition: background-color 0.8s, border 0.8s, color 0.8s;
     margin-right: 15px;
 }
 
 .btn-full:link,
 .btn-full:visited{
-    background-color: #e67e22;/*#2A4C89*/
-    border: 1px solid #e67e22;
-    color: #FFF;
+    background-color: #fedc00;/*#2A4C89*/
+    border: 1px solid #bc8e05;
+    color: #000;
 }
 
 .btn-ghost:link,
 .btn-ghost:visited{
-    border: 1px solid #e67e22;
-    color: #FFF /* Je mets mon couleur de text en blanc(#e67e22;)*/
+    border: 1px solid #fedc00;
+    color: #000 /* Je mets mon couleur de text en blanc(#e67e22;)*/
 }
 
 .btn:active,
 .btn:hover{
-    background-color: #cf6d17;
+    background-color: #bc8e05;
 }
 
 .btn-full:active,
 .btn-full:hover{
-    background-color: #cf6d17;
+    background-color: #bc8e05;
 }
 
 .btn-ghost:active,
 .btn-ghost:hover{
-    border: 1px solid #cf6d17;
-    color: #2A4C89; /*je mets en bleu quand la souris passe*/
+    border: 1px solid #bc8e05;
+    color: #000; /*je mets en bleu quand la souris passe*/
 }
 
 /***************************************************************
@@ -89,14 +89,14 @@ HEADER
 ****************************************************************/
 
 header{
-    background: linear-gradient(rgba(0, 0, 206, 0.7), rgba(0, 206, 0, 0.7)), url(img/bible.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/bible3.jpg);
     background-size: cover;  /*affiche l'image sur toute sa largeur*/
     background-position: center;
     height: 100vh;
 }
 .bible-text-box{
     position: absolute;
-    width: 1140px;
+    width: 1020px;/*1140px;*/
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -139,12 +139,14 @@ NAVIGATION
     color: #FFF;
     text-decoration: none;
     text-transform: uppercase;
+    font-weight: bold;
     font-size: 90%;
     border-bottom: 1px solid transparent;
-    transition: border-botton 0.2s;
+    
+    transition: border-bottom 0.9s;
 }
 
 .main-nav li a:hover,
 .main-nav li a:active{
-    border-bottom: 1px solid #e67e22;
+    border-bottom: 1px solid #8bc701;
 }
