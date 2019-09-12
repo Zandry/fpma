@@ -211,12 +211,18 @@ NAVIGATION
 /*******************************************
 MEALS SECTION
 ********************************************/
+/* QUESTION:
+- modifier le css pour que l'image soit un peu plus zoomé(115% par exemple - voir la fonction transform scale de css)
+    + une fois fini, l'image sera plus grande et dépassera le navigateur. Faire en sorte que ce dépassement soit caché (voir la propriété overflow de css pour documation)
+- faire en sorte que quand la souris passe, l'image passe à 100% (voir la doc de hover)
+IDEE/INSPIRATION: on a déjà fait en sorte que l'image de header soit un peu plus sombre
+DOCUMENTATION: voir transform css / pour mettre une image un peu plus sombre voir linear-gradient*/
+
 /** il y a trop d'espace entre la section d'avant et la section meals-showcase à cause du padding top qu'on a mis dans  section
 Pour enlever cette valeur, nous avons mis une classe section-meals dans la section meals et on va le modifier*/
 .section-meals{
     padding: 0 0 0 0;
 }
-
 /* donner un style au div meal-showcase pour :
     - mettre une largeur à 100% pour remplir toute la page
     - pour que les listes dans ce div n'affichent pas de symbole
