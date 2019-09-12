@@ -265,4 +265,6 @@ Pour enlever cette valeur, nous avons mis une classe section-meals dans la secti
     width: 100%;
     height: auto;
     transform: scale(1.05)
+    /* faire en sorte que l'animation des images se passe en demi-seconde*/
+    /*transition: transform 0.5s; ( ça ne marche pas pour l'instant)*/
 }
