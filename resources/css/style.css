@@ -211,6 +211,12 @@ NAVIGATION
 /*******************************************
 MEALS SECTION
 ********************************************/
+/** il y a trop d'espace entre la section d'avant et la section meals-showcase à cause du padding top qu'on a mis dans  section
+Pour enlever cette valeur, nous avons mis une classe section-meals dans la section meals et on va le modifier*/
+.section-meals{
+    padding: 0 0 0 0;
+}
+
 /* donner un style au div meal-showcase pour :
     - mettre une largeur à 100% pour remplir toute la page
     - pour que les listes dans ce div n'affichent pas de symbole
