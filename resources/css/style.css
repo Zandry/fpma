@@ -215,10 +215,19 @@ MEALS SECTION
     - mettre une largeur à 100% pour remplir toute la page
     - pour que les listes dans ce div n'affichent pas de symbole
 */
-
+.meals-showcase{
+    width: 100%;
+    list-style: none;
+}
 /* donner un style au li dans ce div pour :
     - afficher le contenu des li en colonne et côte à côte (et non pas en ligne comme actuellement)*/
 
+
+.meals-showcase li{
+    display: block;
+    float: left;
+    width: 25%;
+}
  /*   - configurer la largeur de chaque image pour que ça remplisse correctement la ligne sur 4 colonnes (il y a déjà 4 images)
       (idée: jouer sur la largeur)*/
 
@@ -226,5 +235,12 @@ MEALS SECTION
     et donner des propriétés correctes à cette classe */
 
 /** donner une classe meal-photo aux figure (voir les modifs faites au html)*/
-
+.meal-photo{
+    width: 100%;
+    margin: 0;
+}
 /* pour formatter les images, il faut formatter les img dans la classe meal-photo */
+.meal-photo img{
+    width: 100%;
+    height: auto;
+}
