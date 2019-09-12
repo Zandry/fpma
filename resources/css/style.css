@@ -212,8 +212,7 @@ NAVIGATION
 MEALS SECTION
 ********************************************/
 /* QUESTION:
-- modifier le css pour que l'image soit un peu plus zoomé(115% par exemple - voir la fonction transform scale de css)
-    + une fois fini, l'image sera plus grande et dépassera le navigateur. Faire en sorte que ce dépassement soit caché (voir la propriété overflow de css pour documation)
+
 - faire en sorte que quand la souris passe, l'image passe à 100% (voir la doc de hover)
 IDEE/INSPIRATION: on a déjà fait en sorte que l'image de header soit un peu plus sombre
 DOCUMENTATION: voir transform css / pour mettre une image un peu plus sombre voir linear-gradient*/
@@ -250,9 +249,20 @@ Pour enlever cette valeur, nous avons mis une classe section-meals dans la secti
 .meal-photo{
     width: 100%;
     margin: 0;
+    /* -2- Faire en sorte que ce dépassement soit caché*/
+    overflow: hidden;
+    
 }
 /* pour formatter les images, il faut formatter les img dans la classe meal-photo */
 .meal-photo img{
     width: 100%;
     height: auto;
+    /* 1- modifier le css pour que l'image soit un peu plus zoomé*/
+    transform: scale(1.15);
+}
+/*3- faire en sorte que quand la souris passe, l'image passe à 100%*/
+.meal-photo img:hover{
+    width: 100%;
+    height: auto;
+    transform: scale(1.05)
 }
