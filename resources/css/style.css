@@ -84,6 +84,7 @@ h2:after{
     width: 70%;
     margin-left: 15%;
     margin-right: 15%;
+    text-align: center;
 }
 
 .box p{
@@ -93,7 +94,7 @@ h2:after{
 
 /***************ICONS*************/
 .icon-big{
-    font-size: 350%;
+    font-size: 200%; /*nahenako kely nenah ny taille ny icon*/
     display: block;
     color: #8bc701;
 }
@@ -206,3 +207,75 @@ NAVIGATION
 .main-nav li a:active{
     border-bottom: 1px solid #fedc00;
 }
+
+/*******************************************************
+FEATURE SECTION
+********************************************************/
+
+.section1-paragraph1{
+    margin-bottom: 30px;
+}
+
+/*******************************************
+MEALS SECTION
+********************************************/
+/* QUESTION:
+
+- faire en sorte que quand la souris passe, l'image passe à 100% (voir la doc de hover)
+IDEE/INSPIRATION: on a déjà fait en sorte que l'image de header soit un peu plus sombre
+DOCUMENTATION: voir transform css / pour mettre une image un peu plus sombre voir linear-gradient*/
+
+/** il y a trop d'espace entre la section d'avant et la section meals-showcase à cause du padding top qu'on a mis dans  section
+Pour enlever cette valeur, nous avons mis une classe section-meals dans la section meals et on va le modifier*/
+.section-meals{
+    padding: 0 0 0 0;
+}
+/* donner un style au div meal-showcase pour :
+    - mettre une largeur à 100% pour remplir toute la page
+    - pour que les listes dans ce div n'affichent pas de symbole
+*/
+.meals-showcase{
+    width: 100%;
+    list-style: none;
+}
+/* donner un style au li dans ce div pour :
+    - afficher le contenu des li en colonne et côte à côte (et non pas en ligne comme actuellement)*/
+
+
+.meals-showcase li{
+    display: block;
+    float: left;
+    width: 25%;
+}
+ /*   - configurer la largeur de chaque image pour que ça remplisse correctement la ligne sur 4 colonnes (il y a déjà 4 images)
+      (idée: jouer sur la largeur)*/
+
+/* formatter les images de chaque élément de la liste (idée rajouter des classes là où il le faut) 
+    et donner des propriétés correctes à cette classe */
+
+/** donner une classe meal-photo aux figure (voir les modifs faites au html)*/
+.meal-photo{
+    width: 100%;
+    margin: 0;
+    /* -2- Faire en sorte que ce dépassement soit caché*/
+    overflow: hidden;
+    background-color: black;
+    
+}
+/* pour formatter les images, il faut formatter les img dans la classe meal-photo */
+.meal-photo img{
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    /* 1- modifier le css pour que l'image soit un peu plus zoomé*/
+    transform: scale(1.15);
+}
+/*3- faire en sorte que quand la souris passe, l'image passe à 100%*/
+.meal-photo img:hover{
+    width: 100%;
+    height: auto;
+    transform: scale(1.05);
+    /* faire en sorte que l'animation des images se passe en demi-seconde*/
+    transition: transform 0.5s, opacity 0.5;
+}
+
