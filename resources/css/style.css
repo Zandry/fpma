@@ -251,10 +251,12 @@ Pour enlever cette valeur, nous avons mis une classe section-meals dans la secti
     margin: 0;
     /* -2- Faire en sorte que ce dépassement soit caché*/
     overflow: hidden;
+    background-color: black;
     
 }
 /* pour formatter les images, il faut formatter les img dans la classe meal-photo */
 .meal-photo img{
+    opacity: 0.7;
     width: 100%;
     height: auto;
     /* 1- modifier le css pour que l'image soit un peu plus zoomé*/
@@ -266,11 +268,6 @@ Pour enlever cette valeur, nous avons mis une classe section-meals dans la secti
     height: auto;
     transform: scale(1.05);
     /* faire en sorte que l'animation des images se passe en demi-seconde*/
-    transition: transform 0.5s; 
+    transition: transform 0.5s, opacity 0.5;
 }
 
-/* Question 4: 
-- mettre les images avec une couleurs plus sombres.
-- clarifier la couleur un peu plus quand la souris passe  
-(une idée est de s'inspirer du header)
-(une autre idée est de mettre la couleur de fond du div conteneur en noir et de mettre l'opacité de l'image à moins de 1'*/
