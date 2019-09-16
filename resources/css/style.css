@@ -268,3 +268,9 @@ Pour enlever cette valeur, nous avons mis une classe section-meals dans la secti
     /* faire en sorte que l'animation des images se passe en demi-seconde*/
     transition: transform 0.5s; 
 }
+
+/* Question 4: 
+- mettre les images avec une couleurs plus sombres.
+- clarifier la couleur un peu plus quand la souris passe  
+(une idée est de s'inspirer du header)
+(une autre idée est de mettre la couleur de fond du div conteneur en noir et de mettre l'opacité de l'image à moins de 1'*/
