@@ -38,6 +38,13 @@ SECTION 3: Nous allons travailler sur comment on fait des commandes de repas sur
 
 Pour cela, nous allons rajouter une section(class section (class section-steps) avec un titre (comme la section 1, nous utiliserons la class row pour le titre)
 Pour le contenu, récupérer le fichier d'aanalyse(cahier de charge)
+
 Exercice: créer le squelette de code de la nouvelle section avec les bonnes classes et le texte
 idée: s'inspirer de la section2)
+
+Exercice 2:
+-copier l'image bible.jpg dans les ressources et ajouter le dans la première colonne du squelette html pour cet image, l'alternative sera (autre bible) et la class est"bible-open"
+
+-Dans la deuxième colonne rajouter 3 container avec les classes "fiofanana-step". Dans le <div> fiofanana-step, rajouter un autre div qui contiedra le des instructions pour l'utilisation du lien (pas de classe) et juste après rajouter un paragraphe avec le text
+
 
