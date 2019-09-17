@@ -264,7 +264,7 @@ Pour enlever cette valeur, nous avons mis une classe section-meals dans la secti
 }
 /* pour formatter les images, il faut formatter les img dans la classe meal-photo */
 .meal-photo img{
-    opacity: 0.7;
+    opacity: 0.4;
     width: 100%;
     height: auto;
     /* 1- modifier le css pour que l'image soit un peu plus zoomé*/
@@ -275,7 +275,8 @@ Pour enlever cette valeur, nous avons mis une classe section-meals dans la secti
     width: 100%;
     height: auto;
     transform: scale(1.05);
+    opacity: 0.8;
     /* faire en sorte que l'animation des images se passe en demi-seconde*/
-    transition: transform 0.5s, opacity 0.5;
+    transition: transform 0.5s, opacity 0.5s;
 }
 
