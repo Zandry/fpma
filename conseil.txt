@@ -46,5 +46,5 @@ Exercice 2:
 -copier l'image bible.jpg dans les ressources et ajouter le dans la première colonne du squelette html pour cet image, l'alternative sera (autre bible) et la class est"bible-open"
 
 -Dans la deuxième colonne rajouter 3 container avec les classes "fiofanana-step". Dans le <div> fiofanana-step, rajouter un autre div qui contiedra le des instructions pour l'utilisation du lien (pas de classe) et juste après rajouter un paragraphe avec le text
-
+(Résultat pas encore joli)
 
