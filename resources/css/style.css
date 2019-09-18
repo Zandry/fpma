@@ -280,3 +280,60 @@ Pour enlever cette valeur, nous avons mis une classe section-meals dans la secti
     transition: transform 0.5s, opacity 0.5s;
 }
 
+
+/**********************************************************************************
+MEALS SECTION
+***********************************************************************************/
+/*
+Exercice3: Formater la section "Formation SAP"
+- mettre un espacement entre le titre de la section et son contenu (ex: utiliser margin)
+    + aligner l'image à droite de sa boite et rajouter un espacement droit en pourcentage et le texte à gauche de sa boite et un espacement gauche*/
+
+.step-box{
+    margin-top: 30px;
+}
+/*on apprend à utiliser les selections sans class
+/*selection du premier fils (le plus à gauche)*/
+.step-box:first-child{
+    text-align: right;
+    padding-right: 3%;
+}
+/*selection du dernier fils (le plus à droite)*/
+.step-box:last-child{
+    padding-left: 3%;
+}
+/*
+- redimensionner l'image en pourcentage (fournir la bonne taille) (utiliser la class bibleonly)*/
+.bibleonly{
+    width: 40%;
+}
+
+/*
+- Formattage des étapes :
+    + transformer les numéros d'étapes en petit cercle orange et non pas en numéro (pour faire une cercle, on utilisera order et border-radius)
+    + espacer de quelques pixels ( en pourcentage) les bullets/puces et leurs textes*/
+
+.form-step{
+    margin-bottom: 50px;
+}
+
+.form-step div{
+    color: #8bc701;
+    border: 2px solid #8bc701;
+    display: inline-block; /* ça permet d'afficher les box en ligne mais pas remplir la ligne */
+    border-radius: 50%; /* converti en cercle les carrées */
+    /*à ce moment, le cercle est très aplati*/
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    padding: 5px; /* pour centraliser le texte dans le cercle*/
+    float: left; /* pour mettre le bullet à gauche et le texte à droite*/
+    font-size: 150%;/* jouer avec le font-size pour centraliser le chiffre dans le cercle*/
+    margin-right: 10px; /* marge entre le cercle et le texte*/
+}
+/*
+- aligner les boutons applications avec le fond de l'image du téléphone (cela ne concerne pas mon site)
+
+- un problème d'espacement devrait apparaitre entre la nouvelle section et celle d'avant. Il faut utiliser clearfix pour le résoudre (clear the floats à chaque fois qu'on utilise un float, il faut utiliser clearfix)
+*/
+

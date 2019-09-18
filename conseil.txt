@@ -48,3 +48,17 @@ Exercice 2:
 -Dans la deuxième colonne rajouter 3 container avec les classes "fiofanana-step". Dans le <div> fiofanana-step, rajouter un autre div qui contiedra le des instructions pour l'utilisation du lien (pas de classe) et juste après rajouter un paragraphe avec le text
 (Résultat pas encore joli)
 
+EXERCICE 3: Formatter la section "formation SAP"
+- mettre un espacement entre le titre de la section et son contenu (ex: utiliser margin)
+    +aligner l'image à droite de sa boite et rajouter un espacement droit en pourcentage et le mettre à gauche de sa boite et un espacement gauche.
+    
+- redimensionner l'image en pourcentage (fournir la bonne taille) (utiliser la class bibleonly)
+
+- Formattage des étapes :
+    + transformer les numéro d'étapes en petit cercle vert et non pas en numéro (pour faire une cercle, on utilisera border et border-radius)
+    + espacer de quelques pixels (en pourcentage) les bullets/puces et leurs textes
+    
+- aligner les boutons applications avec le fond de l'image du téléphone (j'ai juste marqué, mais cet étape ne concerne pas mon site)
+
+- un problème d'espacement devrait apparaitre entre la nouvelle section et celle d'avant. Il faut utiliser clearfix pour le résoudre (clear the floats à chaque fois qu'on utilise un float, il faut utiliser clearfix
+
