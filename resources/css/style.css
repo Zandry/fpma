@@ -294,6 +294,9 @@ Exercice3: Formater la section "Formation SAP"
 
 /*on apprend à utiliser les selections sans class
 /*selection du premier fils (le plus à gauche)*/
+.section-steps{
+    background-color: #f4f4f4;
+}
 .step-box:first-child{
     text-align: right;
     padding-right: 3%;
