@@ -78,7 +78,9 @@
         <!-- on souhaite utiliser 100% de la largeur de la vue  du navigateur et mettre 4 colonnes d'images par rangée -->
         <!-- nous allons avoir deux lignes d'images et donc nous utiliserons deux listes <ul> (un pour chaque ligne) -->
         <section class="section-meals">
-            <ul class="meals-showcase">
+            <!--récupérer les contenus des alts des balises img dans le fichier d'analyse-->
+            <!--on met la classe clearfix aux parents des élements flottants-->
+            <ul class="meals-showcase clearfix">
                 <li>
                     <figure class="meal-photo">
                         <img src="resources/img/cercle_feminin.jpg" width="320px" height="180">
@@ -100,7 +102,7 @@
                     </figure>
                 </li>
             </ul>
-            <ul class="meals-showcase">
+            <ul class="meals-showcase clearfix">
                 <li>
                     <figure class="meal-photo">
                         <img src="resources/img/Kt.jpg" width="320px" height="180">

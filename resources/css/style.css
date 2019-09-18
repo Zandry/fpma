@@ -18,6 +18,8 @@ html{
     text-rendering: optimizeLegibility; /*lecture facile*/
 }
 
+
+
 /********************************************************************
 
 COMPOSANTS REUTILISABLES
@@ -343,6 +345,19 @@ Exercice3: Formater la section "Formation SAP"
     width: auto;
     margin-right: 10px; /* ça permet de mettre plus d'espace entre les deux images
 }*/
+/*
 - un problème d'espacement devrait apparaitre entre la nouvelle section et celle d'avant. Il faut utiliser clearfix pour le résoudre (clear the floats à chaque fois qu'on utilise un float, il faut utiliser clearfix)
 */
+
+/**clearfix**/
+.clearfix{
+    zoom:1;
+}
+.clearfix:after{
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
 
