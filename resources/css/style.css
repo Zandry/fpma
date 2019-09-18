@@ -99,6 +99,8 @@ h2:after{
     font-size: 200%; /*nahenako kely nenah ny taille ny icon*/
     display: block;
     color: #8bc701;
+    margin: 30px auto;
+    text-align: center;
 }
 /*************BOUTONS*************/
 
@@ -364,3 +366,14 @@ Exercice3: Formater la section "Formation SAP"
     visibility: hidden;
 }
 
+.section-features .row .col h3{
+    text-align: center;
+}
+.section-features .row .col p{
+    margin-left: 15px;
+    text-align: center;
+}
+
+.form-step p{
+    padding-top: 15px;
+}
