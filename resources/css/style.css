@@ -297,7 +297,7 @@ Exercice3: Formater la section "Formation SAP"
 
 /*on apprend à utiliser les selections sans class
 /*selection du premier fils (le plus à gauche)*/
-.section-steps{
+.section-step{
     background-color: #f4f4f4;
 }
 .step-box:first-child{
@@ -382,3 +382,23 @@ Exercice3: Formater la section "Formation SAP"
 .form-step p{
     padding-top: 15px;
 }
+
+/************************************************************
+
+SECTION RESPONSABLE
+*************************************************************/
+
+/*taille des images dans la classe box*/
+
+.box img{
+    width: 100%;
+    height: auto;
+    margin-bottom:  15px;
+}
+
+/** Marge entre les textes en dessous des images*/
+
+.res-feature{
+    margin-bottom: 5px;
+}
+
