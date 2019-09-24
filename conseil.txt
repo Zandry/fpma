@@ -72,4 +72,6 @@ Joelitiana Rarivomanana
 rarivomanana.joelitiana@neuf.fr
 - utiliser des icônes (fontawesone comme dans la section 1) pour mettre une icône devant le lien mail
 
+- un problème est apparu en formattant les liens de notre site. Le bouton lien a été souligné en jaune aussi (voir l'image dans le dépot de git)
+il faudra corriger
 
