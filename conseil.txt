@@ -62,3 +62,16 @@ EXERCICE 3: Formatter la section "formation SAP"
 
 - un problème d'espacement devrait apparaitre entre la nouvelle section et celle d'avant. Il faut utiliser clearfix pour le résoudre (clear the floats à chaque fois qu'on utilise un float, il faut utiliser clearfix
 
+Section 4: Travail à faire:
+- creer une nouvelle section avec une classe section-responsable.Cette section a un titre donc il faudra rajouter un div avec une class row.
+- remplir le contenu avec le fichier d'analyse
+- sous le titre, nous voudrions avoir une ligne avec 4 colonnes. Chaque colonne contiendra une photo avec des détails en dessous. (voir la maquette)
+- le texte de description contient un format comme ci-dessous
+Pasteur
+Joelitiana Rarivomanana
+rarivomanana.joelitiana@neuf.fr
+- utiliser des icônes (fontawesone comme dans la section 1) pour mettre une icône devant le lien mail
+
+- un problème est apparu en formattant les liens de notre site. Le bouton lien a été souligné en jaune aussi (voir l'image dans le dépot de git)
+il faudra corriger
+

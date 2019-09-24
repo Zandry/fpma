@@ -68,6 +68,7 @@ h2{
 h3{
     font-size: 110%;
     margin-bottom: 15px;
+    text-align: center;
 }
 
 h2:after{
@@ -99,9 +100,34 @@ h2:after{
     font-size: 200%; /*nahenako kely nenah ny taille ny icon*/
     display: block;
     color: #8bc701;
-    margin: 30px auto;
     text-align: center;
+    margin-bottom: 30px;
 }
+
+.icon-small{
+    display: inline-block;
+    width: 20px;
+    text-align: left;
+    color: #8bc701;
+    font-size: 65%;
+    line-height: 130%;
+    vertical-align: middle;
+    margin-top: 5px; /*-4px ny valeur teo*/
+    margin-right: 10px; /* espacement droite*/
+}
+
+/********LIENS*************************/
+a:link, a:visited{
+    color: #8bc701;
+    text-decoration: none;
+    border-bottom: 1px solid #fedc00;
+    transition: border-bottom 0.2s, color 0.2s;
+}
+a:hover, a:visited{
+    color#555;
+    border-bottom: 1px solid transparent;
+}
+
 /*************BOUTONS*************/
 
 .btn:link,
@@ -296,7 +322,7 @@ Exercice3: Formater la section "Formation SAP"
 
 /*on apprend à utiliser les selections sans class
 /*selection du premier fils (le plus à gauche)*/
-.section-steps{
+.section-step{
     background-color: #f4f4f4;
 }
 .step-box:first-child{
@@ -328,6 +354,10 @@ Exercice3: Formater la section "Formation SAP"
     margin-bottom: 80px;
 }
 
+.form-step p{
+    padding-top: 10px;
+}
+
 .form-step div{
     color: #8bc701;
     border: 2px solid #fedc00;
@@ -354,6 +384,12 @@ Exercice3: Formater la section "Formation SAP"
 - un problème d'espacement devrait apparaitre entre la nouvelle section et celle d'avant. Il faut utiliser clearfix pour le résoudre (clear the floats à chaque fois qu'on utilise un float, il faut utiliser clearfix)
 */
 
+/*enlever les soulignements*/
+
+.btn-link:link{
+    border: 0px;
+}
+
 /**clearfix**/
 .clearfix{
     zoom:1;
@@ -377,3 +413,23 @@ Exercice3: Formater la section "Formation SAP"
 .form-step p{
     padding-top: 15px;
 }
+
+/************************************************************
+
+SECTION RESPONSABLE
+*************************************************************/
+
+/*taille des images dans la classe box*/
+
+.box img{
+    width: 100%;
+    height: auto;
+    margin-bottom:  15px;
+}
+
+/** Marge entre les textes en dessous des images*/
+
+.res-feature{
+    margin-bottom: 5px;
+}
+
