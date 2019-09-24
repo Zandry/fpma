@@ -103,6 +103,19 @@ h2:after{
     text-align: center;
     margin-bottom: 30px;
 }
+
+.icon-small{
+    display: inline-block;
+    width: 30px;
+    text-align: left;
+    color: #fedc00;
+    font-size: 120%;
+    line-height: 130%;
+    vertical-align: middle;
+    margin-top: -4px;
+    margin-right: 10px; /* espacement droite*/
+}
+
 /*************BOUTONS*************/
 
 .btn:link,
