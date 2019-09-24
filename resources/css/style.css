@@ -18,6 +18,8 @@ html{
     text-rendering: optimizeLegibility; /*lecture facile*/
 }
 
+
+
 /********************************************************************
 
 COMPOSANTS REUTILISABLES
@@ -97,6 +99,8 @@ h2:after{
     font-size: 200%; /*nahenako kely nenah ny taille ny icon*/
     display: block;
     color: #8bc701;
+    margin: 30px auto;
+    text-align: center;
 }
 /*************BOUTONS*************/
 
@@ -264,7 +268,7 @@ Pour enlever cette valeur, nous avons mis une classe section-meals dans la secti
 }
 /* pour formatter les images, il faut formatter les img dans la classe meal-photo */
 .meal-photo img{
-    opacity: 0.7;
+    opacity: 0.4;
     width: 100%;
     height: auto;
     /* 1- modifier le css pour que l'image soit un peu plus zoomé*/
@@ -275,7 +279,101 @@ Pour enlever cette valeur, nous avons mis une classe section-meals dans la secti
     width: 100%;
     height: auto;
     transform: scale(1.05);
+    opacity: 0.8;
     /* faire en sorte que l'animation des images se passe en demi-seconde*/
-    transition: transform 0.5s, opacity 0.5;
+    transition: transform 0.5s, opacity 0.5s;
 }
 
+
+/**********************************************************************************
+MEALS SECTION
+***********************************************************************************/
+/*
+Exercice3: Formater la section "Formation SAP"
+- mettre un espacement entre le titre de la section et son contenu (ex: utiliser margin)
+    + aligner l'image à droite de sa boite et rajouter un espacement droit en pourcentage et le texte à gauche de sa boite et un espacement gauche*/
+
+
+/*on apprend à utiliser les selections sans class
+/*selection du premier fils (le plus à gauche)*/
+.section-steps{
+    background-color: #f4f4f4;
+}
+.step-box:first-child{
+    text-align: right;
+    padding-right: 3%;
+    margin-top: 30px;
+}
+/*selection du dernier fils (le plus à droite)*/
+.step-box:last-child{
+    padding-left: 3%;
+    margin-top: 70px;
+}
+/*
+- redimensionner l'image en pourcentage (fournir la bonne taille) (utiliser la class bibleonly)*/
+.bibleonly{
+    width: 40%;
+}
+
+/*
+- Formattage des étapes :
+    + transformer les numéros d'étapes en petit cercle orange et non pas en numéro (pour faire une cercle, on utilisera order et border-radius)
+    + espacer de quelques pixels ( en pourcentage) les bullets/puces et leurs textes*/
+
+.form-step{
+    margin-bottom: 50px;
+}
+
+.form-step:last-of-type{
+    margin-bottom: 80px;
+}
+
+.form-step div{
+    color: #8bc701;
+    border: 2px solid #fedc00;
+    display: inline-block; /* ça permet d'afficher les box en ligne mais pas remplir la ligne */
+    border-radius: 50%; /* converti en cercle les carrées */
+    /*à ce moment, le cercle est très aplati*/
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    padding: 5px; /* pour centraliser le texte dans le cercle*/
+    float: left; /* pour mettre le bullet à gauche et le texte à droite*/
+    font-size: 150%;/* jouer avec le font-size pour centraliser le chiffre dans le cercle*/
+    margin-right: 10px; /* marge entre le cercle et le texte*/
+}
+/*
+- aligner les boutons applications avec le fond de l'image du téléphone (cela ne concerne pas mon site)
+/* formattage des boutons*/
+/*.btn-app img{
+    height: 50px; 
+    width: auto;
+    margin-right: 10px; /* ça permet de mettre plus d'espace entre les deux images
+}*/
+/*
+- un problème d'espacement devrait apparaitre entre la nouvelle section et celle d'avant. Il faut utiliser clearfix pour le résoudre (clear the floats à chaque fois qu'on utilise un float, il faut utiliser clearfix)
+*/
+
+/**clearfix**/
+.clearfix{
+    zoom:1;
+}
+.clearfix:after{
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+.section-features .row .col h3{
+    text-align: center;
+}
+.section-features .row .col p{
+    margin-left: 15px;
+    text-align: center;
+}
+
+.form-step p{
+    padding-top: 15px;
+}

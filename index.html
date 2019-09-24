@@ -78,50 +78,90 @@
         <!-- on souhaite utiliser 100% de la largeur de la vue  du navigateur et mettre 4 colonnes d'images par rangée -->
         <!-- nous allons avoir deux lignes d'images et donc nous utiliserons deux listes <ul> (un pour chaque ligne) -->
         <section class="section-meals">
-            <ul class="meals-showcase">
+            <!--récupérer les contenus des alts des balises img dans le fichier d'analyse-->
+            <!--on met la classe clearfix aux parents des élements flottants-->
+            <ul class="meals-showcase clearfix">
                 <li>
                     <figure class="meal-photo">
-                        <img src="resources/img/cercle_feminin.jpg" width="350px" height="190">
+                        <img src="resources/img/cercle_feminin.jpg" width="320px" height="180">
                     </figure>
                 </li>
                 <li>
                     <figure class="meal-photo">
-                        <img src="resources/img/cercle_masculin.jpg" width="350px" height="190">
+                        <img src="resources/img/cercle_masculin.jpg" width="320px" height="180">
                     </figure>
                 </li>
                 <li>
                     <figure class="meal-photo">
-                        <img src="resources/img/Chorale.jpg" width="350px" height="190">
+                        <img src="resources/img/Chorale.jpg" width="350px" height="180">
                     </figure>
                 </li>
                 <li>
                     <figure class="meal-photo">
-                        <img src="resources/img/Ed.jpg" width="350px" height="190">
-                    </figure>
-                </li>
-            </ul>
-            <ul class="meals-showcase">
-                <li>
-                    <figure class="meal-photo">
-                        <img src="resources/img/Kt.jpg" width="350px" height="190">
-                    </figure>
-                </li>
-                <li>
-                    <figure class="meal-photo">
-                        <img src="resources/img/Jeune.jpg" width="350px" height="190">
-                    </figure>
-                </li>
-                <li>
-                    <figure class="meal-photo">
-                        <img src="resources/img/musique.jpg" width="350px" height="190">
-                    </figure>
-                </li>
-                <li>
-                    <figure class="meal-photo">
-                        <img src="resources/img/Reveil.jpg" width="350px" height="190">
+                        <img src="resources/img/Ed.jpg" width="320px" height="180">
                     </figure>
                 </li>
             </ul>
+            <ul class="meals-showcase clearfix">
+                <li>
+                    <figure class="meal-photo">
+                        <img src="resources/img/Kt.jpg" width="320px" height="180">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="resources/img/jeune.jpg" width="320px" height="180">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="resources/img/music.jpg" width="320px" height="180">
+                    </figure>
+                </li>
+                <li>
+                    <figure class="meal-photo">
+                        <img src="resources/img/Reveil.jpg" width="320px" height="180">
+                    </figure>
+                </li>
+            </ul>
+        </section>
+        
+        <section class="section-step">
+            <div class="row">
+                <!--header de la section contenant le titre-->
+                <h2>Formation SAP</h2>
+            </div>
+            <div class="row"> <!--permet d'utiliser toute la largeur du navigateur-->
+                <div class="col span-1-of-2 step-box">
+                    <img src="resources/img/bible_PN.png" alt="bible pour formation" class="bible-open">
+                </div>
+                <div class="col span-1-of-2 step-box">
+                    <div class="form-step">
+                        <div>1</div>
+                        <p>
+                            Fampianarana isaky ny alarobia: 20h à 21h
+                        </p>
+                    </div>
+                    <div class="form-step">
+                        <div>2</div>
+                        <p>
+                            Fidirana amin'ny confcall: <br>
+                            Phone: 0176728908<br>
+                            code : 359104#
+                        </p>
+                    </div>
+                    <div class="form-step">
+                        <div>3</div>
+                        <p>
+                            Fampianarana SAP/KNPL:<br>
+                                - Le leadership Masculin:  <a href="#" >http://archives.fpma.net</a>
+                        </p>
+                    </div>
+                    <!--rajout du bouton lien-->
+                    <a href="#" class="btn-link"><img src="resources/img/icone-lien.png" width="50px" height="50px" alt="bouton lien"></a>
+                    <span>cliquez ici pour visiter le site</span>
+                </div>
+            </div>
         </section>
     </BODY>
 
