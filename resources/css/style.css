@@ -384,6 +384,12 @@ Exercice3: Formater la section "Formation SAP"
 - un problème d'espacement devrait apparaitre entre la nouvelle section et celle d'avant. Il faut utiliser clearfix pour le résoudre (clear the floats à chaque fois qu'on utilise un float, il faut utiliser clearfix)
 */
 
+/*enlever les soulignements*/
+
+.btn-link:link{
+    border: 0px;
+}
+
 /**clearfix**/
 .clearfix{
     zoom:1;
