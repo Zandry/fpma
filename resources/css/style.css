@@ -106,14 +106,25 @@ h2:after{
 
 .icon-small{
     display: inline-block;
-    width: 30px;
+    width: 20px;
     text-align: left;
-    color: #fedc00;
-    font-size: 120%;
+    color: #8bc701;
+    font-size: 65%;
     line-height: 130%;
     vertical-align: middle;
-    margin-top: -4px;
+    margin-top: 5px; /*-4px ny valeur teo*/
     margin-right: 10px; /* espacement droite*/
+}
+
+/********LIENS*************************/
+a:link, a:visited{
+    color: #8bc701;
+    text-decoration: none;
+    border-bottom: 1px solid #fedc00;
+}
+a:hover, a:visited{
+    color#555;
+    border-bottom: 1px solid transparent;
 }
 
 /*************BOUTONS*************/
