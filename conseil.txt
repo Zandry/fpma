@@ -75,3 +75,9 @@ rarivomanana.joelitiana@neuf.fr
 - un problème est apparu en formattant les liens de notre site. Le bouton lien a été souligné en jaune aussi (voir l'image dans le dépot de git)
 il faudra corriger
 
+Section5: c'est une sorte de forum.mais dans mon site, c'est le verser du mois que nous formattons pour afficher
+Travail à faire:
+- créer le squelette de la section avec les éléments nécéssaires (s'inspirer de la maquette et du fichier d'analyse)
+question à poser: A-t-on un titre? De combien de colonnes a-t-on besoin?
+
+- Remplir le sqelette des informations fournie dans le fichier d'analyse
