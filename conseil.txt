@@ -81,3 +81,13 @@ Travail à faire:
 question à poser: A-t-on un titre? De combien de colonnes a-t-on besoin?
 
 - Remplir le sqelette des informations fournie dans le fichier d'analyse
+
+- créer une image de fond pour la section verser du mois
+
+- formatter les balises bloquotes et cite (espacement, texte en italique, line-height,...)
+
+- formatter les images dans les balises cite, pour apparaitre dans un petet cercle comme le montre la maquette
+
+- bien aligner l'image avec le nom
+
+- rajouter des guillemets pour encadrer les textes des quotes des versers à partir du  CSS pour qu'on puisse le formatter (inspiration utiliser .bloquote: before fin de mettre le guillemet ouvrant devant le texte du bloquote) 
