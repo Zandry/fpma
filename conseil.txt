@@ -92,3 +92,18 @@ question à poser: A-t-on un titre? De combien de colonnes a-t-on besoin?
 - bien aligner l'image avec le nom
 
 - rajouter des guillemets pour encadrer les textes des quotes des versers à partir du  CSS pour qu'on puisse le formatter (inspiration utiliser .bloquote: before fin de mettre le guillemet ouvrant devant le texte du bloquote) 
+
+SECTION 6: on va apprendre à créer des boites avec css. On va également apprendre à faire des ombres
+TRAVAIL A FAIRE:
+- créer le squelette de la sectionavec les éléments (ce qui est dans le fichier d'analyse)
+question à se poser: A-t-on un titre? De combien de colonnes a-t- on besoin? est ce qu'on doit remplir  toute la ligne ou doit-on utiliser un autre layout?
++ on a titre
++ on a selon la maquette trois colonnes
++ on a 2 sections ( pas comme dans la maquette) ( on va pour le moment mettre à des div)
+  ==> section petit titre, section nom du membre et son adresse mail
+  
+  
+- remplir le squelette à partir déléments du fichier d'analyse
+
+- dupliquer ce premier squelette trois fois pour avoir les trois colonnes
+
