@@ -455,6 +455,7 @@ blockquote{
     font-size: 125%;
     line-height: 145%;
     position: relative;
+    margin-top: 40px;
 }
 
 /* rejouter des guillemets pour encadrer les textes des quotes des clients à partir du CSS pour qu'on puisse le formatter (inspiration utiliser .bloquote:before fin de mettre le guillemets ouvrant devant le texte du bloquote)*/
