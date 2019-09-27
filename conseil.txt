@@ -83,6 +83,7 @@ question à poser: A-t-on un titre? De combien de colonnes a-t-on besoin?
 - Remplir le sqelette des informations fournie dans le fichier d'analyse
 
 - créer une image de fond pour la section verser du mois
+( inspiration: on a déjà fait le même chose pour l'image de fond du header)
 
 - formatter les balises bloquotes et cite (espacement, texte en italique, line-height,...)
 

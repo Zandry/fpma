@@ -433,3 +433,15 @@ SECTION RESPONSABLE
     margin-bottom: 5px;
 }
 
+/**************************************
+DERNIER VERSEt DU MOIS SECTION
+****************************************/
+
+/* - créer une image de fond pour la section dernier verset du mois ( une image de background existe )*/
+
+
+.section-verset-du-mois{
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/bibles-hero.jpg);
+    background-size: cover;
+    color: #FFF;
+}
