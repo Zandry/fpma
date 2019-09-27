@@ -75,3 +75,20 @@ rarivomanana.joelitiana@neuf.fr
 - un problème est apparu en formattant les liens de notre site. Le bouton lien a été souligné en jaune aussi (voir l'image dans le dépot de git)
 il faudra corriger
 
+Section5: c'est une sorte de forum.mais dans mon site, c'est le verser du mois que nous formattons pour afficher
+Travail à faire:
+- créer le squelette de la section avec les éléments nécéssaires (s'inspirer de la maquette et du fichier d'analyse)
+question à poser: A-t-on un titre? De combien de colonnes a-t-on besoin?
+
+- Remplir le sqelette des informations fournie dans le fichier d'analyse
+
+- créer une image de fond pour la section verser du mois
+( inspiration: on a déjà fait le même chose pour l'image de fond du header)
+
+- formatter les balises bloquotes et cite (espacement, texte en italique, line-height,...)
+
+- formatter les images dans les balises cite, pour apparaitre dans un petet cercle comme le montre la maquette
+
+- bien aligner l'image avec le nom
+
+- rajouter des guillemets pour encadrer les textes des quotes des versers à partir du  CSS pour qu'on puisse le formatter (inspiration utiliser .bloquote: before fin de mettre le guillemet ouvrant devant le texte du bloquote) 
