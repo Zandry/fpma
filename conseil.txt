@@ -107,3 +107,20 @@ question à se poser: A-t-on un titre? De combien de colonnes a-t- on besoin? es
 
 - dupliquer ce premier squelette trois fois pour avoir les trois colonnes
 
+################################################################################
+Travail à faire (suite) 
+- FORMATTAGE SECTION SECRETAIRE
+- mettre une couleur de fond pour la section (un gris comme celle de la section "FORMATION SAP"
+- formatter les div plan-box (boites) pour que le fond soit blanc et les coins des boites soient arrondis (utiliser border-radius), formatter la largeur des boites pour occuper 90% de la largeur allouée
+- formatter les div dans chaque plan-box pour former une section claire (commencer par experimenter en mettant un espacement entre les div, ça pourrait être un border-bottom avec une bordure solid à 1px et avec une couleur par exemple)
+- formatter la section nom pour que la taille de police soit gros. Colorier la partie nom en bleu
+- Formatter la liste ul pour ne pas avoir des puces 
+- rajouter des espacements entre les éléments de la liste si nécéssaires ( padding entre les li)
+
+- définir les icônes comme étant des icones petit (on a déjà une classe .icon-small définit pour la section responsable)
+- centrer les bouttons dans chaque boite (indice: les boutons peuvent être défini comme étant le dernier fils du div dan sla classe plan-box)
+
+- griser un peu le fond la première section des boites (indice: c'est le premier fils du div dans la class plan-box). Améliorer ensuite les arrondis aux bord haut gauche et droit à 5px s'ils ne sont pas déjà là (indice: border-top-left-radius et border-top-right-radius)
+
+- rajouter ensuite un effet d'ombrage dans les bpites plan-box (indice: box-shadow)
+
