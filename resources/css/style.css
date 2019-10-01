@@ -487,3 +487,13 @@ cite img{
     clear: both;
     vertical-align: middle;
 }
+
+
+
+/******************************************************************
+Membre  SECTION
+*************************************************************/
+/* - mettre une couleur de fond pour la section (un gris comme celle de la section "formation")*/
+.section-membre{
+    background-color: #f4f4f4;
+}
