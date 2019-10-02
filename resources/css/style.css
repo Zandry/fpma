@@ -521,3 +521,11 @@ border-bottom: 1px solid #e8e8e8;
     color: #385aa0;
 }
 
+.plan-box div ul{
+    list-style: none;
+}
+
+.plan-box div ul li{
+    padding: 15px;
+}
+
