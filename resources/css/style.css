@@ -497,3 +497,13 @@ Membre  SECTION
 .section-membre{
     background-color: #f4f4f4;
 }
+
+/* formatter les div plan-box (les boites) pour que le fond soit blanc et les coins des boites soient arrondis (utiliser border-radius)
+formatter la largeur des boites pour occuper90% de la largeur allouée*/
+.plan-box{
+    background-color: #FFF;
+    border-radius: 10px;
+    width: 90%;
+    /*voir le resultat et ajuster la marge et ajuster la marge à gauche*/
+    margin-left: 5%
+}
