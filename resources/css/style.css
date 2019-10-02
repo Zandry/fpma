@@ -99,7 +99,7 @@ h2:after{
 .icon-big{
     font-size: 200%; /*nahenako kely nenah ny taille ny icon*/
     display: block;
-    color: #8bc701;
+    color: #385aa0;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -118,9 +118,9 @@ h2:after{
 
 /********LIENS*************************/
 a:link, a:visited{
-    color: #8bc701;
+    color: #385aa0;
     text-decoration: none;
-    border-bottom: 1px solid #fedc00;
+    /*border-bottom: 1px solid #fedc00;*/
     transition: border-bottom 0.2s, color 0.2s;
 }
 a:hover, a:visited{
