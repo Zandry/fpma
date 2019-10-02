@@ -511,5 +511,7 @@ formatter la largeur des boites pour occuper90% de la largeur allouée*/
 /* formatter les div dans chaque plan-box pour former une section claire*/
 
 .plan-box div{
-border-bottom: 1px solid;
+padding: 15px;
+border-bottom: 1px solid #e8e8e8;
 }
+
