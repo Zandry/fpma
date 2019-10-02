@@ -516,7 +516,7 @@ border-bottom: 1px solid #e8e8e8;
 }
 
 .nom{
-    font-size: 300%;
+    font-size: 150%;/* je mets la font-size à 150% au lieu de 300% */
     font-weight: 100%;
 }
 
