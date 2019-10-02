@@ -529,3 +529,7 @@ border-bottom: 1px solid #e8e8e8;
     padding: 15px 0;
 }
 
+/* griser un peu le fond de la première section*/
+.plan-box div:first-child{
+    background-color: #eaeaea;
+}
