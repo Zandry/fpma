@@ -507,3 +507,9 @@ formatter la largeur des boites pour occuper90% de la largeur allouée*/
     /*voir le resultat et ajuster la marge et ajuster la marge à gauche*/
     margin-left: 5%
 }
+
+/* formatter les div dans chaque plan-box pour former une section claire*/
+
+.plan-box div{
+border-bottom: 1px solid;
+}
