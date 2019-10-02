@@ -120,6 +120,9 @@ Travail à faire (suite)
 - définir les icônes comme étant des icones petit (on a déjà une classe .icon-small définit pour la section responsable)
 - centrer les bouttons dans chaque boite (indice: les boutons peuvent être défini comme étant le dernier fils du div dan sla classe plan-box)
 
+après toutes ces formattages, on a un problème d'alignements car on a une section vide
+- pour remplir le vide, on va modifier le Html
+
 - griser un peu le fond la première section des boites (indice: c'est le premier fils du div dans la class plan-box). Améliorer ensuite les arrondis aux bord haut gauche et droit à 5px s'ils ne sont pas déjà là (indice: border-top-left-radius et border-top-right-radius)
 
 - rajouter ensuite un effet d'ombrage dans les bpites plan-box (indice: box-shadow)
