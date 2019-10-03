@@ -532,4 +532,6 @@ border-bottom: 1px solid #e8e8e8;
 /* griser un peu le fond de la première section*/
 .plan-box div:first-child{
     background-color: #eaeaea;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
