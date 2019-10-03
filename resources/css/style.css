@@ -505,7 +505,8 @@ formatter la largeur des boites pour occuper90% de la largeur allouée*/
     border-radius: 10px;
     width: 90%;
     /*voir le resultat et ajuster la marge et ajuster la marge à gauche*/
-    margin-left: 5%
+    margin-left: 5%;
+    box-shadow: 5px 5px 10px #383838;
 }
 
 /* formatter les div dans chaque plan-box pour former une section claire*/
@@ -534,4 +535,9 @@ border-bottom: 1px solid #e8e8e8;
     background-color: #eaeaea;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+}
+
+.plan-box div:last-child{
+    /*text-align: center;*/
+    border-bottom: 0;
 }
