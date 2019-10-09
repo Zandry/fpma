@@ -99,7 +99,7 @@ h2:after{
 .icon-big{
     font-size: 200%; /*nahenako kely nenah ny taille ny icon*/
     display: block;
-    color: #8bc701;
+    color: #385aa0;
     text-align: center;
     margin-bottom: 30px;
 }
@@ -118,9 +118,9 @@ h2:after{
 
 /********LIENS*************************/
 a:link, a:visited{
-    color: #8bc701;
+    color: #385aa0;
     text-decoration: none;
-    border-bottom: 1px solid #fedc00;
+    /*border-bottom: 1px solid #fedc00;*/
     transition: border-bottom 0.2s, color 0.2s;
 }
 a:hover, a:visited{
@@ -434,6 +434,10 @@ SECTION RESPONSABLE
     margin-bottom: 5px;
 }
 
+.res-feature p{
+    font-size: 15px
+}
+
 /**************************************
 DERNIER VERSEt DU MOIS SECTION
 ****************************************/
@@ -486,4 +490,59 @@ cite img{
     margin-right: 10px;
     clear: both;
     vertical-align: middle;
+}
+
+
+
+/******************************************************************
+Membre  SECTION
+*************************************************************/
+/* - mettre une couleur de fond pour la section (un gris comme celle de la section "formation")*/
+.section-membre{
+    background-color: #f4f4f4;
+}
+
+/* formatter les div plan-box (les boites) pour que le fond soit blanc et les coins des boites soient arrondis (utiliser border-radius)
+formatter la largeur des boites pour occuper90% de la largeur allouée*/
+.plan-box{
+    background-color: #FFF;
+    border-radius: 10px;
+    width: 90%;
+    /*voir le resultat et ajuster la marge et ajuster la marge à gauche*/
+    height: 395px;
+    margin-left: 5%;
+    box-shadow: 5px 5px 10px #383838;
+}
+
+/* formatter les div dans chaque plan-box pour former une section claire*/
+
+.plan-box div{
+padding: 15px;
+border-bottom: 1px solid #e8e8e8;
+}
+
+.nom{
+    font-size: 150%;/* je mets la font-size à 150% au lieu de 300% */
+    font-weight: 100%;
+    color: #385aa0;
+}
+
+.plan-box div ul{
+    list-style: none;
+}
+
+.plan-box div ul li{
+    padding: 15px 0;
+}
+
+/* griser un peu le fond de la première section*/
+.plan-box div:first-child{
+    background-color: #eaeaea;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.plan-box div:last-child{
+    /*text-align: center;*/
+    border-bottom: 0;
 }
