@@ -434,6 +434,10 @@ SECTION RESPONSABLE
     margin-bottom: 5px;
 }
 
+.res-feature p{
+    font-size: 15px
+}
+
 /**************************************
 DERNIER VERSEt DU MOIS SECTION
 ****************************************/
@@ -505,6 +509,7 @@ formatter la largeur des boites pour occuper90% de la largeur allouée*/
     border-radius: 10px;
     width: 90%;
     /*voir le resultat et ajuster la marge et ajuster la marge à gauche*/
+    height: 395px;
     margin-left: 5%;
     box-shadow: 5px 5px 10px #383838;
 }
