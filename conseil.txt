@@ -127,3 +127,16 @@ après toutes ces formattages, on a un problème d'alignements car on a une sect
 
 - rajouter ensuite un effet d'ombrage dans les bpites plan-box (indice: box-shadow)
 
+
+
+#######################################################################################################
+Contact form -travail à faire
+########################################################################################################
+- créer le squelette de html pour faire un formulaire (on a un titre)
+- créer un div row entier et une form sans action et dans lequel on a un autre div row entier.
+- Dans chaque row dans le form, diviser l'espace disponible en trois colonnes:
+ + la première colonne aura le label
+ + la deuxième colonne aura le controle (textbox ou radiobouton, ...etc)
+ + on laissera vide la troisième colonne pour l'instant (ne pas créer)
+ (créer autant de row que de fields qu'on doit créer selon le fichier d'analyse)
+
