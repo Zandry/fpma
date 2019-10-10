@@ -546,3 +546,12 @@ border-bottom: 1px solid #e8e8e8;
     /*text-align: center;*/
     border-bottom: 0;
 }
+
+/******************************************************
+Contact SECTION
+*******************************************************/
+
+.contact-form{
+    width: 60%;
+    margin: 0 auto;
+}
