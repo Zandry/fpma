@@ -139,4 +139,17 @@ Contact form -travail à faire
  + la deuxième colonne aura le controle (textbox ou radiobouton, ...etc)
  + on laissera vide la troisième colonne pour l'instant (ne pas créer)
  (créer autant de row que de fields qu'on doit créer selon le fichier d'analyse)
+ 
+ - Modifier la largeur de la section contact-form à 60%
+ - Centrer la section en mettant une marge haut et bas à 0 et gauche et droit à auto; ( voir la doc de margin http://developer.mozilla.org/fr/docs/web/css/margin - chercher la syntaxe où on a deux paramètres à margin)
+ - formatter tous les éléments d'interface graphique pour occuper 100% de leur largeur ( ces éléments sont tous les éléments de droite)
+ - mettre un peu de padding à 7px;
+ - arrondissez les ordures des controles
+ - modifiez les bordures des contrôles  modifiés pour avoir une épaisseur égale autour de ces controles et coloriez le en gris
+ - mettez la hauteur du textarea à 100%
+ - mettre le bouton en forme pour qu'il ressemle aux autres bouton arrondis
+ - mettre des espacemets autour du checkbox (10 5 10 0) car on a l'impression que l'espacement est différente des autres.
+ - enlever les couleurs bleus autour des controles quand on les selectionne (indice css focus <=> c'est comme border)
+
+ - 
 
