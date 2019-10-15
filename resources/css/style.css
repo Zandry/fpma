@@ -565,3 +565,8 @@ textarea{
     border-radius: 5px;
     border: 1px solid #CCCCCC;
 }
+
+/*mettez la hauteur du textarea à 100px*/
+textarea{
+    height: 100px;
+}
