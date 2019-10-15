@@ -151,5 +151,16 @@ Contact form -travail à faire
  - mettre des espacemets autour du checkbox (10 5 10 0) car on a l'impression que l'espacement est différente des autres.
  - enlever les couleurs bleus autour des controles quand on les selectionne (indice css focus <=> c'est comme border)
 
- - 
+ #######################################################################################################
+ Footer - travail à faire
+ #######################################################################################################
+ Notre footer contiendra une partie de navigation (un menu) et une partie où mettra les icônes sociales.
+ Les éléments de navigation sont dans le fichier d'analyse
+ 
+ - créer le squelette de code html (deux colonnes 50/50)
+    +  première ligne: pas de titre mais une ligne entière navigation et icône sociales
+    + deuxième ligne: texte
+- dans la première ligne et première colonne, rajouter une liste <ul><li>...dans lesquelles vous rajouterez les éléments du fichier d'analyse
+- dans la première ligne et deuxième colonne, rajouter une liste <ul><li>... dans lesquelles on rajoute les icônes de fb, youtube, 'mail'
+- dans la deuxième ligne, rajouter le texte "copyright 2019, by fpma Cergy. 
 
