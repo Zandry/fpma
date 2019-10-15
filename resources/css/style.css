@@ -580,3 +580,15 @@ textarea{
 textarea{
     height: 100px;
 }
+/*************************************************************
+JUSTE POUR UN DOCUMENT, (je n'ai pas utiliser un checkbox)
+*****************************************************************/
+/* Mettre les espacements autour du checkbox
+input[type=checkbox]{
+    margin: 15px 5px 10px 0px;
+}
+
+/*enlever les couleurs bleus autour des controles quand on les selectionne
+*:focus{
+    outline: none;
+}*/
