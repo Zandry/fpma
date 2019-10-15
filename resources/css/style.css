@@ -131,7 +131,8 @@ a:hover, a:visited{
 /*************BOUTONS*************/
 
 .btn:link,
-.btn:visited{
+.btn:visited,
+input[type=submit]{
     display: inline-block;
     padding: 10px 30px;
     font-weight: 300;
@@ -141,33 +142,42 @@ a:hover, a:visited{
     margin-right: 15px;
 }
 
+.btn:active,
+.btn:hover,
+input[type=submit]{
+    background-color: #385aa0;
+}
+
 .btn-full:link,
-.btn-full:visited{
-    background-color: #fedc00;/*#2A4C89*/
-    border: 1px solid #bc8e05;
-    color: #000;
+.btn-full:visited,
+input[type=submit]{
+    background-color: #385aa0;
+    border: 1px solid #385aa0;
+    color: #fff;
 }
 
 .btn-ghost:link,
 .btn-ghost:visited{
-    border: 1px solid #fedc00;
-    color: #000 /* Je mets mon couleur de text en blanc(#e67e22;)*/
+    border: 1px solid #385aa0;
+    color: #fff /* Je mets mon couleur de text en blanc(#e67e22;)*/
 }
 
 .btn:active,
-.btn:hover{
-    background-color: #bc8e05;
+.btn:hover,
+input[type=submit]:active,
+input[type=submit]:hover{
+    background-color: #385aa0;
 }
 
 .btn-full:active,
 .btn-full:hover{
-    background-color: #bc8e05;
+    border: 1px solid #8bc701;
 }
 
 .btn-ghost:active,
 .btn-ghost:hover{
-    border: 1px solid #bc8e05;
-    color: #000; /*je mets en bleu quand la souris passe*/
+    border: 1px solid #8bc701;
+    color: #fff; /*je mets en bleu quand la souris passe*/
 }
 
 /***************************************************************
@@ -546,3 +556,39 @@ border-bottom: 1px solid #e8e8e8;
     /*text-align: center;*/
     border-bottom: 0;
 }
+
+/******************************************************
+Contact SECTION
+*******************************************************/
+
+.contact-form{
+    width: 60%;
+    margin: 0 auto;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea{
+    width: 100%;
+    padding: 7px;
+    border-radius: 5px;
+    border: 1px solid #CCCCCC;
+}
+
+/*mettez la hauteur du textarea à 100px*/
+textarea{
+    height: 100px;
+}
+/*************************************************************
+JUSTE POUR UN DOCUMENT, (je n'ai pas utiliser un checkbox)
+*****************************************************************/
+/* Mettre les espacements autour du checkbox
+input[type=checkbox]{
+    margin: 15px 5px 10px 0px;
+}
+
+/*enlever les couleurs bleus autour des controles quand on les selectionne
+*:focus{
+    outline: none;
+}*/

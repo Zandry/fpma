@@ -324,6 +324,105 @@
                 </div>
             </div>
         </section>
+        
+        <section class="section-form">
+            <div class="row">
+                <h2> Inscription Ecole du Dimanche</h2>
+            </div>
+            <div class="row">
+                <form method="post" action="#" class="contact-form">
+                    <!--Nom-->
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Nom du Responsable</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="name" id="name" placeholder="Nom du responsable" required>
+                        </div>
+                   </div>
+                   <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Prénom du Responsable</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="name" id="name" placeholder="Prénom du responsable" required>
+                        </div>
+                   </div>
+                   <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Nom de l'enfant</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="name" id="name" placeholder="Nom de l'enfant" required>
+                        </div>
+                   </div>
+                   <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Prénom de l'enfant</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="name" id="name" placeholder="Prénom de l'enfant" required>
+                        </div>
+                  </div>
+                  <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Date de Naissance</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="text" name="date_naiss" id="date_naiss"required>
+                        </div>
+                  </div>
+                  <!--Section-->
+                    <div class="row">
+                        <!-- une colonne parmi 3 -->
+                        <div class="col span-1-of-3">
+                            <label>Section</label>
+                        </div>
+                        <!-- deux colonnes parmi 3 -->
+                        <div class="col span-2-of-3">
+                            <!--ici ce ne sera pas un input mais un combobox-->
+                            <!--les id sont utiles pour utiliser les controles-->
+                            <select name="find-us" id="find-us">
+                                <option value="section-1" selected>Section 1</option>
+                                <option value="section-2">Section 2</option>
+                                <option value="section-3">Section 3</option>
+                                <option value="section-4">Section 4</option>
+                            </select>
+                        </div> 
+                    </div>
+                    <!--Email-->
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <label>Votre email</label>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="email" name="email" id="email" placeholder="entrer votre email">
+                        </div>
+                    </div>
+                    <!--drop us a line-->
+                    <div class="row">
+                        <!-- une colonne parmi 3 -->
+                        <div class="col span-1-of-3">
+                            <label> Votre Message</label>
+                        </div>
+                        <!-- deux colonnes parmi 3 -->
+                        <div class="col span-2-of-3">
+                            <textarea id="message" name="message" placeholder="Votre message">
+                            </textarea>
+                        </div> 
+                    </div>   
+                    <!--submit button-->
+                    <div class="row">
+                        <div class="col span-1-of-3">
+                            <labe> </labe>
+                        </div>
+                        <div class="col span-2-of-3">
+                            <input type="submit" value="Envoyer">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
     </BODY>
 
 </html>
