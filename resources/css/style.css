@@ -592,3 +592,33 @@ input[type=checkbox]{
 *:focus{
     outline: none;
 }*/
+
+/**************************************************************
+Footer SECTION
+****************************************************************/
+/*Mettre une couleur de fond sombre pour le footer entier*/
+footer{
+    background-color:#333333;
+    padding: 40px;
+    font-size: 80%;
+}
+.footer-nav{
+    float: left;
+    list-style:none;
+}
+.footer-nav li a{
+     color: #8bc701;
+}
+.social-links{
+    float:right;
+    list-style:none;
+}
+.footer-nav li,
+.social-links li{
+    display:inline-block;
+    margin-right:20px;
+}
+.footer-nav li:last-child,
+.social-links li:last-child{
+    margin-right: 0;
+}
