@@ -166,10 +166,10 @@ Contact form -travail à faire
 
 FORMATTAGE
 - mettre une couleur de fond sombre pour le footer entier (ex: #333333)
-- mettre le contenu du footer en float left et les styles de list à none
+- mettre le contenu du footer en float left et les styles de list à none pour supprimer les styles
 - mettre le contenu du footer nav en affichage horizontal (indice display)
 - faire la même chose avec les social icons (float right et style de list à none)
-- afficher les social-icons en ligne ( indice inline)
+- afficher les social-icons en ligne ( indice inline) et rajouter une marge de 20px à droite de chaque élément d'icône
 - supprimer la marge du dernier élément des social icons
 - formatter les liens pour les menus et les social icons (car les liens deviennent gris quand on les a visités)
     + suppression les décorations de texte (pour ne pas avoir les soulignements)
