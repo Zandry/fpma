@@ -606,9 +606,10 @@ footer{
     float: left;
     list-style:none;
 }
-.footer-nav li a{
+/*.footer-nav li a{
      color: #385aa0;
-}
+}*/
+
 .social-links{
     float:right;
     list-style:none;
@@ -621,4 +622,21 @@ footer{
 .footer-nav li:last-child,
 .social-links li:last-child{
     margin-right: 0;
+}
+
+.footer-nav li a:active,
+.footer-nav li a:link,
+.social-links li a:active,
+.social-links li a:link{
+    text-decoration: none;
+    border: 0;
+    color: #888;
+}
+.footer-texte{
+    color: #FFF;
+    text-align: center;
+}
+
+.footer-copy{
+    color: #FFF;
 }
