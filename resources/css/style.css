@@ -108,7 +108,7 @@ h2:after{
     display: inline-block;
     width: 20px;
     text-align: left;
-    color: #8bc701;
+    color: /*#8bc701;*/ #329698;
     font-size: 65%;
     line-height: 130%;
     vertical-align: middle;
