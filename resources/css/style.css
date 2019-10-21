@@ -639,11 +639,35 @@ footer{
     color: #FFF;
 }
 
-.footer-texte{
-    color: #FFF;
+footer p{
+    color: #888;
+    font-size: 80%;
     text-align: center;
+    margin-top: 30px;
 }
 
-.footer-copy{
-    color: #FFF;
+.social-links li a{
+    font-size: 160%;
 }
+
+.fa-facebook-f:hover{
+    color: #385aa0;
+}
+
+.fa-youtube:hover{
+    color: #FF0000;
+}
+
+.fa-rss:hover{
+    color: #8bc701;
+}
+
+.fab fa-facebook-f,
+.fab fa-youtube,
+.fas fa-rss{
+    transition: color 0.2S;
+}
+/*.footer-texte{
+    color: #FFF;
+    text-align: center;
+}*/
