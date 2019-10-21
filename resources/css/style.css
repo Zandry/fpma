@@ -245,7 +245,7 @@ NAVIGATION
 
 .main-nav li a:hover,
 .main-nav li a:active{
-    border-bottom: 1px solid #8bc701;
+    border-bottom: 1px solid #329698;
 }
 
 /*******************************************************
@@ -369,8 +369,8 @@ Exercice3: Formater la section "Formation SAP"
 }
 
 .form-step div{
-    color: #8bc701;
-    border: 2px solid #fedc00;
+    color: /*#8bc701;*/ #329698;
+    border: 2px solid #329698;
     display: inline-block; /* ça permet d'afficher les box en ligne mais pas remplir la ligne */
     border-radius: 50%; /* converti en cercle les carrées */
     /*à ce moment, le cercle est très aplati*/
