@@ -382,6 +382,8 @@ Exercice3: Formater la section "Formation SAP"
     font-size: 150%;/* jouer avec le font-size pour centraliser le chiffre dans le cercle*/
     margin-right: 10px; /* marge entre le cercle et le texte*/
 }
+
+
 /*
 - aligner les boutons applications avec le fond de l'image du téléphone (cela ne concerne pas mon site)
 /* formattage des boutons*/
