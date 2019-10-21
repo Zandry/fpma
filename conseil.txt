@@ -175,7 +175,7 @@ FORMATTAGE
     + suppression les décorations de texte (pour ne pas avoir les soulignements)
     + mettre les bordures à 0
     + mettre les couleurs des liens à leur couleurs visité(#888) (à voir le résultat)
-- formatter les liens hover et active avec une couleur #ddd
+- formatter les liens hover et active avec une couleur #ddd pour le menu (pour les icônes, one fera plus tard)
 - mettre le contenu du paragraph copyright à la même couleur que les liens et réduire sa taille de fond (donner la taille en pourcent pour la responsivité). Ensuite centrerle texte.
 - rajouter un padding de 40px au footer
 - rajouter un margin-top de 30px pour séparer les menus et le paragraph
