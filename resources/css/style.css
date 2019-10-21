@@ -624,14 +624,21 @@ footer{
     margin-right: 0;
 }
 
-.footer-nav li a:active,
+.footer-nav li a:visited,
 .footer-nav li a:link,
-.social-links li a:active,
+.social-links li a:visited,
 .social-links li a:link{
     text-decoration: none;
     border: 0;
     color: #888;
+    transition: color 0.2s;
 }
+
+.footer-nav li a:hover,
+.social-links li a:active{
+    color: #FFF;
+}
+
 .footer-texte{
     color: #FFF;
     text-align: center;
