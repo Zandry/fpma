@@ -592,3 +592,82 @@ input[type=checkbox]{
 *:focus{
     outline: none;
 }*/
+
+/**************************************************************
+Footer SECTION
+****************************************************************/
+/*Mettre une couleur de fond sombre pour le footer entier*/
+footer{
+    background-color:#333333;
+    padding: 40px;
+    font-size: 80%;
+}
+.footer-nav{
+    float: left;
+    list-style:none;
+}
+/*.footer-nav li a{
+     color: #385aa0;
+}*/
+
+.social-links{
+    float:right;
+    list-style:none;
+}
+.footer-nav li,
+.social-links li{
+    display:inline-block;
+    margin-right:20px;
+}
+.footer-nav li:last-child,
+.social-links li:last-child{
+    margin-right: 0;
+}
+
+.footer-nav li a:visited,
+.footer-nav li a:link,
+.social-links li a:visited,
+.social-links li a:link{
+    text-decoration: none;
+    border: 0;
+    color: #888;
+    transition: color 0.2s;
+}
+
+.footer-nav li a:hover,
+.social-links li a:active{
+    color: #FFF;
+}
+
+footer p{
+    color: #888;
+    font-size: 80%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.social-links li a{
+    font-size: 160%;
+}
+
+.fa-facebook-f:hover{
+    color: #385aa0;
+}
+
+.fa-youtube:hover{
+    color: #FF0000;
+}
+
+.fa-rss:hover{
+    color: #8bc701;
+}
+
+.fab fa-facebook-f,
+.fab fa-youtube,
+.fas fa-rss{
+    transition: color 0.2S;
+}
+/*.footer-texte{
+    color: #FFF;
+    text-align: center;
+}*/
