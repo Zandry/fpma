@@ -108,7 +108,7 @@ h2:after{
     display: inline-block;
     width: 20px;
     text-align: left;
-    color: #8bc701;
+    color: /*#8bc701;*/ #329698;
     font-size: 65%;
     line-height: 130%;
     vertical-align: middle;
@@ -166,7 +166,7 @@ input[type=submit]{
 .btn:hover,
 input[type=submit]:active,
 input[type=submit]:hover{
-    background-color: #385aa0;
+    background-color: #329698;
 }
 
 .btn-full:active,
@@ -237,7 +237,6 @@ NAVIGATION
     color: #FFF;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
     font-size: 90%;
     border-bottom: 1px solid transparent;
     
@@ -246,7 +245,7 @@ NAVIGATION
 
 .main-nav li a:hover,
 .main-nav li a:active{
-    border-bottom: 1px solid #fedc00;
+    border-bottom: 1px solid #329698;
 }
 
 /*******************************************************
@@ -370,8 +369,8 @@ Exercice3: Formater la section "Formation SAP"
 }
 
 .form-step div{
-    color: #8bc701;
-    border: 2px solid #fedc00;
+    color: /*#8bc701;*/ #329698;
+    border: 2px solid #329698;
     display: inline-block; /* ça permet d'afficher les box en ligne mais pas remplir la ligne */
     border-radius: 50%; /* converti en cercle les carrées */
     /*à ce moment, le cercle est très aplati*/
@@ -383,6 +382,8 @@ Exercice3: Formater la section "Formation SAP"
     font-size: 150%;/* jouer avec le font-size pour centraliser le chiffre dans le cercle*/
     margin-right: 10px; /* marge entre le cercle et le texte*/
 }
+
+
 /*
 - aligner les boutons applications avec le fond de l'image du téléphone (cela ne concerne pas mon site)
 /* formattage des boutons*/
