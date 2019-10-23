@@ -148,7 +148,6 @@ Contact form -travail à faire
  - modifiez les bordures des contrôles  modifiés pour avoir une épaisseur égale autour de ces controles et coloriez le en gris
  - mettez la hauteur du textarea à 100%
  - mettre le bouton en forme pour qu'il ressemle aux autres bouton arrondis
- - mettre des espacemets autour du checkbox (10 5 10 0) car on a l'impression que l'espacement est différente des autres.
  - enlever les couleurs bleus autour des controles quand on les selectionne (indice css focus <=> c'est comme border)
 
  #######################################################################################################
