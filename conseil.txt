@@ -198,4 +198,25 @@ Make the site responsive - travail à faire
 - ouvrer l'inspecteur d'objet afin que chrome affiche (en haut à droite) la résolution quand on réduit la taille du navigateur
     + Header 1: réduite la taille du navigateur jusqu'à ce que le texte dans le header ne rentre plus dans l'en-tête (normalement, à partir d'une largeur de 1148px, le texte est collé/ou dépasse sur le bord gauche du navigateur)
     
+    + Pour corriger cela, prendre le code css qui permet de dimensionner le texte (en inspectant, on arrive à voir que la classe est hero-text-box)
+        * modifier la largeur et mettez le à 100%
+        * mettez un padding vertical horizontal à 0 et 2% respectivement
+        * alignez également le logo car il est collé au bord gauche de la fenetre
+        
+- (mediaquery 1023px) Ouvrez la page dans chrome et réduisez la largeur à 768px. On se rend compte que le fonts sont partout un peu gros maintenant. On peut également trouver d'autres problèmes à résoudre.
+    + fixer le font-size partout à 18px;
+    + modifier le padding de chaque section (celui qui se trouve entre 2 sections) à 60px 0px
+
+- Une fois qu'on a fait tout cela, on se rend compte que le texte en dessous de Get Food Fast a beaucoup d'espace à gauche et à droite. la classe qu'on a donné à ce texte est section1-paragraph1.
+
+    + modifier la classe pour occuper 80% de la largeur et une marge de 10% de chaque côté gauche et droite
+      * agrandir un peu la taille de l'image de l'Iphone car il est trop petit à ce stade (voir la    
+        taille adequate) <=> rappel, la classe de l'Iphone est app-screen 
+      * mettre une marge top à step-box = 10px;
+      * à l'élement de texte (step-box:last-child), rajouter un margin-top de 60px pour aligner les deux colonnes
+      * à works-step, mettez un margin-bottom de 40px au lieu de 80px pour réduire l'espacement;
+      * à works-step:last-of-type, mettez un margin-bottom de 0px au lieu de 80px pour réduire l'espacement;
+      
+      
+    
 
