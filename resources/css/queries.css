@@ -1,6 +1,14 @@
 /*ecran pc ou grande tablette allant jusqu'à 1200px de largeur*/
 @media only screen and (max-width:1200px){
+    .hero-text-box{
+        width: 100%;
+        padding: 0 2%;
+    }
     
+    .row{
+        padding: 0 2%;
+        margin: 0 auto 0 auto;
+    }
 }
 
 /*ecran tablette ou petit pc entre 768px et 1024px de largeur*/
