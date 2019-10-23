@@ -194,5 +194,9 @@ Make the site responsive - travail à faire
 
 - créer un nouveau fichier CSS pour les media-queries, dans le répertoire CSS
  + rajouter les medias queries selon les tailles d'écran standards dans le doc et lier le nouveau CSS à la page
+ 
+- ouvrir la page à partir de chrome (ou firefox mais chrome est mieux) sans passer par brackets
+- ouvrer l'inspecteur d'objet afin que chrome affiche (en haut à droite) la résolution quand on réduit la taille du navigateur
+    + Header 1: réduite la taille du navigateur jusqu'à ce que le texte dans le header ne rentre plus dans l'en-tête (normalement, à partir d'une largeur de 1148px, le texte est collé/ou dépasse sur le bord gauche du navigateur)
     
 
