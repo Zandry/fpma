@@ -1,0 +1,19 @@
+/*ecran pc ou grande tablette allant jusqu'à 1200px de largeur*/
+@media only screen and (max-width:1200px){
+    
+}
+
+/*ecran tablette ou petit pc entre 768px et 1024px de largeur*/
+@media only screen and (max-width:1024px){
+    
+}
+
+/*ecran téléphone et petite tablette 481px à 767px*/
+@media only screen and (max-width:767px){
+    
+}
+
+/*très petits ecrans et très petits téléphones 0 à 480*/
+@media only screen and (max-width:480px){
+    
+}
