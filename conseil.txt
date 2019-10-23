@@ -183,5 +183,16 @@ FORMATTAGE
 - mettre les icônes aux couleurs originaux des réseaux à chaque fois que la souris passe dessus (pour avoir les couleurs originaux, aller sur https://www.materialui.com/socialcolors) "mon cas à vérifier car j'utise fontawesone)
 - rajouter une transition pour le changement de ces couleurs, de 0,2s
 - finalement, réduire tout le texte du footer à 80%
+
+######################################################################################################
+Make the site responsive - travail à faire
+######################################################################################################
+- trouver les breakpoints (un breakpoint est une taille ou un résolution à partir duquel le site ne     s'affiche plus bien)
+  cela se fait en ouvrant le site dans un navigateur et réduire la taille petit à petit et trouver la taille du navigateur qui ne fait plus correctement le rendu.==>voir fichier d'analyse pour les breakpoints standards
+  Dans ce travail, nous allons utiliser les breakpoints standards.
+- mettre la ligne de code <meta> html qui permet d'utiliser les medias queries
+
+- créer un nouveau fichier CSS pour les media-queries, dans le répertoire CSS
+ + rajouter les medias queries selon les tailles d'écran standards dans le doc et lier le nouveau CSS à la page
     
 
