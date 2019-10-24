@@ -1,6 +1,6 @@
 /*ecran pc ou grande tablette allant jusqu'à 1200px de largeur*/
 @media only screen and (max-width:1200px){
-    .hero-text-box{
+    .bible-text-box{
         width: 100%;
         padding: 0 2%;
     }
@@ -13,7 +13,28 @@
 
 /*ecran tablette ou petit pc entre 768px et 1024px de largeur*/
 @media only screen and (max-width:1024px){
+    .section1-paragraph1{
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+   
+    .step-box{
+        margin-top: 10px;
+    }
     
+    .step-box:last-child{
+        margin-top: 60px;
+    }
+    .form-step{
+        margin-bottom: 40px;
+    }
+    .form-step:last-of-type{
+        margin-bottom: 60px;
+    }
+    .bible-open{
+        width: 50%;
+    }
 }
 
 /*ecran téléphone et petite tablette 481px à 767px*/
