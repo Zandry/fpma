@@ -222,5 +222,15 @@ LES RESPONSABLES(1024px)
   (la classe des icônes est icon-small)
 - Modifier également la taille des textes de responsableà 17px pour que le texte soit bien justifier.
 
+SECTION MEMBRE (1024px)
+- les boites sont moins large maintenant et l'affichage de leur contenu part à la ligne. Cela fait en           sorte que les boites n'ont plus les mêmes hauteurs.
+   Problème:
+   + il y a beaucoup d'espace blanc dans les boites.
+     Solution:
+     * Modifier la largeur des boites de 90% à 100% et margin-left à 0 (pour gagner les espaces blancs)
+     Cette solution résoud notre problème jusqu'à une résolution de (820 et quelques pixels) seulement.
+     Pour résoudre ce problème jusqu'à notre breakpoint (767px), on doit encore gagner de l'espace pour que les boites s'alignent.
+       * on va déjà mettre la taille de titre à 275% de sa taille pour ne pas aller à la ligne
+
     
 
