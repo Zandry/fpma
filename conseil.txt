@@ -217,6 +217,10 @@ Make the site responsive - travail à faire
       * à works-step, mettez un margin-bottom de 40px au lieu de 80px pour réduire l'espacement;
       * à works-step:last-of-type, mettez un margin-bottom de 0px au lieu de 80px pour réduire l'espacement;
       
-      
+LES RESPONSABLES(1024px)
+- les icônes de la section sont trop larges et plein d'espace blanc à partir de 1024px;
+  (la classe des icônes est icon-small)
+- Modifier également la taille des textes de responsableà 17px pour que le texte soit bien justifier.
+
     
 
