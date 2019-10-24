@@ -35,6 +35,16 @@
     .bible-open{
         width: 50%;
     }
+    .icon-small{
+        width: 15px;
+        margin-right: 5px;
+    }
+    .res-feature{
+        font-size: 60%;
+    }
+    h3{
+        font-size: 80%;
+    }
 }
 
 /*ecran téléphone et petite tablette 481px à 767px*/
