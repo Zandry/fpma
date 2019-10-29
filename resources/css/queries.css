@@ -45,6 +45,12 @@
     h3{
         font-size: 80%;
     }
+    
+    .plan-box{
+        width: 100%;
+        height: 100%;
+        margin-left: 0;
+    }
 }
 
 /*ecran téléphone et petite tablette 481px à 767px*/
