@@ -52,6 +52,10 @@
         height: 100%;
         margin-left: 0;
     }
+    
+    .section-form{
+        width: 90%;
+    }
 }
 
 /*ecran téléphone et petite tablette 481px à 767px*/
