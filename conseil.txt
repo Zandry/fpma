@@ -243,5 +243,8 @@ FOOTER (1024px)
 CONTACT FORM(1024px)
 - il y a trop d'espace blanc sur les bord de la section form et le formulaire est recroquillé au centre. Il faut agrandir la largeur de la section form (class contact-form ==>passer de 60% à 80%)
 
+480px:
+- voir l'image fournit dan sle commit d'avant pour voir les effets de la réduction de la largeur à 480px
+- il nous faut déjà cacher tout ce qui dépasse dans toute la page (et dans toutes les résolution)
     
 
