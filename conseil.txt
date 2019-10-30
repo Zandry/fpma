@@ -217,6 +217,10 @@ Make the site responsive - travail à faire
       * à works-step, mettez un margin-bottom de 40px au lieu de 80px pour réduire l'espacement;
       * à works-step:last-of-type, mettez un margin-bottom de 0px au lieu de 80px pour réduire l'espacement;
       
+formation sap(OUBLI)
+- LES BOUTONS vont à la ligne
+- correction (réduire les margin-right des boutons(sauf que je n'ai pas les boutons sur mon site.Mais je fais le remarque sur mon fichier conseil) 10pxpar 5px pour gagner un peu d'espace). La classe des boutons est "btn-app
+      
 LES RESPONSABLES(1024px)
 - les icônes de la section sont trop larges et plein d'espace blanc à partir de 1024px;
   (la classe des icônes est icon-small)
