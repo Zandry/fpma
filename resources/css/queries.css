@@ -2,7 +2,7 @@
 @media only screen and (max-width:1200px){
     .bible-text-box{
         width: 100%;
-        padding: 2% 0;
+        padding: 0 2%;
     }
     
     .row{
@@ -52,9 +52,9 @@
         margin-left: 0;
     }
     
-    .section-form{
+    /*.section-form{
         width: 90%;
-    }
+    }*/
     
     .footer-nav{
         width: 130%;
