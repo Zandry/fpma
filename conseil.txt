@@ -231,6 +231,9 @@ SECTION MEMBRE (1024px)
      Cette solution résoud notre problème jusqu'à une résolution de (820 et quelques pixels) seulement.
      Pour résoudre ce problème jusqu'à notre breakpoint (767px), on doit encore gagner de l'espace pour que les boites s'alignent.
        * on va déjà mettre la taille de titre à 275% de sa taille pour ne pas aller à la ligne
+       
+CONTACT FORM(1024px)
+- il y a trop d'espace blanc sur les bord de la section form et le formulaire est recroquillé au centre. Il faut agrandir la largeur de la section form (class contact-form ==>passer de 60% à 80%)
 
     
 
