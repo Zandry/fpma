@@ -232,6 +232,10 @@ SECTION MEMBRE (1024px)
      Pour résoudre ce problème jusqu'à notre breakpoint (767px), on doit encore gagner de l'espace pour que les boites s'alignent.
        * on va déjà mettre la taille de titre à 275% de sa taille pour ne pas aller à la ligne
        
+FOOTER (1024px)
+    - problème : le menu va à la ligne
+    - solution : augmenter la largeur de la classe "footer-nav" à 130% et la taille de police à 95%
+       
 CONTACT FORM(1024px)
 - il y a trop d'espace blanc sur les bord de la section form et le formulaire est recroquillé au centre. Il faut agrandir la largeur de la section form (class contact-form ==>passer de 60% à 80%)
 
