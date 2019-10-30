@@ -2,7 +2,7 @@
 @media only screen and (max-width:1200px){
     .bible-text-box{
         width: 100%;
-        padding: 0 2%;
+        padding: 2% 0;
     }
     
     .row{
@@ -10,6 +10,7 @@
         margin: 0 auto 0 auto;
     }
 }
+
 
 /*ecran tablette ou petit pc entre 768px et 1024px de largeur*/
 @media only screen and (max-width:1024px){
