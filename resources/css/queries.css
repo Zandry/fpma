@@ -56,6 +56,15 @@
     .section-form{
         width: 90%;
     }
+    
+    .footer-nav{
+        width: 130%;
+        font-size: 70%;
+    }
+    
+    .social-links{
+        font-size: 70%;
+    }
 }
 
 /*ecran téléphone et petite tablette 481px à 767px*/
