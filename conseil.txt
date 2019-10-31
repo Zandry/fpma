@@ -264,5 +264,6 @@ HEADER (767px)
 
 FEATURES (767px)
 - réduire les marges de la classe "section1-paragraph1" afin d'afficher tout ce texte sur 100% de la largeur
+- mettre les icônes et le titre des features au centre
     
 
