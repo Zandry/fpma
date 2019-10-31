@@ -265,5 +265,14 @@ HEADER (767px)
 FEATURES (767px)
 - réduire les marges de la classe "section1-paragraph1" afin d'afficher tout ce texte sur 100% de la largeur
 - mettre les icônes et le titre des features au centre
-    
+
+##########################################################################"
+FORMATION SAP(767px)
+- centrer l'image de la bible (la classe utilisé est .step-box:first-child) est fixer sa largeur à 40%.
+(rappel la classe de la bible est "bible-open")
+- Il faudra centrer les boutons app-btn(je n'ai pas ces boutons sur mon site.Mais je le mets dans le doc  quand même).Pour cela, il faudra:
+ + centrer le contenu de la classe step-box:last-child (cela permettra de centrer les boutons sinon impossible de centrer des éléments inline)
+ + aligner à gauche le contenu de step-form ( pour que les textes restent à gauches)
+ + pour garder l'alignement du texte avec les cercles, mettez font-size à 125% dans form-step et réduire un peu la taille des cercles (mettre à '40px) ne pas oublier de changer le font-size des chiffres
+- réduire la marge inséré en dessus des steps (la classe est .step-box:last-child)
 
