@@ -111,6 +111,11 @@
     
     .step-box:last-child{
         text-align: center;
+        margin-top: 20px;
+    }
+    
+    .form-step:last-of-type{
+        margin-bottom: 30px;
     }
     
     .form-step{
