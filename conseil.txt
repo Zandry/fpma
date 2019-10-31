@@ -258,5 +258,8 @@ Pour cela, commencer par donner un peu d'espace sur les côtés des éléments c
 - traiter également le padding des classes row. Mettre le padding à 0 40% au lieu de 0 2%
 - ensuite rajouter une classe col dans notre media query avec une largeur de 100% (attention: col n'est pas définit dans notre fichier style.css mais dans grid.css)
 - modifier la taille de tous les balises h1 à 180% et h2 à 150% de leur taille actuelle
+
+HEADER (767px)
+- faire disparaitre le menu (pour le moment). Plus tard, nous allons utiliser JQuery pour afficher le menu sous formz d'icône.
     
 
