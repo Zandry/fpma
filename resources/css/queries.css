@@ -7,7 +7,7 @@
     
     .row{
         padding: 0 2%;
-        margin: 0 auto 0 auto;
+        margin: 0 auto;
     }
 }
 
@@ -99,6 +99,30 @@
     .section1-paragraph1{
         width: 100%;
         margin-left: 0;
+    }
+    
+    .step-box:first-child{
+        text-align: center;
+        padding: 10px;
+    }
+    .bible-open{
+        width: 40%;
+    }
+    
+    .step-box:last-child{
+        text-align: center;
+    }
+    
+    .form-step{
+        text-align: left;
+        font-size: 125%;
+        margin-bottom: 30px;
+    }
+    
+    .form-step div{
+        height: 40px;
+        width: 40px;
+        font-size: 125%;
     }
 }
 
