@@ -261,5 +261,8 @@ Pour cela, commencer par donner un peu d'espace sur les côtés des éléments c
 
 HEADER (767px)
 - faire disparaitre le menu (pour le moment). Plus tard, nous allons utiliser JQuery pour afficher le menu sous formz d'icône.
+
+FEATURES (767px)
+- réduire les marges de la classe "section1-paragraph1" afin d'afficher tout ce texte sur 100% de la largeur
     
 
