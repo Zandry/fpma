@@ -91,6 +91,10 @@
     h2{
         font-size: 150%;
     }
+    
+    .main-nav{
+        display: none;
+    }
 }
 
 /*très petits ecrans et très petits téléphones 0 à 480*/
