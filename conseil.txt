@@ -246,5 +246,17 @@ CONTACT FORM(1024px)
 480px:
 - voir l'image fournit dan sle commit d'avant pour voir les effets de la réduction de la largeur à 480px
 - il nous faut déjà cacher tout ce qui dépasse dans toute la page (et dans toutes les résolution)
+
+PAGE EN GENERAL (767px)
+- réduire la taille des polices dans les html,body de 20px à 60px
+- on se rend compte également qu'il y a trop d'espace blanc entre les sections.
+- réduire le padding entre section de 60px vertical à 30px vertical (voir le code de section)
+
+Par la suite, nous allons mettre tous les éléments du site empilé (l'un en dessus des autres)
+(en particulier les colonnes seront empilés et non plus côte à côte)
+Pour cela, commencer par donner un peu d'espace sur les côtés des éléments comme suit:
+- traiter également le padding des classes row. Mettre le padding à 0 40% au lieu de 0 2%
+- ensuite rajouter une classe col dans notre media query avec une largeur de 100% (attention: col n'est pas définit dans notre fichier style.css mais dans grid.css)
+- modifier la taille de tous les balises h1 à 180% et h2 à 150% de leur taille actuelle
     
 
