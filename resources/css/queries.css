@@ -95,6 +95,11 @@
     .main-nav{
         display: none;
     }
+    
+    .section1-paragraph1{
+        width: 100%;
+        margin-left: 0;
+    }
 }
 
 /*très petits ecrans et très petits téléphones 0 à 480*/
