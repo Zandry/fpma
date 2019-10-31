@@ -68,7 +68,29 @@
 
 /*ecran téléphone et petite tablette 481px à 767px*/
 @media only screen and (max-width:767px){
+    html,body{
+        font-size: 16px;
+    }
     
+    section{
+        padding: 30px 0;
+    }
+    
+    .row{
+        padding: 0 40%;
+    }
+    
+    .col{
+        width: 100%;
+    }
+    
+    h1{
+        font-size: 180%;
+    }
+    
+    h2{
+        font-size: 150%;
+    }
 }
 
 /*très petits ecrans et très petits téléphones 0 à 480*/
