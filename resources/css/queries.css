@@ -133,6 +133,7 @@
     /*afficher les boites "plan-box" sur 60%*/
     .plan-box{
         width: 70%;
+        /*centrer le plan-box afin d'avoir moins d'espace blanc pour les téléphones et tablettes.(si la largeur est de 70 alors on partageraa l'espace qui reste, 30% entre marge gauche et droite)*/
         margin-left: 15%;
     }
 }
