@@ -148,7 +148,6 @@ Contact form -travail à faire
  - modifiez les bordures des contrôles  modifiés pour avoir une épaisseur égale autour de ces controles et coloriez le en gris
  - mettez la hauteur du textarea à 100%
  - mettre le bouton en forme pour qu'il ressemle aux autres bouton arrondis
- - mettre des espacemets autour du checkbox (10 5 10 0) car on a l'impression que l'espacement est différente des autres.
  - enlever les couleurs bleus autour des controles quand on les selectionne (indice css focus <=> c'est comme border)
 
  #######################################################################################################
@@ -183,5 +182,106 @@ FORMATTAGE
 - mettre les icônes aux couleurs originaux des réseaux à chaque fois que la souris passe dessus (pour avoir les couleurs originaux, aller sur https://www.materialui.com/socialcolors) "mon cas à vérifier car j'utise fontawesone)
 - rajouter une transition pour le changement de ces couleurs, de 0,2s
 - finalement, réduire tout le texte du footer à 80%
+
+######################################################################################################
+Make the site responsive - travail à faire
+######################################################################################################
+- trouver les breakpoints (un breakpoint est une taille ou un résolution à partir duquel le site ne     s'affiche plus bien)
+  cela se fait en ouvrant le site dans un navigateur et réduire la taille petit à petit et trouver la taille du navigateur qui ne fait plus correctement le rendu.==>voir fichier d'analyse pour les breakpoints standards
+  Dans ce travail, nous allons utiliser les breakpoints standards.
+- mettre la ligne de code <meta> html qui permet d'utiliser les medias queries
+
+- créer un nouveau fichier CSS pour les media-queries, dans le répertoire CSS
+ + rajouter les medias queries selon les tailles d'écran standards dans le doc et lier le nouveau CSS à la page
+ 
+- ouvrir la page à partir de chrome (ou firefox mais chrome est mieux) sans passer par brackets
+- ouvrer l'inspecteur d'objet afin que chrome affiche (en haut à droite) la résolution quand on réduit la taille du navigateur
+    + Header 1: réduite la taille du navigateur jusqu'à ce que le texte dans le header ne rentre plus dans l'en-tête (normalement, à partir d'une largeur de 1148px, le texte est collé/ou dépasse sur le bord gauche du navigateur)
     
+    + Pour corriger cela, prendre le code css qui permet de dimensionner le texte (en inspectant, on arrive à voir que la classe est hero-text-box)
+        * modifier la largeur et mettez le à 100%
+        * mettez un padding vertical horizontal à 0 et 2% respectivement
+        * alignez également le logo car il est collé au bord gauche de la fenetre
+        
+- (mediaquery 1023px) Ouvrez la page dans chrome et réduisez la largeur à 768px. On se rend compte que le fonts sont partout un peu gros maintenant. On peut également trouver d'autres problèmes à résoudre.
+    + fixer le font-size partout à 18px;
+    + modifier le padding de chaque section (celui qui se trouve entre 2 sections) à 60px 0px
+
+- Une fois qu'on a fait tout cela, on se rend compte que le texte en dessous de Get Food Fast a beaucoup d'espace à gauche et à droite. la classe qu'on a donné à ce texte est section1-paragraph1.
+
+    + modifier la classe pour occuper 80% de la largeur et une marge de 10% de chaque côté gauche et droite
+      * agrandir un peu la taille de l'image de l'Iphone car il est trop petit à ce stade (voir la    
+        taille adequate) <=> rappel, la classe de l'Iphone est app-screen 
+      * mettre une marge top à step-box = 10px;
+      * à l'élement de texte (step-box:last-child), rajouter un margin-top de 60px pour aligner les deux colonnes
+      * à works-step, mettez un margin-bottom de 40px au lieu de 80px pour réduire l'espacement;
+      * à works-step:last-of-type, mettez un margin-bottom de 0px au lieu de 80px pour réduire l'espacement;
+      
+formation sap(OUBLI)
+- LES BOUTONS vont à la ligne
+- correction (réduire les margin-right des boutons(sauf que je n'ai pas les boutons sur mon site.Mais je fais le remarque sur mon fichier conseil) 10pxpar 5px pour gagner un peu d'espace). La classe des boutons est "btn-app
+      
+LES RESPONSABLES(1024px)
+- les icônes de la section sont trop larges et plein d'espace blanc à partir de 1024px;
+  (la classe des icônes est icon-small)
+- Modifier également la taille des textes de responsableà 17px pour que le texte soit bien justifier.
+
+SECTION MEMBRE (1024px)
+- les boites sont moins large maintenant et l'affichage de leur contenu part à la ligne. Cela fait en           sorte que les boites n'ont plus les mêmes hauteurs.
+   Problème:
+   + il y a beaucoup d'espace blanc dans les boites.
+     Solution:
+     * Modifier la largeur des boites de 90% à 100% et margin-left à 0 (pour gagner les espaces blancs)
+     Cette solution résoud notre problème jusqu'à une résolution de (820 et quelques pixels) seulement.
+     Pour résoudre ce problème jusqu'à notre breakpoint (767px), on doit encore gagner de l'espace pour que les boites s'alignent.
+       * on va déjà mettre la taille de titre à 275% de sa taille pour ne pas aller à la ligne
+       
+FOOTER (1024px)
+    - problème : le menu va à la ligne
+    - solution : augmenter la largeur de la classe "footer-nav" à 130% et la taille de police à 95%
+       
+CONTACT FORM(1024px)
+- il y a trop d'espace blanc sur les bord de la section form et le formulaire est recroquillé au centre. Il faut agrandir la largeur de la section form (class contact-form ==>passer de 60% à 80%)
+
+480px:
+- voir l'image fournit dan sle commit d'avant pour voir les effets de la réduction de la largeur à 480px
+- il nous faut déjà cacher tout ce qui dépasse dans toute la page (et dans toutes les résolution)
+
+PAGE EN GENERAL (767px)
+- réduire la taille des polices dans les html,body de 20px à 60px
+- on se rend compte également qu'il y a trop d'espace blanc entre les sections.
+- réduire le padding entre section de 60px vertical à 30px vertical (voir le code de section)
+
+Par la suite, nous allons mettre tous les éléments du site empilé (l'un en dessus des autres)
+(en particulier les colonnes seront empilés et non plus côte à côte)
+Pour cela, commencer par donner un peu d'espace sur les côtés des éléments comme suit:
+- traiter également le padding des classes row. Mettre le padding à 0 40% au lieu de 0 2%
+- ensuite rajouter une classe col dans notre media query avec une largeur de 100% (attention: col n'est pas définit dans notre fichier style.css mais dans grid.css)
+- modifier la taille de tous les balises h1 à 180% et h2 à 150% de leur taille actuelle
+
+HEADER (767px)
+- faire disparaitre le menu (pour le moment). Plus tard, nous allons utiliser JQuery pour afficher le menu sous formz d'icône.
+
+FEATURES (767px)
+- réduire les marges de la classe "section1-paragraph1" afin d'afficher tout ce texte sur 100% de la largeur
+- mettre les icônes et le titre des features au centre
+
+##########################################################################"
+FORMATION SAP(767px)
+- centrer l'image de la bible (la classe utilisé est .step-box:first-child) est fixer sa largeur à 40%.
+(rappel la classe de la bible est "bible-open")
+- Il faudra centrer les boutons app-btn(je n'ai pas ces boutons sur mon site.Mais je le mets dans le doc  quand même).Pour cela, il faudra:
+ + centrer le contenu de la classe step-box:last-child (cela permettra de centrer les boutons sinon impossible de centrer des éléments inline)
+ + aligner à gauche le contenu de step-form ( pour que les textes restent à gauches)
+ + pour garder l'alignement du texte avec les cercles, mettez font-size à 125% dans form-step et réduire un peu la taille des cercles (mettre à '40px) ne pas oublier de changer le font-size des chiffres
+- réduire la marge inséré en dessus des steps (la classe est .step-box:last-child)
+
+#############################################"
+SECTION-MEMBRE DU BUREAU(767px)
+- les boites présentent un problème: ils ne commencent pas à la même colonne
+Cela est causé par le fait que dans la section précédente, on modifie un classe qui est dan s grid.css
+C'est la classe "col". Solution: rapporter les définitions des marges pour la classe "col" à partir de grid.css dans notre fichier queries.css ( voir capture d'ecran ==> problème_767_membrebureau.png)
+    + Cela nous permettra également de rajouter un petit espace entre les boites égalements
+    + Ensuite, il serait bien de réduire la largeur des boites car il y a trop d'espace blanc dans les boites. ==> afficher les boites "plan-box" sur 60% de la largeurafin d'eviter d'avoir 100% de la largeur et d'avoir plein d'espace blanc
+- centrer les plan-box afin d'avoir moins d'espace lanc pour les téléphones et tablettes
 

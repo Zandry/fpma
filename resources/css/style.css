@@ -8,7 +8,7 @@ CONFIGURATION ENVIRONNEMENT BASIQUE
     box-sizing: border-box;
 }
 
-html{
+html,body{
     background-color: #FFF;
     color: #555;
     /*première font est Lato et si non disponible Arial et sinon n'importe quel sans-serif fera l'affaire*/
@@ -16,6 +16,7 @@ html{
     font-weight: 300;
     font-size: 20px;
     text-rendering: optimizeLegibility; /*lecture facile*/
+    overflow-x: hidden;
 }
 
 
@@ -510,7 +511,6 @@ Membre  SECTION
 *************************************************************/
 /* - mettre une couleur de fond pour la section (un gris comme celle de la section "formation")*/
 .section-membre{
-    background-color: #f4f4f4;
 }
 
 /* formatter les div plan-box (les boites) pour que le fond soit blanc et les coins des boites soient arrondis (utiliser border-radius)
@@ -520,7 +520,7 @@ formatter la largeur des boites pour occuper90% de la largeur allouée*/
     border-radius: 10px;
     width: 90%;
     /*voir le resultat et ajuster la marge et ajuster la marge à gauche*/
-    height: 395px;
+    height: 450px;
     margin-left: 5%;
     box-shadow: 5px 5px 10px #383838;
 }
@@ -561,7 +561,9 @@ border-bottom: 1px solid #e8e8e8;
 /******************************************************
 Contact SECTION
 *******************************************************/
-
+.section-form{
+    background-color: #f4f4f4;
+}
 .contact-form{
     width: 60%;
     margin: 0 auto;

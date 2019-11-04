@@ -1,0 +1,165 @@
+/*ecran pc ou grande tablette allant jusqu'à 1200px de largeur*/
+@media only screen and (max-width:1200px){
+    .bible-text-box{
+        width: 100%;
+        padding: 0 2%;
+    }
+    
+    .row{
+        padding: 0 2%;
+        margin: 0 auto;
+    }
+}
+
+
+/*ecran tablette ou petit pc entre 768px et 1024px de largeur*/
+@media only screen and (max-width:1024px){
+    .section1-paragraph1{
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+   
+    .step-box{
+        margin-top: 10px;
+    }
+    
+    .step-box:last-child{
+        margin-top: 60px;
+    }
+    .form-step{
+        margin-bottom: 40px;
+    }
+    .form-step:last-of-type{
+        margin-bottom: 60px;
+    }
+    .bible-open{
+        width: 50%;
+    }
+    .icon-small{
+        width: 15px;
+        margin-right: 5px;
+    }
+    .res-feature{
+        font-size: 60%;
+    }
+    h3{
+        font-size: 80%;
+    }
+    
+    .plan-box{
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    /*.section-form{
+        width: 90%;
+    }*/
+    
+    .footer-nav{
+        width: 130%;
+        font-size: 70%;
+    }
+    
+    .social-links{
+        font-size: 70%;
+    }
+}
+
+/*ecran téléphone et petite tablette 481px à 767px*/
+@media only screen and (max-width:767px){
+    html,body{
+        font-size: 16px;
+    }
+    
+    section{
+        padding: 30px 0;
+    }
+    
+    .row{
+        padding: 0 10%;
+    }
+    
+    .col{
+        width: 100%;
+        margin: 0% 0% 4% 0%;
+    }
+    
+    h1{
+        font-size: 180%;
+    }
+    
+    h2{
+        font-size: 150%;
+    }
+    
+    .main-nav{
+        display: none;
+    }
+    
+    .section1-paragraph1{
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .step-box:first-child{
+        text-align: center;
+        padding: 10px;
+    }
+    .bible-open{
+        width: 40%;
+    }
+    
+    .step-box:last-child{
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .form-step:last-of-type{
+        margin-bottom: 30px;
+    }
+    
+    .form-step{
+        text-align: left;
+        font-size: 125%;
+        margin-bottom: 30px;
+    }
+    
+    .form-step div{
+        height: 40px;
+        width: 40px;
+        font-size: 125%;
+    }
+    /*afficher les boites "plan-box" sur 60%*/
+    .plan-box{
+        width: 75%;
+        /*centrer le plan-box afin d'avoir moins d'espace blanc pour les téléphones et tablettes.(si la largeur est de 70 alors on partageraa l'espace qui reste, 30% entre marge gauche et droite)*/
+        margin-left: 15%;
+    }
+    
+    /*mettre les icones de section-responsables au centre*/
+    .section-responsable .box h3,
+    .section-responsable .box i{
+        text-align: center;
+    }
+}
+
+/*très petits ecrans et très petits téléphones 0 à 480*/
+@media only screen and (max-width:480px){
+    .section-form{
+        width: 100%;
+    }
+    footer{
+        padding: 40px 15px;
+    }
+    div .footer-nav{
+        font-size: 100%;
+        width: 100%;
+        text-align: center;
+    }
+    div .social-links{
+        font-size: 100%;
+        width: 100%;
+        text-align: center;
+    }
+}
