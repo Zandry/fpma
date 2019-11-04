@@ -276,3 +276,12 @@ FORMATION SAP(767px)
  + pour garder l'alignement du texte avec les cercles, mettez font-size à 125% dans form-step et réduire un peu la taille des cercles (mettre à '40px) ne pas oublier de changer le font-size des chiffres
 - réduire la marge inséré en dessus des steps (la classe est .step-box:last-child)
 
+#############################################"
+SECTION-MEMBRE DU BUREAU(767px)
+- les boites présentent un problème: ils ne commencent pas à la même colonne
+Cela est causé par le fait que dans la section précédente, on modifie un classe qui est dan s grid.css
+C'est la classe "col". Solution: rapporter les définitions des marges pour la classe "col" à partir de grid.css dans notre fichier queries.css ( voir capture d'ecran ==> problème_767_membrebureau.png)
+    + Cela nous permettra également de rajouter un petit espace entre les boites égalements
+    + Ensuite, il serait bien de réduire la largeur des boites car il y a trop d'espace blanc dans les boites. ==> afficher les boites "plan-box" sur 60% de la largeurafin d'eviter d'avoir 100% de la largeur et d'avoir plein d'espace blanc
+- centrer les plan-box afin d'avoir moins d'espace lanc pour les téléphones et tablettes
+

@@ -82,6 +82,7 @@
     
     .col{
         width: 100%;
+        margin: 0% 0% 4% 0%;
     }
     
     h1{
@@ -128,6 +129,11 @@
         height: 40px;
         width: 40px;
         font-size: 125%;
+    }
+    /*afficher les boites "plan-box" sur 60%*/
+    .plan-box{
+        width: 70%;
+        margin-left: 15%;
     }
 }
 
