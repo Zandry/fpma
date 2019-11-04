@@ -285,3 +285,17 @@ C'est la classe "col". Solution: rapporter les définitions des marges pour la c
     + Ensuite, il serait bien de réduire la largeur des boites car il y a trop d'espace blanc dans les boites. ==> afficher les boites "plan-box" sur 60% de la largeurafin d'eviter d'avoir 100% de la largeur et d'avoir plein d'espace blanc
 - centrer les plan-box afin d'avoir moins d'espace lanc pour les téléphones et tablettes
 
+###################################
+SUPPORT DE TOUS LES NAVIGATEURS
+###################################
+Pour s'assurer que notre site est bien affiché par tous les navigateurs, il nous faudra :
+- mettre à jour notre css avec les prefixes vendeurs
+    + installer le plugin autoprefixer dans brackets
+    + selectionner toutes les lignes de css
+    + modifier > autoprefix la selection
+- utiliser respond.js pour supporter les media queries sur les vieux navigateurs (à récupérer sur internet - par ex: jdelivr.com)
+- utiliser html5shiv pour forcer les vieux navigateurs à supporter les instructions html5shiv (à pomper sur jdelivr.com)
+- utiliser selectivizr pour émuler et forcer la reconnaissance des pseudo-classes css3 dans les vieux navigateurs
+
+Remarque: pour savoir si un navigateur supporte vos instructions css, utiliser caniuse.com
+
