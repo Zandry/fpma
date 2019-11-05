@@ -146,6 +146,23 @@
 
 /*très petits ecrans et très petits téléphones 0 à 480*/
 @media only screen and (max-width:480px){
+    nav{
+        display: inline-block;
+        text-align: center;
+    }
+    
+    header{
+        text-align: center;
+    }
+    .bible-text-box{
+        width: 100%;
+        text-align-last: center;
+    }
+    
+    .logo{
+        display: block;
+    }
+    
     .section-form{
         width: 100%;
     }
