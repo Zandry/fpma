@@ -5,6 +5,7 @@ CONFIGURATION ENVIRONNEMENT BASIQUE
 *{
     margin: 0;
     padding: 0;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -122,6 +123,7 @@ a:link, a:visited{
     color: #385aa0;
     text-decoration: none;
     /*border-bottom: 1px solid #fedc00;*/
+    -webkit-transition: border-bottom 0.2s, color 0.2s;
     transition: border-bottom 0.2s, color 0.2s;
 }
 a:hover, a:visited{
@@ -139,6 +141,7 @@ input[type=submit]{
     font-weight: 300;
     text-decoration: none; /*pour enlever les décorations*/
     border-radius: 200px;
+    -webkit-transition: background-color 0.2s, border 0.2s, color 0.2s;
     transition: background-color 0.8s, border 0.8s, color 0.8s;
     margin-right: 15px;
 }
@@ -187,6 +190,7 @@ HEADER
 ****************************************************************/
 
 header{
+    background: -webkit-gradient(linear,left top, left bottom,from(rgba(0,0,0,0.7)),to(rgba(0,0,0,0.7))),url(img/bible3.jpg);
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/bible3.jpg);
     background-size: cover;  /*affiche l'image sur toute sa largeur*/
     background-position: center;
@@ -198,6 +202,7 @@ header{
     width: 1020px;/*1140px;*/
     top: 50%;
     left: 50%;
+    -webkit-transform: translate(-50%,-50%);
     transform: translate(-50%, -50%);
 }
 /***********************************
@@ -240,7 +245,7 @@ NAVIGATION
     text-transform: uppercase;
     font-size: 90%;
     border-bottom: 1px solid transparent;
-    
+    -webkit-transition: border-bottom 0.2s;
     transition: border-bottom 0.9s;
 }
 
@@ -309,16 +314,21 @@ Pour enlever cette valeur, nous avons mis une classe section-meals dans la secti
     width: 100%;
     height: auto;
     /* 1- modifier le css pour que l'image soit un peu plus zoomé*/
+    -webkit-transform: scale(1.15);
     transform: scale(1.15);
 }
 /*3- faire en sorte que quand la souris passe, l'image passe à 100%*/
 .meal-photo img:hover{
     width: 100%;
     height: auto;
+    -webkit-transform: scale(1.05);
     transform: scale(1.05);
     opacity: 0.8;
     /* faire en sorte que l'animation des images se passe en demi-seconde*/
+    -webkit-transition: opacity 0.5s, -webkit-transform 0.5s;
+    transition: opacity 0.5s, -webkit-transform 0.5s;
     transition: transform 0.5s, opacity 0.5s;
+    transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s;
 }
 
 
@@ -458,6 +468,7 @@ DERNIER VERSEt DU MOIS SECTION
 
 
 .section-verset-du-mois{
+    background: -webkit-gradient(linear,left top,left bottom,from(rgba(0, 0, 0, 0.8)),to(rgba(0, 0, 0, 0.8))), url(img/bibles-hero.jpg);
     background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/bibles-hero.jpg);
     background-size: cover;
     color: #FFF;
@@ -522,6 +533,7 @@ formatter la largeur des boites pour occuper90% de la largeur allouée*/
     /*voir le resultat et ajuster la marge et ajuster la marge à gauche*/
     height: 450px;
     margin-left: 5%;
+    -webkit-box-shadow: 5px 5px 10px #383838;
     box-shadow: 5px 5px 10px #383838;
 }
 
@@ -634,6 +646,7 @@ footer{
     text-decoration: none;
     border: 0;
     color: #888;
+    -webkit-transition: color 0.2s;
     transition: color 0.2s;
 }
 
@@ -668,6 +681,7 @@ footer p{
 .fab fa-facebook-f,
 .fab fa-youtube,
 .fas fa-rss{
+    -webkit-transition: color 0.2s;
     transition: color 0.2S;
 }
 /*.footer-texte{
