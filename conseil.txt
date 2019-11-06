@@ -299,3 +299,10 @@ Pour s'assurer que notre site est bien affiché par tous les navigateurs, il nou
 
 Remarque: pour savoir si un navigateur supporte vos instructions css, utiliser caniuse.com
 
+##################################################
+TUTORIAL JQUERY
+####################################################
+$('h1') <=> selectionne tous les tags h1 du html
+$('h1').click() <==> est un evenement appelé quand on a cliqué sur un tag h1 selectionné et click() peut prendre une fonction à l'intérieur (voir l'exemple script.js)
+
+
