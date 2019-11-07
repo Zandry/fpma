@@ -270,7 +270,8 @@ NAVIGATION
 
 .sticky .logo{
     display: block;
-    margin-top: 12px;
+    height: 50px;
+    margin-top: 5px;
 }
 
 .sticky .main-nav{
