@@ -254,20 +254,20 @@ NAVIGATION
     border-bottom: 1px solid #329698;
 }
 
-/*******************************************************
-FEATURE SECTION
-********************************************************/
-
-.section1-paragraph1{
-    margin-bottom: 30px;
-}
-
 /**sticky class pour jquery**/
 .sticky{
     position: fixed;
     top: 0; left: 0;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.9);
+}
+
+/*******************************************************
+FEATURE SECTION
+********************************************************/
+
+.section1-paragraph1{
+    margin-bottom: 30px;
 }
 
 /*******************************************
