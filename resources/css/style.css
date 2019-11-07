@@ -208,13 +208,16 @@ header{
 /***********************************
 LOGO
 ************************************/
-.logo{
+.logo,.logo-black{
     height: 100px;
     width: auto;
     float: left;
     margin-top: 20px;
 }
 
+.logo-black{
+    display: none;
+}
 /***********************************
 NAVIGATION
 **************************************/
@@ -260,6 +263,14 @@ FEATURE SECTION
 
 .section1-paragraph1{
     margin-bottom: 30px;
+}
+
+/**sticky class pour jquery**/
+.sticky{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 /*******************************************
