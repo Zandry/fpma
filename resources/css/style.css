@@ -262,6 +262,12 @@ NAVIGATION
     background-color: rgba(255, 255, 255, 0.9);
 }
 
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited{
+    padding: 8px 0;
+    color: #555;
+}
+
 /*******************************************************
 FEATURE SECTION
 ********************************************************/
