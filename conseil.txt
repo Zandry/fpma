@@ -335,6 +335,13 @@ Pour résooudre le problème de visibilité du menu. On veut que le style du men
     N'affiche pas le logo dans un cas où la classe sticky est définit (display:none)
 - définir maintenant une instruction css qui affiche logo-black en block (display:block) s'il est dans la classe sticky (.sticky .logo-black...)
 - réduire l'espace en dessus du menu et du logo noir. Pour cela, récupérer le code css de main-nav et faire un equivalent "sticky", et modifier le margin-top à 15px pour que le menu soit bien en haut
-- réduire aussi la taille du logo-noir (récupérer le code de logo et en faire un equivalent sticky) à 50px de hauteur et changer la marge en haut à 5px
+- réduire aussi la taille du logo-noir "dans mon site,c'est mon logo original que j'ai modifier et mettre dans le sticky" (récupérer le code de logo et en faire un equivalent sticky) à 50px de hauteur et changer la marge en haut à 5px
+
+##################FORMATTAGE ouveau menu###########
+- modification padding pour rapprocher le soulignement orange de la bordure
+- rajouter un ombre autour du menu sticky pour afficher une bordure d'ombre (utiliser box-shadow)
+
+- ajustement: modifier la classe "logo-black" pour un margin: 5px 0;
+- modification de la largeur de la ligne souligné pour les menus hover (changer la largeur à 2px ==>voir résultat)
 
 
