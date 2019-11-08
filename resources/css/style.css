@@ -254,6 +254,40 @@ NAVIGATION
     border-bottom: 1px solid #329698;
 }
 
+/**sticky class pour jquery**/
+.sticky{
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 2px 2px #efefef;
+    z-index: 9999;
+}
+
+.sticky .main-nav{
+    margin-top: 16px;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited{
+    padding: 18px 0;
+    color: #555;
+}
+
+/*Modification de la largeur de la ligne souligné pour les menus hover*/
+.sticky .main-nav li a:hover,
+.sticky .main-nav li a:active{
+    border-bottom: 2px solid #329698;
+}
+
+.sticky .logo{
+    display: block;
+    height: 50px;
+    margin-top: 5px;
+}
+
+
+
 /*******************************************************
 FEATURE SECTION
 ********************************************************/

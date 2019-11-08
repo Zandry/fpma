@@ -305,4 +305,48 @@ TUTORIAL JQUERY
 $('h1') <=> selectionne tous les tags h1 du html
 $('h1').click() <==> est un evenement appelé quand on a cliqué sur un tag h1 selectionné et click() peut prendre une fonction à l'intérieur (voir l'exemple script.js)
 
+##########################################################
+STICKY NAVIGATION JQUERY
+######################################################
+Ce qu'on veut c'est d'afficher le menu dans l'en-tête sur toutes les sections mais pas seulement quand on est sur le header.
+Ce qui va se passer c'est que le menu va apparaître en haut quand on scroll en début de section.
+Attention: notre menu est transparent.
+
+Pour cela:
+- rajouter la classe "sticky" à la balise nav dans le html (juste pour tester car nous allons enlever plus tard et le rajouter dynamiquement avec JQuery)
+
+- dans style.css, rajouter la définition de la classe sticky. Elle devra:
+    + mettre position à "fixed" car cela permet de fixer l'élément à un endroit sans que ça suive le scroll
+    + positionner l'élément en haut et à gauche
+    + forcer l'élément à occuper toute la largeur de la page (indice "width")
+    + définir la coueleur de fond du menu à blanc
+    + définir un petit effet de transparence (à 90%)
+- tester la page (on devrait avoir une bande blanche avec le menu en dessus mais presque invisible)
+
+Pour résooudre le problème de visibilité du menu. On veut que le style du menu s'applique seul
+- recopier .main-nav li a: link et .main-nav li a: visited et coller-le sous sticky. Modifier le ppour modifier la navigation si le main-nav est à l'intérieur de la classe stocky (solution: créer un style .sticky .main-nav li ....)
+    + supprimer les webkit
+    + modifier la couleur du texte à #555 (pour tester - trouver ce qui convient)
+    
+- le logo est en blanc (modifier-le en noir - utiliser l'autre fichier de logo). Pour cela:
+    + allez dans le html et incluez le logo noir au même endroit
+    + créer un css qui met en forme ce logo noir comme le vrai logo
+    Par la suite, nous allons faire en sorte de n'afficher qu'un seul logo ==> renomez la deuxième classe logo en logo-black
+    N'affiche pas le logo dans un cas où la classe sticky est définit (display:none)
+- définir maintenant une instruction css qui affiche logo-black en block (display:block) s'il est dans la classe sticky (.sticky .logo-black...)
+- réduire l'espace en dessus du menu et du logo noir. Pour cela, récupérer le code css de main-nav et faire un equivalent "sticky", et modifier le margin-top à 15px pour que le menu soit bien en haut
+- réduire aussi la taille du logo-noir "dans mon site,c'est mon logo original que j'ai modifier et mettre dans le sticky" (récupérer le code de logo et en faire un equivalent sticky) à 50px de hauteur et changer la marge en haut à 5px
+
+##################FORMATTAGE ouveau menu###########
+- modification padding pour rapprocher le soulignement orange de la bordure
+- rajouter un ombre autour du menu sticky pour afficher une bordure d'ombre (utiliser box-shadow)
+
+- ajustement: modifier la classe "logo-black" pour un margin: 5px 0;
+- modification de la largeur de la ligne souligné pour les menus hover (changer la largeur à 2px ==>voir résultat)
+
+##############################################"
+PROBLEME
+######################################"
+Un problème apparâitre toutefois sur le sticky menu. Le menu est derrière la gallerie d'image quand elle passe dessus. Pour cela, définir pour la classe sticky une valeur de z-index au maximum possible.
+
 
