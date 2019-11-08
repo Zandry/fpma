@@ -344,4 +344,9 @@ Pour résooudre le problème de visibilité du menu. On veut que le style du men
 - ajustement: modifier la classe "logo-black" pour un margin: 5px 0;
 - modification de la largeur de la ligne souligné pour les menus hover (changer la largeur à 2px ==>voir résultat)
 
+##############################################"
+PROBLEME
+######################################"
+Un problème apparâitre toutefois sur le sticky menu. Le menu est derrière la gallerie d'image quand elle passe dessus. Pour cela, définir pour la classe sticky une valeur de z-index au maximum possible.
+
 
