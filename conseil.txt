@@ -361,4 +361,6 @@ Telecharger un zip et decompresser et prenez "jquery.waypoints.min.js" et insere
     + créer une ligne de code qui selectionne la section après le header (section section-features)
     Cependant, pour séparer correctement notre code js de code css, on va rajouter une classe dans le div de la classe section-features, js--section-features.
 
+- Cependant, un problèmeà résoudre: entre le temps où le menu sticky apparaisse et le temps où le menu classique disparait, il y a un espace où on n'a pas de menu, on veut que le menu stickyapparaisse un peu avant. Pour cela, utiliser l'option "offset" de waypoints et définir un offset (à partir du breackpoint de la section où on va apparaitre le menu sticky). On peut définir en pourcentage ou en pixel.
+J'ai mis 90% pour que le menu sticky s'affiche dès que le menu classique est caché
 
