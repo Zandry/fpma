@@ -360,3 +360,9 @@ nous allons rajouter "js-section-plans" dans la section "section-plans". Et ensu
 
 - faire la même chose pour le bouton ghost mais redirigez-le vers js--section-features
 
+- la prochaine section consiste à faire la redirection des menus:
+Conseil: utilisez beaucoup de code que les autres ont écrits (pas besoin de toujours tout réinventer)
+Pour trouver des codes, on peut essayer css-tricks.com par exemple (ou beaucoup d'autres )
+Pour ce qu'on souhaite faire, nous allons chercher ici
+https://css-tricks.com/snippets/jquery/smooth-scrolling/ (copier coller le code qui est dans la section JQuery)
+
