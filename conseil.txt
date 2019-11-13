@@ -358,3 +358,5 @@ Pour cela:
 4- maintenant que le code js a été testé et fonctionne, nous allons définir la classe destination et donc  
 nous allons rajouter "js-section-plans" dans la section "section-plans". Et ensuite,nous allons coder que la page ira vers cette section quand on clique sur le bouton/lien "js-scroll-to-plans" (pour cela, voir la doc Jquery sur animate et scrolltop)
 
+- faire la même chose pour le bouton ghost mais redirigez-le vers js--section-features
+
