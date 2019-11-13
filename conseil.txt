@@ -366,3 +366,13 @@ Pour trouver des codes, on peut essayer css-tricks.com par exemple (ou beaucoup 
 Pour ce qu'on souhaite faire, nous allons chercher ici
 https://css-tricks.com/snippets/jquery/smooth-scrolling/ (copier coller le code qui est dans la section JQuery)
 
+-créer des liens d'ancrage (anchor links) entre les menus et les sections qu'on doit atteindre en les cliquant. L'objectif est de lier:
+    + accueil <==> section bible texte
+       on va pour cela modifier le code  html comme suit:
+       <li><a href="#features" >Food delivery </a></li> (j'ai suivi juste le doc de Pa omnifood) dans mon cas c'est sur que c'est autre chise
+       <section class="section-features js--section-features" id="features">
+    + reveil <==> section bible
+    + contact <==> section responsable
+    + section <==> section meals(eo @ sarin le sampana rehetra)
+       
+
