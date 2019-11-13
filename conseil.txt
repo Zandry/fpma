@@ -345,22 +345,15 @@ Pour résooudre le problème de visibilité du menu. On veut que le style du men
 - modification de la largeur de la ligne souligné pour les menus hover (changer la largeur à 2px ==>voir résultat)
 
 ##############################################"
-PROBLEME
-######################################"
-Un problème apparâitre toutefois sur le sticky menu. Le menu est derrière la gallerie d'image quand elle passe dessus. Pour cela, définir pour la classe sticky une valeur de z-index au maximum possible.
+REDIRECTION DES NAVIGATIONS ET SCROLLING
+###########################################
+Dans cette section, nous allons définir ce que font les boutons et les éléments du menu
 
-############################################
-JQuery sticky menu (suite)
-#################################################
-Pour activer le menu quand on passe d'une section à une autre, nous allons utiliser un plugin de Jquery qui s'appelle "waypoint" (http://imakewebthings.com/waypoints/)
-Telecharger un zip et decompresser et prenez "jquery.waypoints.min.js" et inserer dans le html et copier le fichier dans vendor/js
+- rediriger le bouton "Ecouter en direct" vers la section "section-plans". C'est-à-dire que quand on clique sur le bouton, la page va scroller vers cette section
+- rediriger le bouton "Annonce" vers la section "section-features"
+Pour cela:
+1- rajouter la classe "js-scroll-to-plan" dans le div du bouton (avec la classe "btn" et "btn-full")
+2- rajouter la classe "js-scroll-to-start" pour la classe "btn" et "btn-ghost"
+3- ensuite nous allons d'abord tester que le js fonctionne en affichant une alerte message
 
-- voir le guide de waypoint pour avoir une idée comment l'utiliser
-- on veut que le menu sticky apparaisse quand on passe dans une autre section (quand on est dans la section de header, on ne souhaite pas qu'il apparaisse) Modifiier le fichier script.js pour faire cela. Pour cela:
-    + enlever la classe sticky de la balise nav pour que le site fonctionne comme avant sans sticky
-    + créer une ligne de code qui selectionne la section après le header (section section-features)
-    Cependant, pour séparer correctement notre code js de code css, on va rajouter une classe dans le div de la classe section-features, js--section-features.
-
-- Cependant, un problèmeà résoudre: entre le temps où le menu sticky apparaisse et le temps où le menu classique disparait, il y a un espace où on n'a pas de menu, on veut que le menu stickyapparaisse un peu avant. Pour cela, utiliser l'option "offset" de waypoints et définir un offset (à partir du breackpoint de la section où on va apparaitre le menu sticky). On peut définir en pourcentage ou en pixel.
-J'ai mis 90% pour que le menu sticky s'affiche dès que le menu classique est caché
 
