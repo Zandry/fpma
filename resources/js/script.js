@@ -13,6 +13,6 @@ $(document).ready(function(){
  });
  //** code pour rediriger la page lorsqu'on clique sur les boutons*/
     $(".js--scroll-to-plans").click(function(){
-        alert("essai");
+        $('html, body').animate({scrollTop: $('.js--section-plans').offset().top}, 1000);
     });
 });
