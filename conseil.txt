@@ -349,4 +349,10 @@ PROBLEME
 ######################################"
 Un problème apparâitre toutefois sur le sticky menu. Le menu est derrière la gallerie d'image quand elle passe dessus. Pour cela, définir pour la classe sticky une valeur de z-index au maximum possible.
 
+############################################
+JQuery sticky menu (suite)
+#################################################
+Pour activer le menu quand on passe d'une section à une autre, nous allons utiliser un plugin de Jquery qui s'appelle "waypoint" (http://imakewebthings.com/waypoints/)
+Telecharger un zip et decompresser et prenez "jquery.waypoints.min.js" et inserer dans le html et copier le fichier dans vendor/js
+
 
