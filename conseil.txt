@@ -355,4 +355,10 @@ JQuery sticky menu (suite)
 Pour activer le menu quand on passe d'une section à une autre, nous allons utiliser un plugin de Jquery qui s'appelle "waypoint" (http://imakewebthings.com/waypoints/)
 Telecharger un zip et decompresser et prenez "jquery.waypoints.min.js" et inserer dans le html et copier le fichier dans vendor/js
 
+- voir le guide de waypoint pour avoir une idée comment l'utiliser
+- on veut que le menu sticky apparaisse quand on passe dans une autre section (quand on est dans la section de header, on ne souhaite pas qu'il apparaisse) Modifiier le fichier script.js pour faire cela. Pour cela:
+    + enlever la classe sticky de la balise nav pour que le site fonctionne comme avant sans sticky
+    + créer une ligne de code qui selectionne la section après le header (section section-features)
+    Cependant, pour séparer correctement notre code js de code css, on va rajouter une classe dans le div de la classe section-features, js--section-features.
+
 
