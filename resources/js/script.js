@@ -8,6 +8,7 @@ $(document).ready(function(){
          $('nav').removeClass('sticky');
      }
  },{
-     offset:'90%'
+     offset:'560px' // on peut donner en pixel
+     //offset:'90%'
  });
 });
