@@ -355,5 +355,6 @@ Pour cela:
 1- rajouter la classe "js-scroll-to-plan" dans le div du bouton (avec la classe "btn" et "btn-full")
 2- rajouter la classe "js-scroll-to-start" pour la classe "btn" et "btn-ghost"
 3- ensuite nous allons d'abord tester que le js fonctionne en affichant une alerte message
-
+4- maintenant que le code js a été testé et fonctionne, nous allons définir la classe destination et donc  
+nous allons rajouter "js-section-plans" dans la section "section-plans". Et ensuite,nous allons coder que la page ira vers cette section quand on clique sur le bouton/lien "js-scroll-to-plans" (pour cela, voir la doc Jquery sur animate et scrolltop)
 
