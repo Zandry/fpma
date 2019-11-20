@@ -722,3 +722,15 @@ footer p{
     color: #FFF;
     text-align: center;
 }*/
+
+
+/** Animation **/
+
+/* opaqque à 0(= transparent à 100%)*/
+.js--wp-featurebox{
+    opacity: 0;
+}
+
+.js--wp-featurebox.animated{
+    opacity: 1;
+}
