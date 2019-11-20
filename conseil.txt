@@ -382,6 +382,8 @@ ANIMATION DES BOITES ET DESSINS DE LA PAGE
 Pour cela, nous allons utiliser le plugin animate.css (voir le site  https://daneden.github.io/animate.css/ pour les exemples d'animation). Dans notre cas, nous allons prendre ces animations et nous allons utiliser jquery pour activer les animations en manipulant les css
 Premier travail: ANIMER LA SECTION FEATURES
 Dans la section features ("LA Bible(pour mon site)"), nous allons animer les 4 boites. Pour cela, nous allons d'abord utiliser waypoint (on l'a vu dans le sticky menu) pour définir la position des boites
-- définir une classe javascript (js--xxx) pour la classe row contenant les boites de la section feature
-       
+- tester manuellement l'animation en utilisant animate.css (telecharger animate.css ou animate.min.css à partir du site)
+    + rajouter ce css dans vendor et dans le fichier html
+    + rajouter une classe d'animation dans la classe qu'on souhaite animer (pour notre cas, les boites de la section feature). Pour faire une animation voir le doc ici (https://github.com/daneden/animate.css). Il faut rajouter à la classe qu'on souhaite animer la class 'animated', suivi du nom de l'animation et enfin le temps de l'animation (optionel) et le délai entre 2 animations (optionel)
+    Nous allons utiliser l'animation bouce pour notre boite et infinite pour que ça ne s'arrete jamais
 
