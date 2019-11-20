@@ -2,13 +2,14 @@
 $(document).ready(function(){
  
     //**sticky navigation**/
- $('.js--section-features').waypoint(function(direction){
-     if(direction == "down"){
-         $('nav').addClass('sticky');
-     }
-     else{
-         $('nav').removeClass('sticky');
-     }
+ $('.js--section-features').waypoint(
+     function(direction){
+        if(direction == "down"){
+            $('nav').addClass('sticky');
+        }
+        else{
+            $('nav').removeClass('sticky');
+        }
  },{
      offset:'560px' // on peut donner en pixel
      //offset:'90%'
@@ -58,4 +59,10 @@ $('a[href*="#"]')
       }
     }
   });
+    
+/** animate box*/
+$('.js--wp-featurebox').waypoint(
+    function(direction){
+        alert('test');
+    });
 });
