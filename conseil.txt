@@ -404,3 +404,4 @@ Dans la section features ("LA Bible(pour mon site)"), nous allons animer les 4 b
     + maintenat qu'on sait que le code waypoint fonctionne, on va rajouter la classe animated et fadeIn à la section
 
     - petit problème: l'apparition se fait quand on est  la moitié des boites (et qu'on ne voit plus les icônes)==> Correction: utiliser un offset pour que l'apparition se declenche à un offset plus petit. Pour ma part j'ai essayé 50%
+EXERCICE : On peut également vérifier la direction et faire disparaitre les boites quand la section est cachée

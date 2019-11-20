@@ -64,5 +64,9 @@ $('a[href*="#"]')
 $('.js--wp-featurebox').waypoint(
     function(direction){
         $('.js--wp-featurebox').addClass('animated');
-    });
+    },
+    {
+        offset:'50%'
+    }
+);
 });
