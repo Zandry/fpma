@@ -405,3 +405,9 @@ Dans la section features ("LA Bible(pour mon site)"), nous allons animer les 4 b
 
     - petit problème: l'apparition se fait quand on est  la moitié des boites (et qu'on ne voit plus les icônes)==> Correction: utiliser un offset pour que l'apparition se declenche à un offset plus petit. Pour ma part j'ai essayé 50%
 EXERCICE : On peut également vérifier la direction et faire disparaitre les boites quand la section est cachée
+
+- Exercice: Animer de même pour l'image de la bible(dans la section formation sap). Nous allons utiliser l'animation fadeINUp
+    + définir une classe js--<nom de la section>
+    + mettre l'opacite 0 avant l'animation
+    + coder le javascript correspondant qui active l'animation
+
