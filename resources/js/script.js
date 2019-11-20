@@ -63,6 +63,6 @@ $('a[href*="#"]')
 /** animate box*/
 $('.js--wp-featurebox').waypoint(
     function(direction){
-        alert('test');
+        $('.js--wp-featurebox').addClass('animated');
     });
 });
