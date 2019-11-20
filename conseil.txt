@@ -393,3 +393,10 @@ Dans la section features ("LA Bible(pour mon site)"), nous allons animer les 4 b
 - faire disparaitre les 4 boites features en utilisant css.
     + rajouter dans la classe row des boites (qui a été animé dans le test), une classe javascript "js---wp-featurebox".utiliser cette classe pour faire disparaitre toute la ligne ( le row entier) avec css3
     + pour faire disparaitre la boite et le faire apparaitre par animate, on peut tout simplement, mettre son opacité à 0 et quand il contiendra la classe animated, on met l-opacité à 1
+    
+    + rajouter le code javascript qui utilise waypoint pour selectionner le scroll. A chaque moment où on scrolle sur la section, les boites vont apparaitre ( et pour faire apparaitre les boites , rajouter les classes "animated" et "fadeIn" à la classe "js--wp-featurebox")
+    $('.js--wp-featurebox').waypoint(
+        function(direction{
+            //code à mettre
+        });
+    + tester déjà que ce code fonctionne en mettant juste une alerte (cela nous permettra de nous assurer que le code waypoint fonctionne)
