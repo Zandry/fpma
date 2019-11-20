@@ -387,3 +387,9 @@ Dans la section features ("LA Bible(pour mon site)"), nous allons animer les 4 b
     + rajouter une classe d'animation dans la classe qu'on souhaite animer (pour notre cas, les boites de la section feature). Pour faire une animation voir le doc ici (https://github.com/daneden/animate.css). Il faut rajouter à la classe qu'on souhaite animer la class 'animated', suivi du nom de l'animation et enfin le temps de l'animation (optionel) et le délai entre 2 animations (optionel)
     Nous allons utiliser l'animation bouce pour notre boite et infinite pour que ça ne s'arrete jamais
 
+- Pour le site, nous allons utiliser la classe d'animation fadeIn
+    + tester cette classe sur le site de animate
+    + cette classe permet à notre boite d'apparaître du néant. Pour que la boite puisse "apparaitre", il faut qu'elle soit invisible au départ. Et ensuite, nous allons activer son apparition avec JQuery
+- faire disparaitre les 4 boites features en utilisant css.
+    + rajouter dans la classe row des boites (qui a été animé dans le test), une classe javascript "js---wp-featurebox".utiliser cette classe pour faire disparaitre toute la ligne ( le row entier) avec css3
+    + pour faire disparaitre la boite et le faire apparaitre par animate, on peut tout simplement, mettre son opacité à 0 et quand il contiendra la classe animated, on met l-opacité à 1
