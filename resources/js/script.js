@@ -79,4 +79,14 @@ $('.js--wp-step-box').waypoint(
         offset:'50%'
     }
 );
+    
+/**step box responsable**/
+$('.js--responsable-images').waypoint(
+    function(direction){
+        $('.js--responsable-images').addClass('animated fadeIn');
+    },
+    {
+        offset:'50%'
+    }
+);
 });

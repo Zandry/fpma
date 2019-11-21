@@ -743,3 +743,11 @@ footer p{
 .js--wp-step-box.animated{
     opacity: 1;
 }
+
+.js--responsable-images{
+    opacity: 0;
+}
+
+.js--responsable-images.animated{
+    opacity: 1;
+}
