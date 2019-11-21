@@ -410,4 +410,8 @@ EXERCICE : On peut également vérifier la direction et faire disparaitre les bo
     + définir une classe js--<nom de la section>
     + mettre l'opacite 0 avant l'animation
     + coder le javascript correspondant qui active l'animation
+    
+- Exercice: faire une animation FadeIn pour les images des responsable dans la section "section-responsable"
+    + définir la classe js dans l'élément où on a les photos (moi je l'ai appelé js--responsable-images)
+    + activer l'animation
 
