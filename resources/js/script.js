@@ -89,4 +89,14 @@ $('.js--responsable-images').waypoint(
         offset:'50%'
     }
 );
+    
+/**plan-box**/
+$('.js--plan-box').waypoint(
+    function(direction){
+        $('.js--plan-box').addClass('animated pulse');
+    },
+    {
+        offset:'50%'
+    }
+);
 });

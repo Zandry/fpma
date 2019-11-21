@@ -727,27 +727,14 @@ footer p{
 /** Animation **/
 
 /* opaqque à 0(= transparent à 100%)*/
-.js--wp-featurebox{
-    opacity: 0;
-}
-
-.js--wp-featurebox.animated{
-    opacity: 1;
-}
-
-/**animation de la photo bible dans formation sap*/
-.js--wp-step-box{
-    opacity: 0;
-}
-
-.js--wp-step-box.animated{
-    opacity: 1;
-}
-
+.js--wp-featurebox,
+.js--wp-step-box,
 .js--responsable-images{
     opacity: 0;
 }
 
+.js--wp-featurebox.animated,
+.js--wp-step-box.animated,
 .js--responsable-images.animated{
     opacity: 1;
 }
