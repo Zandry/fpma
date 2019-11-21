@@ -731,6 +731,11 @@ footer p{
 .js--wp-step-box,
 .js--responsable-images{
     opacity: 0;
+    animation-duration: 1s;
+}
+
+.js--plan-box{
+    animation-duration: 1s;
 }
 
 .js--wp-featurebox.animated,
