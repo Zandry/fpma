@@ -99,4 +99,15 @@ $('.js--plan-box').waypoint(
         offset:'50%'
     }
 );
+
+/* code pour vérifier la taille de l'ecran (media query javascript)
+    $(window).resize(function(){
+        if($(window).width() <=320){
+            alert('test');
+        }
+        else{
+            alert('plus d\'espace');
+        }
+    });
+    */
 });
