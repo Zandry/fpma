@@ -2,13 +2,14 @@
 $(document).ready(function(){
  
     //**sticky navigation**/
- $('.js--section-features').waypoint(function(direction){
-     if(direction == "down"){
-         $('nav').addClass('sticky');
-     }
-     else{
-         $('nav').removeClass('sticky');
-     }
+ $('.js--section-features').waypoint(
+     function(direction){
+        if(direction == "down"){
+            $('nav').addClass('sticky');
+        }
+        else{
+            $('nav').removeClass('sticky');
+        }
  },{
      offset:'560px' // on peut donner en pixel
      //offset:'90%'
@@ -58,4 +59,44 @@ $('a[href*="#"]')
       }
     }
   });
+    
+/** animate box*/
+$('.js--wp-featurebox').waypoint(
+    function(direction){
+        $('.js--wp-featurebox').addClass('animated fadeIn');
+    },
+    {
+        offset:'50%'
+    }
+);
+
+/*step box formation*/
+$('.js--wp-step-box').waypoint(
+    function(direction){
+        $('.js--wp-step-box').addClass('animated fadeInUp');
+    },
+    {
+        offset:'50%'
+    }
+);
+    
+/**step box responsable**/
+$('.js--responsable-images').waypoint(
+    function(direction){
+        $('.js--responsable-images').addClass('animated fadeIn');
+    },
+    {
+        offset:'50%'
+    }
+);
+    
+/**plan-box**/
+$('.js--plan-box').waypoint(
+    function(direction){
+        $('.js--plan-box').addClass('animated pulse');
+    },
+    {
+        offset:'50%'
+    }
+);
 });

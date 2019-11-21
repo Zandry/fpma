@@ -374,5 +374,51 @@ https://css-tricks.com/snippets/jquery/smooth-scrolling/ (copier coller le code 
     + reveil <==> section bible
     + contact <==> section responsable
     + section <==> section meals(eo @ sarin le sampana rehetra)
-       
+    
+##############################################
+ANIMATION DES BOITES ET DESSINS DE LA PAGE
+################################################
+- Nous souhaiterions créer des animations des divers éléments dusite (par exemple, des images qui apparaissent ou des photos des sections  qui diaparaissent, des boites des membres
+Pour cela, nous allons utiliser le plugin animate.css (voir le site  https://daneden.github.io/animate.css/ pour les exemples d'animation). Dans notre cas, nous allons prendre ces animations et nous allons utiliser jquery pour activer les animations en manipulant les css
+Premier travail: ANIMER LA SECTION FEATURES
+Dans la section features ("LA Bible(pour mon site)"), nous allons animer les 4 boites. Pour cela, nous allons d'abord utiliser waypoint (on l'a vu dans le sticky menu) pour définir la position des boites
+- tester manuellement l'animation en utilisant animate.css (telecharger animate.css ou animate.min.css à partir du site)
+    + rajouter ce css dans vendor et dans le fichier html
+    + rajouter une classe d'animation dans la classe qu'on souhaite animer (pour notre cas, les boites de la section feature). Pour faire une animation voir le doc ici (https://github.com/daneden/animate.css). Il faut rajouter à la classe qu'on souhaite animer la class 'animated', suivi du nom de l'animation et enfin le temps de l'animation (optionel) et le délai entre 2 animations (optionel)
+    Nous allons utiliser l'animation bouce pour notre boite et infinite pour que ça ne s'arrete jamais
 
+- Pour le site, nous allons utiliser la classe d'animation fadeIn
+    + tester cette classe sur le site de animate
+    + cette classe permet à notre boite d'apparaître du néant. Pour que la boite puisse "apparaitre", il faut qu'elle soit invisible au départ. Et ensuite, nous allons activer son apparition avec JQuery
+- faire disparaitre les 4 boites features en utilisant css.
+    + rajouter dans la classe row des boites (qui a été animé dans le test), une classe javascript "js---wp-featurebox".utiliser cette classe pour faire disparaitre toute la ligne ( le row entier) avec css3
+    + pour faire disparaitre la boite et le faire apparaitre par animate, on peut tout simplement, mettre son opacité à 0 et quand il contiendra la classe animated, on met l-opacité à 1
+    
+    + rajouter le code javascript qui utilise waypoint pour selectionner le scroll. A chaque moment où on scrolle sur la section, les boites vont apparaitre ( et pour faire apparaitre les boites , rajouter les classes "animated" et "fadeIn" à la classe "js--wp-featurebox")
+    $('.js--wp-featurebox').waypoint(
+        function(direction{
+            //code à mettre
+        });
+    + tester déjà que ce code fonctionne en mettant juste une alerte (cela nous permettra de nous assurer que le code waypoint fonctionne)
+    
+    + maintenat qu'on sait que le code waypoint fonctionne, on va rajouter la classe animated et fadeIn à la section
+
+    - petit problème: l'apparition se fait quand on est  la moitié des boites (et qu'on ne voit plus les icônes)==> Correction: utiliser un offset pour que l'apparition se declenche à un offset plus petit. Pour ma part j'ai essayé 50%
+EXERCICE : On peut également vérifier la direction et faire disparaitre les boites quand la section est cachée
+
+- Exercice: Animer de même pour l'image de la bible(dans la section formation sap). Nous allons utiliser l'animation fadeINUp
+    + définir une classe js--<nom de la section>
+    + mettre l'opacite 0 avant l'animation
+    + coder le javascript correspondant qui active l'animation
+    
+- Exercice: faire une animation FadeIn pour les images des responsable dans la section "section-responsable"
+    + définir la classe js dans l'élément où on a les photos (moi je l'ai appelé js--responsable-images)
+    + activer l'animation
+
+- Exercice animer la première boite plan-box (la boite membre du bureau) par une animation pulse
+  (pas besoin que la oite ait une opacité de 0 avant)
+  
+- Avant de continuer, on va refactoriser le code car on voit qu'il y a des codes qui se rèpètent dans le css
+
+- Un dernier travail sur l'animation est de modifier la rapidité de l'animation car certaines animations sont trop lentes (en particulier l'image de la bible dans la "section formation SAP" qui monte). Pour cela, nous allons utiliser de css pure (animation-duration:1s pou que ça dure sur 1 seconde). il ne faut pas oublier la classe d'animation de plan-box qui n'est pas dans le css, il faut le rajouter.
+- Enfain, n'oubliez pas d'appliquer les vendor prefix (comme on l'a déjà fait) pour la prise en compte de plusieurs navigateurs.
