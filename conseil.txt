@@ -415,3 +415,7 @@ EXERCICE : On peut également vérifier la direction et faire disparaitre les bo
     + définir la classe js dans l'élément où on a les photos (moi je l'ai appelé js--responsable-images)
     + activer l'animation
 
+- Exercice animer la première boite plan-box (la boite membre du bureau) par une animation pulse
+  (pas besoin que la oite ait une opacité de 0 avant)
+  
+- Avant de continuer, on va refactoriser le code car on voit qu'il y a des codes qui se rèpètent dans le css
