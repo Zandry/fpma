@@ -734,3 +734,12 @@ footer p{
 .js--wp-featurebox.animated{
     opacity: 1;
 }
+
+/**animation de la photo bible dans formation sap*/
+.js--wp-step-box{
+    opacity: 0;
+}
+
+.js--wp-step-box.animated{
+    opacity: 1;
+}

@@ -63,7 +63,17 @@ $('a[href*="#"]')
 /** animate box*/
 $('.js--wp-featurebox').waypoint(
     function(direction){
-        $('.js--wp-featurebox').addClass('animated');
+        $('.js--wp-featurebox').addClass('animated fadeIn');
+    },
+    {
+        offset:'50%'
+    }
+);
+
+/*step box formation*/
+$('.js--wp-step-box').waypoint(
+    function(direction){
+        $('.js--wp-step-box').addClass('animated fadeInUp');
     },
     {
         offset:'50%'
