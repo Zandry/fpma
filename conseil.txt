@@ -419,3 +419,6 @@ EXERCICE : On peut également vérifier la direction et faire disparaitre les bo
   (pas besoin que la oite ait une opacité de 0 avant)
   
 - Avant de continuer, on va refactoriser le code car on voit qu'il y a des codes qui se rèpètent dans le css
+
+- Un dernier travail sur l'animation est de modifier la rapidité de l'animation car certaines animations sont trop lentes (en particulier l'image de la bible dans la "section formation SAP" qui monte). Pour cela, nous allons utiliser de css pure (animation-duration:1s pou que ça dure sur 1 seconde). il ne faut pas oublier la classe d'animation de plan-box qui n'est pas dans le css, il faut le rajouter.
+- Enfain, n'oubliez pas d'appliquer les vendor prefix (comme on l'a déjà fait) pour la prise en compte de plusieurs navigateurs.
