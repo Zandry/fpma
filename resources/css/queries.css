@@ -101,6 +101,12 @@
     .main-nav li{
         display: block;
     }
+    
+    .main-nav li a:link,
+    .main-nav li a:hover{
+        display: block;
+    }
+    
     .mobile-nav-icon{
         display: inline-block;
     }
