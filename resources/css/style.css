@@ -259,6 +259,7 @@ NAVIGATION
     float: right;
     margin-top: 30px;
     cursor: pointer;
+    display: none;
 }
 
 /**sticky class pour jquery**/
