@@ -86,16 +86,17 @@
     }
     
     h1{
-        font-size: 180%;
+        font-size: 120%;
     }
     
     h2{
         font-size: 150%;
     }
-    /** code qui fait disparaitre le menu
+    /** code qui fait disparaitre le menu*/
     .main-nav{
-        display: none;
-    }*/
+        /*display: none;*/
+        float: left;
+    }
     .mobile-nav-icon{
         display: inline-block;
     }
