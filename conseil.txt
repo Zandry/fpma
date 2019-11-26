@@ -421,4 +421,11 @@ EXERCICE : On peut également vérifier la direction et faire disparaitre les bo
 - Avant de continuer, on va refactoriser le code car on voit qu'il y a des codes qui se rèpètent dans le css
 
 - Un dernier travail sur l'animation est de modifier la rapidité de l'animation car certaines animations sont trop lentes (en particulier l'image de la bible dans la "section formation SAP" qui monte). Pour cela, nous allons utiliser de css pure (animation-duration:1s pou que ça dure sur 1 seconde). il ne faut pas oublier la classe d'animation de plan-box qui n'est pas dans le css, il faut le rajouter.
-- Enfain, n'oubliez pas d'appliquer les vendor prefix (comme on l'a déjà fait) pour la prise en compte de plusieurs navigateurs.
+- Enfin, n'oubliez pas d'appliquer les vendor prefix (comme on l'a déjà fait) pour la prise en compte de plusieurs navigateurs.
+
+#####################################################
+NAVIGATION RESPONSIVE
+########################################################
+Notre navigation n'est pas entièrement responsive. Quand on réduit le navigateur, elle disparait mais n'est plus utilisable
+Des astuces d'écran du menu fini est commité. et c'est ce que nous allons faire maintenant. Pour cela:
+- créer une balise a avec une classe "mobile-nav-icon" juste en dessous de la balise ul menu dans html. Dans cette balise a, nous allons mettre l'icone du menu réduit (le bouton avec des petites barres horizontale ==> ion-navicon-round dans ionicons et l'icone "align-justify" dans font-awesome par ex)
