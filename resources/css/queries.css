@@ -92,9 +92,12 @@
     h2{
         font-size: 150%;
     }
-    
+    /** code qui fait disparaitre le menu
     .main-nav{
         display: none;
+    }*/
+    .mobile-nav-icon{
+        display: inline-block;
     }
     
     .section1-paragraph1{
