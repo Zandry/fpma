@@ -254,6 +254,13 @@ NAVIGATION
     border-bottom: 1px solid #329698;
 }
 
+/** navigation mobile**/
+.mobile-nav-icon{
+    float: right;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
 /**sticky class pour jquery**/
 .sticky{
     position: fixed;
