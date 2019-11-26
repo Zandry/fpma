@@ -433,3 +433,5 @@ Des astuces d'écran du menu fini est commité. et c'est ce que nous allons fair
     + le faire flotter sur la droite (float:right)
     + rajouter une petite margin-top de 30px pour aligner avec le menu actuelle
     + comme la balise n'a pas de href, le pointeur ne change pas quand elle est en hover. Pour avoir un pointeur de souris correcte, il faut specifier la propriété cursor
+- on voit que le bouton est visible alors que le menu est visible.
+  Exercice: le rendre invisible
