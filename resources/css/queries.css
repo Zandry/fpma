@@ -97,6 +97,10 @@
         /*display: none;*/
         float: left;
     }
+    
+    .main-nav li{
+        display: block;
+    }
     .mobile-nav-icon{
         display: inline-block;
     }
