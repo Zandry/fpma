@@ -446,3 +446,4 @@ MEDIA QUERIES  pour le menu
 - nous voudrions qua,d même que le bouton s'affiche à droite du menu et que le menu flotte à gauche du bouton (Exercice: faire le code correspondant à cette fonctionnalité)
 - on voudrait que les éléments du menu (les balises <li>) s'entassent (les uns au dessus des autres)
 (Exercice: proposer une solution pour faire cela)
+- une fois que c'est fait, on se rend compte que cela nous pose un pb d'affichage des lignes en dessous de nos éléments de menus (les lignes coupent le texte) (exercice:proposer une solution)
