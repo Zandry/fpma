@@ -262,6 +262,11 @@ NAVIGATION
     display: none;
 }
 
+.mobile-nav-icon i{
+    font-size: 200%;
+    color: #FFF;
+}
+
 /**sticky class pour jquery**/
 .sticky{
     position: fixed;
