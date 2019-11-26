@@ -439,3 +439,8 @@ Des astuces d'écran du menu fini est commité. et c'est ce que nous allons fair
     + la taille de police de l'icône doit être de 200%
     + la couleur blanche
     ==> pour tester si ça fonctionne, affichez temporairement l'icône et quand c'est fini, re-cachez le.
+########################################################
+MEDIA QUERIES  pour le menu
+###########################################################""
+- on sait que le menu disparait à partir de 767px. On ne veut plus que le menu disparaisse. Il faut donc enlever le code css qui fait disparaître ce menu. Et en plus il faut le code css qui fait apparaître le boton mobile nav
+- nous voudrions qua,d même que le bouton s'affiche à droite du menu et que le menu flotte à gauche du bouton (Exercice: faire le code correspondant à cette fonctionnalité)
