@@ -457,3 +457,7 @@ MEDIA QUERIES  pour le menu
 - modifier la coouleur du bouton en #555 dans le sticky menu (quand le sticky nav menu apparait) --> puis arranger la marge en dessus du bouton car il n'est pas aligné avec le menu sticky
 
 - le prochain travail est l'activation du menu en mode mobile. Au début, le menu est invisible (modifier le code pour que le menu soit invisible au début et que seul le bouton apparaît)
+
+- définir ce qui se passera lorsqu'on click sur le bouton de menu (nous souhaitons que le menu devienne visible). Pour cela, nous allons utiliser JQuery.
+    + commencer par rajouter une classe javascript dans le bouton mobile "js--nav_icon".
+    + définir l'évenement click sur le bouton dans le code jQuery (voir document ici https://www.w3schools.com/jquery/event_click.asp). tester ce code avec un messager alert comme dans la documentation
