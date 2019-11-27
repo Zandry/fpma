@@ -454,3 +454,4 @@ MEDIA QUERIES  pour le menu
     + rajouter un peu de padding entre les liens du menu
     
 - mettre en forme également le sticky menu pour mobile
+- modifier la coouleur du bouton en #555 dans le sticky menu (quand le sticky nav menu apparait) --> puis arranger la marge en dessus du bouton car il n'est pas aligné avec le menu sticky

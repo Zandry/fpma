@@ -111,6 +111,21 @@
         font-size: 100%;
     }
     
+    /*sticky menu nav pour mobile*/
+    .sticky .main-nav{
+        margin-top: 10px;
+    }
+    .sticky .main-nav li a:link,
+    .sticky .main-nav li a:visited{
+        padding: 10px 0;
+    }
+    
+    /*modification de la largeur de la ligne souligé pour les menu hover*/
+    .sticky .main-nav li a:hover,
+    .sticky .main-nav li a:active{
+        border-bottom: 2px solid #329698;
+    }
+    
     .mobile-nav-icon{
         display: inline-block;
     }
