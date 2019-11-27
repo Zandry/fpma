@@ -111,6 +111,7 @@ $('.js--plan-box').waypoint(
     });
     */
     $('.js--nav-icon').click(function(){
-        alert('test');
+        var nav = $(".js--main-nav");
+        nav.slideToggle(200);
     });
 });
