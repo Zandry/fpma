@@ -99,4 +99,29 @@ $('.js--plan-box').waypoint(
         offset:'50%'
     }
 );
+
+/* code pour vérifier la taille de l'ecran (media query javascript)
+    $(window).resize(function(){
+        if($(window).width() <=320){
+            alert('test');
+        }
+        else{
+            alert('plus d\'espace');
+        }
+    });
+    */
+    $('.js--nav-icon').click(function(){
+        var nav = $(".js--main-nav");
+        var icon = $(".js--nav-icon i");
+        nav.slideToggle(200);
+        if (icon.hasClass("fa-bars"))
+            {
+                icon.addClass("fa-window-close");
+                icon.removeClass("fa-bars");
+            }
+        else{
+            icon.addClass("fa-bars");
+            icon.removeClass("fa-window-close");
+        }
+    });
 });

@@ -421,4 +421,49 @@ EXERCICE : On peut également vérifier la direction et faire disparaitre les bo
 - Avant de continuer, on va refactoriser le code car on voit qu'il y a des codes qui se rèpètent dans le css
 
 - Un dernier travail sur l'animation est de modifier la rapidité de l'animation car certaines animations sont trop lentes (en particulier l'image de la bible dans la "section formation SAP" qui monte). Pour cela, nous allons utiliser de css pure (animation-duration:1s pou que ça dure sur 1 seconde). il ne faut pas oublier la classe d'animation de plan-box qui n'est pas dans le css, il faut le rajouter.
-- Enfain, n'oubliez pas d'appliquer les vendor prefix (comme on l'a déjà fait) pour la prise en compte de plusieurs navigateurs.
+- Enfin, n'oubliez pas d'appliquer les vendor prefix (comme on l'a déjà fait) pour la prise en compte de plusieurs navigateurs.
+
+#####################################################
+NAVIGATION RESPONSIVE
+########################################################
+Notre navigation n'est pas entièrement responsive. Quand on réduit le navigateur, elle disparait mais n'est plus utilisable
+Des astuces d'écran du menu fini est commité. et c'est ce que nous allons faire maintenant. Pour cela:
+- créer une balise a avec une classe "mobile-nav-icon" juste en dessous de la balise ul menu dans html. Dans cette balise a, nous allons mettre l'icone du menu réduit (le bouton avec des petites barres horizontale ==> ion-navicon-round dans ionicons et l'icone "align-justify" dans font-awesome par ex)
+- mise en forme de l'icône mobile nav:
+    + le faire flotter sur la droite (float:right)
+    + rajouter une petite margin-top de 30px pour aligner avec le menu actuelle
+    + comme la balise n'a pas de href, le pointeur ne change pas quand elle est en hover. Pour avoir un pointeur de souris correcte, il faut specifier la propriété cursor
+- on voit que le bouton est visible alors que le menu est visible.
+  Exercice: le rendre invisible
+- quelqueq mise en forme du bouton est nécéssaire:
+    + la taille de police de l'icône doit être de 200%
+    + la couleur blanche
+    ==> pour tester si ça fonctionne, affichez temporairement l'icône et quand c'est fini, re-cachez le.
+########################################################
+MEDIA QUERIES  pour le menu
+###########################################################""
+- on sait que le menu disparait à partir de 767px. On ne veut plus que le menu disparaisse. Il faut donc enlever le code css qui fait disparaître ce menu. Et en plus il faut le code css qui fait apparaître le boton mobile nav
+- nous voudrions qua,d même que le bouton s'affiche à droite du menu et que le menu flotte à gauche du bouton (Exercice: faire le code correspondant à cette fonctionnalité)
+- on voudrait que les éléments du menu (les balises <li>) s'entassent (les uns au dessus des autres)
+(Exercice: proposer une solution pour faire cela)
+- une fois que c'est fait, on se rend compte que cela nous pose un pb d'affichage des lignes en dessous de nos éléments de menus (les lignes coupent le texte) (exercice:proposer une solution)
+- quelques mise en forme nécéssaire:
+    + réduire la margin-top du menu (il y a trop d'espace en dessus) [dans le style.css, on l'a mis à 55px, ici on va le mettre à 25px]
+    + rajouter également au menu, un margin-left à 25px
+    + peut-être augmenter un peu la taille de police (essayer 100% car on est à 90% dans mon cas)
+    + rajouter un peu de padding entre les liens du menu
+    
+- mettre en forme également le sticky menu pour mobile
+- modifier la coouleur du bouton en #555 dans le sticky menu (quand le sticky nav menu apparait) --> puis arranger la marge en dessus du bouton car il n'est pas aligné avec le menu sticky
+
+- le prochain travail est l'activation du menu en mode mobile. Au début, le menu est invisible (modifier le code pour que le menu soit invisible au début et que seul le bouton apparaît)
+
+- définir ce qui se passera lorsqu'on click sur le bouton de menu (nous souhaitons que le menu devienne visible). Pour cela, nous allons utiliser JQuery.
+    + commencer par rajouter une classe javascript dans le bouton mobile "js--nav_icon".
+    + définir l'évenement click sur le bouton dans le code jQuery (voir document ici https://www.w3schools.com/jquery/event_click.asp). tester ce code avec un messager alert comme dans la documentation
+- après cette modification, on a un code qui fonctionne. Il nous faut maintenant créer un code JQuery qui fera apparaître le menu (qui est initialement invisible). Pour cela, nous allons:
+    + aussi rajouter une calsse js--main-nav ( à rajouter dans la classe main-nav) pour qu'on puisse manipuler main-nav avec du javascript
+    + remplacer le code alert dans notre squelettede code pour afficher le menu. Pour faire apparaître ou disparaître le menu, voir la documentation de slideToggle().
+    
+- dernière chose à faire pour ce menu est de transformerle bouton en icon X (croix) quand le menu est affiché (cela permet de donner l'intuition que ce menu pourra être fermé)
+    + pour cela, nous allons modifier avec jquery l'icône du bouton dans le même code que l'évenement click. Il faut également que lorsque le menu est affiché, l'icôn croix s'affiche et inversement, lorsque le menu est caché, l'icône bouton mobile s'affiche

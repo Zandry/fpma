@@ -86,15 +86,56 @@
     }
     
     h1{
-        font-size: 180%;
+        font-size: 120%;
     }
     
     h2{
         font-size: 150%;
     }
-    
+    /** code qui fait disparaitre le menu*/
     .main-nav{
         display: none;
+        float: left;
+        margin-top: 35px;
+    }
+    
+    .main-nav li{
+        display: block;
+    }
+    
+    .main-nav li a:link,
+    .main-nav li a:hover{
+        display: block;
+        border: 0; /* on peut enlever les soulignements si on veut car sur mobile on n'a pas de hover*/
+        padding: 10px 0;
+        font-size: 100%;
+    }
+    
+    /*sticky menu nav pour mobile*/
+    .sticky .main-nav{
+        margin-top: 10px;
+    }
+    .sticky .main-nav li a:link,
+    .sticky .main-nav li a:visited{
+        padding: 10px 0;
+    }
+    
+    /*modification de la largeur de la ligne souligé pour les menu hover*/
+    .sticky .main-nav li a:hover,
+    .sticky .main-nav li a:active{
+        border-bottom: 2px solid #329698;
+    }
+    
+    .sticky .mobile-nav-icon i{
+        color: #555;
+    }
+    
+    .sticky .mobile-nav-icon{
+        margin-top: 10px;
+    }
+    
+    .mobile-nav-icon{
+        display: inline-block;
     }
     
     .section1-paragraph1{
@@ -165,6 +206,11 @@
     
     .section-form{
         width: 100%;
+    }
+    
+    .plan-box{
+        width: 110%;
+        margin-left: 1%;
     }
     footer{
         padding: 40px 15px;
