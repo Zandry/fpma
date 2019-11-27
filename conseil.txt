@@ -461,3 +461,6 @@ MEDIA QUERIES  pour le menu
 - définir ce qui se passera lorsqu'on click sur le bouton de menu (nous souhaitons que le menu devienne visible). Pour cela, nous allons utiliser JQuery.
     + commencer par rajouter une classe javascript dans le bouton mobile "js--nav_icon".
     + définir l'évenement click sur le bouton dans le code jQuery (voir document ici https://www.w3schools.com/jquery/event_click.asp). tester ce code avec un messager alert comme dans la documentation
+- après cette modification, on a un code qui fonctionne. Il nous faut maintenant créer un code JQuery qui fera apparaître le menu (qui est initialement invisible). Pour cela, nous allons:
+    + aussi rajouter une calsse js--main-nav ( à rajouter dans la classe main-nav) pour qu'on puisse manipuler main-nav avec du javascript
+    + remplacer le code alert dans notre squelettede code pour afficher le menu. Pour faire apparaître ou disparaître le menu, voir la documentation de slideToggle().
