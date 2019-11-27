@@ -96,6 +96,7 @@
     .main-nav{
         /*display: none;*/
         float: left;
+        margin-top: 35px;
     }
     
     .main-nav li{
@@ -106,6 +107,8 @@
     .main-nav li a:hover{
         display: block;
         border: 0; /* on peut enlever les soulignements si on veut car sur mobile on n'a pas de hover*/
+        padding: 10px 0;
+        font-size: 100%;
     }
     
     .mobile-nav-icon{
