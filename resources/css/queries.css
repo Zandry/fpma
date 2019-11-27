@@ -94,7 +94,7 @@
     }
     /** code qui fait disparaitre le menu*/
     .main-nav{
-        /*display: none;*/
+        display: none;
         float: left;
         margin-top: 35px;
     }
@@ -206,6 +206,11 @@
     
     .section-form{
         width: 100%;
+    }
+    
+    .plan-box{
+        width: 110%;
+        margin-left: 1%;
     }
     footer{
         padding: 40px 15px;
