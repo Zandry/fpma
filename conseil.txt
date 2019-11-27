@@ -452,3 +452,5 @@ MEDIA QUERIES  pour le menu
     + rajouter également au menu, un margin-left à 25px
     + peut-être augmenter un peu la taille de police (essayer 100% car on est à 90% dans mon cas)
     + rajouter un peu de padding entre les liens du menu
+    
+- mettre en forme également le sticky menu pour mobile
