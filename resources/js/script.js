@@ -110,4 +110,7 @@ $('.js--plan-box').waypoint(
         }
     });
     */
+    $('.js--nav-icon').click(function(){
+        alert('test');
+    });
 });
