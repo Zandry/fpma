@@ -126,6 +126,14 @@
         border-bottom: 2px solid #329698;
     }
     
+    .sticky .mobile-nav-icon i{
+        color: #555;
+    }
+    
+    .sticky .mobile-nav-icon{
+        margin-top: 10px;
+    }
+    
     .mobile-nav-icon{
         display: inline-block;
     }
