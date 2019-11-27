@@ -464,3 +464,6 @@ MEDIA QUERIES  pour le menu
 - après cette modification, on a un code qui fonctionne. Il nous faut maintenant créer un code JQuery qui fera apparaître le menu (qui est initialement invisible). Pour cela, nous allons:
     + aussi rajouter une calsse js--main-nav ( à rajouter dans la classe main-nav) pour qu'on puisse manipuler main-nav avec du javascript
     + remplacer le code alert dans notre squelettede code pour afficher le menu. Pour faire apparaître ou disparaître le menu, voir la documentation de slideToggle().
+    
+- dernière chose à faire pour ce menu est de transformerle bouton en icon X (croix) quand le menu est affiché (cela permet de donner l'intuition que ce menu pourra être fermé)
+    + pour cela, nous allons modifier avec jquery l'icône du bouton dans le même code que l'évenement click. Il faut également que lorsque le menu est affiché, l'icôn croix s'affiche et inversement, lorsque le menu est caché, l'icône bouton mobile s'affiche
