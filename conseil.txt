@@ -467,3 +467,9 @@ MEDIA QUERIES  pour le menu
     
 - dernière chose à faire pour ce menu est de transformerle bouton en icon X (croix) quand le menu est affiché (cela permet de donner l'intuition que ce menu pourra être fermé)
     + pour cela, nous allons modifier avec jquery l'icône du bouton dans le même code que l'évenement click. Il faut également que lorsque le menu est affiché, l'icôn croix s'affiche et inversement, lorsque le menu est caché, l'icône bouton mobile s'affiche
+    
+############################################################################
+OPTIMISATION finale
+##########################################################
+- travail sur le favicon (favicon est l'icône qui apparaît sur l'onglet du navigateur pour notre site). Notre objectif est de créer un favicon qui fonctionne pour tous les navigateurs et OS
+Il faut donc aller sur https://realfavicongenerator.net/ et soumettre notre image de favicon (pour moi,c'est le logo noir fond blanc). Je vais le parametrer avec un fond blanc pour IOS et Android et je laisserai par défaut pour tout le reste. A la fin dans génér  tion options, je choisit de ne pas mettre mon faviconà la racine de mon site et je vais donner un chemin /ressources/favicons. Ensuite, cliquer sur generate favicons. Ensuite, suivre les instructionsdans la fenetre install your favicons
