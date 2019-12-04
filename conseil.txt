@@ -473,3 +473,34 @@ OPTIMISATION finale
 ##########################################################
 - travail sur le favicon (favicon est l'icône qui apparaît sur l'onglet du navigateur pour notre site). Notre objectif est de créer un favicon qui fonctionne pour tous les navigateurs et OS
 Il faut donc aller sur https://realfavicongenerator.net/ et soumettre notre image de favicon (pour moi,c'est le logo noir fond blanc). Je vais le parametrer avec un fond blanc pour IOS et Android et je laisserai par défaut pour tout le reste. A la fin dans génér  tion options, je choisit de ne pas mettre mon faviconà la racine de mon site et je vais donner un chemin /ressources/favicons. Ensuite, cliquer sur generate favicons. Ensuite, suivre les instructionsdans la fenetre install your favicons
+
+
+- réduire la taille des images et des fichiers css et js par minification
+#####################################################################################################
+REDUCTION DES IMAGES
+###########################################################"########################################
+- la première approche est de réduire la taille des images de manière optimisé. Pour cela, il faut voir quelle est la taille affichée par le site et quelle est la taille réelle de l'image. Pour avooir cesdifférentes tailles, il faut inspecter l'image, mettre la souris sur la source ( propriété src dans la balise image et vous obtiendrez alors deux tailles d'images de cette forme
+"a x b pixels (intrinsic: mx n pixels)". Cela signifie que la taille affiché est axb et la taille réelle est mxn. Si axb est largement inférieur à mxn alors il nous faudra réduire la taille de l'image. Cependant, pour que les images ne soient pas pixélisés pour les afficheurs très hautes définitions, il faut alors que sa taille sooit au moins deux fois plus que la taille affichée. Par contre, il faut faire attentionaux affichages pour le changement des dimensions des ecrans car il arrive que l'image s'affiche plus grand que normalement entre deux dimensions d'ecrans.
+    + Prenons l'exemple des images de section (section responsable), quand le site est à sa dimension max, nous obtenons les images de taille "249x166(instrinc:900x600px). Quand les images commencent à être affiché en block (ligne par ligne), leur taille est de 521x394px. Pour une largeur d'ecran de 450 pixel, l'image a une taille de 350x249. Si on prend la moyenne de 350 pixels de largeur des photos des sections (responsables), nous devrions les redimensionner à 700 de largeur (en gardant l'aspect ratio)
+    
+    + pour voir les tailles des fichiers avant le redimensionnement, utiliser la commande suivante:
+    "du -h <nom de l'image dans la section responsable>" (sans les guillemets et le crochet)
+    
+    384K bible.jpg
+    220K president.jpg
+    188K gestionnaire.jpg
+    264K tresorie.jpg
+    Total =
+    
+    + pour réduire les images, utiliser la commande mogrify ( si la commmande n'existe pas, installer ImageMagick) comme suit, après être rentré sur le répertoire des images du site:
+    mogrify -resize 700 bible.jpg president.jpg gestionnaire.jpg tresorie.jpg
+    
+    + recalculer les tailles après le redimensionnement
+    
+    264K bible.jpg
+    192K president.jpg
+    176K gestionnaire.jpg
+    276K tresorie.jpg
+    
+La taille n'a pas affecté le look du site
+    
