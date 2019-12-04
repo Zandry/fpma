@@ -503,4 +503,10 @@ REDUCTION DES IMAGES
     276K tresorie.jpg
     
 La taille n'a pas affecté le look du site
+
+REfaire cette analyse sur toutes les images du site pour gagner qualques mégaoctets et augmenterla rapidité de chargement du site
+
+
+
+
     
