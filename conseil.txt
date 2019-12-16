@@ -507,6 +507,16 @@ La taille n'a pas affecté le look du site
 REfaire cette analyse sur toutes les images du site pour gagner qualques mégaoctets et augmenterla rapidité de chargement du site
 
 
+###################################################################""
+UTILISATION DE OPTIMIZILLA
+#########################################################################
+Nous allons utiliser un outil qui s'appelle optimizilla pour optimiser nos 2 plus grandes images
+- resources/css/img/back-customers.jpg (1,2 Mo) <exemplee repertoire le an'i Pa io fa nenah tsy misy grande taille ny image>
+- resources/css/img/hero.jpg (2,3 Mo) <exemplee repertoire le an'i Pa io fa nenah tsy misy grande taille ny image>
 
+-> Rentrer sur le site de Optimizilla https://imagecompressor.com/fr/. et uploadez les deux images
+ et compressez-les. Ensuite recopier les images compressées dans le dossier source (décompressez les fichiers images min et mettez à jour les références vers les images dans le fichiers code sources)
+
+    
 
     
