@@ -520,6 +520,15 @@ Nous allons utiliser un outil qui s'appelle optimizilla pour optimiser nos 2 plu
  PAS D IMAGE À GRANDE TAILLE
 
  Partie css à modifier pour le nom d'image reférencé par le code
+ 
+ ##############################################################
+SEARCH ENGINE OPTIMIZATION
+##############################################################
+Pour l'optimization SEO, nous aurons besoin de rajouter le tag <meta name="description" ....> avec une description claire et concise contenant les mots clés de notre site. Cette description ne sera pas visible par les visiteurs mais sera visible par les moteurs de recherche.
+Nous allons donc rajouter un meta description et un meta charset (rien à voir avec SEO mais c'est pratique pour afficher les caractères latins ). 
+Il nous faudra un texte de 160 mots maximum dans la forme <meta name="description" content="le texte">
+
+
 
     
 
