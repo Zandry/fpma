@@ -519,6 +519,8 @@ Nous allons utiliser un outil qui s'appelle optimizilla pour optimiser nos 2 plu
  
  PAS D IMAGE À GRANDE TAILLE
 
+ Partie css à modifier pour le nom d'image reférencé par le code
+
     
 
     
