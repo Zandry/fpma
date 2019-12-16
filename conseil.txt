@@ -528,6 +528,13 @@ Pour l'optimization SEO, nous aurons besoin de rajouter le tag <meta name="descr
 Nous allons donc rajouter un meta description et un meta charset (rien à voir avec SEO mais c'est pratique pour afficher les caractères latins ). 
 Il nous faudra un texte de 160 mots maximum dans la forme <meta name="description" content="le texte">
 
+##############################################################
+VALIDATION DU CODE HTML
+##############################################################
+HTML est un langage qui accepte les erreurs. Pour nous assurer que nous écrivons du code correcte, il faut valider le HTML. Dans cette exercice, nous allons utiliser le site W2C Markup Validation Service (https://validator.w3.org/). Nous allons coller tout notre code dans l'interface et vérifier le HTML
+Ensuite, nous corrigerons tous les erreurs qui sont remontés
+
+
 
 
     
