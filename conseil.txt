@@ -516,6 +516,8 @@ Nous allons utiliser un outil qui s'appelle optimizilla pour optimiser nos 2 plu
 
 -> Rentrer sur le site de Optimizilla https://imagecompressor.com/fr/. et uploadez les deux images
  et compressez-les. Ensuite recopier les images compressées dans le dossier source (décompressez les fichiers images min et mettez à jour les références vers les images dans le fichiers code sources)
+ 
+ PAS D IMAGE À GRANDE TAILLE
 
     
 
