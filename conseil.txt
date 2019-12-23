@@ -589,6 +589,12 @@ On peut cependant avoir des alternatives comme https://www.embedgooglemap.net/.
 Pour mon cas. J'ai créer un nouveau section pour le map .
 Je veux afficher mon map avant le footer
 
+
+Il se passe que form-box s'affiche tout en haut de la page
+On rappelle que si on fixe un élément à position:absolute, sa position sera absolute par rapport à son premier ancetre positionné relative. C'est à dire que si on lui donne top:0 et left:0, son bord haut gauche sera au bord de son parent. Si aucun ancêtre relative n'est trouvé, ce sera la page
+Il faut donc que l'ancêtre de notre form soit à position relative (cet élément est map-box
+Exercice: corriger le problème et tester
+
     
 
     
