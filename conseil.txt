@@ -573,6 +573,10 @@ new GMaps({
     + rajouter un style css pour définir la taille de la zone de map ()
 
 - mettre à jour le html en rajoutant un div avec une classe map en dessous du div de début de la section "section-form" et c'est tout. Pour le moment, rien ne s'affiche car il faut styler la section dans css ( au moins lui donner une taille hauteur et largeur)
+- PROBLEME: actuellement, google map est payant et affiche des textes "for development only" etc etc.
+On peut cependant avoir des alternatives comme https://www.embedgooglemap.net/.
+
+- Mettre en forme la section comme nous l'avons montré dans la maquette
 
 
     
