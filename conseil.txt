@@ -577,6 +577,8 @@ new GMaps({
 On peut cependant avoir des alternatives comme https://www.embedgooglemap.net/.
 
 - Mettre en forme la section comme nous l'avons montré dans la maquette
+    + nous allons remplacer la section par un div que nous allons appeler "map-box" pour ne pas modifier les mise en forme de section que nous avons fait pour les autres sections. ==> ou rajouter juste une classe map-box dans la section pour pouvoir rajouter de la mise en forme sans changer la mise en forme des sections
+    + nous allons mettre le formulaire dans un box (donc dans un div propre à lui que nous appellons form-box)
 
 
     
