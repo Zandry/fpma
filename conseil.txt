@@ -552,6 +552,12 @@ Le site final se trouve ici (http://webdesigncourse.co/omnifood/) (le site omnif
 Site de design 99design.com
 site de freelance freelance.com, odesk, ou elance
 
+#################################################################
+Rajout de map sur le site
+###########################################################
+Plusieurs manières existent pour rajouter un map à un site
+Pour notre cas, nous allons utiliser gomap.js. Commencez par telecharger gmap.js sur https://hpneo.dev/gmaps/. 
+Ensuite, enregistrez-le dans le répertoire js (de vendor) et mettez à jour le fichier html pour le référencer
 
 
     
