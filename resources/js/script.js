@@ -124,4 +124,11 @@ $('.js--plan-box').waypoint(
             icon.removeClass("fa-window-close");
         }
     });
+    /******map fonctionality*/
+    //instanciation de gmap
+    new GMaps({
+        div: '.map',
+        lat: -12.043333,
+        lng: -77.028333
+    });
 });

@@ -557,7 +557,22 @@ Rajout de map sur le site
 ###########################################################
 Plusieurs manières existent pour rajouter un map à un site
 Pour notre cas, nous allons utiliser gomap.js. Commencez par telecharger gmap.js sur https://hpneo.dev/gmaps/. 
-Ensuite, enregistrez-le dans le répertoire js (de vendor) et mettez à jour le fichier html pour le référencer
+- Ensuite, enregistrez-le dans le répertoire js (de vendor) et mettez à jour le fichier html pour le référencer
+- L'exemple qu'on prendra est le plus simple (exemple basic https://hpneo.dev/gmaps/examples/basic.html)  qui nous demande de définir un id map ==> que nous allons transformer en class map en remplaçant le # par un . dans le code)
+new GMaps({
+    div: '#map',
+    lat: -12.043333,
+    lng: -77.028333
+});
+
+- regardez ensuite le doc de l'exemple sur https://github.com/hpneo/gmap
+- selon cet doc, il y a 3 choses à faire dans le code
+    + rajouter une référence au google map API dans le HTML
+        <script src="http://maps.google.com/maps/api/js"></script>
+    + rajouter une référence au gmap.js
+    + rajouter un style css pour définir la taille de la zone de map ()
+
+- mettre à jour le html en rajoutant un div avec une classe map en dessous du div de début de la section "section-form" et c'est tout. Pour le moment, rien ne s'affiche car il faut styler la section dans css ( au moins lui donner une taille hauteur et largeur)
 
 
     
