@@ -522,7 +522,8 @@ Nous allons utiliser un outil qui s'appelle optimizilla pour optimiser nos 2 plu
  Partie css à modifier pour le nom d'image reférencé par le code
  
  ##############################################################
-SEARCH ENGINE OPTIMIZATION
+SEARCH ENGINE OPTIMIZATION (SEO)
+alise description
 ##############################################################
 Pour l'optimization SEO, nous aurons besoin de rajouter le tag <meta name="description" ....> avec une description claire et concise contenant les mots clés de notre site. Cette description ne sera pas visible par les visiteurs mais sera visible par les moteurs de recherche.
 Nous allons donc rajouter un meta description et un meta charset (rien à voir avec SEO mais c'est pratique pour afficher les caractères latins ). 
@@ -530,9 +531,20 @@ Il nous faudra un texte de 160 mots maximum dans la forme <meta name="descriptio
 
 ##############################################################
 VALIDATION DU CODE HTML
+correction des erreurs
 ##############################################################
 HTML est un langage qui accepte les erreurs. Pour nous assurer que nous écrivons du code correcte, il faut valider le HTML. Dans cette exercice, nous allons utiliser le site W2C Markup Validation Service (https://validator.w3.org/). Nous allons coller tout notre code dans l'interface et vérifier le HTML
 Ensuite, nous corrigerons tous les erreurs qui sont remontés
+
+####################################################################
+contenu Rajout de mots clés
+#################################################################"
+Le contenue est très important. Si le contenu du site est bien, les visiteurs reviendront et le site sera populaire au niveau des moteurs de recherche.Donc , il faut soigner et faire attention au contenu
+Les mots clés sont les mots que les visiteurs utilisent pour retrouver le site par un moteur de recherche. Il faut bien chisir les mots clés et surtout faire attention à l'utiulisation de ces mots clés (si on en met trop par exemple) car les moteurs de recherche peuvent pénaliser le site pour "keyword spamming". Utilisez les mots clés dans les balises titles, les balises meta, les balises link (<a>) oou les balises headings (<h1>, <h2>,...)
+Les phrases etles mots qui sont dans notre site sont déjà des mots clés (mais on peut en rajouter dans les balises meta)
+Les backlinks: une chose imporatante est d'avoir d'autre sites qui référencent notre site (ça s'appelle faire du backlink) et c'est comme une lettre de recommandation pour notre site. Les moteurs de recherche donnent  des notes à notre site par le nombre et la qualité des sites qui nous référencent.
+
+(pas de code à faire dans cette section)
 
 
 
