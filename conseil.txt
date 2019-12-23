@@ -473,3 +473,82 @@ OPTIMISATION finale
 ##########################################################
 - travail sur le favicon (favicon est l'icône qui apparaît sur l'onglet du navigateur pour notre site). Notre objectif est de créer un favicon qui fonctionne pour tous les navigateurs et OS
 Il faut donc aller sur https://realfavicongenerator.net/ et soumettre notre image de favicon (pour moi,c'est le logo noir fond blanc). Je vais le parametrer avec un fond blanc pour IOS et Android et je laisserai par défaut pour tout le reste. A la fin dans génér  tion options, je choisit de ne pas mettre mon faviconà la racine de mon site et je vais donner un chemin /ressources/favicons. Ensuite, cliquer sur generate favicons. Ensuite, suivre les instructionsdans la fenetre install your favicons
+
+
+- réduire la taille des images et des fichiers css et js par minification
+#####################################################################################################
+REDUCTION DES IMAGES
+###########################################################"########################################
+- la première approche est de réduire la taille des images de manière optimisé. Pour cela, il faut voir quelle est la taille affichée par le site et quelle est la taille réelle de l'image. Pour avooir cesdifférentes tailles, il faut inspecter l'image, mettre la souris sur la source ( propriété src dans la balise image et vous obtiendrez alors deux tailles d'images de cette forme
+"a x b pixels (intrinsic: mx n pixels)". Cela signifie que la taille affiché est axb et la taille réelle est mxn. Si axb est largement inférieur à mxn alors il nous faudra réduire la taille de l'image. Cependant, pour que les images ne soient pas pixélisés pour les afficheurs très hautes définitions, il faut alors que sa taille sooit au moins deux fois plus que la taille affichée. Par contre, il faut faire attentionaux affichages pour le changement des dimensions des ecrans car il arrive que l'image s'affiche plus grand que normalement entre deux dimensions d'ecrans.
+    + Prenons l'exemple des images de section (section responsable), quand le site est à sa dimension max, nous obtenons les images de taille "249x166(instrinc:900x600px). Quand les images commencent à être affiché en block (ligne par ligne), leur taille est de 521x394px. Pour une largeur d'ecran de 450 pixel, l'image a une taille de 350x249. Si on prend la moyenne de 350 pixels de largeur des photos des sections (responsables), nous devrions les redimensionner à 700 de largeur (en gardant l'aspect ratio)
+    
+    + pour voir les tailles des fichiers avant le redimensionnement, utiliser la commande suivante:
+    "du -h <nom de l'image dans la section responsable>" (sans les guillemets et le crochet)
+    
+    384K bible.jpg
+    220K president.jpg
+    188K gestionnaire.jpg
+    264K tresorie.jpg
+    Total =
+    
+    + pour réduire les images, utiliser la commande mogrify ( si la commmande n'existe pas, installer ImageMagick) comme suit, après être rentré sur le répertoire des images du site:
+    mogrify -resize 700 bible.jpg president.jpg gestionnaire.jpg tresorie.jpg
+    
+    + recalculer les tailles après le redimensionnement
+    
+    264K bible.jpg
+    192K president.jpg
+    176K gestionnaire.jpg
+    276K tresorie.jpg
+    
+La taille n'a pas affecté le look du site
+
+REfaire cette analyse sur toutes les images du site pour gagner qualques mégaoctets et augmenterla rapidité de chargement du site
+
+
+###################################################################""
+UTILISATION DE OPTIMIZILLA
+#########################################################################
+Nous allons utiliser un outil qui s'appelle optimizilla pour optimiser nos 2 plus grandes images
+- resources/css/img/back-customers.jpg (1,2 Mo) <exemplee repertoire le an'i Pa io fa nenah tsy misy grande taille ny image>
+- resources/css/img/hero.jpg (2,3 Mo) <exemplee repertoire le an'i Pa io fa nenah tsy misy grande taille ny image>
+
+-> Rentrer sur le site de Optimizilla https://imagecompressor.com/fr/. et uploadez les deux images
+ et compressez-les. Ensuite recopier les images compressées dans le dossier source (décompressez les fichiers images min et mettez à jour les références vers les images dans le fichiers code sources)
+ 
+ PAS D IMAGE À GRANDE TAILLE
+
+ Partie css à modifier pour le nom d'image reférencé par le code
+ 
+ ##############################################################
+SEARCH ENGINE OPTIMIZATION (SEO)
+alise description
+##############################################################
+Pour l'optimization SEO, nous aurons besoin de rajouter le tag <meta name="description" ....> avec une description claire et concise contenant les mots clés de notre site. Cette description ne sera pas visible par les visiteurs mais sera visible par les moteurs de recherche.
+Nous allons donc rajouter un meta description et un meta charset (rien à voir avec SEO mais c'est pratique pour afficher les caractères latins ). 
+Il nous faudra un texte de 160 mots maximum dans la forme <meta name="description" content="le texte">
+
+##############################################################
+VALIDATION DU CODE HTML
+correction des erreurs
+##############################################################
+HTML est un langage qui accepte les erreurs. Pour nous assurer que nous écrivons du code correcte, il faut valider le HTML. Dans cette exercice, nous allons utiliser le site W2C Markup Validation Service (https://validator.w3.org/). Nous allons coller tout notre code dans l'interface et vérifier le HTML
+Ensuite, nous corrigerons tous les erreurs qui sont remontés
+
+####################################################################
+contenu Rajout de mots clés
+#################################################################"
+Le contenue est très important. Si le contenu du site est bien, les visiteurs reviendront et le site sera populaire au niveau des moteurs de recherche.Donc , il faut soigner et faire attention au contenu
+Les mots clés sont les mots que les visiteurs utilisent pour retrouver le site par un moteur de recherche. Il faut bien chisir les mots clés et surtout faire attention à l'utiulisation de ces mots clés (si on en met trop par exemple) car les moteurs de recherche peuvent pénaliser le site pour "keyword spamming". Utilisez les mots clés dans les balises titles, les balises meta, les balises link (<a>) oou les balises headings (<h1>, <h2>,...)
+Les phrases etles mots qui sont dans notre site sont déjà des mots clés (mais on peut en rajouter dans les balises meta)
+Les backlinks: une chose imporatante est d'avoir d'autre sites qui référencent notre site (ça s'appelle faire du backlink) et c'est comme une lettre de recommandation pour notre site. Les moteurs de recherche donnent  des notes à notre site par le nombre et la qualité des sites qui nous référencent.
+
+(pas de code à faire dans cette section)
+
+
+
+
+    
+
+    
