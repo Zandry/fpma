@@ -586,8 +586,9 @@ On peut cependant avoir des alternatives comme https://www.embedgooglemap.net/.
         * map ==> déjà mise en forme dans les étapes d'avant
         * form-box ==> pour pouvoir fixer la position de cette box au bord de la section (left=0 et right =0 ), il faut qu'on mette sa position à absolute==> donc mettre position: absolute. Tester. 
         
-Pour mon cas. J'ai créer un nouveau section pour le map .
-Je veux afficher mon map avant le footer
+("Pour mon cas. J'ai créer un nouveau section pour le map .
+Je veux afficher mon map avant le footer"
+fa mbola tsy nataoko ihany ndray aloha. J'ai suivi tout simplement le tutorial)
 
 
 Il se passe que form-box s'affiche tout en haut de la page
@@ -596,6 +597,7 @@ Il faut donc que l'ancêtre de notre form soit à position relative (cet éléme
 Exercice: corriger le problème et tester
 
     
+    + un autre problème apparaît. l'en-tête du form-box dépasse. Ceci est causé par le formattage de la balise section (padding). exercice : Vérifier ce code dans style.css et annuler le en faisant l'inverse de ce formattage avec map-box
 
     
 
