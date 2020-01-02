@@ -128,8 +128,9 @@ $('.js--plan-box').waypoint(
     //instanciation de gmap
     var map = new GMaps({
         div: '.map',
-        lng: 2.0183663,
-        lat: 49.0506098
+        lng: 2.020560,
+        lat: 49.050610,
+        zoom: 18
     });
     
     map.addMarker({
