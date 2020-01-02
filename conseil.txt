@@ -604,6 +604,9 @@ Exercice: corriger le problème et tester
                 - Mettre la carte map au second plan
     + un autre problème apparaît. Le form-box a une longueur moindre. Il faut le mettre à la même longueur que le map (500px).
     Exercice: faire le code et tester.
+    
+        + Un autre problème apparait. le bouton orange de form-box touche le bord. Il faut donc augmenter la hauteur de map et de form-box. Essayer 560 px et tester. Profiter pour rajouter quelques corrections mineurs (padding-top 40px, width 50% et enlever la bordure rouge du form-box.
+
 
     
 
