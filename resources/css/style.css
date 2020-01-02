@@ -667,6 +667,7 @@ input[type=checkbox]{
 .map{
     width: 100%;
     height: 500px;
+    z-index: 0;
 }
 
 .form-box{
@@ -674,6 +675,8 @@ input[type=checkbox]{
     border: red 1px solid;
     top: 0px;
     right: 0px;
+    background-color: rgba(255,255,255,0.8);
+    z-index: 10;
 }
 
 /**************************************************************
