@@ -622,6 +622,7 @@ Contact SECTION
 *******************************************************/
 .section-form{
     background-color: #f4f4f4;
+
 }
 .contact-form{
     width: 60%;
@@ -677,6 +678,7 @@ input[type=checkbox]{
     right: 0px;
     background-color: rgba(255,255,255,0.8);
     z-index: 10;
+    height: 500px;
 }
 
 /**************************************************************
