@@ -628,7 +628,9 @@ Exercice: corriger le problème et tester
           }
         });*/
     ce code sous-entend qu'il y a une variable map (instance Gmaps) qui contient une carte et à qui on veut rajouter un marker. Nous avons déjà un code qui fait new GMaps, il faut juste qu'on l'affecte à la variable map.
-      
+
+    + Adapter le zoom de la carte par l'instruction zoom dans la première fonction de map.
+
 
 
 
