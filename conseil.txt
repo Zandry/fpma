@@ -608,6 +608,12 @@ Exercice: corriger le problème et tester
         + Un autre problème apparait. le bouton orange et le texte-area de form-box touche le bord. Il faut donc augmenter la hauteur de map et de form-box. Essayer 560 px et tester. Profiter pour rajouter quelques corrections mineurs (padding-top 40px, width 50% et enlever la bordure rouge du form-box.
         
         + Dernier problème: on voit que dans le form-box, il y a beaucoup d'espace à gauche et à droite des contrôles (textbox, button, etc etc). Ceci est causé par un code qu'on a fait pour contact-form ==> width:60%, il faut le remplacer à 90%.
+        
+        + Nous allons ensuite modifier l'adresse du map afin qu'on puisse le pointer vers le 19 chemin des pilets Cergy.
+        Pour modifier le map, nous allons récupérer la latitude et la longitude de l'adresse. Soit en allant sur map et en récupérant l'adresse dans google maps (https://www.google.fr/maps/place/19+Chemin+des+Pilets,+95800+Cergy/@49.0506098,2.0183663,17)
+        la latitude est le premier nombre et la longitude le deuxième nombre. ==> Sinon, il y a des sites qui convertissent des adresses en long lat.
+	(tester et nous devrons avoir des noms de rue reconnues)
+
 
 
     
