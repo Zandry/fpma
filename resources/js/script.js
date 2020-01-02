@@ -128,7 +128,9 @@ $('.js--plan-box').waypoint(
     //instanciation de gmap
     new GMaps({
         div: '.map',
-        lat: -12.043333,
-        lng: -77.028333
+        /*lat: -12.043333,
+        lng: -77.028333*/
+        lng: 2.0183663,
+        lat: 49.0506098
     });
 });
