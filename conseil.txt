@@ -598,6 +598,11 @@ Exercice: corriger le problème et tester
 
     
     + un autre problème apparaît. l'en-tête du form-box dépasse. Ceci est causé par le formattage de la balise section (padding). exercice : Vérifier ce code dans style.css et annuler le en faisant l'inverse de ce formattage avec map-box
+    + maintenant que le form-box est bien placé à droite et aligné avec le coin droit haut du map, nous allons mettre en forme la form-box. 
+    Exercice :  - Mettre le fond du formulaire en blanc transparent à 20%
+                - Mettre le form-box au premier plan
+                - Mettre la carte map au second plan
+    
 
     
 
