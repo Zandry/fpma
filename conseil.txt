@@ -613,6 +613,9 @@ Exercice: corriger le problème et tester
         Pour modifier le map, nous allons récupérer la latitude et la longitude de l'adresse. Soit en allant sur map et en récupérant l'adresse dans google maps (https://www.google.fr/maps/place/19+Chemin+des+Pilets,+95800+Cergy/@49.0506098,2.0183663,17)
         la latitude est le premier nombre et la longitude le deuxième nombre. ==> Sinon, il y a des sites qui convertissent des adresses en long lat.
 	(tester et nous devrons avoir des noms de rue reconnues)
+	
+    Si le fait que la map soit en dessous du form ne plait pas, il est possible de mettre la map à 50% et la form à 50% (tester)
+
 
 
 
