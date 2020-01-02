@@ -615,6 +615,20 @@ Exercice: corriger le problème et tester
 	(tester et nous devrons avoir des noms de rue reconnues)
 	
     Si le fait que la map soit en dessous du form ne plait pas, il est possible de mettre la map à 50% et la form à 50% (tester)
+    
+    + Rajout d'un marqueur pour l'adresse concerné. Revoir dans les exemple de gMap.js sur le site (voir le site plus haut)
+    Dans les exemples de Gmaps.js, il y a un exemple sur les markers.
+      /*
+      map.addMarker({
+          lat: -12.043333,
+          lng: -77.028333,
+          title: 'Lima',
+          click: function(e) {
+            alert('You clicked in this marker');
+          }
+        });*/
+    ce code sous-entend qu'il y a une variable map (instance Gmaps) qui contient une carte et à qui on veut rajouter un marker. Nous avons déjà un code qui fait new GMaps, il faut juste qu'on l'affecte à la variable map.
+      
 
 
 
