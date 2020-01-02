@@ -668,12 +668,12 @@ input[type=checkbox]{
     height: 500px;
 }
 
-/*.form-box{
+.form-box{
     position: absolute;
     border: red 1px solid;
     top: 0px;
     right: 0px;
-}*/
+}
 
 /**************************************************************
 Footer SECTION
