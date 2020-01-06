@@ -639,6 +639,13 @@ avec une largeur très petite, très difficile à voir.
     + Nous allons mettre la vue à une colonne et placée l'un au dessus de l'autre comme pour les images (la carte sera au dessus du form) 
 
         > recopier les codes de mise en forme du map et du form dans queries.css (à la section 767px car c'est à partir de cette résolution que l'affichage est mauvaise)
+        > Pour afficher les deux éléménts entassé (l'un en dessous de l'autre), il faut que la position du map ne soit plus absolue (car absolue signifie qu'on le force à se mettre à une position top, left ou right donné). En relative, il s'affiche dans l'ordre naturel d'apparition dans le HTML (donc après la map) et on peut le positionner par rapport à cette position naturelle.
+        
+        en référence, revoir la documentation ici http://fr.learnlayout.com/position.html
+        ==> une fois que la position est devenue relative, alors le map se trouve au dessus du form. il ne reste plus qu'à ajuster la hauteur et la largeur (en % pour que ça continue à être responsive.). tester
+        
+		
+
         
 
 
