@@ -183,6 +183,23 @@
     .section-responsable .box i{
         text-align: center;
     }
+    
+    /** maps*/
+    .map-box{
+        width: 100%;
+        position: relative;
+    }
+        
+    .form-box{
+        position: relative;
+        height: auto;
+        width: 100%;
+    }
+    
+        .map{
+        width: 100%;
+        height: 400px;
+    }
 }
 
 /*très petits ecrans et très petits téléphones 0 à 480*/

@@ -124,4 +124,21 @@ $('.js--plan-box').waypoint(
             icon.removeClass("fa-window-close");
         }
     });
+    /******map fonctionality*/
+    //instanciation de gmap
+    var map = new GMaps({
+        div: '.map',
+        lng: 2.020560,
+        lat: 49.050610,
+        zoom: 18
+    });
+    
+    map.addMarker({
+        lng: 2.020560,
+        lat: 49.050610,
+        title:'19 Chemin des pilets Cergy',
+        infoWindow: {
+            content: '<p>Vente de drogue à 60m</p>'
+    }
+    });
 });

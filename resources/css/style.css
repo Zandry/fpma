@@ -622,9 +622,10 @@ Contact SECTION
 *******************************************************/
 .section-form{
     background-color: #f4f4f4;
+
 }
 .contact-form{
-    width: 60%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -654,6 +655,31 @@ input[type=checkbox]{
 *:focus{
     outline: none;
 }*/
+
+/** maps */
+
+.map-box{
+    width: 100%;
+    position: relative;
+    padding: 0;
+}
+
+.map{
+    width: 50%;
+    height: 660px;
+    z-index: 0;
+}
+
+.form-box{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: rgba(255,255,255,0.8);
+    z-index: 10;
+    height: 660px;
+    padding-top: 40px;
+    width:50%;
+}
 
 /**************************************************************
 Footer SECTION
