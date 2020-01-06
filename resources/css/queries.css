@@ -183,6 +183,30 @@
     .section-responsable .box i{
         text-align: center;
     }
+    
+    /** maps*/
+    .map-box{
+        width: 100%;
+        position: relative;
+        padding: 0;
+    }
+    
+    .map{
+        width: 50%;
+        height: 560px;
+        z-index: 0;
+    }
+    
+    .form-box{
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        background-color: rgba(255,255,255,0.8);
+        z-index: 10;
+        height: 560px;
+        padding-top: 40px;
+        width: 50%;
+    }
 }
 
 /*très petits ecrans et très petits téléphones 0 à 480*/
