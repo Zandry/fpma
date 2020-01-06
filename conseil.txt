@@ -631,6 +631,15 @@ Exercice: corriger le problème et tester
 
     + Adapter le zoom de la carte par l'instruction zoom dans la première fonction de map.
 
+#################################
+- mettre la carte responsive.
+#################################
+- si on réduit la taille de la fenetre, on se rend compte que la carte est non responsive. la vue reste une vue à deux colonnes 
+avec une largeur très petite, très difficile à voir.
+    + Nous allons mettre la vue à une colonne et placée l'un au dessus de l'autre comme pour les images (la carte sera au dessus du form) 
+
+        > recopier les codes de mise en forme du map et du form dans queries.css (à la section 767px car c'est à partir de cette résolution que l'affichage est mauvaise)
+        
 
 
 
