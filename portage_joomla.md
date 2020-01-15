@@ -1,0 +1,379 @@
+# Portage du template dans Joomla.
+
+## 1. <u>Objectif</u>: 
+Il est interessant de porter le template sous Joomla (ou un autre CMS) car cela permettrait à une personne non developpeur 
+de modifier les contenus du site. Dans ce tutorial, nous allons travailler sur Joomla (à venir wordpress).
+
+## 2. <u>Installation de l'environnement</u>: 
+ Pour éviter d'installer une LAMPP stack sur notre machine, nous allons avoir recours à docker.
+ Le document de référence est ici: https://doc.ubuntu-fr.org/docker_lamp (je ne fais que recopier cette partie et éventuellement, reformuler ou clarifier des parties)
+
+### 2.a. Installation de docker
+Debian n'intègre pas par défaut le répository contenant Docker Engine. ON peut donc installer docker de plusieurs manières mais nous allons utiliser la méthode où on met à jour notre repository.
+
+(le document de référence est https://docs.docker.com/install/linux/docker-ce/debian/ pour cette installation)
+
+- Desinstaller les paquets Docker éventuellement installés sur la machine:
+```bash
+    patou@pc-pa:~$ sudo apt-get purge docker lxc-docker docker-engine docker.io
+```
+- Mettre à jour les paquets installés pour utiliser des repository en https:
+```bash
+    patou@pc-pa:~$ sudo apt install apt-transport-https ca-certificates curl software-properties-common gnupg2
+```
+- On va récupérer le certificat officiel de Docker (pour nous assurer qu'on installe bien la version offcielle). Pour cela, nous allons télécharger la clé GPG officiel.
+```bash
+    patou@pc-pa:~$ curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+```
+- Vérifions que la commande `apt-key add - ` nous a rajouté la clé officielle de Docker (9DC8 5822 9FC7 DD38 854A E2D8 8D81 803C 0EBF CD88). pour cela, on donne à la commande `apt-key fingerprint` les 6 derniers octets de la clé.
+ ```bash
+    patou@pc-pa:~$ sudo apt-key fingerprint 0EBFCD88
+    pub   rsa4096 2017-02-22 [SCEA]
+          9DC8 5822 9FC7 DD38 854A  E2D8 8D81 803C 0EBF CD88
+    uid           [ unknown] Docker Release (CE deb) <docker@docker.com>
+    sub   rsa4096 2017-02-22 [S]
+ ```
+Donc on a bien la clé qui est installé. Cela nous permet de nous assurer qu'on isntallera bien la version officielle de Docker. 
+
+- Mettre à jour notre fichier `/etc/apt/sources.list` pour nous permettre l'installation de Docker.
+Pour rajouter une ligne dans ce fichier de configuration, on peut utiliser la commande `apt-add-repository`ou `add-apt-repository`. La ligne que nous voudrions rajouter dans `sources.list` est la suivante:
+`deb [arch=amd64] https://download.docker.com/linux/debian stretch stable` 
+qu'on pourrait rajouter à la main en tant que root ou qu'on pourrait rajouter en ligne de commande comme suit:
+```bash
+    patou@pc-pa:~$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+```
+- mise à jour des repository et installation de Docker (enfin)
+```bash
+    patou@pc-pa:~$ sudo apt-get update
+    Réception de:18 https://download.docker.com/linux/debian stretch/stable amd64 Packages [11,9 kB] 1 113 ko réceptionnés en 1s (1 028 ko/s)                                                         
+    Lecture des listes de paquets... Fait
+    patou@pc-pa:~$ sudo apt-get install docker-ce docker-ce-cli containerd.io
+    Lecture des listes de paquets... Fait
+    Construction de l'arbre des dépendances       
+    Lecture des informations d'état... Fait
+    Les paquets suivants ont été installés automatiquement et ne sont plus nécessaires :
+      gconf2 gksu libgksu2-0 libglade2-0 net-tools python-glade2 python-gobject python-notify rfkill
+    Veuillez utiliser « sudo apt autoremove » pour les supprimer.
+    The following additional packages will be installed:
+      aufs-dkms aufs-tools cgroupfs-mount dkms pigz
+    Paquets suggérés :
+      aufs-dev python3-apport menu
+    Les NOUVEAUX paquets suivants seront installés :
+      aufs-dkms aufs-tools cgroupfs-mount containerd.io dkms docker-ce docker-ce-cli pigz
+    0 mis à jour, 8 nouvellement installés, 0 à enlever et 4 non mis à jour.
+    Il est nécessaire de prendre 22,8 Mo/85,7 Mo dans les archives.
+    Après cette opération, 385 Mo d'espace disque supplémentaires seront utilisés.
+    Souhaitez-vous continuer ? [O/n]
+```
+A partir de ce moment, Docker est installé.
+
+- test de l'installation (installation d'une application helloworld):
+```bash
+    patou@pc-pa:~/Documents/docker_course$ sudo docker run hello-world
+```
+Si l'installation est OK, alors on verra le message `Hello from Docker!` en autres.
+On peut également, voir si l'image docker de 'Hello world' est bien installé par la commande suivante:
+```bash
+    patou@pc-pa:~/Documents/docker_course$ sudo docker run hello-world
+```
+```bash
+patou@pc-pa:~/Documents/docker_course$ sudo docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+hello-world         latest              fce289e99eb9        11 months ago       1.84kB
+```
+
+- Pour finir l'installation, on va donner les droits à notre compte utilisateur pour pouvoir manipuler les containers Docker. Cela nous permettra en tant qu'utilisateur de manipuler les containers. Cependant, cela posera aussi un problème de sécurité car cela pourrait permettre une escalation de privilège plus tard.
+```sh
+ patou@pc-pa:~/Documents/docker_course$ sudo usermod -aG docker $USER
+```
+
+### 2.b. Mise en place des répertoires de travail
+Par défaut, les fichiers dockers ne sont pas persistantes (tout est oublié/réinitialisé à chaque lancement du conteneur).
+L'intérêt de l'option -v (volume) de Docker est de créer une sorte de lien symbolique entre le conteneur et le système hôte, ainsi les fichiers modifiés par le conteneur seront persistés sur le système. En bref, nous pourrions, faire persister des configuration avec les liens symboliques.
+
+ Commençons donc par créer des répertoires pour le contenu que l'on souhaite modifier et conserver, en l'occurrence les fichiers du site et les bases de donnés : 
+ 
+ ```bash
+ mkdir -p ~/Documents/docker_cours/www ~/Documents/docker_cours/mysql
+ ```
+ ```bash
+ patou@pc-pa:~/Documents$ cd ~/Documents/docker_cours
+ ```
+ ```bash
+    patou@pc-pa:~/Documents/docker_cours$ tree
+    .
+    ├── mysql
+    └── www
+
+    2 directories, 0 files
+```
+
+### 2.c. Installation de la LAMPP Stack
+- <u>méthode simple (pour la documentation mais à ne pas faire)</u>
+
+    LAMPP peut être installé de deux manières (méthode simple et avancée)
+
+    La méthode simple consiste à juste télécharger un container tout prêt (à partir de https://hub.docker.com/r/lioshi/lamp/) et de l'utiliser. Ce container est basée sur *Debian Jessie, PHP 5, Apache 2,* et *MySQL*.
+    La commande pour la méthode simple est :
+    ```bash
+    docker run -v ~/Documents/docker_cours/www:/var/www/html -v ~/Documents/docker_cours/mysql:/var/lib/mysql -p 80:80 -p 3306:3306 --restart=always lioshi/lamp:php5
+    ```
+    L'option **-v** (volume) relie les répertoires locaux ~/Documents/docker_cours/www et ~/Documents/docker_cours/mysql aux répertoires /var/www/html et /var/lib/mysql de l'image Debian dans le conteneur.
+    L'option **-p** (port) relie les ports qui nous intéressent du conteneur aux ports de notre machine locale. Ici le port 80 (HTTP) et le port 3306 (MySQL).
+
+    L'option **–restart=always** permet de relancer le conteneur à chaque démarrage de Docker (donc au démarrage de l'ordinateur, la nouvelle LAMPP stack est toujours lancée). 
+
+    Quand cette commande est lancée, Linux télécharge le container et la LAMPP stack peut s'utiliser ensuite directement. On peut accéder à notre serveur web à partir de http://localhost
+    
+    La base de donnée sera alors sauvegardé sur ~/Documents/docker_cours/mysql.
+    PhpMyAdmin est accessible sur http://localhost/phpmyadmin
+    Avec cette image Docker l'utilisateur par défaut pour les bases de données devrait être **admin** avec le mot de passe **admin** (hôte localhost). 
+    
+- <u>méthode avancée</u>:
+    Il est recommandé d'avoir un container par executables autant que possible. Donc nous avons besoin d'une image pour *Apache* avec *PHP*, une image pour *MySQL* et une image pour *phpMyAdmin*. 
+        
+    Pour Apache/PHP nous allons choisir l'image fournie ici (https://hub.docker.com/r/lavoweb/php-5.6/).
+    Pour MySQL, nous pouvons prendre l'image fournie officiellement par MySQL, en version 5.5 (https://hub.docker.com/_/mysql/).
+    Pour phpMyAdmin, nous pouvons aussi choisir l'image officielle (https://hub.docker.com/r/phpmyadmin/phpmyadmin/).
+
+    #### 2.c.1.  Installation de docker-compose
+     `docker-compose`est un outil qui permet de combiner plusieurs containers en un seul container.
+     ```bash     
+     patou@pc-pa:~/Documents/docker_cours$ sudo apt-get install docker-compose
+     ```
+    #### 2.c.2.  Creation d'un fichier docker-compose.yml
+            
+    Le contenu de notre fichier `docker-compose.yml` est:
+    
+    ```
+    version: '2'
+
+    services:
+        web:
+            image: lavoweb/php-5.6
+            ports:
+                - "80:80"
+            volumes:
+                - ~/Documents/docker_cours/www:/var/www/html
+            links:
+                - db:db
+        db:
+            image: mysql:5.5
+            volumes:
+                - ~/Documents/docker_cours/mysql:/var/lib/mysql
+            ports:
+                - "3306:3306"
+            environment:
+                - MYSQL_ROOT_PASSWORD=root
+        myadmin:
+            image: phpmyadmin/phpmyadmin
+            ports:
+                - "8080:80"
+            links:
+                - db:db
+    ```
+    - Explication:
+        Les services sont des conteneurs: **web**, **db** et **myadmin** sont les noms qu'on décide de leur donner.
+
+        Ces noms sont utilisés pour créer des liens - **links** - entre les différents conteneurs. Par ex. **db:db** signifie que notre conteneur db (du nom de notre conteneur MySQL) correspondra à l'hôte db dans notre conteneur web. Pour se connecter au serveur MySQL il faudra donc entrer **db** comme nom d'hôte.
+
+        On peut également passer des variables d'environnements à nos conteneurs. Ici nous définissons le mot de passe de l'utilisateur MySQL root comme étant root (par `MYSQL_ROOT_PASSWORD` comme variable d'environnement)
+
+        Le paramètre **volumes** relie les répertoires locaux `~/Documents/docker_cours/www` et `~/Documents/docker_cours/mysql` aux répertoires `/var/www/html` de l'image Apache/PHP et `/var/lib/mysql` de l'image MySQL dans nos conteneurs. Cela correspond à l'options **-v** de la ligne de commande, décrit dans la méthode simple. 
+
+        Et le paramètre **ports** de la même manière que l'options **-p**, relie les ports qui nous intéressent de nos conteneurs aux ports de notre machine locale. Ici le port 80 (HTTP) et le port 3306 (MySQL). 
+    
+  #### 2.c.3.  Lancement des containers
+  
+  Une fois que le fichier yml est mis en place, on peut lancer les containers.
+    ```bash
+        patou@pc-pa:~/Documents/docker_cours$ sudo docker-compose up
+        Creating network "dockercours_default" with the default driver
+        Pulling db (mysql:5.5)...
+        5.5: Pulling from library/mysql
+        743f2d6c1f65: Pull complete
+        3f0c413ee255: Pull complete
+        aef1ef8f1aac: Pull complete
+        f9ee573e34cb: Pull complete
+        3f237e01f153: Pull complete
+        03da1e065b16: Pull complete
+        04087a801070: Pull complete
+        7efd5395ab31: Pull complete
+        1b5cc03aaac8: Pull complete
+        2b7adaec9998: Pull complete
+        385b8f96a9ba: Pull complete
+        Digest: sha256:12da85ab88aedfdf39455872fb044f607c32fdc233cd59f1d26769fbf439b045
+        Status: Downloaded newer image for mysql:5.5
+        Pulling myadmin (phpmyadmin/phpmyadmin:latest)...
+        latest: Pulling from phpmyadmin/phpmyadmin
+        000eee12ec04: Downloading [==========================>                        ]  14.23MB/27.09MB
+        8ae4f9fcfeea: Download complete
+        60f22fbbd07a: Downloading [========>                                          ]  12.87MB/76.65MB
+    ```
+    
+    Il faut attendre une peu que les images soient téléchargées, et c'est tout ! Notre serveur est en route. 
+    
+    (Je ne sais pas pourquoi mais mon serveur web n'arrivati pas à atteindre ma page sans reboot - peut-être à cause du fait que je viens d'installer docker from scratch)
+    
+    **<u>Rappel:</u>** 
+    Nous savons que les containers docker ne sont pas persistant par défaut. Cela siginifie que lorsque nous modifions le container en cours d'utilisation, ces modifications seront perdues si on redemarre le container.
+    Pour pouvoir rajouter des fichiers à notre LAMPP stack, nous avons donc utilisé la section "volumes" dans le fichier yml.
+    
+    #### 2.c.4.  Tester Apache
+    Pour tester apache, nous allons créer un fichier index.php dans `~/Documents/docker_cours/www`. 
+    On va aller dans un navigateur et taper `http://localhost` mais on n'aura rien en réponse car on n'a pas de page à voir.
+    ![Drag Racing](./portage_joomla/apache.png)
+    
+    Nous allons donc, juste créer un fichier `index.php` dedans afin de tester notre serveur web.
+    
+     ```php
+        <html>
+          <head>
+            <title></title>
+            <meta content="">
+            <style></style>
+          </head>
+          <body>
+            <?php
+                phpinfo();
+            ?>
+          </body>
+        </html>
+     ```
+    Après la création du fichier, il faut éteindre et redemarrer le seveur.
+    
+    ```bash 
+    patou@pc-pa:~/Documents/docker_cours$ docker-compose down
+    Stopping dockercours_web_1 ... done
+    Stopping dockercours_myadmin_1 ... done
+    Stopping dockercours_db_1 ... done
+    Removing dockercours_web_1 ... done
+    Removing dockercours_myadmin_1 ... done
+    Removing dockercours_db_1 ... done
+    Removing network dockercours_default
+    patou@pc-pa:~/Documents/docker_cours$ docker-compose up -d
+    Creating network "dockercours_default" with the default driver
+    Creating dockercours_db_1
+    Creating dockercours_myadmin_1
+    Creating dockercours_web_1
+    ```
+    
+    Et maintenant:
+    ![test apache](./portage_joomla/apache2.png)
+    
+    Et pour PhpMyAdmin, on a également localhost mais avec le port 8080 (voir fichier yml). Le login/mot de passe est: root root
+    
+    ![test apache](./portage_joomla/phpmyadmin.png)
+    
+    #### 2.c.5.  Accéder à notre stack LAMPP en ligne de commande
+    Il pourrait être utile de savoir comment accéder à chaque process de notre docker machine.
+    - Si je souhaiterais accéder à ma base SQL en ligne de commande:
+      il faut retrouver le nom du module dans le fichier `docker-compose.yml` (ici c'est `db`). La commande est la suivante, et le résultat est une console de commande en tant que `root` à notre machine linux qui contient le process de database.
+      
+        ```bash
+        patou@pc-pa:~/Documents/docker_cours$ docker-compose exec db /bin/bash
+        root@fc5b8b4b8c94:/# 
+
+        ```
+     Pour sortir de la machine, il faut taper `exit`. 
+     Nous allons essayer de nous connecter au processus `mysql`en mode console. Nous allons nous connecter en tant qu'utilisateur `root`
+        
+     ```bash
+        patou@pc-pa:~/Documents/docker_cours$ docker-compose exec db /bin/bash
+        root@fc5b8b4b8c94:/#mysql -u root -p
+        Enter password: 
+        Welcome to the MySQL monitor.  Commands end with ; or \g.
+        Your MySQL connection id is 1
+        Server version: 5.5.62 MySQL Community Server (GPL)
+
+        Copyright (c) 2000, 2018, Oracle and/or its affiliates. All rights reserved.
+
+        Oracle is a registered trademark of Oracle Corporation and/or its
+        affiliates. Other names may be trademarks of their respective
+        owners.
+
+        Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+        mysql>
+    ```
+     
+    On peut également afficher toutes les bases de données dans notre `MySQL`
+     ```bash
+        mysql> show databases;
+        +--------------------+
+        | Database           |
+        +--------------------+
+        | information_schema |
+        | mysql              |
+        | performance_schema |
+        +--------------------+
+        3 rows in set (0.00 sec)
+     ```
+     
+  - De la même manière, on pourra accéder au service web (apache), lire les fichiers de configurations (ou les modifier). Les modifications seront persistantes si on modifie la machine. ( à remarquer que les 2 fichiers que nous voyons ci-dessous sont nos )
+     ```bash
+        patou@pc-pa:~/Documents/docker_cours$ docker-compose exec web /bin/bash
+        root@f82fea97bcb2:/var/www/html# ls
+        index.html  index.php
+        root@f82fea97bcb2:/var/www/html# exit
+     ```
+
+### 2.d Installation de Joomla
+
+On télécharge joomla sur https://downloads.joomla.org/fr. Nous allons décompresser dans `www`, les fichiers fournis dans le fichier joomla.zip
+
+On relance nos serveurs par la commande `docker-compose up -d` et on va aller dans `http://locahost/` et le programme d'installation de joomla commence. Vous remplirez avec les informations qui correspondent à votre site. J'ai aussi mis `admin` et `admin` pour le compte super-utilisateur.(ATTENTION: si vous décompressez dans un répertoire, il faudra mettre ce répertoire dans l'adresse également `http://locahost/repertoire`)
+
+![install joomla](./portage_joomla/configuration_joomla_site.png)
+
+Et cliquez `suivant`
+  
+L'étape 2 consiste à configurer la base de données MySQL (le nom d'utilisateur de notre base MySQL est root - souvenez-vous et sont mot de passe est aussi root). 
+Pour tester nous allons garder cela (même si la plus raisonnable en terme de sécurité est de créer un utilisateur et de faire une commande SQL )
+J'ai nommé ma base de donnée `Omnifood`. Il faudra créer cette base en utilisant soit la ligne de commande `MySQL`soit `PhpMyAdmin`. Nous allons utiliser `phpMyAdmin` dans une autre page.
+
+![test apache](./portage_joomla/phpmyadmin_2.png). 
+
+Juste pour remarquer que nous avons bien la même base de donnée que ce que nous accédons en ligne de commande dans phpmyAdmin car on retrouve bien la même liste de bases de données dans PhpMyAdmin et dans MySQL en ligne de commande:
+
+![test db](./portage_joomla/bases_existants.png)
+
+
+
+Nous allons ensuite commencer par créer un utilisateur autre que root: que nous allons appeler `devsite` et dont le mote de passe est `devsite` et dans privileges, nous allons donner tous les droits pour commencer (plus tard, il faudra limiter ces droits)
+
+![test db](./portage_joomla/config_new_user.png)
+
+Cliquer ensuite sur `Executer` pour rajouter l'utilisateur. Deconnectez-vous de phpMyAdmin et reconnectez-vous avec l'utilisateur `developpeur`
+
+Nous allons ensuite créer une base de données. Pour ma part, elle s'appelera `Omnifood`. Cliquez sur le menu de gauche `Nouvelle base de donnée` et nommez votre base de donnée selon le site et cliquez sur créer. Pas besoin de créer des tables, car joomla va les créer.
+  
+![install joomla](./portage_joomla/configuration_joomla_db.png)
+  
+Le nom du serveur est le nom de la machine contenant la base de donnée (dans notrefichier yml, notre serveur de base de donnée est `db`. Le nom de la base est (pour moi) `Omnifood` et le nom d'utilisateur est `developpeur` et le mot de passe de cet utilisateur est `devsite`).
+
+Cliquez ensutie sur `Suivant`. Dans la troisième étape, ne rien toucher et cliquez sur `Suivant`. Et enfin dans l'étape 4, cliquez sur `Données d'exemple pour apprendre Joomla`  et cliquez sur `Installation`. Attendre la fin de l'installation.
+
+![install joomla](./portage_joomla/Joomla_installation_fini.png) 
+
+ATTENTION: BIEN LIRE les instructions de fin d'installation jusqu'à la fin car il y a des choses à faire.
+
+Une fois que l'installation est effectué, vous pourrez accéder à notre site sur `http://localhost/joomla/`
+et à l'interface d'administration sur `http://localhost/joomla/administrator`
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+     
