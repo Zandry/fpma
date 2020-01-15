@@ -320,14 +320,100 @@ L'intérêt de l'option -v (volume) de Docker est de créer une sorte de lien sy
 
 ### 2.d Installation de Joomla
 
-On télécharge joomla sur https://downloads.joomla.org/fr. Nous allons décompresser dans `www`, les fichiers fournis dans le fichier joomla.zip
+On télécharge joomla sur https://downloads.joomla.org/fr. Nous allons créer un répertoire joomla dans `www`, et y décompresser les fichiers fournis dans le fichier joomla.zip.
+Il faut ensuite s'assurer qu'on a les accès correctes. Pour cela, il faudra que joomla ait l'accès en écriture au répertoire et sous-répertoire dans joomla. 
 
-On relance nos serveurs par la commande `docker-compose up -d` et on va aller dans `http://locahost/` et le programme d'installation de joomla commence. Vous remplirez avec les informations qui correspondent à votre site. J'ai aussi mis `admin` et `admin` pour le compte super-utilisateur.(ATTENTION: si vous décompressez dans un répertoire, il faudra mettre ce répertoire dans l'adresse également `http://locahost/repertoire`)
+Relancer nos serveurs par la commande `docker-compose up -d`
+Ouvrez le serveur web en mode ligne de commande: c'est le service nommé `web` dans le fichier yml.
+   ```bash
+   patou@pc-pa:~/Documents/docker_cours/www$ docker-compose exec web /bin/bash
+   ```
+   à partir de là, nous avons une console en mode root qui est notre serveur web.
+   
+   ```bash
+   root@a0d8ce0e9193:/var/www/html# ls -la
+    total 13632
+    drwxr-xr-x  3 1000 1000     4096 Dec 29 11:57 .
+    drwxr-xr-x  1 root root     4096 Nov 22 15:47 ..
+    -rwxr-xr-x  1 1000 1000 13942196 Dec 20 10:28 Joomla_3.9.11-Stable-Full_Package.zip
+    -rwxr-xr-x  1 1000 1000       24 Dec 20 14:56 index.php
+    drwxr-xr-x 18 1000 1000     4096 Dec 29 11:57 joomla
+   root@a0d8ce0e9193:/var/www/html# cd joomla/
+   root@a0d8ce0e9193:/var/www/html/joomla# ls -la
+    total 116
+    drwxr-xr-x 18 1000 1000  4096 Dec 29 11:57 .
+    drwxr-xr-x  3 1000 1000  4096 Dec 29 11:57 ..
+    -rw-r--r--  1 1000 1000 18092 Dec 17 09:01 LICENSE.txt
+    -rw-r--r--  1 1000 1000  4793 Dec 17 09:01 README.txt
+    drwxr-xr-x 11 1000 1000  4096 Dec 29 11:57 administrator
+    drwxr-xr-x  2 1000 1000  4096 Dec 29 11:57 bin
+    drwxr-xr-x  2 1000 1000  4096 Dec 29 11:57 cache
+    drwxr-xr-x  2 1000 1000  4096 Dec 29 11:57 cli
+    drwxr-xr-x 20 1000 1000  4096 Dec 29 11:57 components
+    -rw-r--r--  1 1000 1000  3159 Dec 17 09:01 htaccess.txt
+    drwxr-xr-x  5 1000 1000  4096 Dec 29 11:57 images
+    drwxr-xr-x  2 1000 1000  4096 Dec 29 11:57 includes
+    -rw-r--r--  1 1000 1000  1420 Dec 17 09:01 index.php
+    drwxr-xr-x 14 1000 1000  4096 Dec 29 11:57 installation
+    drwxr-xr-x  4 1000 1000  4096 Dec 29 11:57 language
+    drwxr-xr-x  5 1000 1000  4096 Dec 29 11:57 layouts
+    drwxr-xr-x 12 1000 1000  4096 Dec 29 11:57 libraries
+    drwxr-xr-x 30 1000 1000  4096 Dec 29 11:57 media
+    drwxr-xr-x 27 1000 1000  4096 Dec 29 11:57 modules
+    drwxr-xr-x 19 1000 1000  4096 Dec 29 11:57 plugins
+    -rw-r--r--  1 1000 1000   829 Dec 17 09:01 robots.txt.dist
+    drwxr-xr-x  5 1000 1000  4096 Dec 29 11:57 templates
+    drwxr-xr-x  2 1000 1000  4096 Dec 29 11:57 tmp
+    -rw-r--r--  1 1000 1000  1859 Dec 17 09:01 web.config.txt
+   root@a0d8ce0e9193:/var/www/html/joomla# 
+   ```
+   On remarque que seul le propriétaire du répertoire (donc l'utilisateur créateur) peut écrire dedans (pour plus de compréhension, voir ici: https://www.it-connect.fr/les-droits-sous-linux ). Il faudra donner les droits d'écriture aux `autres` utilisateurs. 
+   
+   ```bash
+   root@a0d8ce0e9193:/var/www/html# chmod 777 -R joomla/
+   root@a0d8ce0e9193:/var/www/html# ls -la
+    total 13632
+    drwxr-xr-x  3 1000 1000     4096 Dec 29 11:57 .
+    drwxr-xr-x  1 root root     4096 Nov 22 15:47 ..
+    -rwxr-xr-x  1 1000 1000 13942196 Dec 20 10:28 Joomla_3.9.11-Stable-Full_Package.zip
+    -rwxr-xr-x  1 1000 1000       24 Dec 20 14:56 index.php
+    drwxrwxrwx 18 1000 1000     4096 Dec 29 11:57 joomla
+   root@a0d8ce0e9193:/var/www/html# cd joomla
+   root@a0d8ce0e9193:/var/www/html/joomla# ls -la
+    total 116
+    drwxr-xr-x 18 1000 1000  4096 Dec 29 11:57 .
+    drwxr-xr-x  3 1000 1000  4096 Dec 29 11:57 ..
+    -rwxrwxrwx  1 1000 1000 18092 Dec 17 09:01 LICENSE.txt
+    -rwxrwxrwx  1 1000 1000  4793 Dec 17 09:01 README.txt
+    drwxrwxrwx 11 1000 1000  4096 Dec 29 11:57 administrator
+    drwxrwxrwx  2 1000 1000  4096 Dec 29 11:57 bin
+    drwxrwxrwx  2 1000 1000  4096 Dec 29 11:57 cache
+    drwxrwxrwx  2 1000 1000  4096 Dec 29 11:57 cli
+    drwxrwxrwx 20 1000 1000  4096 Dec 29 11:57 components
+    -rwxrwxrwx  1 1000 1000  3159 Dec 17 09:01 htaccess.txt
+    drwxrwxrwx  5 1000 1000  4096 Dec 29 11:57 images
+    drwxrwxrwx  2 1000 1000  4096 Dec 29 11:57 includes
+    -rwxrwxrwx  1 1000 1000  1420 Dec 17 09:01 index.php
+    drwxrwxrwx 14 1000 1000  4096 Dec 29 11:57 installation
+    drwxrwxrwx  4 1000 1000  4096 Dec 29 11:57 language
+    drwxrwxrwx  5 1000 1000  4096 Dec 29 11:57 layouts
+    drwxrwxrwx 12 1000 1000  4096 Dec 29 11:57 libraries
+    drwxrwxrwx 30 1000 1000  4096 Dec 29 11:57 media
+    drwxrwxrwx 27 1000 1000  4096 Dec 29 11:57 modules
+    drwxrwxrwx 19 1000 1000  4096 Dec 29 11:57 plugins
+    -rwxrwxrwx  1 1000 1000   829 Dec 17 09:01 robots.txt.dist
+    drwxrwxrwx  5 1000 1000  4096 Dec 29 11:57 templates
+    drwxrwxrwx  2 1000 1000  4096 Dec 29 11:57 tmp
+    -rwxrwxrwx  1 1000 1000  1859 Dec 17 09:01 web.config.txt
+   ```
+
+On va aller dans `http://locahost/joomla` et le programme d'installation de joomla commence. Vous remplirez avec les informations qui correspondent à votre site. J'ai aussi mis `admin` et `admin` pour le compte super-utilisateur.(ATTENTION: si vous décompressez dans un autre répertoire, il faudra mettre ce répertoire dans l'adresse également `http://locahost/repertoire`)
 
 ![install joomla](./portage_joomla/configuration_joomla_site.png)
 
 Et cliquez `suivant`
-  
+Avant d'aller créer la base de donnée, pensez à vérifier dans phpmyadmin (`http://localhost:8080`) que la base de donnée que vous souhaitez créer n'est pas déjà existant.
+
 L'étape 2 consiste à configurer la base de données MySQL (le nom d'utilisateur de notre base MySQL est root - souvenez-vous et sont mot de passe est aussi root). 
 Pour tester nous allons garder cela (même si la plus raisonnable en terme de sécurité est de créer un utilisateur et de faire une commande SQL )
 J'ai nommé ma base de donnée `Omnifood`. Il faudra créer cette base en utilisant soit la ligne de commande `MySQL`soit `PhpMyAdmin`. Nous allons utiliser `phpMyAdmin` dans une autre page.
@@ -350,9 +436,16 @@ Nous allons ensuite créer une base de données. Pour ma part, elle s'appelera `
   
 ![install joomla](./portage_joomla/configuration_joomla_db.png)
   
-Le nom du serveur est le nom de la machine contenant la base de donnée (dans notrefichier yml, notre serveur de base de donnée est `db`. Le nom de la base est (pour moi) `Omnifood` et le nom d'utilisateur est `developpeur` et le mot de passe de cet utilisateur est `devsite`).
+Le nom du serveur est le nom de la machine contenant la base de donnée (dans notrefichier yml, notre serveur de base de donnée est `db`. Le nom de la base est (pour moi) `Omnifood` et le nom d'utilisateur est `developpeur` et le mot de passe de cet utilisateur est `devsite`). 
 
-Cliquez ensutie sur `Suivant`. Dans la troisième étape, ne rien toucher et cliquez sur `Suivant`. Et enfin dans l'étape 4, cliquez sur `Données d'exemple pour apprendre Joomla`  et cliquez sur `Installation`. Attendre la fin de l'installation.
+
+
+Un dernier détail: il faut rajouter la ligne ci-dessous à nos services docker pour désactiver la vérification que fait Joomla sur les bases de données docker:
+   ```
+   environment:
+        - JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
+   ```
+Cliquez ensuite sur `Suivant`. Dans la troisième étape, ne rien toucher et cliquez sur `Suivant`. Et enfin dans l'étape 4, cliquez sur `Aucune donnée exemple`  et cliquez sur `Installation`. Attendre la fin de l'installation.
 
 ![install joomla](./portage_joomla/Joomla_installation_fini.png) 
 
@@ -361,15 +454,54 @@ ATTENTION: BIEN LIRE les instructions de fin d'installation jusqu'à la fin car 
 Une fois que l'installation est effectué, vous pourrez accéder à notre site sur `http://localhost/joomla/`
 et à l'interface d'administration sur `http://localhost/joomla/administrator`
   
+Remarque: Après l'installation de Joomla, on rencontre une erreur de version de php quand on rentre sur l'interface d'administration. Il faut remplacer la version de php par la version 7.3 pour se débarasser de ces erreurs. 
+
+Après plusieurs essais avec différentes version de PHP, on rencontre un problème d'accès à la base MSySQL. 
+Il faut alors qu'on remplace également notre base de donnée par une version de MariaDB.
+
+Nous allons alors remplacer notre ficher docker-compose.yml comme ceci:
+   ```
+    version: '2.0'
+    services:
+            web:
+                image: lavoweb/php-7.3
+                ports:
+                    - "80:80"
+                volumes:
+                    - ~/Documents/docker_cours/www:/var/www/html
+                links:
+                    - db:db
+                environment:
+                    - JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
+            db:
+                image: mariadb:10.4
+                volumes:
+                    - ~/Documents/docker_cours/mysql:/var/lib/mysql
+                ports:
+                    - "3306:3306"
+                environment:
+                    - MYSQL_ROOT_PASSWORD=root
+                    - JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
+            myadmin:
+                image: phpmyadmin/phpmyadmin
+                ports:
+                    - "8080:80"
+                links:
+                    - db:db
+                environment:
+                    - JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
+   ```
   
+  Nous avons remplacé la version de php par la version 7.3 et la base de donnée par MariaDB version 10.4.
   
+  Ensuite, il nous faudra supprimer Joomla dans le répertoire www afin d'en installer une nouvelle après avoir recomposer notre machine docker par `docker-compose up -d` (`-d` signifie en mode détaché, c'est à dire que les services tournent en tâche de fond sans acaparer une console entière). Refaire ensuite toute la partie installation de Joomla en s'assurant de ne pas mettre le site exemple .
   
+  A ce stade, vous devriez avoir un joomla installé et configuré (prêt à l'utilisation). 
+  Vous devriez pouvoir tester cela sur `http://localhost/joomla/`, qui devrait nous donner un site exemple vide.
   
-  
-  
-  
-  
-  
+  ![install joomla](./portage_joomla/joomla_site_vide.png) 
+
+  ## 3. Portage du template
   
   
   
