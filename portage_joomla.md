@@ -500,12 +500,97 @@ Nous allons alors remplacer notre ficher docker-compose.yml comme ceci:
   Vous devriez pouvoir tester cela sur `http://localhost/joomla/`, qui devrait nous donner un site exemple vide.
   
   ![install joomla](./portage_joomla/joomla_site_vide.png) 
+  
+  <u>Remarque:</u>:
+  S'il vous arrive d'avoir les warnings suivants:
+  
+  ```bash
+    patou@pc-pa:~/Documents/docker_cours$ docker-compose up -d
+    Creating dockercours_db_1
+    WARNING: Connection pool is full, discarding connection: localhost
+    Creating dockercours_web_1
+    WARNING: Connection pool is full, discarding connection: localhost
+    Creating dockercours_myadmin_1
+  ```
+  
+  La solution est la suivante: 
+  
+  ```bash
+  patou@pc-pa:~/Documents/docker_cours$ export DOCKER_CLIENT_TIMEOUT=120
+  patou@pc-pa:~/Documents/docker_cours$ docker-compose up -d
+  dockercours_db_1 is up-to-date
+  dockercours_web_1 is up-to-date
+  dockercours_myadmin_1 is up-to-date 
+  ```
+   Plus de warning. Pour plus d'information, la doc est ici (https://github.com/docker/compose/issues/1045)
+  
+  ## 3. Formation Joomla pour commencer
+  
+  
+  Avant de commencer, il faut savoir que ce cours est déjà assez ancien et fonctionne avc php5 et mysql5. il nous faudra donc modifier notre fichier `docker-compose.yml` comme suit:
+  
+  ```conf
+version: '2'
+services:
+    web:
+        image: lavoweb/php-5.6
+        ports:
+            - "80:80"
+        volumes:
+            - ~/Documents/docker_cours/www:/var/www/html
+        links:
+            - db:db
+        environment:
+            - JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
+    db:
+        image: mysql:5.7
+        volumes:
+            - ~/Documents/docker_cours/mysql5:/var/lib/mysql
+        ports:
+            - "3306:3306"
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
+    myadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - "8080:80"
+        links:
+            - db:db
+        environment:
+            - JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
+  ```
+  
+  et relancer `docker-compose up -d`.
+  
+  ### 3.1. Restauration d'un site joomla à partir d'une sauvegarde
+  Nous allons commencer par comprendre comment on peut restorer un site dans Joomla.
+  (Avant d'apprendre à sauvegarder notre site, nous allons déjà apprendre ) le restaurer.
+  
+  Un site Joomla sauvegardé est composé de deux éléments: 
+    - un fichier d'installation de joomla (zippé) qui contient déjà un site.
+    - un fichier base de donnée (*.sql).
+  
+  Les 2 fichiers seront fournies en attachement à ce chapitre avec le commit.
+  
+  - Pour restaurer le site, il suffit de dezipper le fichier et de copier le fichier dans la racine du répertoire où nous mettons nos installations de Joomla (pour nous ce sera `www`) - Nous allons garder le nom du répertoire `01_05`. Si vosu lancer votre serveur LAMPP (dans docker) et que vous essayez d'utiliser le site, il y aura un problème car le site n'a pas de base de donnée (essayer d'entrer dans un navigateur `http://localhost/01_05`, vous aurez un message d'erreur  concernant la fonction `session_start()`).
+  - Nous allons donc restaurer également la base de donnée de ce site. 
+    * ouvrir phpmyadmin (`http://localhost:8080`), cliquez sur l'onglet `base de donnée`.
+    * ouvrir le fichier `01_05/configuration.php` dans un éditeur et cherchez dans ce fichier le nom de la base de donnée et les mots de passe de la base de donnée. Nous nous interessons particulièrement aux données suivantes: 
+    
+    ``` java
+        public $user = 'root';
+        public $password = '';
+        public $db = 'joomla';
+    ```
+    On va modifier `$password='root'`.
+    * il nous faut également créer manuellement la base de donnée `joomla` dans phpmyadmin. Pour cela, cliquez, sur l'onglet `Base de données` et entrer le nom de la base de donnée (joomla) et cliquez sur `Créer`.
+    
+      ![install joomla](./portage_joomla/import_db_site_joomla.png)
+    * Vous allez alors trouver sur la partie de droite, la base de donnée nouvellement créée. Il faut maintenant importer le fichier sql. Pour cela, cliquez sur la base de donnée `joomla` et ensuite dans l'onglet `importer`. Ensuite vous avez un bouton `Parcourir...`et trouver le fichier `01_05.sql`. Ensuite tout en bas  de la page, cliquer sur `Executer`. Si tout s'est bien passé, on aura: `L'importation a réussi`.
 
-  ## 3. Portage du template
-  
-  
-  
-  
-  
+    * enfin, en entrant sur le liens `localhost/01_05`, on a le site KinetECO qui s'affiche comme suit:
+     ![install joomla](./portage_joomla/kinetECO_empty_site.png)
+    
 
      
