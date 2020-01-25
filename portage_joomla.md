@@ -614,18 +614,21 @@ _ Modifier l'option `Site Offline` à `Yes`. Cela permettra de mettre un login �
 - Le dernier onglet est `Text filter`, que nous verrons en détails également plus tard.
 
 
+#### c. Utilisation du `Media manager`
+Le `media manager` est l'interface qui vous permettra d'uploader des fichiers images (ou pdf) que vous servirez sur le site pour les usagers du site. C'est également à cet endroit que vous pourrez organiser ces documents par dossier.
+Pour y accéder `System > Control Panel` et choisir `Media Manager`dans la partie de droite (ou à partir du menu `Content > Media Manager`). Par défaut, on a la structure qui s'affiche pour tous les sites.
 
+(Prendre le fichier training.zip et décompresser dans un répertoire où vous pourrez y accéder)
+Dans le répertoire racine, nous allons commencer par créer un répertoire nommé `blog`, en cliquant sur `create folder`. Ensuite, nous allons uploader les fichiers images qui sont dans `Exercise Files/Chapter 2/02_04/` et cliquez sur `Start Upload`. 
 
+#### d. Creation d'un contenu sous Joomla 
 
+Il faut les trois étapes CAM:
+- créer une catégorie
+- créer un article
+- créer un menu pour lier avec l'article
 
-
-
-
-
-
-
-
-
+L'ordre de ces étapes sont importantes car les données sont enregistrés dans la base de donnée. Il faut donc respecter l'ordre CAM.
 
 
 
