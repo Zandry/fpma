@@ -500,12 +500,140 @@ Nous allons alors remplacer notre ficher docker-compose.yml comme ceci:
   Vous devriez pouvoir tester cela sur `http://localhost/joomla/`, qui devrait nous donner un site exemple vide.
   
   ![install joomla](./portage_joomla/joomla_site_vide.png) 
+  
+  <u>Remarque:</u>:
+  S'il vous arrive d'avoir les warnings suivants:
+  
+  ```bash
+    patou@pc-pa:~/Documents/docker_cours$ docker-compose up -d
+    Creating dockercours_db_1
+    WARNING: Connection pool is full, discarding connection: localhost
+    Creating dockercours_web_1
+    WARNING: Connection pool is full, discarding connection: localhost
+    Creating dockercours_myadmin_1
+  ```
+  
+  La solution est la suivante: 
+  
+  ```bash
+  patou@pc-pa:~/Documents/docker_cours$ export DOCKER_CLIENT_TIMEOUT=120
+  patou@pc-pa:~/Documents/docker_cours$ docker-compose up -d
+  dockercours_db_1 is up-to-date
+  dockercours_web_1 is up-to-date
+  dockercours_myadmin_1 is up-to-date 
+  ```
+   Plus de warning. Pour plus d'information, la doc est ici (https://github.com/docker/compose/issues/1045)
+  
+  ## 3. Formation Joomla pour commencer
+  
+  
+  Avant de commencer, il faut savoir que ce cours est déjà assez ancien et fonctionne avc php5 et mysql5. il nous faudra donc modifier notre fichier `docker-compose.yml` comme suit:
+  
+  ```conf
+version: '2'
+services:
+    web:
+        image: lavoweb/php-5.6
+        ports:
+            - "80:80"
+        volumes:
+            - ~/Documents/docker_cours/www:/var/www/html
+        links:
+            - db:db
+        environment:
+            - JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
+    db:
+        image: mysql:5.7
+        volumes:
+            - ~/Documents/docker_cours/mysql5:/var/lib/mysql
+        ports:
+            - "3306:3306"
+        environment:
+            - MYSQL_ROOT_PASSWORD=root
+            - JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
+    myadmin:
+        image: phpmyadmin/phpmyadmin
+        ports:
+            - "8080:80"
+        links:
+            - db:db
+        environment:
+            - JOOMLA_INSTALLATION_DISABLE_LOCALHOST_CHECK=1
+  ```
+  
+  et relancer `docker-compose up -d`.
+  
+  ### 3.1. Restauration d'un site joomla à partir d'une sauvegarde
+  Nous allons commencer par comprendre comment on peut restorer un site dans Joomla.
+  (Avant d'apprendre à sauvegarder notre site, nous allons déjà apprendre ) le restaurer.
+  
+  Un site Joomla sauvegardé est composé de deux éléments: 
+    - un fichier d'installation de joomla (zippé) qui contient déjà un site.
+    - un fichier base de donnée (*.sql).
+  
+  Les 2 fichiers seront fournies en attachement à ce chapitre avec le commit.
+  
+  - Pour restaurer le site, il suffit de dezipper le fichier et de copier le fichier dans la racine du répertoire où nous mettons nos installations de Joomla (pour nous ce sera `www`) - Nous allons garder le nom du répertoire `01_05`. Si vosu lancer votre serveur LAMPP (dans docker) et que vous essayez d'utiliser le site, il y aura un problème car le site n'a pas de base de donnée (essayer d'entrer dans un navigateur `http://localhost/01_05`, vous aurez un message d'erreur  concernant la fonction `session_start()`).
+  - Nous allons donc restaurer également la base de donnée de ce site. 
+    * ouvrir phpmyadmin (`http://localhost:8080`), cliquez sur l'onglet `base de donnée`.
+    * ouvrir le fichier `01_05/configuration.php` dans un éditeur et cherchez dans ce fichier le nom de la base de donnée et les mots de passe de la base de donnée. Nous nous interessons particulièrement aux données suivantes: 
+    
+    ``` java
+        public $user = 'root';
+        public $password = '';
+        public $db = 'joomla';
+    ```
+    On va modifier `$password='root'`.
+    * il nous faut également créer manuellement la base de donnée `joomla` dans phpmyadmin. Pour cela, cliquez, sur l'onglet `Base de données` et entrer le nom de la base de donnée (joomla) et cliquez sur `Créer`.
+    
+      ![install joomla](./portage_joomla/import_db_site_joomla.png)
+    * Vous allez alors trouver sur la partie de droite, la base de donnée nouvellement créée. Il faut maintenant importer le fichier sql. Pour cela, cliquez sur la base de donnée `joomla` et ensuite dans l'onglet `importer`. Ensuite vous avez un bouton `Parcourir...`et trouver le fichier `01_05.sql`. Ensuite tout en bas  de la page, cliquer sur `Executer`. Si tout s'est bien passé, on aura: `L'importation a réussi`.
 
-  ## 3. Portage du template
-  
-  
-  
-  
-  
+    * enfin, en entrant sur le liens `localhost/01_05`, on a le site KinetECO qui s'affiche comme suit:
+     ![install joomla](./portage_joomla/kinetECO_empty_site.png).
+    
+#### a. Tour rapide de l'interface Joomla (on le fera ensemble-pas besoin de doc)
+L'idée est de voir un à un les menus de Joomla et de comprendre le rôle de ces menus.
 
-     
+#### b. Configuration du site KinetECO dans Joomla
+Ouvrez le backend de Joomla et allez dans Global Configuration (ou Menu Système > Global Configuration). Vous avez alors la possibilité de voir toutes les configurations du site. 
+
+![config joomla](./portage_joomla/Global_configuration_joomla.png).
+
+- Commencer par changer le nom du site de `KinetECO` à `KinetECO, Inc.` dans la zone `Site Name`.
+_ Modifier l'option `Site Offline` à `Yes`. Cela permettra de mettre un login à notre site si le site est maintenance et donc seul les personnes qui ont un login auront accès au site. (testez-le mais remettez l'option à `No` un fois que vous aurez fini de tester, pour avoir plus de faciliter à travailler en local).  
+<br>Dans les options qui suivent, on peut également customiser un message d'erreur à afficher lorsque le site est en maintenance.
+- <u>Sur la partie de droite on a `Search Engine Friendly URLs`</u> qui permet d'avoir des URL qui sont optimisés pour être référencés par les moteurs de recherche.
+- <u>L'option `Include Site Name in Page Titles`</u>: est une option importante à activer. Cela permet d'avoir le nom du site avec le titre de la page. En effet, si vous ouvrez la page d'accueil de notre site, on a `Home` à l'onglet de notre page. Cependant, ce titre n'est pas un titre très descriptif de notre site. De plus, les moteurs de recherche donnent des points aux mots et si le titre n'est pas descriptif de notre site, il ne sert à rien. Il en est de même pour les favoris: si j'essaye de mettre cette page en favori, il y aura un titre `Home` dans mes favoris mais rien de très descriptif de ce que c'est. Pour toutes ces raisons, nous allons activer cette option à `Before` et sauvegarder la modification (bouton `Save` en dessus). Tester la modification en rafraichissant la page et vous verrez que le titre de la page sera `KinetECO,Inc. Home` (au lieu de `Home`).
+- <u>Configuration des méta-data</u>: Dans la partie `Metadata Setting`, on peut configurer les metadata. et rajouter des mots clés ou des descriptions. Pour KinetEco, nous avons un fichier avec des metadata dans `Exercise Files/Chapter 2/02_03/meta description.txt`. Copier le contenu de ce fichier dans `Site Meta Description`. Ce méta description apparaitra sur toutes les pages de notre site suf si on décide de surcharger articles par articles (donc page par page) en définissant une meta description pour chaque article. Les meta description des sites doivent être courts et simple car ils sont utilisés par les moteurs de recherche pour référencer le site.
+
+- Dans l'onglet `System` de l'option `Global Configuration`, on a `Session Settings`, et on y trouve `Session lifetime`, c'estle temps pour laquelle vous êtes loggé et si vous êtes inactif pendant le temps fourni, votre session est deconnecté. 
+- Dans l'onglet `Server`, on a la possibilité de changer le fuseau horaire. Dans notre cas, on pourra choisir `Paris`au lieu de `UTC`. 
+- On y retrouve également `Mail setting`. Il n'est pas recommandé de toucher aux configurations de `FTP` et de `Database`.
+- Dans l'onglet `Permissions`, il existe plein de configuration que nous verrons en détails lorsque nous verrons les ACL (Access Control List).
+- Le dernier onglet est `Text filter`, que nous verrons en détails également plus tard.
+
+
+#### c. Utilisation du `Media manager`
+Le `media manager` est l'interface qui vous permettra d'uploader des fichiers images (ou pdf) que vous servirez sur le site pour les usagers du site. C'est également à cet endroit que vous pourrez organiser ces documents par dossier.
+Pour y accéder `System > Control Panel` et choisir `Media Manager`dans la partie de droite (ou à partir du menu `Content > Media Manager`). Par défaut, on a la structure qui s'affiche pour tous les sites.
+
+(Prendre le fichier training.zip et décompresser dans un répertoire où vous pourrez y accéder)
+Dans le répertoire racine, nous allons commencer par créer un répertoire nommé `blog`, en cliquant sur `create folder`. Ensuite, nous allons uploader les fichiers images qui sont dans `Exercise Files/Chapter 2/02_04/` et cliquez sur `Start Upload`. 
+
+#### d. Creation d'un contenu sous Joomla 
+
+Il faut les trois étapes CAM:
+- créer une catégorie
+- créer un article
+- créer un menu pour lier avec l'article
+
+L'ordre de ces étapes sont importantes car les données sont enregistrés dans la base de donnée. Il faut donc respecter l'ordre CAM.
+
+
+
+
+
+
+
+
