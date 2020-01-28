@@ -685,7 +685,7 @@ Pour créer un article, il faut aller dans l'`article manager`. L'article manage
 
 - Je vais commencer par créer mon article `About` et donc taper `About` dans la zone `Title` et choisir une catégorie `About`. C'est pour cela qu'il faut d'abord créer une catégorie avant les articles. Je vais récupérer les articles dans `portage_joomla/Chapter 4/04_01`. Prendre le fichier `About us copy.txt`. Copier toute la partie `Mission statements` et `Company description` dans le corps de l'article comme suit. Il faut penser à bien nettoyer les caractères bizarres qui sont dans l'éditeur.
 
-![cat_manager](./portage_joomla/articles_about_us.png).
+![cat_manager](./portage_joomla/articles_about_us.png)
 
 Cliquer ensuite sur `Save and New` pour en créer un autre. 
 
@@ -693,3 +693,28 @@ Toujours dans la catégorie `About`, nous allons créer un autre article avec co
 Cliquer `Save and New`, une fois fini et continuer avec ̀`Executives` et son contenu dans le fichier texte.
 
 - Continuons ensuite avec les articles dans le fichier `Products copy.txt`. Pour chaque titre, nous allons créer un article dans la catégorie `Product`.
+
+Après ce stade, vous devriez avoir des articles comme suit, dans Joomla:
+
+![cat_manager](./portage_joomla/articles_fini.png)
+
+#### b. Formattage des articles
+Aller dans `Article Manager`. Cliquer sur l'article `About` pour le mettre en forme. Cela va ouvrir l'editeur de texte de Joomla. 
+
+Nous allons essayer de mettre le titre `Mission statement`en heading 1 (balise H1). Pour cela, nous allons procéder comme dans Word. Selectionner le texte et cliquer sur Paragraph et choisir ensuite `Heading 2`. On se rend compte que cela met en `<h1>` tout le texte.
+
+Avant de continuer, il est important de comprendre que dans l'editeur de Joomla, le texte qu'on voit n'est pas le texte qui est rangé dans la base de donnée. Pour voir ce qui est rangé dans la base de donnée, on peut cliquer sur le bouton `Toggle editor`.
+
+Cela nous permet de voir qu'une balise `<p>` `</p>` existe entre le début et la fin de tout le texte. 
+Pour que la mise en forme fonctionne, il faut que les paragrapahes soient entre les éléments. Pour cela, mettre le curseur devant le mot KinetECO et taper `backspace` deux fois pour que ce texte monte jusqu'à 'Mission statement'. Ensuite redescendez de deux lignes. Faites de même pour tous les paragraphes à créer en dessous.  
+
+Reessayer de selectionner le titre et choisir heading 1 dans la liste et là, le titre devrait être un peu plus gras tout seul. On peut revérifier avec `Toggle` 
+Mettre le titre en `<h2>`et le texte en paragraph. et cliquer sur `Save and close`.
+
+Faire la même chose pour l'article `Executives`. 
+
+
+Ouvrir l'article `Company structure` et mettre ̀`KinetEco, Inc. Administrative Headquarters` en italic et souligné. Faire de même tous les débuts de paragraphe: Pour `KinetEco, Inc. Laboratories`, `KinetEco, Inc.`, `KinetEco, Inc.`
+
+#### c. Configuration de l'éditeur de texte
+Allez dans le menu `Extension > Plugin Manager`. Dans la liste, choisir ` Editor - TinyMCE `.  Passer dans l'onglet `Basic options` et Modifier `Functionality` à `Extended`. Ensuite revenez dans l'Article Manager (Rappel: Content > Article Manager et choisir un article). On obtiendra un ̀`Article Manager` un peu plus élaboré avec plus d'outils..
