@@ -644,7 +644,7 @@ L'ordre de ces étapes sont importantes car les données sont enregistrés dans 
  Le contenu de fichier `sitemap` est:
  
  ```txt
-     Home - Uncategorized category
+    Home - Uncategorized category
 
     Products - Products category
 
@@ -678,5 +678,18 @@ Ensuite cliquer sur `Select Status` et choisir `Trashed`. Ensuite, il faut le se
 Pour le restaurer, il faut aller dans le status `Trashed` et cliquer sur le petit bouton `poubelle` à gauche (Publish item). L'objet reviendra dans la liste des objets `published`.
 
 
+### 3.2. Gestion des articles
 
+#### a. Creation d'articles
+Pour créer un article, il faut aller dans l'`article manager`. L'article manager peut se trouver dans `Content>Article Manager`. Pour créer un article, cliquer sur le bouton `New` en vert.
 
+- Je vais commencer par créer mon article `About` et donc taper `About` dans la zone `Title` et choisir une catégorie `About`. C'est pour cela qu'il faut d'abord créer une catégorie avant les articles. Je vais récupérer les articles dans `portage_joomla/Chapter 4/04_01`. Prendre le fichier `About us copy.txt`. Copier toute la partie `Mission statements` et `Company description` dans le corps de l'article comme suit. Il faut penser à bien nettoyer les caractères bizarres qui sont dans l'éditeur.
+
+![cat_manager](./portage_joomla/articles_about_us.png).
+
+Cliquer ensuite sur `Save and New` pour en créer un autre. 
+
+Toujours dans la catégorie `About`, nous allons créer un autre article avec comme titre `Company structure` et le contenu est toujours dans le fichier `About us copy.txt`. 
+Cliquer `Save and New`, une fois fini et continuer avec ̀`Executives` et son contenu dans le fichier texte.
+
+- Continuons ensuite avec les articles dans le fichier `Products copy.txt`. Pour chaque titre, nous allons créer un article dans la catégorie `Product`.
