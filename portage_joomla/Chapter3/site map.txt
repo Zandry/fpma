@@ -1,0 +1,15 @@
+Home - Uncategorized category
+
+Products - Products category
+
+News & Info - News category
+   Solar Blog - Solar category
+   Press Releases - Press Release category
+
+About - About category
+    Company Structure - About category
+    Executives - About category
+
+Links - Weblinks component, no category needed
+
+Contact Us - Contact component, no category needed

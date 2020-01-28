@@ -630,9 +630,52 @@ Il faut les trois étapes CAM:
 
 L'ordre de ces étapes sont importantes car les données sont enregistrés dans la base de donnée. Il faut donc respecter l'ordre CAM.
 
+ ### 3.2. Catégorization des éléments du site
+ 
+ #### a. Creation des catégories dans Joomla
+ La catégorization permet de définir les divers sections du site.
+ Si à première vue, un menu conduit vers un ou plusieurs articles alors, il nous faut lui définir une catégorie pour cette section. Surtout si l'article est succeptible de changer dans le temps. 
+ Egalement, si les sous-menu conduisent vers un ou plusieurs articles, alors, leur définir des sous-catégories.
+  
+ Pour le moment, nous allons définir des catégories pour chaque Menu de notre site (même si ces menus n'ouvrent pas de nouveaux articles mais conduisent à ds emplacements différentes sur notre page).
 
+ Pour commencer, c'est une bonne idée de commencer avec votre sitemap (qu'il faudra construire si on n'en a pas). 
+ Pour le site KinetEco, on peut trouver son sitemap dans `portage joomla > Chapter3 > site map.txt`. 
+ Le contenu de fichier `sitemap` est:
+ 
+ ```txt
+     Home - Uncategorized category
 
+    Products - Products category
 
+    News & Info - News category
+       Solar Blog - Solar category
+       Press Releases - Press Release category
+
+    About - About category
+        Company Structure - About category
+        Executives - About category
+
+    Links - Weblinks component, no category needed
+
+    Contact Us - Contact component, no category needed
+  ```
+ 
+ Nous allons donc créer les catégories qui sont dans ce fichier sitemap. 
+ Pour cela, cliquez sur le bouton vert `New` et entrer le nom de la catégorie. Seul le nom est obligatoire, le reste est optionel. Ensuite, cliquez sur `Save and New` et continuez à créer toutes les autres catégories. Pour les sous-catégories de `News`, il faut choisir l'option `Parent` (dans la partie `Détails` en dessous du formulaire de création) et choisir le parent correct (en l'occurence, pour les sous-catégories de `News`, le parent est donc `News`).
+ 
+ 
+En revenant dans `Content>Category Manager`, vous devriez  avoir:
+
+![cat_manager](./portage_joomla/cat_manager.png).
+ 
+ 
+#### b. Suppression catégories Joomla
+Pour supprimer une catégorie, il faut passer par le ̀`Catégory Manager`, Cochez la petite checkbox à gauche et cliquer sur le bouton `Trash` dans la barre d'outil en dessus. La catégorie qu'on vient de supprimer est mis dans une catégorie spécifique invisible appelé `Trashed`. On peut le récupérer jusqu'à ce qu'on décide de le supprimer définitivement de cette catégorie. 
+Pour le supprimer défitivement, il faut aller dans la partie filter (à gauche dans le Category Manager). 
+Ensuite cliquer sur `Select Status` et choisir `Trashed`. Ensuite, il faut le selectionner en cochant la checkbox à gauche, et cliquer sur le bouton `Empty Trash`.
+
+Pour le restaurer, il faut aller dans le status `Trashed` et cliquer sur le petit bouton `poubelle` à gauche (Publish item). L'objet reviendra dans la liste des objets `published`.
 
 
 
