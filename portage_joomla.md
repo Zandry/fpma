@@ -717,4 +717,112 @@ Faire la même chose pour l'article `Executives`.
 Ouvrir l'article `Company structure` et mettre ̀`KinetEco, Inc. Administrative Headquarters` en italic et souligné. Faire de même tous les débuts de paragraphe: Pour `KinetEco, Inc. Laboratories`, `KinetEco, Inc.`, `KinetEco, Inc.`
 
 #### c. Configuration de l'éditeur de texte
-Allez dans le menu `Extension > Plugin Manager`. Dans la liste, choisir ` Editor - TinyMCE `.  Passer dans l'onglet `Basic options` et Modifier `Functionality` à `Extended`. Ensuite revenez dans l'Article Manager (Rappel: Content > Article Manager et choisir un article). On obtiendra un ̀`Article Manager` un peu plus élaboré avec plus d'outils..
+Allez dans le menu `Extension > Plugin Manager`. Dans la liste, choisir ` Editor - TinyMCE `.  Passer dans l'onglet `Basic options` et Modifier `Functionality` à `Extended`. Ensuite revenez dans l'Article Manager (Rappel: Content > Article Manager et choisir un article). On obtiendra un ̀`Article Manager` un peu plus élaboré avec plus d'outils.
+
+#### d. Créer un lien externe dans un article
+Ouvrir l'article manager. 
+Dans l'article `Executives`, nous avons, dans le paragraphe de `Simon Lodine, PhD, CEO ` (vers la fin), le texte Wind Powering America. C'est le nom d'une société. Comme la société possède un site web, nous allons lier ce nom à un lien.
+Ouvrir le fichier `portage_joomla/Chapter 4/04_03/link.txt`. 
+
+Selectionner le texte `Wind Powering America` et choisir le petit bouton lien (voir image ci-dessous)
+
+![cat_manager](./portage_joomla/lien.png)
+
+Dans la partie url de la boite de dialogue qui s'ouvre, coller le lien et dans la partie `Target`, on va choisir si on doit ouvrir le lien dans une nouvelle fenetre ou dans un nouvel onglet ou dans la même page. Dans notre cas, nous allons l'ouvrir dans une nouvelle page et donc configurer comme dans l'image ci-dessous.
+
+![external_links](./portage_joomla/2links.png)
+
+Pour tester, il faudra attendre que nous ayons mis notre article sur notre site (pour le moment, nous sommes seulement dans la partie A de CAM)
+
+#### e. Rajouter une image dans un article
+On a déjà vu comment on pouvait uploader des images dans le media manager. Pour notre cas, nous allons voir comment rajouter une image dans les articles. 
+- Ouvrez l'article `About` dans l'article manager.
+- Placer le curseur de la souris à l'endroit de l'article où vous vourdriez placer le haut de l'image.
+ (Pour ma part, je voudrais avoir une image à gauche de Kineteco,Inc. dans le premier paragraphe donc je mets mon curseur juste avant KinetECO,Inc.).
+ - Cliquer sur le bouton `Image` en dessous de l'éditeur d'article. (Attention: le bouton `Image` dans la barre d'outil de l'éditeur est difficile car il faut connaitre le chemin alors que le bouton en dessous de l'éditeur permet de parcourir des répertoires pour rechercher les images). La fenetre qui s'affiche en premier nous montre le `Media Manager` et donc, je peux déjà commencer par rajouter une image qui est dedans mais là je souhaite rajouter une image qui n'a pas été mis dans le media manager. Pour cela, il faut scroller la fenetre vers le bas et trouver le bouton `Parcourir`ou `Browse`. Je vais alors parcourir les répertoires `portage_joomla/Chapter 4/04_04/` et choisir le fichier `About.jpg`. Ce fichier est directement rajouté dans le répertoire `Images` de Joomla (là où on trouver tous les images dans le 'Media MAnager').
+ - Dans la fenetre, je reclique sur l'image que je veux insérer pour la choisir et ensuite je scrolle vers le bas pour les options: 
+    * à la place de `Not set` (champ `Align`) , je vais choisir `Right` pour aligner l'image à droite.
+    * `Image Description `est l'equivalent du tag `alt`. C'est le texte qui sera affiché si l'image n'est pas trouvé. C'est aussi le texte que les moteurs de recherche liront quand ils vont parcourir le site. Nous allons donc le remplir correctement par une phrase qui parle: `Wind farm in Baskerville`.
+    * Pour le champ `Image Title`, il est aussi important de le mettre car les moteurs de recherche les utilisent aussi pour référencer notre site. Nous allons mettre le même texte que `Image description`.
+Quand tout est fini, il faut scroller vers le haut et cliquer sur le bouton `insert`. Nous obtenons, l'écran ci-dessous.
+ 
+![external_links](./portage_joomla/image_about_article_.png) 
+
+On remarquera que le top de notre image est bien à l'endroit qu'on a cliqué avant de cliquer sur le bouton `Image`.
+
+Pour toute la suite des articles, nous allons rajouter toutes les images utiles via le `Media Manager`. Rajouter toutes les images qui sont dans `portage_joomla/Chapter 4/04_04/`. 
+
+Ensuite, une fois que les images sont importés dans le média manager, ouvrez l'article `K-Eco Energy Bulbs` dans l'article Manager.
+Placer le curseur devant le mote `Callen` et cliquez sur le bouton `Image`. Cela va ouvrir le Media Manager. Choisir alors  l'image `KE-energy-bulbs.jpg`. Aligner l'image sur la droite `Droite`. En description de l'image, utiliser `KinetEco bulbs in a store.` Cliquer ensuite sur le bouton `Insert`.
+
+Faire la même chose pour les articles suivants: 
+- K-Eco Low-Flow Shower Head <=> `K-Eco Low-Flow Shower Head.jpg` (aligné sur la droite et rajouter un texte de description)
+- K-Eco Mini Panel <=> `K-Eco Mini Panel.jpg` (rajouter aligné sur la droite et rajouter un texte de description) 
+- K-Eco Solar Mug <=> `K-Eco Solar Mug.jpg` (---------------//------------------------------)
+- Products <=> `products.jpg` (--------------------- // ---------------------)
+
+
+#### f. Rajouter les articles de blogs
+
+Si on regarde notre sitemap, nous avons créé à peu près tous les articles sauf le `Solar blog`, `Press release` et quelques autres éléments. Je rappelle ci-dessous le site map.
+
+    Home - Uncategorized category
+
+    Products - Products category
+
+    News & Info - News category
+       Solar Blog - Solar category
+       Press Releases - Press Release category
+
+    About - About category
+        Company Structure - About category
+        Executives - About category
+
+    Links - Weblinks component, no category needed
+
+    Contact Us - Contact component, no category needed
+    
+Dans la suite, nous allons rajouter le `Solar blog`
+
+Lors du rajout du contenu de `Solar blog`, je vais vous montrer comment on utiliser la fonctionalité `Voir plus` ou `Lire plus`. C'est une fonctionalité qui permet de n'afficher qu'un court texte et d'avoir un bouton `voir plus` qui permet d'afficher le reste du texte.
+Ouvrir l'article manager et créer un nouvel aricle par le bouton `New`.
+Ouvrez le fichier ̀`portage_joomla/Chapter 4/04_05/solar blog.txt`
+
+Créer un article avec comme titre = `Embry house - a model of energy efficiency` et comme contenu le premier paragraphe (tout le texte jusqu'au prochain titre). Choisir la catégorie `Solar` pour cet article.
+
+Ici, nous allons en profiter pour utiliser la fonctionnalité `Voir plus`. Pour cela, il faut définir la partie de l'article qui s'affiche en premier. Dans notre cas, nous allons faire en sorte que le premier affichage montre juste le premier paragraphe de notre article (juste jusqu'à ̀`dream house`). Ensuite, mettre le curseur juste entre les deux paragraphes et cliquez sur le bout `Read more` en dessous. On verra une petite barre rouge entre les deux textes. Ainsi, la page affichera juste le texte d'intro et quand on cliquera sur le bouton `Read more`, on verra tout le contenu.
+
+Une dernière chose à faire sur le blog est l'ajout d'une image. Cliquer à la fin de l'article, et cliquer sur le bouton `Image`. Ensuite, cliquer sur le répertoire `blog` (dans le media manager qui s'affiche) afin qu'on en pofite pour mettre le nouvel image dans ce répertoire. Tout en bas, cliquer sur `Parcourir` et choisir `portage_joomla/Chapter 4/04_05/blog-solar-house.jpg`. Ensuite cliquer sur `Start upload` et cela mettra l'image dans le répertoire `blog`.
+Recliquer alors sur l'image `blog-solar-house.jpg` dans le media manager pour le choisir. Rajouter une description `The Ember house`. On ne rajoute pas d'alignement car l'image est sur sa propre ligne. L'image devrait se retourve à la fin de l'article. Cliquer ensuite sur ̀`Save and close`.
+
+<u>**Travail à faire:**</u>
+Compléter les articles pour le blog (voir le contenu du fichier `solar blog.txt`). Egalement, dans le répertoire, je vous laisse chercher les images correspondants à ces articles. Pour les articles courts, pas besoin de `Read more`.
+
+- Announcing K-Eco Mini Panels et rajouter l'image blog-mini-panels.jpg. Mettre la barre de `Read more` juste avant le premier paragraphe et la photo sera placée après l'article comme dans le premier article de blog.
+
+- Trend in alternative energy usage <=> pas besoin de read more.
+
+- Farmers installing solar power <=> 2 paragraphes donc on va mettre une section ̀`Read more`.
+
+- Rajouter égalements dans la catégorie Press Realease, les articles dans le fichier `press releases.txt`. Je vous laisse trouver les images.
+
+#### g. Creation de featured article pour la page d'accueil
+Ce qui nous manque maintenant, c'est une page pour notre page d'accueil.
+Nous allons créer un article avec une catégorie `Uncategorized`. Pour le contenu, nous allons prendre dans le répertoire d'exemple `04-06` et récupérer le fichier `home.txt`. Remplir le titre et l'article de la page d'accueil.
+
+Une fois que cet article est rédigé, il est en fait très facile de l'afficher sur le site même sans le menu (c'est l'exception où on n'a pas besoin du M de CAM). Pour cela, nous allons le mettre en `Featured Article`. Pour cela, nosu allons aller dans la partie droite de l'article Manager (dans la partie ̀`Details`) et nosu allons trouver `Featured` et mettre l'option à `Yes`. On peut alors rafraichir la page et voir notre article dans le front-end. 
+Dans la liste des articles dans le backend, on trouve aussi notre featured article avec un petit étoile jaune (ces pétis étoiles jaunes montrent que les articles sont des articles featured). 
+Pour le moment, il y a plein de détails qui ne nous interessent pas dans l'article mais ça va venir.
+
+#### h. Publier ou annuler la publication d'un article
+Si un article est publié, alors dans l'Article manager, il contient une petite coche verte.
+Pour ne pas publier un article, on va cliquer sur la petite coche verte et il deviendra une croix rouge. 
+
+Un article est publié signifie qu'il est prêt à être affiché sur le site. 
+Si un article n'est pas prêt à être affiché sur le site, alors il est mieux de le mettre à l'état `Non publié`.
+
+Pour la suppression d'un article, c'est comme celle d'une catégorie (envoyé dans `Trash`d'abord et ensuite détruire)
+
+
+
+
