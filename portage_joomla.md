@@ -678,7 +678,7 @@ Ensuite cliquer sur `Select Status` et choisir `Trashed`. Ensuite, il faut le se
 Pour le restaurer, il faut aller dans le status `Trashed` et cliquer sur le petit bouton `poubelle` à gauche (Publish item). L'objet reviendra dans la liste des objets `published`.
 
 
-### 3.2. Gestion des articles
+### 3.3. Gestion des articles
 
 #### a. Creation d'articles
 Pour créer un article, il faut aller dans l'`article manager`. L'article manager peut se trouver dans `Content>Article Manager`. Pour créer un article, cliquer sur le bouton `New` en vert.
