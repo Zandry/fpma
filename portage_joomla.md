@@ -824,5 +824,49 @@ Si un article n'est pas prêt à être affiché sur le site, alors il est mieux 
 Pour la suppression d'un article, c'est comme celle d'une catégorie (envoyé dans `Trash`d'abord et ensuite détruire)
 
 
+### 3.4. Les menus
+Nous avons créé les catégories et les articles jusque là. Maintenant, il est temps de créer les menus pour arriver à compléter le processus CAM (Categorie Article Menu). 
+Si nous regardons notre front-end, nous avons actuellement un article en featured (et donc qui s'affiche sur notre page d'accueil par défaut sans menu.)
+
+Dans joomla, on a 2 manières d'utiliser les menus.
+Si on va dans `Menus`, on y retrouve `Menu manager` et `Main Menu` 
+
+<img  src="portage_joomla/acces_menu.png"/>
+
+Dans l'immédiat, nous allons utiliser le Main menu. Pour plus tard, nous utiliserons par exemple un footer menu.
+L'ajout d'un élément dans ce menu nous permet juste de controler ce qu'on souhaite y mettre et de controle l'ordre des éléments dans ce menu. *Il ne permet pas de contrôler où se trouve le menu sur le site web*. 
+Pour le positionnement du menu, il faut aller dans `Extensions > Module manager ` et on y trouvera un module `Main Menu`  et il faudra changer la position (on verra cela plus tard)
+
+#### a. Rajout du menu `About` dans `Main menu`
+
+Juste à remarquer avant de continuer, le menu `Home` qui est présent dans le Main menu est créé par Joomla par défaut pendant l'installation. 
+Commençons par aller dans `Menu>Main Menu`. 
+
+<img  style="float:right;" src="portage_joomla/main_menu.png"/>
+
+Cliquer sur le bouton `New` et on obtient la nouvelle fenetre suivante, qui crée un `Menu item` (un élément de menu).
+
+<img src="portage_joomla/new_menu_window.png"/>
+
+- `Status`définit si le menu est publié (au même sens que pour les articles publié signifie "prêt à être affiché sur le site")
+- `Menu Item Type`, en cliquant sur le bouton select nous montre tous les types de liens qu'on peut utiliser avec un menu. Dans notre cas, nous souhaitons lier le Menu `About` à l'article `About`donc nous allons cliquer sur `Article`. 
+En cliquant sur `Article`, on a plein d'Option. 
+    - Nous allons choisir `Single Article` (un seul article). Avec cette option, la page principale s'est mis à jour et nous demande en plus de selectionner un article. En cliquant sur `Select`, vous avez la possibilité de choisir notre article. Et donc on va choisir ̀`About`.
+- `Menu title` est le texte qui va s'afficher sur le menu. Nous allons le remplir par `About`.
+- `Menu location ` nous permet de choisir le Menu dans lequel on va mettre notre `Menu item`.
+
+C'est à peu près tout ce dont on a besoin pour créer un Menu item. Cliquer sur `Save and Close` et rafrachissez le front-end. Le nouveau Menu item devrait apparaître dans le main menu.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
