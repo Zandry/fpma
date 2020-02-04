@@ -858,13 +858,25 @@ En cliquant sur `Article`, on a plein d'Option.
 C'est à peu près tout ce dont on a besoin pour créer un Menu item. Cliquer sur `Save and Close` et rafrachissez le front-end. Le nouveau Menu item devrait apparaître dans le main menu.
 
 
+#### b. Les menus à plusieurs niveaux (exemple de sous Menu About):
+Si on regarde notre sitemap, on voit que le menu `About` devrait contenir deux sous niveaux: Executives et company structure.
 
+```
+    About - About category
+        Company Structure - About category
+        Executives - About category
+```
+Ce qu'on veut avoir alors, ce serait que le menu `About` contienne deux sous-menu `Executives` et ̀`Compoany structure` qui nous conduirons vers les articles correspondants à ces titres.
 
+Pour la suite, nous allons donc créer un nouveau `Menu Item` à partir du Menu Manager et le lier à un ̀`single article`. Pour le premier je vais lier avec l'article ̀`Executives`. Mettre le titre à `Executives`. Je le définis comme étant dans le `Main Menu`. Maintenant, pour en faire un sous menu de `About`, il faut aller dans la zone `Parent Item` et choisir `About` à la place de `Menu Item Root`. 
+Tester et essayer de jouer avec les menus pour voir.
 
+<u>Travail à faire</u>:
+Créer l'autre sous-menu de `About` appelé `Company structure`
 
+A ce stade, on devrait avoir un site comme suit:
 
-
-
+<img src="portage_joomla/sous-menu.png"/>
 
 
 
