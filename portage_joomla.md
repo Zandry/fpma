@@ -883,11 +883,35 @@ A ce stade, on devrait avoir un site comme suit:
 - Nous allons commencer par créer un menu avec un article très court
 (un placeholder <=> juste pour garder de la place car je ne veux pas vraiment afficher d'article ou de section de page quand je clique sur ce Menu. Je veux plus tard créer un ou plusieurs sous-menu dedans)
     Créer un menu `News & Info` au même niveau que `Home`, single article et choisir `New & Information` comme article et mettre le menu dans `Root item` (au même niveau que `Home`). Si on clique sur le Menu `News & Info` dans le front-end, nous obtenons alors ceci:
- 
-    <img src="portage_joomla/new_info.png"/>
+   
+   <img src="portage_joomla/new_info.png"/>
 
     
-- En dessous de ce menu, je vais créer un sous-menu et le type ne sera pas `Single Article` mais  sera `Category Blog` (à trouver dans l'option Article). Category ̀`Solar`. Donner `Solar Blog`comme titre. Et Parent item choisir `News & Info`. Save abd close. Et c'est tout. Rafraichir le front-end et voir le résultat. En plus, cela nous permet de voir les effets des boutons ̀`Read more`. Ce qu'ont voit est qu'on a un premier article qui occupe toute la largeur de la page et en dessous des petits articles sur deux colonnes. Si je clique sur le bouton `Read more` d'un article, cela m'ouvre une page vers l'article tout entier sur une page. En gros, c'est le layout que nous pouvons avoir pour un category blog. Mais on pourra modifer ce layout et c'est ce que nous verrons dans le titre suivant.
+- En dessous de ce menu, je vais créer un sous-menu et le type ne sera pas `Single Article` mais  sera `Category Blog` (à trouver dans l'option Article). Category ̀`Solar`. Donner `Solar Blog`comme titre. Et Parent item choisir `News & Info`. Save abd close. Et c'est tout. Rafraichir le front-end et voir le résultat. En plus, cela nous permet de voir les effets des boutons ̀`Read more`. Ce qu'ont voit est qu'on a un premier article qui occupe toute la largeur de la page et en dessous des petits articles sur deux colonnes. Si je clique sur le bouton `Read more` d'un article, cela m'ouvre une page vers l'article tout entier sur une page. En gros, c'est le layout que nous pouvons avoir pour un category blog. Mais on pourra modifer ce layout et c'est ce que nous verrons dans la section suivant.
+
+#### d. Configuration avancé pour un category blog
+Dans la section précédente, nous avons créer un category blog. On a vu que le layout était affichable mais pas exceptionnel (Nous avions 4 articles dans le blog : un article sur toute la largeur suivi de deux articles sur deux colonnes et enfin un article sur la moitié de la page ). 
+La question qui se pose est comment nous pourrons modifier cela?
+
+Pour cela, ouvrez le Menu manager et éditez votre Menu `Solar blog` en cliquant dessus. Nous allons aller dans l'onglet ̀`Advanced` (que nous n'avons pas encore vu jusque là).
+Naviguez ensuite jusqu'à `Blog layout Options`. Nous allons en particulier regarder les 4 premières options. Si on positionne la souris sur le label de chaque options, on obtient la description de ce que fait l'option.
+-   #Leading Articles : Il faut rentrer un chiffre qui va définir combien d'articles nous décidons d'afficher au début sur toute la largeur de la page. Si je mets, 0, il n'y aura pas d'article sur toute la largeur de la page. Essayer et tester des valeurs (en rafraichissant le front-end)
+
+- #Intro Articles: C'est le nombre d'articles qui s'affiche après le leading articles (sur les deux colonnes). Si je mets une valeur de 2, alors seulement deux articles iront se mettre sur la partie en deux colonnes et le reste se mettra juste en tant que `#link` (cela sous-entend que `#Link` est le nombre d'article affiché en tant que lien en dessous des colonnes.
+- #Columns: C'est le nombre de colonne sur lequel les `Intro articles` vont s'afficher. Si on choisit 3, on affichera 3 colonnes. (Testez). On voit effectivement qu'on a bien trois colonnes (le premier article n'a pas de `Read more`car on n'en a pas mis)
+
+Maintenant qu'on connait toutes ces configurations avancées, nous allons définir ce dont nous avons besoin pour notre blog:
+ * 0 leading articles
+ * 20 intro articles
+ * 1 colonne 
+ * 0 links
+ 
+ Et avec cela, nous avons ceci:
+ 
+ <img src="portage_joomla/advanced_category.png"/>
+
+
+
 
 
   
