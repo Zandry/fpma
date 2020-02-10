@@ -879,6 +879,17 @@ A ce stade, on devrait avoir un site comme suit:
 <img src="portage_joomla/sous-menu.png"/>
 
 
+#### c. Creation du Solar blog 
+- Nous allons commencer par créer un menu avec un article très court
+(un placeholder <=> juste pour garder de la place car je ne veux pas vraiment afficher d'article ou de section de page quand je clique sur ce Menu. Je veux plus tard créer un ou plusieurs sous-menu dedans)
+    Créer un menu `News & Info` au même niveau que `Home`, single article et choisir `New & Information` comme article et mettre le menu dans `Root item` (au même niveau que `Home`). Si on clique sur le Menu `News & Info` dans le front-end, nous obtenons alors ceci:
+ 
+    <img src="portage_joomla/new_info.png"/>
 
+    
+- En dessous de ce menu, je vais créer un sous-menu et le type ne sera pas `Single Article` mais  sera `Category Blog` (à trouver dans l'option Article). Category ̀`Solar`. Donner `Solar Blog`comme titre. Et Parent item choisir `News & Info`. Save abd close. Et c'est tout. Rafraichir le front-end et voir le résultat. En plus, cela nous permet de voir les effets des boutons ̀`Read more`. Ce qu'ont voit est qu'on a un premier article qui occupe toute la largeur de la page et en dessous des petits articles sur deux colonnes. Si je clique sur le bouton `Read more` d'un article, cela m'ouvre une page vers l'article tout entier sur une page. En gros, c'est le layout que nous pouvons avoir pour un category blog. Mais on pourra modifer ce layout et c'est ce que nous verrons dans le titre suivant.
+
+
+  
 
 
