@@ -933,3 +933,38 @@ Travail à faire: mettre les articles de solar blog dans l'ordre suivant:
 Maintenant, définir l'ordre des articles dans la configuration avancée du blog comme étant `Article manager order`. Save et tester dans le front-end pour voir si l'ordre est correcte.
 
 Pour finaliser, remettre cet ordre à `Most recent first` car nous aurons juste besoin que le plus récent s'affiche en premier (ex: pour des articles de news)
+
+
+
+#### e. Press release et configuration de category list
+
+##### e.1 Creation d'un Category List
+Une press release est une liste d'articles de press (ou de journal ou de périodique - ex: le pli du CE est une press release - Une idée pourrait être un mensuel de l'Eglise est une sorte de press release). 
+
+Comme il y en a beaucoup, nous ne pouvons pas les afficher tous dans une page web. Ce qui serait interessant est d'avoir une page web qui contiendrait une liste de titre (ou de numéro et/ou de description) de press release. 
+
+Cette page avec juste une liste de titre d'articles s'appelle `Category list`.  
+Dans cette section, nous allons en créer une avec des articles de Press release.
+
+- Pour cela, nous allons créer un `Menu item`. 
+- Choisir le type de contenu `Article`
+- Choisir dans la liste `Category List`
+- Choisir `Press realease` dans la section category.
+- Définir `Press release` comme titre.
+- `Parent item` sera définit comme `News & Info`car nous voudrions avoir le menu dans `News and Info`.
+- tester dans le front-end 
+
+On devrait obtenir ceci:
+<img src="portage_joomla/category_list_user.png"/>
+
+Maintenant, si vous loguez en tant qu'admin (login: admin, mdp: admin) à partir du front-end. Vous pourriez avoir la possibilité d'éditer les articles à partir du front-end.
+
+<img src="portage_joomla/category_list_admin.png"/>
+Cela est montré par la petite icône à gauche de notre titre et le texte `Edit`.
+Nous allons voir comment configurer notre `Category List` pour  enlever ces éléments et aussi enlever le texte `Written by super user`, ou même le bouton indicateur de `Hit` (qui nous indique combien de fois l'article a été cliqué et ouvert).
+
+Il nous manque également un titre d'en-tête du `Category list`: par exemple `Press release` et peut-être un petit texte d'introduction.
+
+Avant de continuer, il faut se delogguer du front-end pour voir ce que le public verra.
+
+
