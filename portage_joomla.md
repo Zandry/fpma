@@ -890,6 +890,8 @@ A ce stade, on devrait avoir un site comme suit:
 - En dessous de ce menu, je vais créer un sous-menu et le type ne sera pas `Single Article` mais  sera `Category Blog` (à trouver dans l'option Article). Category ̀`Solar`. Donner `Solar Blog`comme titre. Et Parent item choisir `News & Info`. Save abd close. Et c'est tout. Rafraichir le front-end et voir le résultat. En plus, cela nous permet de voir les effets des boutons ̀`Read more`. Ce qu'ont voit est qu'on a un premier article qui occupe toute la largeur de la page et en dessous des petits articles sur deux colonnes. Si je clique sur le bouton `Read more` d'un article, cela m'ouvre une page vers l'article tout entier sur une page. En gros, c'est le layout que nous pouvons avoir pour un category blog. Mais on pourra modifer ce layout et c'est ce que nous verrons dans la section suivant.
 
 #### d. Configuration avancé pour un category blog
+
+##### d.1 Layout de la page de blog
 Dans la section précédente, nous avons créer un category blog. On a vu que le layout était affichable mais pas exceptionnel (Nous avions 4 articles dans le blog : un article sur toute la largeur suivi de deux articles sur deux colonnes et enfin un article sur la moitié de la page ). 
 La question qui se pose est comment nous pourrons modifier cela?
 
@@ -910,10 +912,24 @@ Maintenant qu'on connait toutes ces configurations avancées, nous allons défin
  
  <img src="portage_joomla/advanced_category.png"/>
 
+##### d.2 Ordre d'apparition des articles
+Pour définir dans quel ordre les articles vont s'afficher sur le blog, il faut aller dans `Advanced Options` après édition du ̀`Solar blog`. Dans `Blog Layout Options`, il faut descendre tout en bas et trouver `Article order` et choisir un des options. Les options sont clairs à part le dernier `Article manager order` qui est l'ordre d'apparition dans l'article manager. 
 
+Comment cela se passe-t-il?
+Avec l'article manager, on a la possibilité de trier les articles (par titre, par date, par nom d'auteur, ou même manuellement) et c'est cet ordre qui est ensuite utilisé.
 
+Pour ordonner manuellement les articles du solar blog, nous allons aller dans `Article Manager` et filtrer par category et choisir `Solar` (voir le cercle rouge dans l'image ci-dessous). Pour trier les articles manuellement, il faut cliquer une fois sur les deux petites flèches entourés par un cercle rouge dans l'image ci-dessous.
 
+<img src="portage_joomla/trier_articles.png"/>
 
-  
+Les trois petites points grises devant les articles deviennent alors noirs et on peut utiliser la souris pour déplacer l'article vers le haut ou vers le bas.
 
+Travail à faire: mettre les articles de solar blog dans l'ordre suivant:
+- Announcing
+- Trends
+- Farmers
+- Embry house
 
+Maintenant, définir l'ordre des articles dans la configuration avancée du blog comme étant `Article manager order`. Save et tester dans le front-end pour voir si l'ordre est correcte.
+
+Pour finaliser, remettre cet ordre à `Most recent first` car nous aurons juste besoin que le plus récent s'affiche en premier (ex: pour des articles de news)
