@@ -967,4 +967,62 @@ Il nous manque également un titre d'en-tête du `Category list`: par exemple `P
 
 Avant de continuer, il faut se delogguer du front-end pour voir ce que le public verra.
 
+##### e.2 Configuration avancée
+
+- Allez dans `Menu Manager`, Main Menu
+- Choisir Press release
+- Allez dans l'onglet `Advanced Options`.
+- Scrollez vers le bas jusqu'à `List layout`.
+  
+Là,  on retrouve un certain nombre d'options, tel que:
+- Display Select : c'est le combobox en haut à droite avec un nombre dedans. Cela permet de définir combien d'articles sont affichés sur une page. Mettez l'option à `Hide`.
+- Filter field: est une zone de recherche pour rechercher des articles (qui ne s'affiche pas pas défaut et qui est intitulé `Content filter search`). Cette recherche peut rechercher les auteurs ou les titres (étant donné que seusl les titres s'affichent dans un category list. A utiliser si on doit par exemple avoir une liste trop longue afin de rechercher des éléments.
+- Table heading: sera un affichage d'en-tête sur chaque titre (pas très interessant)
+- Show date: peut choisir d'afficher la date de creation, de modification ou de publication de l'article.
+- Date formats : forme de la date.
+- Hit lits: Ce sont les compteurs de hits (on peut choisir de les cacher ou les montrer). Nous allons choisir de cacher pour nous.
+- Show author list: affiche le nom de l'auteur en dessous des titres. Nous allons également cacher notre list d'auteur.
+
+La page est déjà beaucoup mieux:
+
+<img src="portage_joomla/category_list_neat.png">
+
+Tout cela est bien mais... Nous n'avons toujours pas de titre pour le contenu de la page.
+Pour cela, revenir dans la configuration avancée de notre menu item `Press release` (maintenant on devrait savoir comment s'y rendre). Bien en bas de la page configuration avancée, on trouve `Page display options`.
+
+On y trouve:
+- Browser page title: qui permet d'avoir un titre différent que ce nous avons configuré dans `Global configuration` (au tout début de Joomla) pour les pages de ce menu Press Release. Pour le moment, on n'y touchera pas .
+- Show page heading: Mettre à yes pour afficher un titre en header des page de ce menu item. Tester dans le front-end. Nous obtenons bien `Press release` comme titre en haut des liens (comme dans les autres page où on a des articles)
+
+Nous souhaitons également avoir une petite introduction après ce titre (les gens du marketing aime bien mettre un petit titre). Nous avons un petit fichier dans `portage_joomla/05_07/press release.txt` dans lequel, nous allons prendre un petit texte d'introduction.
+
+Nous allons ensuite dans le menu item correspondant à notre Category List, qui est le menu Press release.
+Dans la partie, `Advanced options`, nous avons une option `Category options` et dans la liste, nous avons déjà vu `Category description`. Pour le moment, nous allons le mettre à la valeur `Show` et puis `Save and close`.
+
+Ensuite, allez dans le menu `Category Manager` et éditez la catégorie `Press release`. Dans la partie `Description` de cet éditeur, coller le texte du fichier `press release.txt`. Sauvegarder et fermer et tester.
+
+Cette description peut être donné pour toutes les catégories mais ne s'affiche pas sauf s vous faites un `Category blog` ou un `Category list` et que vous définissez la `Category description` à la valeur `Show`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
