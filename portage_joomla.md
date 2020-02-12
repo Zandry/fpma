@@ -1004,9 +1004,66 @@ Ensuite, allez dans le menu `Category Manager` et éditez la catégorie `Press r
 Cette description peut être donné pour toutes les catégories mais ne s'affiche pas sauf s vous faites un `Category blog` ou un `Category list` et que vous définissez la `Category description` à la valeur `Show`.
 
 
+#### f. Featured blog pour `News & Info` et configuration de `Home`
+
+##### f.1. creation du featured blog
+
+Das la partie `3.4.c`, nous avons configuré le menu `News and info` avec un Single article un peu simpliste.
+
+Ce que nous souhaitons faire est la suivante: 
+- avoir des articles en vedette (featured articles) qui viennent de catégories spécifiques. Par exemple, on veut juste des articles en vedette venant  des catégories `Solar blog` et `Press release` mais non pas des autres catégories. 
+- Je ne souhaite pas non plus afficher tous les articles de `Solar blog` ou de `Press release` dans ce blog mais je veux juste afficher les articles qui sont '**les plus nouveaux, les plus lus, les plus visités.**'
+
+Comment va-t-on faire cela?
+- Si vous vous souvenez, le premier featured article que nous avons créé  s'est affiché tout seul dans le homepage sans que nous faisions d'opérations spécifique et nous allons exploiter cela.
+- revenir dans le backend de Joomla et choisir `Main menu`  et choisir le menu `News & Info`.
+- Modifier le type du menu `Menu item type` par `Featured articles` (entrer dans `Articles` et choisir ̀`Featured articles`).
+- Aller dans `Advanced options`. et dedans, je peux choisir quels catégories je peux inclure dans la partie `Salect Categories`.
+- Supprimer alors `All categories` et choisir `Solar` et `Press release` à la place, en cliquant dans la zoone de texte.
+<img src="portage_joomla/featured_blog.png"/>
+- En dessous de cet options, nous retrouvons la même mise en page qu'on a vu dans la mise en forme d'un `Category blog`, contenant: `#leading articles`, `#intro articles`, ... Pour cela, nous allons choisir les valeurs suivantes pour chaque option de mise en page:
+   * 0 leading articles
+   * 20 intro articles
+   * 1 colonne 
+   * 0 links
+(les explications concernant ces valeurs ont été vus en section d.1)
+- Save and close et tester dans le front-end. On voit qu'en cliquant sur le menu `News & Info`, on n'a vraiment rien. Et pourquoi? parce qu'on n'a pas de featured articles dans les 2 catégories qu'on a choisit dans la configuration.
+
+Pour régler cela, nous allons revenir dans l'`article manager`. Filtrer par catégorie `Solar` (choisir `Solar` dans la partie `Select Category` à gauche). Ensuite, mettre les articles `Announcing ....` et `Farmers ...` en featured (rappel: pour mettre un article en featured article, il faut cliquer sur le petit étoile à côté de la coche verte - quand cette étoile est jaune, l'article est featured). 
+
+<img src="portage_joomla/featured_article.png"/>
+
+Filtrer de même par catégorie `Press realease` et mettre en featured l'article `Wind turbine...`
+
+Tester le front-end.
+
+#### f.2 Ordre d'apparition des articles
+On peut définir des ordres d'apparition des articles par Catégorie. C'est à dire qu'on souhaite par exemple que les articles d'une catégorie apparaissent avant celles d'une autre catégorie.
+
+Pour cela, ré-ouvrer le `Menu manager > main menu > New & info` et aller dans `Advanced options` et on peut définir cela dans `Category order`. Pour moi je vais mettre à `No order` (pas de travail particulier car on a déjà vu cette configuration pour les ordres d'apparition des Articles). Pour `article order`, on va mettre à `most recent first` 
+pour que les articles les plus récents s'affichent en premier.
 
 
+#### f.3. Titre du blog
+Revenir dans les options avancées du menu item `News & Info`. Descendre jusqu'à la section `Page display options`.
+On y trouve l'option `Show page heading`, mettre à `yes`.
+option `Page heading`: `News and information`.
 
+Save and close. 
+
+Tester la page `News & Information` et vérifier également la page `Home`. 
+
+On remarque que tous les articles `featured` sont affichés à la page d'accueil `Home`. Cependant ce n'est pas ce que l'on veut. On veut avoir le `Home` page comme avant (sans effet de bord comme ça)
+
+Question: Pourquoi les articles featured sont-ils affichés tous dans le Homepage?
+
+Parce que par défaut un Homepage en joomla est un `featured blog` (un blog pour les featured articles) -exactement la même chose que notre blog `News & Info`
+
+
+Je peux résoudre ce problème en configurant le menu homepage pour définir des catégories sources d'articles et je vais dire que mes articles viennent seulement de `Uncategorized`.
+Ou je peux changer la section `Menu Item Type` du menu `Homè` en single article.
+
+Le plus simple pour moi est de modifier le `Menu item type` de mon `Home` menu item en `Single article` et mon article est `Harnessins ....` 
 
 
 
