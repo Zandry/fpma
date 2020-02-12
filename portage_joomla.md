@@ -1095,9 +1095,37 @@ Si par contre, je souhaite me débarasser définitivement du menu item, je cliqu
 Tant que le menu dans la corbeille n'est pas supprimé, vous ne pourrez pas créer un autre menu item avec le même nom.
 
 
+### h. Création d'un nouveau menu (comme Main Menu)
+Jusque là, nous avons putôt travaillé sur des menu items dans le `Main menu`. 
+Maintenant, nous allons créer un nouveau menu comme le `Main menu` que nous allons appeler `Footer menu` car je voudrais l'utiliser comme un menu dans le footer.
+Notre menu footer contiendra des liens simples, et un lien vers le module de login car je ne souhaiterai pas garder ce login module à droite de mes page car il est trop intrusif et ne sert à rien.
 
+Donc là, je vais créer mon `Footer menu` et m'assurer que ce menu se positionne bien en bas au fond de ma page.
 
+- entrer dans le menu manager et à gauche, choisir `Menu` au lieu de `Menu item` et cliquer sur le bouton `New`.
+- entrer le nom du menu et `menu type`  qui est un nom qui va nous permettre d'utiliser le menu dans un programme php plus tard - donc il faut le nommer comme une variable dans le code `footermenu`.
+- Save & Close.
+- Aller ensuite dans le gestionnaire de Menu.
+  <img src="portage_joomla/menu_after_footer.png"/>
+  On remarque qu'il y a 0 éléments publiés (nous n'avons pas encore de Menu items dans ce menu). 
+  On remarque également qu'il n'y a pas de module associé au menu. Nous allons voir plus tard les modules Joomla mais pour le moment, considérez un module comme une manière d'afficher le menu dans le front-end (ça peut être un code HTML, un code PHP ou un élément déjà tout fait - comme le module de login). Le module contrôle, entre autres, où se placera le menu dans le front-end.
+  Nous allons donc définir un module pour afficher le menu.
+- cliquer sur le lien `Add a module for this menu type.` (cela va ouvrir le module manager , qu'on verra plus tard)
+- Donner un titre `Footer menu`
+- `Hide` pour le moment 
+- Choisir la position `footer` dans la section `Protostar` (car notre template ici est pour le moment `Protostar`. Une position est un emplacement dans le template html (nous verrons aussi cela plus tard quand on fera les templates).
+- Save & Close
 
+Si vous tester le front-end maintenant, il n'y a rien qui a changé car nous n'avons pas encore de menu item dans ce menu. en fait, le nouveau menu est affiché mais comme il ne contient rien, on ne le voit pas.
+
+Nous allons rajouter quelque chose. Comme nous l'avons défini, nous souhaiterons mettre un menu item vers l'interface de login à partir de ce menu.
+
+On va donc rajouter dans ce menu un `Menu item` à partir du menu manager.
+- Aller dans le menu `Menu>Footer Menu`
+- Créer un nouveau `Menu item` (comme nous l'avons déjà fait avant)
+- Menu item type = `Users Manager` et choisir pour le moment `Login form`.
+- Titre= `Login`
+- Save et tester (on voit dans le front-end un petit mot tout en bas `Login` et si je clique dessus, àa m'ouvre un formulaire de login comme voulu). Plus tard, j'enlèverai le formulaire de login qui s'ffiche en permanent à droite.
 
 
 
