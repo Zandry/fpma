@@ -1142,3 +1142,11 @@ Pour solutionner le problème, nous allons créer un `Menu alias`.
     * Pour définir à quelle page ce nouveau `Menu item` va se réferer, il faut aller dans `Advanced Settings` et choisir `Home` dans la liste tel qu'on l'a souhaité.
 - `save and close`.
     
+### j. Modification ordre des menu items dans un menu
+Dans le footer Menu , nous souhaitons montrer `Home` d'abord et ensuite Login. Comment réordonner les menus items?
+- entrer dans le menu manager et dans footer menu.
+- Dans la liste des Menu Items, bougez les menu à l'aide des 3 petits points vertical à gauche (comme ce qu'on a fait pour les articles ou les catégories)
+- Mettez `Home` en dessus.
+
+
+
