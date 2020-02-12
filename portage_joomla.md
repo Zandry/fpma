@@ -1127,6 +1127,18 @@ On va donc rajouter dans ce menu un `Menu item` à partir du menu manager.
 - Titre= `Login`
 - Save et tester (on voit dans le front-end un petit mot tout en bas `Login` et si je clique dessus, àa m'ouvre un formulaire de login comme voulu). Plus tard, j'enlèverai le formulaire de login qui s'ffiche en permanent à droite.
 
+### i. Création d'un alias dans le menu Footer
+Nous souhaitons ajouter un lien dans le menu Footer, un lien vers la page d'accueil `Home`. 
+On peut très simplement, lier le nouveau lien, `Menu item`, au même article que `Home` et c'est reglé mais ce n'est pas ce que nous voulons. Pourquoi? 
+- parce que si le menu `Home` est un catégory blog, par exemple, nous devrions refaire toutes les configurations que nous avons fait pour ce catégory blog et ce n'est pas pratique. Je veux juste que mon nouveau menu item, pointe sur le même lien que `Home` et affiche ce que `Home` aurait affiché.
+- parce que les moteurs de recherche vont considérer cela comme une nouvelle page sur le site mais avec le même contenu et cela donnera un malus/pénalité par rapport au référencement du site. Il ne faut jamais avoir plusieurs pages avec le même contenu. Les contenus doivent être uniques.
 
+Pour solutionner le problème, nous allons créer un `Menu alias`.
 
-
+- Aller dans le menu manager et ouvrir le `footer menu` .
+- Créer un nouveau `menu item ` dans ce menu
+    * le menu item type sera `System Link > Menu Item Alias`
+    * Dans title on va donner el nom de `Home` (ou autre chose)
+    * Pour définir à quelle page ce nouveau `Menu item` va se réferer, il faut aller dans `Advanced Settings` et choisir `Home` dans la liste tel qu'on l'a souhaité.
+- `save and close`.
+    
