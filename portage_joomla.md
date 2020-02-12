@@ -675,7 +675,7 @@ Pour supprimer une catégorie, il faut passer par le ̀`Catégory Manager`, Coch
 Pour le supprimer défitivement, il faut aller dans la partie filter (à gauche dans le Category Manager). 
 Ensuite cliquer sur `Select Status` et choisir `Trashed`. Ensuite, il faut le selectionner en cochant la checkbox à gauche, et cliquer sur le bouton `Empty Trash`.
 
-Pour le restaurer, il faut aller dans le status `Trashed` et cliquer sur le petit bouton `poubelle` à gauche (Publish item). L'objet reviendra dans la liste des objets `published`.
+Pour le restaurer, il faut aller dans le status `Trashed` et cliquer sur le petit bouton `Trash` à gauche (Publish item). L'objet reviendra dans la liste des objets `published`.
 
 
 ### 3.3. Gestion des articles
@@ -1065,15 +1065,34 @@ Ou je peux changer la section `Menu Item Type` du menu `Homè` en single articl
 
 Le plus simple pour moi est de modifier le `Menu item type` de mon `Home` menu item en `Single article` et mon article est `Harnessins ....` 
 
+#### g. Publier/Depublier/Supprimer un menu item
 
+Pour tester cela, nous allons créer un nouveau `Menu Item` dans le `Main Menu`. 
+Nom: `Delete me`
+Menu item type: `single article`
+Article: `News & Information`
+Parent item: `Menu item root`
 
+Si je teste dans mon front-end, je retrouver correctement mon menu item `Delete Me!` en bas.
 
+Il faut comprendre que les Menus items ont des états divers que je peux changer dans mon Menu Manager.
 
+<img src="portage_joomla/menu_status.png"/>
 
+La petite coche verte signifie que le menu est `publié` (cela signifie également que le menu correspond à un lien publié sur mon site). 
+Pour `ne pas publier` (nous allons dire `dépublier` même si ce mot d'existe pas) un menu, il faut cliquer sur la croix verte et cela devient un croix rouge. Cela signifie, que le menu item est toujours existant, que le lien dans mon menu est toujours là mais qu'on ne l'affiche plus dans le front-end du site. 
 
+Essayons de dépublier le menu item `Delete me!`. Et allons tester cela dans notre front-end.
 
+Si maintenant, je clique sur le lien `Delete me!` (sans rafraichir), la page qui s'affichera sera invalide. Et si je rafrachit la page d'acceuil, mon menu item `Delete me!` aura disparu.
 
+Supprimer un menu item signifie le mettre dans corbeille et vider la corbeille (comme pour les articles et les catégories).
+Pour envoyer un menu item dans la corbeille, on peut cliquer sur la coche à sa gauche et cliquer sur `Trash` (en dessus dans la barre d'outil). POur voir les éléments envoyés à la corbeille, il faut utiliser les fitres à gauche du menu et `Select status` (ensuite fitlrer les `Trashed`) - exactement comme pour les articles.
 
+Pour récupérer le menu item, il faut juste le republier (cliquer sur la petite croix rouge et cela le sort de la corbeille)
+Si par contre, je souhaite me débarasser définitivement du menu item, je clique sur le bouton `Empty Trash`.
+
+Tant que le menu dans la corbeille n'est pas supprimé, vous ne pourrez pas créer un autre menu item avec le même nom.
 
 
 
