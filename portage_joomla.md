@@ -1200,7 +1200,7 @@ Pour cela, nous allons utiliser une fonctionnalité de Bootstrap. En effet, boot
 
 Exercice: appliquer le même style (horizontal et nav-pills ) au menu footer.
 
-
+### l. Navigation secondaire (pour le moment pas important, nous le verrons plus tard)
 
 
 
