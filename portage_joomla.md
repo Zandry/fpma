@@ -675,7 +675,7 @@ Pour supprimer une catégorie, il faut passer par le ̀`Catégory Manager`, Coch
 Pour le supprimer défitivement, il faut aller dans la partie filter (à gauche dans le Category Manager). 
 Ensuite cliquer sur `Select Status` et choisir `Trashed`. Ensuite, il faut le selectionner en cochant la checkbox à gauche, et cliquer sur le bouton `Empty Trash`.
 
-Pour le restaurer, il faut aller dans le status `Trashed` et cliquer sur le petit bouton `poubelle` à gauche (Publish item). L'objet reviendra dans la liste des objets `published`.
+Pour le restaurer, il faut aller dans le status `Trashed` et cliquer sur le petit bouton `Trash` à gauche (Publish item). L'objet reviendra dans la liste des objets `published`.
 
 
 ### 3.3. Gestion des articles
@@ -822,6 +822,392 @@ Un article est publié signifie qu'il est prêt à être affiché sur le site.
 Si un article n'est pas prêt à être affiché sur le site, alors il est mieux de le mettre à l'état `Non publié`.
 
 Pour la suppression d'un article, c'est comme celle d'une catégorie (envoyé dans `Trash`d'abord et ensuite détruire)
+
+
+### 3.4. Les menus
+Nous avons créé les catégories et les articles jusque là. Maintenant, il est temps de créer les menus pour arriver à compléter le processus CAM (Categorie Article Menu). 
+Si nous regardons notre front-end, nous avons actuellement un article en featured (et donc qui s'affiche sur notre page d'accueil par défaut sans menu.)
+
+Dans joomla, on a 2 manières d'utiliser les menus.
+Si on va dans `Menus`, on y retrouve `Menu manager` et `Main Menu` 
+
+<img  src="portage_joomla/acces_menu.png"/>
+
+Dans l'immédiat, nous allons utiliser le Main menu. Pour plus tard, nous utiliserons par exemple un footer menu.
+L'ajout d'un élément dans ce menu nous permet juste de controler ce qu'on souhaite y mettre et de controle l'ordre des éléments dans ce menu. *Il ne permet pas de contrôler où se trouve le menu sur le site web*. 
+Pour le positionnement du menu, il faut aller dans `Extensions > Module manager ` et on y trouvera un module `Main Menu`  et il faudra changer la position (on verra cela plus tard)
+
+#### a. Rajout du menu `About` dans `Main menu`
+
+Juste à remarquer avant de continuer, le menu `Home` qui est présent dans le Main menu est créé par Joomla par défaut pendant l'installation. 
+Commençons par aller dans `Menu>Main Menu`. 
+
+<img  style="float:right;" src="portage_joomla/main_menu.png"/>
+
+Cliquer sur le bouton `New` et on obtient la nouvelle fenetre suivante, qui crée un `Menu item` (un élément de menu).
+
+<img src="portage_joomla/new_menu_window.png"/>
+
+- `Status`définit si le menu est publié (au même sens que pour les articles publié signifie "prêt à être affiché sur le site")
+- `Menu Item Type`, en cliquant sur le bouton select nous montre tous les types de liens qu'on peut utiliser avec un menu. Dans notre cas, nous souhaitons lier le Menu `About` à l'article `About`donc nous allons cliquer sur `Article`. 
+En cliquant sur `Article`, on a plein d'Option. 
+    - Nous allons choisir `Single Article` (un seul article). Avec cette option, la page principale s'est mis à jour et nous demande en plus de selectionner un article. En cliquant sur `Select`, vous avez la possibilité de choisir notre article. Et donc on va choisir ̀`About`.
+- `Menu title` est le texte qui va s'afficher sur le menu. Nous allons le remplir par `About`.
+- `Menu location ` nous permet de choisir le Menu dans lequel on va mettre notre `Menu item`.
+
+C'est à peu près tout ce dont on a besoin pour créer un Menu item. Cliquer sur `Save and Close` et rafrachissez le front-end. Le nouveau Menu item devrait apparaître dans le main menu.
+
+
+#### b. Les menus à plusieurs niveaux (exemple de sous Menu About):
+Si on regarde notre sitemap, on voit que le menu `About` devrait contenir deux sous niveaux: Executives et company structure.
+
+```
+    About - About category
+        Company Structure - About category
+        Executives - About category
+```
+Ce qu'on veut avoir alors, ce serait que le menu `About` contienne deux sous-menu `Executives` et ̀`Compoany structure` qui nous conduirons vers les articles correspondants à ces titres.
+
+Pour la suite, nous allons donc créer un nouveau `Menu Item` à partir du Menu Manager et le lier à un ̀`single article`. Pour le premier je vais lier avec l'article ̀`Executives`. Mettre le titre à `Executives`. Je le définis comme étant dans le `Main Menu`. Maintenant, pour en faire un sous menu de `About`, il faut aller dans la zone `Parent Item` et choisir `About` à la place de `Menu Item Root`. 
+Tester et essayer de jouer avec les menus pour voir.
+
+<u>Travail à faire</u>:
+Créer l'autre sous-menu de `About` appelé `Company structure`
+
+A ce stade, on devrait avoir un site comme suit:
+
+<img src="portage_joomla/sous-menu.png"/>
+
+
+#### c. Creation du Solar blog 
+- Nous allons commencer par créer un menu avec un article très court
+(un placeholder <=> juste pour garder de la place car je ne veux pas vraiment afficher d'article ou de section de page quand je clique sur ce Menu. Je veux plus tard créer un ou plusieurs sous-menu dedans)
+    Créer un menu `News & Info` au même niveau que `Home`, single article et choisir `New & Information` comme article et mettre le menu dans `Root item` (au même niveau que `Home`). Si on clique sur le Menu `News & Info` dans le front-end, nous obtenons alors ceci:
+   
+   <img src="portage_joomla/new_info.png"/>
+
+    
+- En dessous de ce menu, je vais créer un sous-menu et le type ne sera pas `Single Article` mais  sera `Category Blog` (à trouver dans l'option Article). Category ̀`Solar`. Donner `Solar Blog`comme titre. Et Parent item choisir `News & Info`. Save abd close. Et c'est tout. Rafraichir le front-end et voir le résultat. En plus, cela nous permet de voir les effets des boutons ̀`Read more`. Ce qu'ont voit est qu'on a un premier article qui occupe toute la largeur de la page et en dessous des petits articles sur deux colonnes. Si je clique sur le bouton `Read more` d'un article, cela m'ouvre une page vers l'article tout entier sur une page. En gros, c'est le layout que nous pouvons avoir pour un category blog. Mais on pourra modifer ce layout et c'est ce que nous verrons dans la section suivant.
+
+#### d. Configuration avancé pour un category blog
+
+##### d.1 Layout de la page de blog
+Dans la section précédente, nous avons créer un category blog. On a vu que le layout était affichable mais pas exceptionnel (Nous avions 4 articles dans le blog : un article sur toute la largeur suivi de deux articles sur deux colonnes et enfin un article sur la moitié de la page ). 
+La question qui se pose est comment nous pourrons modifier cela?
+
+Pour cela, ouvrez le Menu manager et éditez votre Menu `Solar blog` en cliquant dessus. Nous allons aller dans l'onglet ̀`Advanced` (que nous n'avons pas encore vu jusque là).
+Naviguez ensuite jusqu'à `Blog layout Options`. Nous allons en particulier regarder les 4 premières options. Si on positionne la souris sur le label de chaque options, on obtient la description de ce que fait l'option.
+-   #Leading Articles : Il faut rentrer un chiffre qui va définir combien d'articles nous décidons d'afficher au début sur toute la largeur de la page. Si je mets, 0, il n'y aura pas d'article sur toute la largeur de la page. Essayer et tester des valeurs (en rafraichissant le front-end)
+
+- #Intro Articles: C'est le nombre d'articles qui s'affiche après le leading articles (sur les deux colonnes). Si je mets une valeur de 2, alors seulement deux articles iront se mettre sur la partie en deux colonnes et le reste se mettra juste en tant que `#link` (cela sous-entend que `#Link` est le nombre d'article affiché en tant que lien en dessous des colonnes.
+- #Columns: C'est le nombre de colonne sur lequel les `Intro articles` vont s'afficher. Si on choisit 3, on affichera 3 colonnes. (Testez). On voit effectivement qu'on a bien trois colonnes (le premier article n'a pas de `Read more`car on n'en a pas mis)
+
+Maintenant qu'on connait toutes ces configurations avancées, nous allons définir ce dont nous avons besoin pour notre blog:
+ * 0 leading articles
+ * 20 intro articles
+ * 1 colonne 
+ * 0 links
+ 
+ Et avec cela, nous avons ceci:
+ 
+ <img src="portage_joomla/advanced_category.png"/>
+
+##### d.2 Ordre d'apparition des articles
+Pour définir dans quel ordre les articles vont s'afficher sur le blog, il faut aller dans `Advanced Options` après édition du ̀`Solar blog`. Dans `Blog Layout Options`, il faut descendre tout en bas et trouver `Article order` et choisir un des options. Les options sont clairs à part le dernier `Article manager order` qui est l'ordre d'apparition dans l'article manager. 
+
+Comment cela se passe-t-il?
+Avec l'article manager, on a la possibilité de trier les articles (par titre, par date, par nom d'auteur, ou même manuellement) et c'est cet ordre qui est ensuite utilisé.
+
+Pour ordonner manuellement les articles du solar blog, nous allons aller dans `Article Manager` et filtrer par category et choisir `Solar` (voir le cercle rouge dans l'image ci-dessous). Pour trier les articles manuellement, il faut cliquer une fois sur les deux petites flèches entourés par un cercle rouge dans l'image ci-dessous.
+
+<img src="portage_joomla/trier_articles.png"/>
+
+Les trois petites points grises devant les articles deviennent alors noirs et on peut utiliser la souris pour déplacer l'article vers le haut ou vers le bas.
+
+Travail à faire: mettre les articles de solar blog dans l'ordre suivant:
+- Announcing
+- Trends
+- Farmers
+- Embry house
+
+Maintenant, définir l'ordre des articles dans la configuration avancée du blog comme étant `Article manager order`. Save et tester dans le front-end pour voir si l'ordre est correcte.
+
+Pour finaliser, remettre cet ordre à `Most recent first` car nous aurons juste besoin que le plus récent s'affiche en premier (ex: pour des articles de news)
+
+
+
+#### e. Press release et configuration de category list
+
+##### e.1 Creation d'un Category List
+Une press release est une liste d'articles de press (ou de journal ou de périodique - ex: le pli du CE est une press release - Une idée pourrait être un mensuel de l'Eglise est une sorte de press release). 
+
+Comme il y en a beaucoup, nous ne pouvons pas les afficher tous dans une page web. Ce qui serait interessant est d'avoir une page web qui contiendrait une liste de titre (ou de numéro et/ou de description) de press release. 
+
+Cette page avec juste une liste de titre d'articles s'appelle `Category list`.  
+Dans cette section, nous allons en créer une avec des articles de Press release.
+
+- Pour cela, nous allons créer un `Menu item`. 
+- Choisir le type de contenu `Article`
+- Choisir dans la liste `Category List`
+- Choisir `Press realease` dans la section category.
+- Définir `Press release` comme titre.
+- `Parent item` sera définit comme `News & Info`car nous voudrions avoir le menu dans `News and Info`.
+- tester dans le front-end 
+
+On devrait obtenir ceci:
+<img src="portage_joomla/category_list_user.png"/>
+
+Maintenant, si vous loguez en tant qu'admin (login: admin, mdp: admin) à partir du front-end. Vous pourriez avoir la possibilité d'éditer les articles à partir du front-end.
+
+<img src="portage_joomla/category_list_admin.png"/>
+Cela est montré par la petite icône à gauche de notre titre et le texte `Edit`.
+Nous allons voir comment configurer notre `Category List` pour  enlever ces éléments et aussi enlever le texte `Written by super user`, ou même le bouton indicateur de `Hit` (qui nous indique combien de fois l'article a été cliqué et ouvert).
+
+Il nous manque également un titre d'en-tête du `Category list`: par exemple `Press release` et peut-être un petit texte d'introduction.
+
+Avant de continuer, il faut se delogguer du front-end pour voir ce que le public verra.
+
+##### e.2 Configuration avancée
+
+- Allez dans `Menu Manager`, Main Menu
+- Choisir Press release
+- Allez dans l'onglet `Advanced Options`.
+- Scrollez vers le bas jusqu'à `List layout`.
+  
+Là,  on retrouve un certain nombre d'options, tel que:
+- Display Select : c'est le combobox en haut à droite avec un nombre dedans. Cela permet de définir combien d'articles sont affichés sur une page. Mettez l'option à `Hide`.
+- Filter field: est une zone de recherche pour rechercher des articles (qui ne s'affiche pas pas défaut et qui est intitulé `Content filter search`). Cette recherche peut rechercher les auteurs ou les titres (étant donné que seusl les titres s'affichent dans un category list. A utiliser si on doit par exemple avoir une liste trop longue afin de rechercher des éléments.
+- Table heading: sera un affichage d'en-tête sur chaque titre (pas très interessant)
+- Show date: peut choisir d'afficher la date de creation, de modification ou de publication de l'article.
+- Date formats : forme de la date.
+- Hit lits: Ce sont les compteurs de hits (on peut choisir de les cacher ou les montrer). Nous allons choisir de cacher pour nous.
+- Show author list: affiche le nom de l'auteur en dessous des titres. Nous allons également cacher notre list d'auteur.
+
+La page est déjà beaucoup mieux:
+
+<img src="portage_joomla/category_list_neat.png">
+
+Tout cela est bien mais... Nous n'avons toujours pas de titre pour le contenu de la page.
+Pour cela, revenir dans la configuration avancée de notre menu item `Press release` (maintenant on devrait savoir comment s'y rendre). Bien en bas de la page configuration avancée, on trouve `Page display options`.
+
+On y trouve:
+- Browser page title: qui permet d'avoir un titre différent que ce nous avons configuré dans `Global configuration` (au tout début de Joomla) pour les pages de ce menu Press Release. Pour le moment, on n'y touchera pas .
+- Show page heading: Mettre à yes pour afficher un titre en header des page de ce menu item. Tester dans le front-end. Nous obtenons bien `Press release` comme titre en haut des liens (comme dans les autres page où on a des articles)
+
+Nous souhaitons également avoir une petite introduction après ce titre (les gens du marketing aime bien mettre un petit titre). Nous avons un petit fichier dans `portage_joomla/05_07/press release.txt` dans lequel, nous allons prendre un petit texte d'introduction.
+
+Nous allons ensuite dans le menu item correspondant à notre Category List, qui est le menu Press release.
+Dans la partie, `Advanced options`, nous avons une option `Category options` et dans la liste, nous avons déjà vu `Category description`. Pour le moment, nous allons le mettre à la valeur `Show` et puis `Save and close`.
+
+Ensuite, allez dans le menu `Category Manager` et éditez la catégorie `Press release`. Dans la partie `Description` de cet éditeur, coller le texte du fichier `press release.txt`. Sauvegarder et fermer et tester.
+
+Cette description peut être donné pour toutes les catégories mais ne s'affiche pas sauf s vous faites un `Category blog` ou un `Category list` et que vous définissez la `Category description` à la valeur `Show`.
+
+
+#### f. Featured blog pour `News & Info` et configuration de `Home`
+
+##### f.1. creation du featured blog
+
+Das la partie `3.4.c`, nous avons configuré le menu `News and info` avec un Single article un peu simpliste.
+
+Ce que nous souhaitons faire est la suivante: 
+- avoir des articles en vedette (featured articles) qui viennent de catégories spécifiques. Par exemple, on veut juste des articles en vedette venant  des catégories `Solar blog` et `Press release` mais non pas des autres catégories. 
+- Je ne souhaite pas non plus afficher tous les articles de `Solar blog` ou de `Press release` dans ce blog mais je veux juste afficher les articles qui sont '**les plus nouveaux, les plus lus, les plus visités.**'
+
+Comment va-t-on faire cela?
+- Si vous vous souvenez, le premier featured article que nous avons créé  s'est affiché tout seul dans le homepage sans que nous faisions d'opérations spécifique et nous allons exploiter cela.
+- revenir dans le backend de Joomla et choisir `Main menu`  et choisir le menu `News & Info`.
+- Modifier le type du menu `Menu item type` par `Featured articles` (entrer dans `Articles` et choisir ̀`Featured articles`).
+- Aller dans `Advanced options`. et dedans, je peux choisir quels catégories je peux inclure dans la partie `Salect Categories`.
+- Supprimer alors `All categories` et choisir `Solar` et `Press release` à la place, en cliquant dans la zoone de texte.
+<img src="portage_joomla/featured_blog.png"/>
+- En dessous de cet options, nous retrouvons la même mise en page qu'on a vu dans la mise en forme d'un `Category blog`, contenant: `#leading articles`, `#intro articles`, ... Pour cela, nous allons choisir les valeurs suivantes pour chaque option de mise en page:
+   * 0 leading articles
+   * 20 intro articles
+   * 1 colonne 
+   * 0 links
+(les explications concernant ces valeurs ont été vus en section d.1)
+- Save and close et tester dans le front-end. On voit qu'en cliquant sur le menu `News & Info`, on n'a vraiment rien. Et pourquoi? parce qu'on n'a pas de featured articles dans les 2 catégories qu'on a choisit dans la configuration.
+
+Pour régler cela, nous allons revenir dans l'`article manager`. Filtrer par catégorie `Solar` (choisir `Solar` dans la partie `Select Category` à gauche). Ensuite, mettre les articles `Announcing ....` et `Farmers ...` en featured (rappel: pour mettre un article en featured article, il faut cliquer sur le petit étoile à côté de la coche verte - quand cette étoile est jaune, l'article est featured). 
+
+<img src="portage_joomla/featured_article.png"/>
+
+Filtrer de même par catégorie `Press realease` et mettre en featured l'article `Wind turbine...`
+
+Tester le front-end.
+
+#### f.2 Ordre d'apparition des articles
+On peut définir des ordres d'apparition des articles par Catégorie. C'est à dire qu'on souhaite par exemple que les articles d'une catégorie apparaissent avant celles d'une autre catégorie.
+
+Pour cela, ré-ouvrer le `Menu manager > main menu > New & info` et aller dans `Advanced options` et on peut définir cela dans `Category order`. Pour moi je vais mettre à `No order` (pas de travail particulier car on a déjà vu cette configuration pour les ordres d'apparition des Articles). Pour `article order`, on va mettre à `most recent first` 
+pour que les articles les plus récents s'affichent en premier.
+
+
+#### f.3. Titre du blog
+Revenir dans les options avancées du menu item `News & Info`. Descendre jusqu'à la section `Page display options`.
+On y trouve l'option `Show page heading`, mettre à `yes`.
+option `Page heading`: `News and information`.
+
+Save and close. 
+
+Tester la page `News & Information` et vérifier également la page `Home`. 
+
+On remarque que tous les articles `featured` sont affichés à la page d'accueil `Home`. Cependant ce n'est pas ce que l'on veut. On veut avoir le `Home` page comme avant (sans effet de bord comme ça)
+
+Question: Pourquoi les articles featured sont-ils affichés tous dans le Homepage?
+
+Parce que par défaut un Homepage en joomla est un `featured blog` (un blog pour les featured articles) -exactement la même chose que notre blog `News & Info`
+
+
+Je peux résoudre ce problème en configurant le menu homepage pour définir des catégories sources d'articles et je vais dire que mes articles viennent seulement de `Uncategorized`.
+Ou je peux changer la section `Menu Item Type` du menu `Homè` en single article.
+
+Le plus simple pour moi est de modifier le `Menu item type` de mon `Home` menu item en `Single article` et mon article est `Harnessins ....` 
+
+#### g. Publier/Depublier/Supprimer un menu item
+
+Pour tester cela, nous allons créer un nouveau `Menu Item` dans le `Main Menu`. 
+Nom: `Delete me`
+Menu item type: `single article`
+Article: `News & Information`
+Parent item: `Menu item root`
+
+Si je teste dans mon front-end, je retrouver correctement mon menu item `Delete Me!` en bas.
+
+Il faut comprendre que les Menus items ont des états divers que je peux changer dans mon Menu Manager.
+
+<img src="portage_joomla/menu_status.png"/>
+
+La petite coche verte signifie que le menu est `publié` (cela signifie également que le menu correspond à un lien publié sur mon site). 
+Pour `ne pas publier` (nous allons dire `dépublier` même si ce mot d'existe pas) un menu, il faut cliquer sur la croix verte et cela devient un croix rouge. Cela signifie, que le menu item est toujours existant, que le lien dans mon menu est toujours là mais qu'on ne l'affiche plus dans le front-end du site. 
+
+Essayons de dépublier le menu item `Delete me!`. Et allons tester cela dans notre front-end.
+
+Si maintenant, je clique sur le lien `Delete me!` (sans rafraichir), la page qui s'affichera sera invalide. Et si je rafrachit la page d'acceuil, mon menu item `Delete me!` aura disparu.
+
+Supprimer un menu item signifie le mettre dans corbeille et vider la corbeille (comme pour les articles et les catégories).
+Pour envoyer un menu item dans la corbeille, on peut cliquer sur la coche à sa gauche et cliquer sur `Trash` (en dessus dans la barre d'outil). POur voir les éléments envoyés à la corbeille, il faut utiliser les fitres à gauche du menu et `Select status` (ensuite fitlrer les `Trashed`) - exactement comme pour les articles.
+
+Pour récupérer le menu item, il faut juste le republier (cliquer sur la petite croix rouge et cela le sort de la corbeille)
+Si par contre, je souhaite me débarasser définitivement du menu item, je clique sur le bouton `Empty Trash`.
+
+Tant que le menu dans la corbeille n'est pas supprimé, vous ne pourrez pas créer un autre menu item avec le même nom.
+
+
+### h. Création d'un nouveau menu (comme Main Menu)
+Jusque là, nous avons putôt travaillé sur des menu items dans le `Main menu`. 
+Maintenant, nous allons créer un nouveau menu comme le `Main menu` que nous allons appeler `Footer menu` car je voudrais l'utiliser comme un menu dans le footer.
+Notre menu footer contiendra des liens simples, et un lien vers le module de login car je ne souhaiterai pas garder ce login module à droite de mes page car il est trop intrusif et ne sert à rien.
+
+Donc là, je vais créer mon `Footer menu` et m'assurer que ce menu se positionne bien en bas au fond de ma page.
+
+- entrer dans le menu manager et à gauche, choisir `Menu` au lieu de `Menu item` et cliquer sur le bouton `New`.
+- entrer le nom du menu et `menu type`  qui est un nom qui va nous permettre d'utiliser le menu dans un programme php plus tard - donc il faut le nommer comme une variable dans le code `footermenu`.
+- Save & Close.
+- Aller ensuite dans le gestionnaire de Menu.
+  <img src="portage_joomla/menu_after_footer.png"/>
+  On remarque qu'il y a 0 éléments publiés (nous n'avons pas encore de Menu items dans ce menu). 
+  On remarque également qu'il n'y a pas de module associé au menu. Nous allons voir plus tard les modules Joomla mais pour le moment, considérez un module comme une manière d'afficher le menu dans le front-end (ça peut être un code HTML, un code PHP ou un élément déjà tout fait - comme le module de login). Le module contrôle, entre autres, où se placera le menu dans le front-end.
+  Nous allons donc définir un module pour afficher le menu.
+- cliquer sur le lien `Add a module for this menu type.` (cela va ouvrir le module manager , qu'on verra plus tard)
+- Donner un titre `Footer menu`
+- `Hide` pour le moment 
+- Choisir la position `footer` dans la section `Protostar` (car notre template ici est pour le moment `Protostar`. Une position est un emplacement dans le template html (nous verrons aussi cela plus tard quand on fera les templates).
+- Save & Close
+
+Si vous tester le front-end maintenant, il n'y a rien qui a changé car nous n'avons pas encore de menu item dans ce menu. en fait, le nouveau menu est affiché mais comme il ne contient rien, on ne le voit pas.
+
+Nous allons rajouter quelque chose. Comme nous l'avons défini, nous souhaiterons mettre un menu item vers l'interface de login à partir de ce menu.
+
+On va donc rajouter dans ce menu un `Menu item` à partir du menu manager.
+- Aller dans le menu `Menu>Footer Menu`
+- Créer un nouveau `Menu item` (comme nous l'avons déjà fait avant)
+- Menu item type = `Users Manager` et choisir pour le moment `Login form`.
+- Titre= `Login`
+- Save et tester (on voit dans le front-end un petit mot tout en bas `Login` et si je clique dessus, àa m'ouvre un formulaire de login comme voulu). Plus tard, j'enlèverai le formulaire de login qui s'ffiche en permanent à droite.
+
+### i. Création d'un alias dans le menu Footer
+Nous souhaitons ajouter un lien dans le menu Footer, un lien vers la page d'accueil `Home`. 
+On peut très simplement, lier le nouveau lien, `Menu item`, au même article que `Home` et c'est reglé mais ce n'est pas ce que nous voulons. Pourquoi? 
+- parce que si le menu `Home` est un catégory blog, par exemple, nous devrions refaire toutes les configurations que nous avons fait pour ce catégory blog et ce n'est pas pratique. Je veux juste que mon nouveau menu item, pointe sur le même lien que `Home` et affiche ce que `Home` aurait affiché.
+- parce que les moteurs de recherche vont considérer cela comme une nouvelle page sur le site mais avec le même contenu et cela donnera un malus/pénalité par rapport au référencement du site. Il ne faut jamais avoir plusieurs pages avec le même contenu. Les contenus doivent être uniques.
+
+Pour solutionner le problème, nous allons créer un `Menu alias`.
+
+- Aller dans le menu manager et ouvrir le `footer menu` .
+- Créer un nouveau `menu item ` dans ce menu
+    * le menu item type sera `System Link > Menu Item Alias`
+    * Dans title on va donner el nom de `Home` (ou autre chose)
+    * Pour définir à quelle page ce nouveau `Menu item` va se réferer, il faut aller dans `Advanced Settings` et choisir `Home` dans la liste tel qu'on l'a souhaité.
+- `save and close`.
+    
+### j. Modification ordre des menu items dans un menu
+Dans le footer Menu , nous souhaitons montrer `Home` d'abord et ensuite Login. Comment réordonner les menus items?
+- entrer dans le menu manager et dans footer menu.
+- Dans la liste des Menu Items, bougez les menu à l'aide des 3 petits points vertical à gauche (comme ce qu'on a fait pour les articles ou les catégories)
+- Mettez `Home` en dessus.
+
+### k. Dropdown menus dans Joomla
+Avec l'utilisation de Bootstrap, Joomla a maintenant un dropdown menu. Notre template actuel `Protostar` a bien un dropdown menu.
+
+Avant de continuer à afficher le `Drop down menu`, nous allons créer un nouveau menu item `Product` dans lequel, il y aura tous les produits.
+
+Travail à faire:
+
+- Menu manager > Home 
+- Créer un menu item `Product`associé à l'article `Products` (vous devez savoir maintenant, quel est le type de Menu item qu'on doit choisir)
+- ensuite mettre dans ce menu `Product` des sous menus qui pointent vers les articles suivants (cela veut dire qu'il faut modifier le `parent item`:
+    * K-Eco Energy Bulbs
+    * K-Eco Low-Flow Shower Head
+    * K-Eco Mini panel
+    * K-Eco Solar Mug
+
+
+Remarque: ne pas hésiter à utliser des filtres pour n'afficher que les articles dans la catégorie `Product`.
+
+- Save & Close pour tout fermer. Vou pouvez tester mais nous avons là un nouveau Menu item dans `Home` qui s'appelle `Products`.
+
+Maintenant, ce queje voudrais faire c'est de déplacer mon `Main menu` de sa boite de droite vers un vrai menu horizontal.
+
+Dans joomla, nous avons un module qui s'appelle `Navigation` et qui permet d'afficher une `navbar` à partir d'un menu existant.
+
+Cela nous introduit à l'utilisation du `module manager`. 
+
+- entrer dans le module manager (`menu Extensions > Module manager `). On y retrouver a tous les modules utilisés par notre site actuellement.
+
+    <img src="portage_joomla/module_manager.png"/>
+
+    Si on regarde notre `Main menu`, on voit qu'il est à la position `Position-7` dans le menu. On verra un peu plus tard comment on fait pour voir ces positions dans le template actuel (car cette position est définie par template)
+    
+    Pour le moment, nous allons changer cette position pour notre menu afin que notre menu se positionne en horizontal (sous la forme d'un navbar qu'on connait).
+    
+- cliquer sur `Main menu` dans le `module manager`
+- Dans l'option `position`, choisir dans la liste `Protostar Navigation [position-1]` (nous choisissons `Protostar`car notre tempalte est `Protostar`)
+- cliquer sur `Save & Close` et on voit dans le front-end que le menu est passé en haut (mais ce n'est pas toujours ce qu'on veut car le drop-downs s'affichent seulement pour les sous-menu et la forme n'est pas beau). En fait, on a juste modifié la position du module `Main menu` sans changer sa mise en forme. 
+
+Ce qu'on souhaite avoir est que le contenu du menu ne soit pas empilé comme ça mais en horizontal sur la largeur de la page.
+
+- Première chose: on veut avoir les drop-downs menus tout le temps. Pour cela , revenir dans le Module manager et ouvrir le module `Main menu`.
+- Dans basic options, mettre `Show sub-menu`à `Yes`. Résultat: avant, il fallait cliquer sur un menu avec un sous-menu avant que ses sous-menus s'affichent. Maintenant, les sous-menus s'affichent automatiquement.
+
+
+Maintenant le problème qui nous reste à résoudre est de mettre ce menu horizontal.
+Pour cela, nous allons utiliser une fonctionnalité de Bootstrap. En effet, bootstrap a un style qui s'appelle `nav-pills` qui permet de mettre des barre de navigation en horizontal.
+- Pour cela, nous allons dans le module manager pour le menu `Main Menu`
+- Entrer dans `Advanced options`. Et dans `Menu class suffix`, saisir ` nav-pills` (mettre un espace avant pour s'assurer qu'on rajoute la classe). (voir ici pour la documentation sur `nav-pills` - https://www.w3schools.com/bootstrap4/bootstrap_navs.asp)
+- Rafraichir le front-end et nous obtenons un menu comme on le veut.
+
+Exercice: appliquer le même style (horizontal et nav-pills ) au menu footer.
+
+### l. Navigation secondaire (pour le moment pas important, nous le verrons plus tard)
+
+
+
+
+
+
+
 
 
 
