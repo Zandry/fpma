@@ -1148,5 +1148,67 @@ Dans le footer Menu , nous souhaitons montrer `Home` d'abord et ensuite Login. C
 - Dans la liste des Menu Items, bougez les menu à l'aide des 3 petits points vertical à gauche (comme ce qu'on a fait pour les articles ou les catégories)
 - Mettez `Home` en dessus.
 
+### k. Dropdown menus dans Joomla
+Avec l'utilisation de Bootstrap, Joomla a maintenant un dropdown menu. Notre template actuel `Protostar` a bien un dropdown menu.
+
+Avant de continuer à afficher le `Drop down menu`, nous allons créer un nouveau menu item `Product` dans lequel, il y aura tous les produits.
+
+Travail à faire:
+
+- Menu manager > Home 
+- Créer un menu item `Product`associé à l'article `Products` (vous devez savoir maintenant, quel est le type de Menu item qu'on doit choisir)
+- ensuite mettre dans ce menu `Product` des sous menus qui pointent vers les articles suivants (cela veut dire qu'il faut modifier le `parent item`:
+    * K-Eco Energy Bulbs
+    * K-Eco Low-Flow Shower Head
+    * K-Eco Mini panel
+    * K-Eco Solar Mug
+
+
+Remarque: ne pas hésiter à utliser des filtres pour n'afficher que les articles dans la catégorie `Product`.
+
+- Save & Close pour tout fermer. Vou pouvez tester mais nous avons là un nouveau Menu item dans `Home` qui s'appelle `Products`.
+
+Maintenant, ce queje voudrais faire c'est de déplacer mon `Main menu` de sa boite de droite vers un vrai menu horizontal.
+
+Dans joomla, nous avons un module qui s'appelle `Navigation` et qui permet d'afficher une `navbar` à partir d'un menu existant.
+
+Cela nous introduit à l'utilisation du `module manager`. 
+
+- entrer dans le module manager (`menu Extensions > Module manager `). On y retrouver a tous les modules utilisés par notre site actuellement.
+
+    <img src="portage_joomla/module_manager.png"/>
+
+    Si on regarde notre `Main menu`, on voit qu'il est à la position `Position-7` dans le menu. On verra un peu plus tard comment on fait pour voir ces positions dans le template actuel (car cette position est définie par template)
+    
+    Pour le moment, nous allons changer cette position pour notre menu afin que notre menu se positionne en horizontal (sous la forme d'un navbar qu'on connait).
+    
+- cliquer sur `Main menu` dans le `module manager`
+- Dans l'option `position`, choisir dans la liste `Protostar Navigation [position-1]` (nous choisissons `Protostar`car notre tempalte est `Protostar`)
+- cliquer sur `Save & Close` et on voit dans le front-end que le menu est passé en haut (mais ce n'est pas toujours ce qu'on veut car le drop-downs s'affichent seulement pour les sous-menu et la forme n'est pas beau). En fait, on a juste modifié la position du module `Main menu` sans changer sa mise en forme. 
+
+Ce qu'on souhaite avoir est que le contenu du menu ne soit pas empilé comme ça mais en horizontal sur la largeur de la page.
+
+- Première chose: on veut avoir les drop-downs menus tout le temps. Pour cela , revenir dans le Module manager et ouvrir le module `Main menu`.
+- Dans basic options, mettre `Show sub-menu`à `Yes`. Résultat: avant, il fallait cliquer sur un menu avec un sous-menu avant que ses sous-menus s'affichent. Maintenant, les sous-menus s'affichent automatiquement.
+
+
+Maintenant le problème qui nous reste à résoudre est de mettre ce menu horizontal.
+Pour cela, nous allons utiliser une fonctionnalité de Bootstrap. En effet, bootstrap a un style qui s'appelle `nav-pills` qui permet de mettre des barre de navigation en horizontal.
+- Pour cela, nous allons dans le module manager pour le menu `Main Menu`
+- Entrer dans `Advanced options`. Et dans `Menu class suffix`, saisir ` nav-pills` (mettre un espace avant pour s'assurer qu'on rajoute la classe). (voir ici pour la documentation sur `nav-pills` - https://www.w3schools.com/bootstrap4/bootstrap_navs.asp)
+- Rafraichir le front-end et nous obtenons un menu comme on le veut.
+
+Exercice: appliquer le même style (horizontal et nav-pills ) au menu footer.
+
+
+
+
+
+
+
+
+
+
+
 
 
