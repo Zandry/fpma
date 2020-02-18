@@ -1203,9 +1203,30 @@ Exercice: appliquer le même style (horizontal et nav-pills ) au menu footer.
 ### l. Navigation secondaire (pour le moment pas important, nous le verrons plus tard)
 
 
+### 3.5 Formattage avancé d'articles
 
+#### a. Ajout d'un lien vers un pdf dans un article
+Nous avons un nouveau pdf venant d'un de nos partenaires. Il nous faudra rajouter un lien vers ce pdf dans notre page `About`.
+- Commencer par créer un nouveau répertoire dans le Media manager, on l'appelera `pdf`.
+- rajouter le pdf, qui est dans `portage_joomla/Chapter 6/06_01/kineteco-brochure.pdf` dans le media manager, à l'intérieur du répertoire `pdf` (on sait le faire).
+  
+  <img src="portage_joomla/upload_pdf.png"/>
+  
+  On retrouve selectionné dans l'image ci-dessus le chemin relatif du fichier pdf. Les éléments du media manager, on le rappelle, est dans le répertoire `images` de Joomla.
 
+Maintenant, aller dans l'article manager et ouvrez l'article `About`.
 
+Tout à la fin de l'article, on va rajouter le texte suivant: 
+
+`Read our company brochure (pdf, 175k)`
+
+Ensuite selectionner le texte `Read our company brochure` et cliquer sur le bouton lien (voir image ci-dessous)
+
+<img src="portage_joomla/link_pdf.png"/>
+ Dans la fenetre de lin, on va mettre `URL` = `images/pdf/kineteco-brochure.pdf` et `target`= `New window`
+ et cliquer sur `Insert` pour finir et `save & close` pour terminer sur l'édition de l'article.
+ 
+ remarque: Si les pdf ont des tailles trop importantes, il faut les réduire pour ne pas ralentir le site.
 
 
 
