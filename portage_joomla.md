@@ -1229,6 +1229,62 @@ Ensuite selectionner le texte `Read our company brochure` et cliquer sur le bout
  remarque: Si les pdf ont des tailles trop importantes, il faut les réduire pour ne pas ralentir le site.
 
 
+#### b. Diviser des articles longues (accordéon)
+Nous somme sur la page des `Executives`, on voit que c'est juste une liste de nom et de biography. 
+On souahite améliorer le look. Nous allons utiliser les accordions de bootstrap.
+C'est adapté car on a des titres et des contenus, suivi d'autres titres et d'autres contenus...
+(voir la doc ici https://www.w3schools.com/bootstrap4/bootstrap_collapse.asp).
+
+Pour voir les accordions en action dans Joomla, vous l'avez quand vous choisissez un ` Menu Item Type` dans le menu manager (en cliquant sur chaque titre, vous collapsez ou étendez l'accordéon).
+
+Pour faire de même, commencez par aller dans `Article manager` et éditez l'article `Executives`.
+
+On rappelle que les titres sont des balises `<h2>` (si vous cliquez sur le bouton `toggle editor`, vous verrz les balises `<h2>`).
+Pour commencer, nous allons insérer des `Saut de page` entre chaque sections d''executives.
+Tout en bas de l'editeur d'article, vous avez le bouton `Page break` (saut de page comme dans ms word). Cela nous permet d'avoir chaque personne sur une page individuelle. Et c'est ensuite chaque page que nous allons afficher dans un accordeon (au lieu de tourner chaque page comme on fait habituellement)
+
+- Je vais positionner mon premier saut de page avant Simon. (place la souris avant Simon et cliquer sur le bouton ̀`Page break`).
+- Saisir `Simon Lodine, PhD, CEO` dans les 2 champs et cliquer sur le bouton `Insert break`.
+
+- Faire de même pour `Sally Kerner, MBA, CFO`, `June Su-Woo, JD, Legal Counsel`, et `Jason Hemlock, PE, Principal Design Engineer`.
+
+Quand c'est fini, rafraichir la page et vous obtenez: 
+
+<img src="portage_joomla/executive_multi_page"/>
+
+On se rend compte que cela nous a créé une sorte de menu de sous-navigation.
+Remarquer que le premier element du menu n'a pas de contenu car on a rajouté le saut de page juste avant le contenu (ça fait une première page vide)
+- Save & Close pour continuer
+- Allez dans `Extensions> Plugin manager` et chercher un plugin appelé `Content Pagebreak`
+- Editer-le en cliquant dessus.
+- Ensuite, dans `Basic options`, changez `Presentation style` de `Page` à `Slider` (c'est le mot qu'utilise joomla pour dire accordion). 
+- Save&Close et tester. Vous allez voir que le contenu est devenu un accordion et on peut même s'amuser à modifier les css de la page.
+
+Maintenant, nous souhaitons nous débarasser des titres noirs dans le texte puisque nos titres sont déjà les en-têtes de chaque élément de notre accordion.
+Ces titres en noirs sont les titres qui sont encadrés par des balises `<h2>` dans nos articles.
+- revenir dans l'article manager et éditez l'article `executives`. Ensuite supprimer les titres dans l'articles (ce sont les noms des Executives) ==> voir image ci-dessous
+<img src="portage_joomla/suppr_header_accordion.png"/>.
+- rafraichir le front-end et voir le résultat.
+Le titre reste car on a déjà construit l'accordion. Si on refait tout, alors il faudra remettre le titre des articles afin de reconstruire les titres des accordions.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
