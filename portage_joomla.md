@@ -1268,6 +1268,47 @@ Ces titres en noirs sont les titres qui sont encadrés par des balises `<h2>` da
 Le titre reste car on a déjà construit l'accordion. Si on refait tout, alors il faudra remettre le titre des articles afin de reconstruire les titres des accordions.
 
 
+#### c. Paramétrage de l'insertion des tags HTML
+
+Joomla n'accepte pas toujours d'insérer dans ses contenus n'importe quel tag HTML, pour des raisons de sécurité. Cela pourtant, peut causer des problèmes dans les affichages des articles ou des contenus joomla.
+Dans la pratique, si un tags HTML n'est pas autorisé, Joomla l'enlève tout simplement du contenu.
+Dans cette section, nous allons voir comment paramétrer les tags autorisé et les tags non autorisés.
+- Entrer dans `Global configuration` (rappel: Menu `System > Dashboard` et à gauche.
+- Aller dans l'onglet `Text filters`.
+Et là on remarque les différents utilisateurs et groupes d'utilisateurs et leur droits.
+
+Tout en bas, on a l'utilisateur `Super users` et à côté `No filtering`. Cela signifie que tout ce que vous entrez dans vos articles sont pris tel qu'ils sont et sont enregistrés dans la base de données à vos risques et périls. 
+
+Pour les autres utilisateurs, les choix sont :
+- Default black list (permet de mettre tous les tags sauf des tags venant d'une liste noire)
+- Custom black list (comme default black list mais avec une liste que vosu avez créé)
+- White list (permet ne mettre aucun tags sauf ceux qui sont dans une liste blanche)
+- No HTML (aucun HTML autorisé)
+- No filtering (pas de filtrage , tout est autorisé)
+
+Des exemples de tags dangereuses sont les tags HTML comme les `iframe` ou les `applets` ou les `scripts` qui permettent de faire de l'execution de code ou de l'ijection de code.
+
+L'exemple de cas où cela serait utile serait que vous souhaitez insérer une video youtube dans votre article et là, le code html est enlevé et la vidéo ne fonctionne pas.
+
+La deuxième chose à faire est de vérifier si votre éditeur de texte `TinyMCE` ne strippe pas non plus les HTML.
+Pour cela, aller dans le plugin manager.
+- Extension > Plugin manager 
+- Scroller jusqu'à TinyMCE et cliquez dessus.
+- Aller dans l'onglet `Basic Options` et vers le bas, vous trouverez `prohibited elements` et là il y a une liste.
+- Cette liste s'applique à tout le groupe d'utilisateur (non pas à un seul utilisateur) jusqu'au super user.
+Travail: voir sur google ce que fait le tag `iframe` et `applet`.
+- pour pouvoir insérer une video, enlever de la liste l'élément `iframe`
+- Save & Close.
+
+
+
+
+
+
+
+
+
+
 
 
 
