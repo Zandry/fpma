@@ -1300,9 +1300,22 @@ Travail: voir sur google ce que fait le tag `iframe` et `applet`.
 - pour pouvoir insérer une video, enlever de la liste l'élément `iframe`
 - Save & Close.
 
+#### d. Rajouter une video youtube
+Nous souhaitons intégrer cette video du département communication dans le site KinetEco. 
+Le lien de la video est : `https://www.youtube.com/watch?v=vXc849ig9iE`.
 
+Ce lien est un moyen poyr nous de partager notre video. Cependant, nous souhaitons que la video se joue sur notre site.
+Pour cela: 
+- ouvrez la video
+- cliquer sur le lien `partager` (juste en dessous de notre video youtube)
+- et dans la fenetre qui s'affiche, nous avons une icône `<>`   <img src="portage_joomla/lien_partage.png" style="width:50%"/>
 
+- cliquer sur ce lien et copier/coller le code contenant la balise `<iframe>` (on peut modifier le temps de début de la video, la taille, etc etc)
+- maintenant, revenez dans l'article manager et ouvrez l'article `About`. Cliquez sur le bouton `toggle` pour insérer du code en html  taper sur entrer pour passer à la ligne et coller ce qu'on vient de copier en bas de tout l'article.
 
+- Save & close et vous devriez tester la page `About`
+
+Remarque: si on ne passe pas par la méthode `Toggle editor`, Joomla prend le HTML en tant que texte et la video ne s'affichera pas.
 
 
 
