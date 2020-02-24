@@ -1317,19 +1317,45 @@ Pour cela:
 
 Remarque: si on ne passe pas par la méthode `Toggle editor`, Joomla prend le HTML en tant que texte et la video ne s'affichera pas.
 
+#### e. Rajout de lien image spécifique à un article
 
+Dans cette section, nous allons regarder le solar blog. On a plusieurs articles avec des images mais la première vue du blog n'est pas très interessant: rien ne nous dit qu'il y aura des images à voir, ... etc
+Nous allons donc afficher dans la présentation des articles dans le Solar blog, une version minifié (un thumbnail) de l'image correspondant à l'article.
+On veut également que ces petites images soient standardisés (même taille, même résolution, ...)
+- revenons dans l'article manager et filtrer les articles selons les catégories pour n'afficher que les articles de solar blog
+- ouvrez l'article `Farmers...`.
+- Tout en bas de l'éditeur d'article, en dessous, cherchez `Intro image`. Cela ouvrira le Media manager.
+- Entrez dans le répertoire `blog` 
+- Uploader les images qui sont `portage_joomla/Chapter 6/06_05/` . Ces images sont des version mini (petites) des images qui sont dans les articles.
+- Et comme nous sommes dans l'article `Farmer...`,  nous allons choisir donc l'image correspondant à l'article farmers, c'est l'image `blog-farmer-sm`. Cliquer alors sur l'image.
+- Cliquer sur `Insert`.
+- l'option `Global`permet de définir où l'image s'affichera. On gardera peut le définir mais on gardera `Global` et ensuite, nous allons voir comment on va changer la position par défaut definit par `Global` (mais on peut également définir une option image par image <=> mais si on nous demande ensuite de le modifier, il va falloir modifier toutes les options de chaque image).
+- Remplir `Alt` par un texte arbitraire `Some solar panels in the farmer's field`.
+- Plus bas dans l'option `Full article image`, cliquer sur `Select` et choisir l'image de taille normale `blog-farmer.jpg` dans   le répertoire `blog`.
+- Copier / coller le même texte pour `Alt`.
+- revenir dans l'article en dessus et cliquer sur l'image dans l'article (taper `suppr` pour supprimer l'image car on n'en a plus besoin)
+- Save & close et rafraichir le front-end pour voir le résultat (allez dans solar blog). Une petite image en thumbnail est en préview et quand on ouvre read-more, on voit l'image en premier et le texte ensuite.
 
+Travail à faire:
+- faire la même chose pour les deux autres articles du solar blog, qui contiennent une image: `Announcing K-Eco Mini Panels` et ` Embry house - a model of energy efficiency`.
 
+Après ce travail, on se rend compte que les articles sont un peu plus consistent en terme de mise en forme (ils ont tous la même mise en forme sauf celui qui n'a pas d'image)
 
+<img src="portage_joomla/mise_en_forme_article.png"/>
 
+<p></p>
 
+**<span style="color:red">Cette petite partie permet de modifier l'emplacement ou l'alignement des images qu'on vien de rajouter. Vous pouvez tester mais, pour le moment, ça à l'air de ne pas fonctionner dans Joomla (peut-être un bug) dans Joomla. Si ça marche chez vous, merci de me le dire</span>**
 
+Avant de finir cette partie, nous allons voir comment on modifie l'emplacement de l'image dans l'article (car là, on voit qu'il est au dessus alors que nous l'avions au dessous auparavant).
+- Entrer dans l'article manager et cliquez sur le bouton `Options` en haut dans la barre d'outil
+- Choisir `Article` dans le bandeau de gauche si ce n'est pas déjà choisi.
+- Allez dans l'onglet `Editing layout`.
+- On y retrouver `Administrator Images and Links`, ce qui nous permet de rajouter ces images dans ls articles dans l'interface d'administrator (ce qu'on vient de faire). 
+- On y retrouver également les 3 champs `URL A..., URL B..., URL C...` (pour configurer si les liens dans mon articles s'ouvriront dans une nouvelle fenetre ou dans un nouvel onglet)
+- Et vers la fin, on retrouve les paramètres `Intro Image Float` et `Full Text Image Float`.
 
-
-
-
-
-
+Mettre ces Intro image à `right` (pour le moment, cette option ne fonctionne pas dans Joomla donc vous ne verrez pas de modification dans le front-end) et `Full text image...`à `None`.
 
 
 
