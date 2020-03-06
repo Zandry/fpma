@@ -1453,6 +1453,20 @@ Save & close et tester le front-end en entrant dans le `Solar blog`.
 Vous aurez des liens sur les titres et les boutons auront disparus. 
 Si vous essayez d'aller dans `News & Info`, les titres seront noirs et les boutons seront là car seuls le menu `Solar blog` a été affecté.
 
+#### c. Comparaison des en-têtes de page , des titres des articles et titre de navigateur
+La question ici est de savoir à quoi correspondent ces différentes titres et comment les définir dans joomla au besoin.
+
+Nous allons montrer cela par la création d'un article temporaire.
+- ouvrez l'article manager et créer un article avec un titre `Title`. 
+- mettre une catégorie `Uncategorized`
+- Mettez un contenu `Ceci est un article`.
+
+Pour afficher l'article, nous allons créer un `menu item` dans le `Main menu` (`Single article` et comme titre du menu, je mettrai `Article title`). 
+- Allez ensuite dans `Advanced options` et `Page display options` et dans la partie `Browser page title` (c'est le titre qui s'affichera dans le navigateur), taper "Browser page title" et mettez `Show page heading` à `yes` et taper dans `Page heading` le texte "Page heading" (c'est un titre qui s'affichera avant l'article dans la page).
+Save & Close et tester le nouveau menu afin de voir et comprendre toutes ces différents heading et title.
+Avant de terminer, supprimer le nouveau menu et le nouvel article qui ne servent plus à rien.
+
+
 
 
 
