@@ -1203,6 +1203,188 @@ Exercice: appliquer le même style (horizontal et nav-pills ) au menu footer.
 ### l. Navigation secondaire (pour le moment pas important, nous le verrons plus tard)
 
 
+### 3.5 Formattage avancé d'articles
+
+#### a. Ajout d'un lien vers un pdf dans un article
+Nous avons un nouveau pdf venant d'un de nos partenaires. Il nous faudra rajouter un lien vers ce pdf dans notre page `About`.
+- Commencer par créer un nouveau répertoire dans le Media manager, on l'appelera `pdf`.
+- rajouter le pdf, qui est dans `portage_joomla/Chapter 6/06_01/kineteco-brochure.pdf` dans le media manager, à l'intérieur du répertoire `pdf` (on sait le faire).
+  
+  <img src="portage_joomla/upload_pdf.png"/>
+  
+  On retrouve selectionné dans l'image ci-dessus le chemin relatif du fichier pdf. Les éléments du media manager, on le rappelle, est dans le répertoire `images` de Joomla.
+
+Maintenant, aller dans l'article manager et ouvrez l'article `About`.
+
+Tout à la fin de l'article, on va rajouter le texte suivant: 
+
+`Read our company brochure (pdf, 175k)`
+
+Ensuite selectionner le texte `Read our company brochure` et cliquer sur le bouton lien (voir image ci-dessous)
+
+<img src="portage_joomla/link_pdf.png"/>
+ Dans la fenetre de lin, on va mettre `URL` = `images/pdf/kineteco-brochure.pdf` et `target`= `New window`
+ et cliquer sur `Insert` pour finir et `save & close` pour terminer sur l'édition de l'article.
+ 
+ remarque: Si les pdf ont des tailles trop importantes, il faut les réduire pour ne pas ralentir le site.
+
+
+#### b. Diviser des articles longues (accordéon)
+Nous somme sur la page des `Executives`, on voit que c'est juste une liste de nom et de biography. 
+On souahite améliorer le look. Nous allons utiliser les accordions de bootstrap.
+C'est adapté car on a des titres et des contenus, suivi d'autres titres et d'autres contenus...
+(voir la doc ici https://www.w3schools.com/bootstrap4/bootstrap_collapse.asp).
+
+Pour voir les accordions en action dans Joomla, vous l'avez quand vous choisissez un ` Menu Item Type` dans le menu manager (en cliquant sur chaque titre, vous collapsez ou étendez l'accordéon).
+
+Pour faire de même, commencez par aller dans `Article manager` et éditez l'article `Executives`.
+
+On rappelle que les titres sont des balises `<h2>` (si vous cliquez sur le bouton `toggle editor`, vous verrz les balises `<h2>`).
+Pour commencer, nous allons insérer des `Saut de page` entre chaque sections d''executives.
+Tout en bas de l'editeur d'article, vous avez le bouton `Page break` (saut de page comme dans ms word). Cela nous permet d'avoir chaque personne sur une page individuelle. Et c'est ensuite chaque page que nous allons afficher dans un accordeon (au lieu de tourner chaque page comme on fait habituellement)
+
+- Je vais positionner mon premier saut de page avant Simon. (place la souris avant Simon et cliquer sur le bouton ̀`Page break`).
+- Saisir `Simon Lodine, PhD, CEO` dans les 2 champs et cliquer sur le bouton `Insert break`.
+
+- Faire de même pour `Sally Kerner, MBA, CFO`, `June Su-Woo, JD, Legal Counsel`, et `Jason Hemlock, PE, Principal Design Engineer`.
+
+Quand c'est fini, rafraichir la page et vous obtenez: 
+
+<img src="portage_joomla/executive_multi_page"/>
+
+On se rend compte que cela nous a créé une sorte de menu de sous-navigation.
+Remarquer que le premier element du menu n'a pas de contenu car on a rajouté le saut de page juste avant le contenu (ça fait une première page vide)
+- Save & Close pour continuer
+- Allez dans `Extensions> Plugin manager` et chercher un plugin appelé `Content Pagebreak`
+- Editer-le en cliquant dessus.
+- Ensuite, dans `Basic options`, changez `Presentation style` de `Page` à `Slider` (c'est le mot qu'utilise joomla pour dire accordion). 
+- Save&Close et tester. Vous allez voir que le contenu est devenu un accordion et on peut même s'amuser à modifier les css de la page.
+
+Maintenant, nous souhaitons nous débarasser des titres noirs dans le texte puisque nos titres sont déjà les en-têtes de chaque élément de notre accordion.
+Ces titres en noirs sont les titres qui sont encadrés par des balises `<h2>` dans nos articles.
+- revenir dans l'article manager et éditez l'article `executives`. Ensuite supprimer les titres dans l'articles (ce sont les noms des Executives) ==> voir image ci-dessous
+<img src="portage_joomla/suppr_header_accordion.png"/>.
+- rafraichir le front-end et voir le résultat.
+Le titre reste car on a déjà construit l'accordion. Si on refait tout, alors il faudra remettre le titre des articles afin de reconstruire les titres des accordions.
+
+
+#### c. Paramétrage de l'insertion des tags HTML
+
+Joomla n'accepte pas toujours d'insérer dans ses contenus n'importe quel tag HTML, pour des raisons de sécurité. Cela pourtant, peut causer des problèmes dans les affichages des articles ou des contenus joomla.
+Dans la pratique, si un tags HTML n'est pas autorisé, Joomla l'enlève tout simplement du contenu.
+Dans cette section, nous allons voir comment paramétrer les tags autorisé et les tags non autorisés.
+- Entrer dans `Global configuration` (rappel: Menu `System > Dashboard` et à gauche.
+- Aller dans l'onglet `Text filters`.
+Et là on remarque les différents utilisateurs et groupes d'utilisateurs et leur droits.
+
+Tout en bas, on a l'utilisateur `Super users` et à côté `No filtering`. Cela signifie que tout ce que vous entrez dans vos articles sont pris tel qu'ils sont et sont enregistrés dans la base de données à vos risques et périls. 
+
+Pour les autres utilisateurs, les choix sont :
+- Default black list (permet de mettre tous les tags sauf des tags venant d'une liste noire)
+- Custom black list (comme default black list mais avec une liste que vosu avez créé)
+- White list (permet ne mettre aucun tags sauf ceux qui sont dans une liste blanche)
+- No HTML (aucun HTML autorisé)
+- No filtering (pas de filtrage , tout est autorisé)
+
+Des exemples de tags dangereuses sont les tags HTML comme les `iframe` ou les `applets` ou les `scripts` qui permettent de faire de l'execution de code ou de l'ijection de code.
+
+L'exemple de cas où cela serait utile serait que vous souhaitez insérer une video youtube dans votre article et là, le code html est enlevé et la vidéo ne fonctionne pas.
+
+La deuxième chose à faire est de vérifier si votre éditeur de texte `TinyMCE` ne strippe pas non plus les HTML.
+Pour cela, aller dans le plugin manager.
+- Extension > Plugin manager 
+- Scroller jusqu'à TinyMCE et cliquez dessus.
+- Aller dans l'onglet `Basic Options` et vers le bas, vous trouverez `prohibited elements` et là il y a une liste.
+- Cette liste s'applique à tout le groupe d'utilisateur (non pas à un seul utilisateur) jusqu'au super user.
+Travail: voir sur google ce que fait le tag `iframe` et `applet`.
+- pour pouvoir insérer une video, enlever de la liste l'élément `iframe`
+- Save & Close.
+
+#### d. Rajouter une video youtube
+Nous souhaitons intégrer cette video du département communication dans le site KinetEco. 
+Le lien de la video est : `https://www.youtube.com/watch?v=vXc849ig9iE`.
+
+Ce lien est un moyen poyr nous de partager notre video. Cependant, nous souhaitons que la video se joue sur notre site.
+Pour cela: 
+- ouvrez la video
+- cliquer sur le lien `partager` (juste en dessous de notre video youtube)
+- et dans la fenetre qui s'affiche, nous avons une icône `<>`   <img src="portage_joomla/lien_partage.png" style="width:50%"/>
+
+- cliquer sur ce lien et copier/coller le code contenant la balise `<iframe>` (on peut modifier le temps de début de la video, la taille, etc etc)
+- maintenant, revenez dans l'article manager et ouvrez l'article `About`. Cliquez sur le bouton `toggle` pour insérer du code en html  taper sur entrer pour passer à la ligne et coller ce qu'on vient de copier en bas de tout l'article.
+
+- Save & close et vous devriez tester la page `About`
+
+Remarque: si on ne passe pas par la méthode `Toggle editor`, Joomla prend le HTML en tant que texte et la video ne s'affichera pas.
+
+#### e. Rajout de lien image spécifique à un article
+
+Dans cette section, nous allons regarder le solar blog. On a plusieurs articles avec des images mais la première vue du blog n'est pas très interessant: rien ne nous dit qu'il y aura des images à voir, ... etc
+Nous allons donc afficher dans la présentation des articles dans le Solar blog, une version minifié (un thumbnail) de l'image correspondant à l'article.
+On veut également que ces petites images soient standardisés (même taille, même résolution, ...)
+- revenons dans l'article manager et filtrer les articles selons les catégories pour n'afficher que les articles de solar blog
+- ouvrez l'article `Farmers...`.
+- Tout en bas de l'éditeur d'article, en dessous, cherchez `Intro image`. Cela ouvrira le Media manager.
+- Entrez dans le répertoire `blog` 
+- Uploader les images qui sont `portage_joomla/Chapter 6/06_05/` . Ces images sont des version mini (petites) des images qui sont dans les articles.
+- Et comme nous sommes dans l'article `Farmer...`,  nous allons choisir donc l'image correspondant à l'article farmers, c'est l'image `blog-farmer-sm`. Cliquer alors sur l'image.
+- Cliquer sur `Insert`.
+- l'option `Global`permet de définir où l'image s'affichera. On gardera peut le définir mais on gardera `Global` et ensuite, nous allons voir comment on va changer la position par défaut definit par `Global` (mais on peut également définir une option image par image <=> mais si on nous demande ensuite de le modifier, il va falloir modifier toutes les options de chaque image).
+- Remplir `Alt` par un texte arbitraire `Some solar panels in the farmer's field`.
+- Plus bas dans l'option `Full article image`, cliquer sur `Select` et choisir l'image de taille normale `blog-farmer.jpg` dans   le répertoire `blog`.
+- Copier / coller le même texte pour `Alt`.
+- revenir dans l'article en dessus et cliquer sur l'image dans l'article (taper `suppr` pour supprimer l'image car on n'en a plus besoin)
+- Save & close et rafraichir le front-end pour voir le résultat (allez dans solar blog). Une petite image en thumbnail est en préview et quand on ouvre read-more, on voit l'image en premier et le texte ensuite.
+
+Travail à faire:
+- faire la même chose pour les deux autres articles du solar blog, qui contiennent une image: `Announcing K-Eco Mini Panels` et ` Embry house - a model of energy efficiency`.
+
+Après ce travail, on se rend compte que les articles sont un peu plus consistent en terme de mise en forme (ils ont tous la même mise en forme sauf celui qui n'a pas d'image)
+
+<img src="portage_joomla/mise_en_forme_article.png"/>
+
+<p></p>
+
+**<span style="color:red">Cette petite partie permet de modifier l'emplacement ou l'alignement des images qu'on vien de rajouter. Vous pouvez tester mais, pour le moment, ça à l'air de ne pas fonctionner dans Joomla (peut-être un bug) dans Joomla. Si ça marche chez vous, merci de me le dire</span>**
+
+Avant de finir cette partie, nous allons voir comment on modifie l'emplacement de l'image dans l'article (car là, on voit qu'il est au dessus alors que nous l'avions au dessous auparavant).
+- Entrer dans l'article manager et cliquez sur le bouton `Options` en haut dans la barre d'outil
+- Choisir `Article` dans le bandeau de gauche si ce n'est pas déjà choisi.
+- Allez dans l'onglet `Editing layout`.
+- On y retrouver `Administrator Images and Links`, ce qui nous permet de rajouter ces images dans ls articles dans l'interface d'administrator (ce qu'on vient de faire). 
+- On y retrouver également les 3 champs `URL A..., URL B..., URL C...` (pour configurer si les liens dans mon articles s'ouvriront dans une nouvelle fenetre ou dans un nouvel onglet)
+- Et vers la fin, on retrouve les paramètres `Intro Image Float` et `Full Text Image Float`.
+
+Mettre ces Intro image à `right` (pour le moment, cette option ne fonctionne pas dans Joomla donc vous ne verrez pas de modification dans le front-end) et `Full text image...`à `None`.
+
+#### f. Styler des images avec les styles bootstrap
+
+Dans la section Product de notre page, nous avons un certain nombre de bloc de texte statique et des images. Pour les voir, cliquer sur le menu `Product` et le lien suivant ou précédent en dessous des articles.
+Dans cette section, nous allons améliorer l'apparence de ces pages. 
+
+En effet, notre version de Joomla intègre bootstrap, donc on peut profiter des styles de Bootstrap.
+Pour l'instant, nos images sont des carrés, mais Bootstrap a plusieurs manières de mettre des images en forme.
+
+Pour les voir, nous allons sur le site https://getbootstrap.com/2.3.2/base-css.html#images. Mais ça c'est pour une version vieille de Boostrap. Maintenant, il faut aller ici https://getbootstrap.com/docs/4.4/content/images/ et aussi ici https://www.w3schools.com/bootstrap4/bootstrap_images.asp.
+
+
+Dans notre cas, nous souhaitons appliquer ces classes d'images pour les images dans notre article.
+- revenez donc à votre article manager et filtrez sur tous les articles de `Product`.
+- Ouvrer l'article `K-Eco Energy Bulbs` et cliquez sur l'image à droite.
+  <img src="portage_joomla/boostrap_img.png"/>
+- Dans la petite fenetre qui apparaît passer dans l'onglet `Appearance`. Choisr `value` dans le combobox et tapez dedans `img-rounded`.
+- Save & Close et tester le front-end. On ne verra pas les modifications dans l'éditeur car l'éditeur ne supporte pas encore Boostrap et donc ne reconnait pas le style. Par contre, les bords arrondis devraient se voir dans le front-end.
+
+Travail à faire: effectuer les mêmes modifications pour les autres images des autres articles:
+- Pour l'image dans l'article `K-Eco Low-Flow Shower Head`, mettre l'image en cercle (classe bootstrap `img-circle`) avec les css boostrap.
+- Tester pour les autres articles dans `products` et aussi dans `About` (vous êtes libreeeeeee de tester ce que vous voulez comme forme d'images)
+- tester également le formattage polaroid (classe `img-polaroid`) sur l'image dans l'article Product dans la catégorie product.
+
+Voici un exemple de résultat:
+<img  src="portage_joomla/img-rounded_about.png"/>
+
+
+
 
 
 
