@@ -1357,6 +1357,31 @@ Avant de finir cette partie, nous allons voir comment on modifie l'emplacement d
 
 Mettre ces Intro image à `right` (pour le moment, cette option ne fonctionne pas dans Joomla donc vous ne verrez pas de modification dans le front-end) et `Full text image...`à `None`.
 
+#### f. Styler des images avec les styles bootstrap
+
+Dans la section Product de notre page, nous avons un certain nombre de bloc de texte statique et des images. Pour les voir, cliquer sur le menu `Product` et le lien suivant ou précédent en dessous des articles.
+Dans cette section, nous allons améliorer l'apparence de ces pages. 
+
+En effet, notre version de Joomla intègre bootstrap, donc on peut profiter des styles de Bootstrap.
+Pour l'instant, nos images sont des carrés, mais Bootstrap a plusieurs manières de mettre des images en forme.
+
+Pour les voir, nous allons sur le site https://getbootstrap.com/2.3.2/base-css.html#images. Mais ça c'est pour une version vieille de Boostrap. Maintenant, il faut aller ici https://getbootstrap.com/docs/4.4/content/images/ et aussi ici https://www.w3schools.com/bootstrap4/bootstrap_images.asp.
+
+
+Dans notre cas, nous souhaitons appliquer ces classes d'images pour les images dans notre article.
+- revenez donc à votre article manager et filtrez sur tous les articles de `Product`.
+- Ouvrer l'article `K-Eco Energy Bulbs` et cliquez sur l'image à droite.
+  <img src="portage_joomla/boostrap_img.png"/>
+- Dans la petite fenetre qui apparaît passer dans l'onglet `Appearance`. Choisr `value` dans le combobox et tapez dedans `img-rounded`.
+- Save & Close et tester le front-end. On ne verra pas les modifications dans l'éditeur car l'éditeur ne supporte pas encore Boostrap et donc ne reconnait pas le style. Par contre, les bords arrondis devraient se voir dans le front-end.
+
+Travail à faire: effectuer les mêmes modifications pour les autres images des autres articles:
+- Pour l'image dans l'article `K-Eco Low-Flow Shower Head`, mettre l'image en cercle (classe bootstrap `img-circle`) avec les css boostrap.
+- Tester pour les autres articles dans `products` et aussi dans `About` (vous êtes libreeeeeee de tester ce que vous voulez comme forme d'images)
+- tester également le formattage polaroid (classe `img-polaroid`) sur l'image dans l'article Product dans la catégorie product.
+
+Voici un exemple de résultat:
+<img  src="portage_joomla/img-rounded_about.png"/>
 
 
 
