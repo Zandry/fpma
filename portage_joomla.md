@@ -1435,6 +1435,23 @@ Si je teste mon site, l'affichage est propre. Cependant, dans le `Solar blog`, j
 
 Nous allons faire cela dans la section suivante.
 
+#### b. Menu display options (pour un menu complet)
+Comme dit ci-dessus, je souhaiterais garder les titres avec les liens pour le blog. Cela me permettra de les clocker pour aller dans l'article complet. 
+De plus, je n'aime pas vraiment le style des boutons `Read more` (pour le moment) donc je souhaiterais les enlever pour le Solar blog. Si le visiteurs de mon site souhaitent lire l'article au complet, ils cliqueront sur le titre et cela ouvrira l'article complet.
+
+Pour cela, je vais donc `surcharger` les options globales que je viens de mettre (mais seulement pour le Solar blog). Cela signifie aussi que tous les articles que nous souahaitons modifier sont tous sous un seul Menu (le menu Solar blog). 
+Joomla permet de définir des settings pour tous les articles sous un seul menu.
+
+- Allez dans le Menu manager > Main menu et trouver le menu `Solar blog`.
+- Cliquer dessus et allez dans l'onglet `Advanced Options` et descendez jusqu'à la partie `Article Options`. On y retrouver un peu les options qu'on vient de définir dans `Global configuration` mais si on les définit ici, alors ils serons valides seulement pour les articles dans ce menu item.
+
+Pour le site, nous souhaitons donc:
+* mettre `Yes` à `Linked Titles` (voir la description de cet option si vous avez oublié dans la partie `a`).
+* mettre `Hide` à `Show read more` pour cacher le bouton et également `Hide`à `Show titles with Read more`.
+
+Save & close et tester le front-end en entrant dans le `Solar blog`.
+Vous aurez des liens sur les titres et les boutons auront disparus. 
+Si vous essayez d'aller dans `News & Info`, les titres seront noirs et les boutons seront là car seuls le menu `Solar blog` a été affecté.
 
 
 
