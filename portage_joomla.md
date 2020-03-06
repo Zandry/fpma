@@ -1384,6 +1384,57 @@ Voici un exemple de résultat:
 <img  src="portage_joomla/img-rounded_about.png"/>
 
 
+### 3.6 paramètre d'affichage dans Joomla  
+
+#### a. Options d'affichage des articles
+
+Nous avons dit depuis plusieurs titres que nous allons nettoyé la manière dont les articles seront affichés.
+Dans cette section, nous allons procéder au paramétrage de l'affichage des articles afin que les affiches des auteurs, ou des dates etc etc soient contrôlables.
+
+Actuellement, nous avons l'affichage ci-dessous.
+
+<img src="portage_joomla/affichage_articles.png"/>
+(voir les parties encadrés en rouge aussi - ce sont des parties qui ne sont pas forcément utiles)
+
+On peut se débarasser de ces parties sur une base d'article par articles ou sur une base global où on demande à Joomla ne
+plus afficher ces détails pour chaque articles.
+
+Nous allons commencer par la méthode globale qui permet à Joomla d'enlever tous ces détails dans chaque article.
+Ensuite, nous allons voir dans chaque article pour lequel nous souhaitons garder ces détails.
+
+- Allez dans `Article Manager` et cliquer sur le bouton `Options` (**juste le super user a le droit de voir ce bouton**)
+- Choisir `Article` dans la partie de gauche si ce n'est pas déjà choisi.
+- `Linked Titles` permet de mettre un titre qui n'est pas un lien hypertexte (pour certaines articles c'est interessant mais pour d'autres, on va l'enlever car cela permet juste de recharger la page pour certaines articles.). Nous allons globalement l'enlever ici et le reactiver pour les articles qui nous interessent.
+- `Show Intro Text` est le petit bout de texte qui s'affiche avant le bouton `Read more`.
+- `Position of Article Info` est la position des informations encadrés en rouge dans la figure ci-dessus.
+- `Show catagory` permet de cacher ou d'afficher le texte `Category: Products` en dessous de `Détails` (voir le dessin ci-dessus et la partie encadrée en rouge). on va le mettre à Hide car on ne veut pas de ce texte à chaque fois.
+- `Link category`permet d'afficher le nom du catégory en lien (en bleu donc). On va le mettre à Hide.
+- Un peu plus bas, nou avons `Show athor`. C'est le texte `Written by Super User` (ou tout autre auteur). On va le mettre à `Hide` également.
+- `Show Publish Date` (un peu plus bas) est aussi à cacher car cela ne nous interesse pas beaucoup.
+- `Show Navigation` est le bouton `Next` et `Previous` que nous trouvons dans le `Product blog` par exemple.
+
+  <img src="portage_joomla/next_previous.png"/>
+  
+  (On peut voir également ces boutons quand on rentre dans un article de `News and Info` après avoir cliqué sur ̀`Read more`). 
+  Nous allons cacher également ces boutons.
+  
+- La section `Read more` permet de paramétrer les boutons `Read more`. On peut les cacher (`Show "Read More"`). On peut également ne pas afficher les titres dans les boutons mais juste le texte `Read more` (`Show Title with Read More`). Enfin, on peut aussi donner un nombre maximum de caractères à afficher dans le bouton (`Read More Limit`). Nous allons juste mettre `Show Title with Read More` à `Hide` pour que seul le bouton `Read more` s'affiche.
+
+-  Les options pour les icônes sont un peu plus bas encore. Les icônes dont on parle ici sont celles qui sont marqués dans la figure ci-dessous. 
+<img src="portage_joomla/icons_hits_mail_print.png"/>
+
+  Le bouton `Print` est interessant si on souhaite imprimer un article ou une page (tester en cliquant sur le bouton `Print`), mais on n'en a pas toujours besoin. Le bouton `Email` est beaucoup moins interessant car on n'a pas de zone où on peut donner un texte dans la fenetre qui s'affiche.
+  
+  Pour notre part, tous les boutons ne nous interessent pas encore. Nous allons donc tout cacher. Pour cela, on va utiliser l'option `Show Icons` qui nous cachera tous les icônes en un coup.
+    
+  Quand on teste, on se rend compte que cet option a juste caché les `icônes` mais les options `Hit`, `Email` ou `Print` sont toujours là. Si on veut les cacher, il faut mettre `Hide` dans chacune des options leur correspondant dans l'option d'article Manager.
+  <img src="portage_joomla/icons_hits_mail_print2.png"/>
+  (save and close et ensuite tester le front-end.)
+
+Si je teste mon site, l'affichage est propre. Cependant, dans le `Solar blog`, je voudrais bien avoir les liens sur les titres (comme avant). En plus, je ne voudrais peut-être pas avoir un bouton `Read more` puisque j'ai mon titre qui sera déjà un lien vers mon article.
+
+Nous allons faire cela dans la section suivante.
+
 
 
 
