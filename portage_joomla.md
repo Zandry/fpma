@@ -1480,14 +1480,46 @@ Je vais donc prendre le texte du premier article dans le Home page `Harnessing w
 Revenez dans le Menu Home, dans `Advanced options` et `Page display options`, entrez ce texte comme valeur dans `Browser page title`.
 
 
+#### c. Configuration des écrans de configurations du backend et du front-end 
 
+Joomla a beaucoup d'écrans de configurations, comme nous l'avons vu. Cela peut nous causer des problèmes car, comme nous l'avon vu, on pourrait configurer la même chose à plusieurs endroits différents. Dans cette section, nous allons voir comment paramétrer ces écrans de config pour que ce soit plus simples et éventuellement, comment désactiver certains de ces écrans de config.
 
+Allons dans l'article manager et ouvrons l'article `Farmers installing solar power...`. On y retrouve plusieurs autres options, en particulier les onglets en dessus de l'article comme le montre la photo ci-dessous
 
+<img src="portage_joomla/articles_options.png"/>
 
+- Dans l'onglet `Publishing options`,  on peut retrouver une option sympatique qui est `start pusblishing` et `finish publishing` et donc l'article sera publié seulement entre ces dates là et ensuite sera retiré de la publication (comme si elle n'existait pas).
 
+- Dans l'onglet `Article Options`, on reconnait une configuration qu'on a déjà vu plusieurs fois: `show text`, `Linked text`... Cette fois, ces configurations, qu'on connait déjà, seront définies pour l'article seulement. 
+- Pour l'instant `Configuring edit screen` n'est pas important pour nous
+- On a aussi l'onglet `Metadata options`, pour insérer les métadata mais propre à cet article (pour optimiser les moteurs de recherche sur notre site par exemple).
+- Nous allons voir également `Article permissions` plus loin.
 
+Dans la pratique, il est possible que nous n'aurons jamais à modifier les options listés ci-dessus et Joomla nous offre une manière de les désactiver. 
+- pour commencer, fermer l'article. `Close`.
+- Ensuite allez dans le bouton `Options` et allez dans l'onglet `Editing layout`.
+  <img src="portage_joomla/articles_editing_options.png"/>
 
+Ce qu'on retrouve est l'activation de l'affichage ou pas des onglets dans l'éditeur d'articles.
+* `Show publishing options` permet de cacher l'onglet `Publishing options` dans l'éditeur d'articles. Nous allons le mettre à `No` car peut-être que nous en aurons besoin.
+* Il en est de même pour l'onglet `Article options` pour l'option `Show Article options`. Nous allons également le mettre à `No`.
+* `Front-end images and links` permet d'insérer des images à partir du front-end pour les utilisateurs ayant le droit. Nous allons le mettre à `No` car cela ne nous servira pas.
+* `Administrator Images and links` fait la même chose mais à partir de l'interface d'administration. Nous allons également le mettre à No.
 
+Save ans close et réouvrir l'article `Farmers installing ....`. Si vous cliquez cette fois sur l'onglet `Publishing options`, alors, rien ne se passe car il a été désactivé. Et d'autre part `Article options` a disparu. De plus, si on va en dessous de l'éditeur d'article, on voit que nous n'avons plus l'interface d'ajout d'image (pour rajouter le gros et petits images) qu'on avait avant car nous l'avons désactivé.
+
+Il est à remarquer que ces options ont été désactivé globalement (donc pour tout joomla).
+Mais comme dans tout joomla, on peut l'activer article par article (afin que certaines articles qui ont en besoin puisse y avoir accès).
+
+Pour cela, nous allons dans l'onglet `Configure Edit screen` et on retrouve les même configurations qu'on vient de désactiver dans l'options des articles de Joomla.
+
+Pour le voir, nous allons réactiver l'options `Administrator Images and links` et donc le mettre à `Yes`. Pour le reste, nous allons laisser comme ça. Si vous sauvez les modifications par le bouton `save`, vous verrez apparaître en dessous l'interface de rajout d'image.
+
+Pour le moment, nous allons remettre cet opption à `Use global` car nous n'en avons pas besoin dans cet article.
+
+Au contraire, nous allons le réactiver globalement et le mettre à `Yes` là où nous l'avons désactivé (dans l'options des articles) et sauvegarder ma configuration.
+
+Même si nous avons configuré l'options globalement, il est à remarquer que nous l'avons utilisé seulement pour les blogs.
 
 
 
