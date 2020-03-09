@@ -1384,6 +1384,151 @@ Voici un exemple de résultat:
 <img  src="portage_joomla/img-rounded_about.png"/>
 
 
+### 3.6 paramètre d'affichage dans Joomla  
+
+#### a. Options d'affichage des articles
+
+Nous avons dit depuis plusieurs titres que nous allons nettoyé la manière dont les articles seront affichés.
+Dans cette section, nous allons procéder au paramétrage de l'affichage des articles afin que les affiches des auteurs, ou des dates etc etc soient contrôlables.
+
+Actuellement, nous avons l'affichage ci-dessous.
+
+<img src="portage_joomla/affichage_articles.png"/>
+(voir les parties encadrés en rouge aussi - ce sont des parties qui ne sont pas forcément utiles)
+
+On peut se débarasser de ces parties sur une base d'article par articles ou sur une base global où on demande à Joomla ne
+plus afficher ces détails pour chaque articles.
+
+Nous allons commencer par la méthode globale qui permet à Joomla d'enlever tous ces détails dans chaque article.
+Ensuite, nous allons voir dans chaque article pour lequel nous souhaitons garder ces détails.
+
+- Allez dans `Article Manager` et cliquer sur le bouton `Options` (**juste le super user a le droit de voir ce bouton**)
+- Choisir `Article` dans la partie de gauche si ce n'est pas déjà choisi.
+- `Linked Titles` permet de mettre un titre qui n'est pas un lien hypertexte (pour certaines articles c'est interessant mais pour d'autres, on va l'enlever car cela permet juste de recharger la page pour certaines articles.). Nous allons globalement l'enlever ici et le reactiver pour les articles qui nous interessent.
+- `Show Intro Text` est le petit bout de texte qui s'affiche avant le bouton `Read more`.
+- `Position of Article Info` est la position des informations encadrés en rouge dans la figure ci-dessus.
+- `Show catagory` permet de cacher ou d'afficher le texte `Category: Products` en dessous de `Détails` (voir le dessin ci-dessus et la partie encadrée en rouge). on va le mettre à Hide car on ne veut pas de ce texte à chaque fois.
+- `Link category`permet d'afficher le nom du catégory en lien (en bleu donc). On va le mettre à Hide.
+- Un peu plus bas, nou avons `Show athor`. C'est le texte `Written by Super User` (ou tout autre auteur). On va le mettre à `Hide` également.
+- `Show Publish Date` (un peu plus bas) est aussi à cacher car cela ne nous interesse pas beaucoup.
+- `Show Navigation` est le bouton `Next` et `Previous` que nous trouvons dans le `Product blog` par exemple.
+
+  <img src="portage_joomla/next_previous.png"/>
+  
+  (On peut voir également ces boutons quand on rentre dans un article de `News and Info` après avoir cliqué sur ̀`Read more`). 
+  Nous allons cacher également ces boutons.
+  
+- La section `Read more` permet de paramétrer les boutons `Read more`. On peut les cacher (`Show "Read More"`). On peut également ne pas afficher les titres dans les boutons mais juste le texte `Read more` (`Show Title with Read More`). Enfin, on peut aussi donner un nombre maximum de caractères à afficher dans le bouton (`Read More Limit`). Nous allons juste mettre `Show Title with Read More` à `Hide` pour que seul le bouton `Read more` s'affiche.
+
+-  Les options pour les icônes sont un peu plus bas encore. Les icônes dont on parle ici sont celles qui sont marqués dans la figure ci-dessous. 
+<img src="portage_joomla/icons_hits_mail_print.png"/>
+
+  Le bouton `Print` est interessant si on souhaite imprimer un article ou une page (tester en cliquant sur le bouton `Print`), mais on n'en a pas toujours besoin. Le bouton `Email` est beaucoup moins interessant car on n'a pas de zone où on peut donner un texte dans la fenetre qui s'affiche.
+  
+  Pour notre part, tous les boutons ne nous interessent pas encore. Nous allons donc tout cacher. Pour cela, on va utiliser l'option `Show Icons` qui nous cachera tous les icônes en un coup.
+    
+  Quand on teste, on se rend compte que cet option a juste caché les `icônes` mais les options `Hit`, `Email` ou `Print` sont toujours là. Si on veut les cacher, il faut mettre `Hide` dans chacune des options leur correspondant dans l'option d'article Manager.
+  <img src="portage_joomla/icons_hits_mail_print2.png"/>
+  (save and close et ensuite tester le front-end.)
+
+Si je teste mon site, l'affichage est propre. Cependant, dans le `Solar blog`, je voudrais bien avoir les liens sur les titres (comme avant). En plus, je ne voudrais peut-être pas avoir un bouton `Read more` puisque j'ai mon titre qui sera déjà un lien vers mon article.
+
+Nous allons faire cela dans la section suivante.
+
+#### b. Menu display options (pour un menu complet)
+Comme dit ci-dessus, je souhaiterais garder les titres avec les liens pour le blog. Cela me permettra de les clocker pour aller dans l'article complet. 
+De plus, je n'aime pas vraiment le style des boutons `Read more` (pour le moment) donc je souhaiterais les enlever pour le Solar blog. Si le visiteurs de mon site souhaitent lire l'article au complet, ils cliqueront sur le titre et cela ouvrira l'article complet.
+
+Pour cela, je vais donc `surcharger` les options globales que je viens de mettre (mais seulement pour le Solar blog). Cela signifie aussi que tous les articles que nous souahaitons modifier sont tous sous un seul Menu (le menu Solar blog). 
+Joomla permet de définir des settings pour tous les articles sous un seul menu.
+
+- Allez dans le Menu manager > Main menu et trouver le menu `Solar blog`.
+- Cliquer dessus et allez dans l'onglet `Advanced Options` et descendez jusqu'à la partie `Article Options`. On y retrouver un peu les options qu'on vient de définir dans `Global configuration` mais si on les définit ici, alors ils serons valides seulement pour les articles dans ce menu item.
+
+Pour le site, nous souhaitons donc:
+* mettre `Yes` à `Linked Titles` (voir la description de cet option si vous avez oublié dans la partie `a`).
+* mettre `Hide` à `Show read more` pour cacher le bouton et également `Hide`à `Show titles with Read more`.
+
+Save & close et tester le front-end en entrant dans le `Solar blog`.
+Vous aurez des liens sur les titres et les boutons auront disparus. 
+Si vous essayez d'aller dans `News & Info`, les titres seront noirs et les boutons seront là car seuls le menu `Solar blog` a été affecté.
+
+#### c. Comparaison des en-têtes de page , des titres des articles et titre de navigateur
+La question ici est de savoir à quoi correspondent ces différentes titres et comment les définir dans joomla au besoin.
+
+Nous allons montrer cela par la création d'un article temporaire.
+- ouvrez l'article manager et créer un article avec un titre `Title`. 
+- mettre une catégorie `Uncategorized`
+- Mettez un contenu `Ceci est un article`.
+
+Pour afficher l'article, nous allons créer un `menu item` dans le `Main menu` (`Single article` et comme titre du menu, je mettrai `Article title`). 
+- Allez ensuite dans `Advanced options` et `Page display options` et dans la partie `Browser page title` (c'est le titre qui s'affichera dans le navigateur), taper "Browser page title" et mettez `Show page heading` à `yes` et taper dans `Page heading` le texte "Page heading" (c'est un titre qui s'affichera avant l'article dans la page).
+Save & Close et tester le nouveau menu afin de voir et comprendre toutes ces différents heading et title.
+Avant de terminer, supprimer le nouveau menu et le nouvel article qui ne servent plus à rien.
+
+#### d. Enlever le titre du Home page
+Si nous avons navigué depuis 5 mn sur la page, nous savons que la page est le homepage. Donc pas besoin de mettre un gros texte `Home` dessus. Nous allons donc enlever cela puisqu'on vient de voir comment.
+Ici, on parlerait du heading de la page `Page heading`.
+Pour cela: 
+- aller dans le menu manager > Main menu et cliquer sur `Home`.
+- Allez dans `Advanced options` et `Page display options` (pour réduire Article Options, cliquer sur dessus)
+- Ensuite, on y retrouve les items qu'on vient de voir dans la partie c. Ainsi pour désactiver le Page heading de ma homepage, je dois mettre `Show page heading` à `No`. 
+- Save & Close et tester le home page. Le mote `Home` ne devrait plus apparaître.
+
+L'autre chose qui pourrait nous interesser tant qu'on est dans ce sujet est de modifier le titre de notre navigateur quand on est dans la page Home. En effet, le titre du navigateur est `Home`, un titre qui n'est pas très descriptive du site et surtout comme ce titre est utilisé par les moteurs de recherche pour trouver notre site, il faut l'améliorer pour être descriptive.
+Je vais donc prendre le texte du premier article dans le Home page `Harnessing wind and sun for a cleaner, energized plan`, comme titre de page.
+Revenez dans le Menu Home, dans `Advanced options` et `Page display options`, entrez ce texte comme valeur dans `Browser page title`.
+
+
+#### c. Configuration des écrans de configurations du backend et du front-end 
+
+Joomla a beaucoup d'écrans de configurations, comme nous l'avons vu. Cela peut nous causer des problèmes car, comme nous l'avon vu, on pourrait configurer la même chose à plusieurs endroits différents. Dans cette section, nous allons voir comment paramétrer ces écrans de config pour que ce soit plus simples et éventuellement, comment désactiver certains de ces écrans de config.
+
+Allons dans l'article manager et ouvrons l'article `Farmers installing solar power...`. On y retrouve plusieurs autres options, en particulier les onglets en dessus de l'article comme le montre la photo ci-dessous
+
+<img src="portage_joomla/articles_options.png"/>
+
+- Dans l'onglet `Publishing options`,  on peut retrouver une option sympatique qui est `start pusblishing` et `finish publishing` et donc l'article sera publié seulement entre ces dates là et ensuite sera retiré de la publication (comme si elle n'existait pas).
+
+- Dans l'onglet `Article Options`, on reconnait une configuration qu'on a déjà vu plusieurs fois: `show text`, `Linked text`... Cette fois, ces configurations, qu'on connait déjà, seront définies pour l'article seulement. 
+- Pour l'instant `Configuring edit screen` n'est pas important pour nous
+- On a aussi l'onglet `Metadata options`, pour insérer les métadata mais propre à cet article (pour optimiser les moteurs de recherche sur notre site par exemple).
+- Nous allons voir également `Article permissions` plus loin.
+
+Dans la pratique, il est possible que nous n'aurons jamais à modifier les options listés ci-dessus et Joomla nous offre une manière de les désactiver. 
+- pour commencer, fermer l'article. `Close`.
+- Ensuite allez dans le bouton `Options` et allez dans l'onglet `Editing layout`.
+  <img src="portage_joomla/articles_editing_options.png"/>
+
+Ce qu'on retrouve est l'activation de l'affichage ou pas des onglets dans l'éditeur d'articles.
+* `Show publishing options` permet de cacher l'onglet `Publishing options` dans l'éditeur d'articles. Nous allons le mettre à `No` car peut-être que nous en aurons besoin.
+* Il en est de même pour l'onglet `Article options` pour l'option `Show Article options`. Nous allons également le mettre à `No`.
+* `Front-end images and links` permet d'insérer des images à partir du front-end pour les utilisateurs ayant le droit. Nous allons le mettre à `No` car cela ne nous servira pas.
+* `Administrator Images and links` fait la même chose mais à partir de l'interface d'administration. Nous allons également le mettre à No.
+
+Save ans close et réouvrir l'article `Farmers installing ....`. Si vous cliquez cette fois sur l'onglet `Publishing options`, alors, rien ne se passe car il a été désactivé. Et d'autre part `Article options` a disparu. De plus, si on va en dessous de l'éditeur d'article, on voit que nous n'avons plus l'interface d'ajout d'image (pour rajouter le gros et petits images) qu'on avait avant car nous l'avons désactivé.
+
+Il est à remarquer que ces options ont été désactivé globalement (donc pour tout joomla).
+Mais comme dans tout joomla, on peut l'activer article par article (afin que certaines articles qui ont en besoin puisse y avoir accès).
+
+Pour cela, nous allons dans l'onglet `Configure Edit screen` et on retrouve les même configurations qu'on vient de désactiver dans l'options des articles de Joomla.
+
+Pour le voir, nous allons réactiver l'options `Administrator Images and links` et donc le mettre à `Yes`. Pour le reste, nous allons laisser comme ça. Si vous sauvez les modifications par le bouton `save`, vous verrez apparaître en dessous l'interface de rajout d'image.
+
+Pour le moment, nous allons remettre cet opption à `Use global` car nous n'en avons pas besoin dans cet article.
+
+Au contraire, nous allons le réactiver globalement et le mettre à `Yes` là où nous l'avons désactivé (dans l'options des articles) et sauvegarder ma configuration.
+
+Même si nous avons configuré l'options globalement, il est à remarquer que nous l'avons utilisé seulement pour les blogs.
+
+
+
+
+
+
+
+
+
 
 
 
