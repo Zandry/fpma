@@ -1521,6 +1521,30 @@ Au contraire, nous allons le réactiver globalement et le mettre à `Yes` là o�
 
 Même si nous avons configuré l'options globalement, il est à remarquer que nous l'avons utilisé seulement pour les blogs.
 
+### 3.7 Les modules joomla
+
+#### a. Trouver les positions des modules dans un template joomla.
+
+Nous avons déjà commencé à travailler une fois sur les modules. En effet, dans les menus (cf 3.4), nous avons configuré un module pour aficher le menu footer ou le menu main. 
+
+Un module dans joomla est un élément qui permet d'afficher quelque chose dans la page à une position donné. La position est définie par le template lors de la création du template. 
+
+Ainsi, quand on utilise un template dans Joomla, il et important de savoir où se trouve les positions dans ce template. Pour cela, il existe une astuce (qu'on appelle `TP=1` mais qui a été désactivé dans Joomla 3). Pour l'utiliser, il faut l'activer. Nous allons voir comment.
+-Aller dans `Extensions> Template Manager` (on y retrouve les templates)
+ <img src="portage_joomla/template_no_preview.png"/>
+  
+  Attention: les deux templates sans encadrement en rouge sont des templates d'administration et non pas de site.
+- Cliquer sur le bouton `Options` et activer le bouton `Preview Module position`
+- Save and close et vérifiez ensuite que les preview sont disponibles pour les templates (les signes interdits encadrés en rouge sont tranformés en oeil bleu)
+- Pour avoir un preview des positions sur le template Protostar (que nous sommes en train d'utiliser), cliquer sur le petit oeil bleu à sa gauche
+
+<img src="portage_joomla/template_preview.png"/>
+
+En cliquant sur l'oeil bleu, cela nous ouvre un front-end mais avec une option dans l'url `tp=1` et avec comme contenu le front-end mélangé avec les positions disponibles.
+
+<img src="portage_joomla/view_template_position.png"/>
+
+
 
 
 
