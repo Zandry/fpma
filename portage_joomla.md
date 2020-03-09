@@ -1466,6 +1466,37 @@ Pour afficher l'article, nous allons créer un `menu item` dans le `Main menu` (
 Save & Close et tester le nouveau menu afin de voir et comprendre toutes ces différents heading et title.
 Avant de terminer, supprimer le nouveau menu et le nouvel article qui ne servent plus à rien.
 
+#### d. Enlever le titre du Home page
+Si nous avons navigué depuis 5 mn sur la page, nous savons que la page est le homepage. Donc pas besoin de mettre un gros texte `Home` dessus. Nous allons donc enlever cela puisqu'on vient de voir comment.
+Ici, on parlerait du heading de la page `Page heading`.
+Pour cela: 
+- aller dans le menu manager > Main menu et cliquer sur `Home`.
+- Allez dans `Advanced options` et `Page display options` (pour réduire Article Options, cliquer sur dessus)
+- Ensuite, on y retrouve les items qu'on vient de voir dans la partie c. Ainsi pour désactiver le Page heading de ma homepage, je dois mettre `Show page heading` à `No`. 
+- Save & Close et tester le home page. Le mote `Home` ne devrait plus apparaître.
+
+L'autre chose qui pourrait nous interesser tant qu'on est dans ce sujet est de modifier le titre de notre navigateur quand on est dans la page Home. En effet, le titre du navigateur est `Home`, un titre qui n'est pas très descriptive du site et surtout comme ce titre est utilisé par les moteurs de recherche pour trouver notre site, il faut l'améliorer pour être descriptive.
+Je vais donc prendre le texte du premier article dans le Home page `Harnessing wind and sun for a cleaner, energized plan`, comme titre de page.
+Revenez dans le Menu Home, dans `Advanced options` et `Page display options`, entrez ce texte comme valeur dans `Browser page title`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
