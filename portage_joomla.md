@@ -1545,9 +1545,28 @@ En cliquant sur l'oeil bleu, cela nous ouvre un front-end mais avec une option d
 <img src="portage_joomla/view_template_position.png"/>
 
 
+#### b. Ajout d'un module de recherche 
+Une des choses que je souhaiterais ajouter dans mon site serait un module de recherche qui me permetterait d'avoir une zone de texte pour saisir un texte et de le rechercher sur le site.
+
+Dans Joomla nous avons deux types de recherche (qu'on va voir)
+
+- Allez dans le `Module manager` et cliquer sur le bouton vert `+New`
+  Remarquez que tous les fonctions sur les modules se trouveront dans le Module Manager. Il est à remarquer également que les modules permettent de rajouter des fonctionalités (par exemple recherche) à Joomla et surtout qu'il est possible d'installer des modules externes. Ce module de recherche par contre est interne à Joomla puisqu'il est fourni avec Joomla.
+- Dans la liste qui s'affiche ensuite, vous avez `Search` et `Smart search`. `Search` est la recherche qu'on connait tous   où on entre un texte et il recherche, tandis que `Smart search` serait un peu plus proche du moteur de recherche de       Google au sens où il fait des propositions selon le début des mots qu'on a tapé, .... Le `Smart search` peut avoir des     bugs qu'on l'installe avec plusieurs modules externes et donc il va juste chercher dans ce qui est dans Joomla et jamais 
+  dans les modules externes. (Si par exemple, vous installer des modules pour des calendriers comme JCal Pro, la recherche ne fonctionnera pas avec le contenu des calendriers). 
+  Pour cela, nous allons choisir `Search` qui est plus simple.
+- Dans la fenetre qui s'affiche, il faut:
+    * toujours donner un `title` à votre module mais on n'est pas obligé de l'afficher donc on peut modifier `Show title`.
+    * Il faut également choisir la position afin que le module s'affiche (nous allons choisir la position 0 - rappel que  
+      la position est définit dans l'image de la section `a.`).
+    * Divers options existent également dans l'onglet `Basic options` (par exemple `Box width` pour la largeur de la zone de recherche ou `Box text` pour le texte qui s'affiche initialement dans la zone de recherche. L'option `Search button` est un petit bouton après la zone de recherche  qu'on peut activer ou pas et on peut le positionner à droite ou à gauche de la zone de recherche. On peut aussi définir le texte sur le bouton par `Button text`). Nous allons mettre `Search button` à `Yes` et `Button text` à `Go!`
+    * D'autres options existent aussi dans `Advanced options` que nous allons voir plus tard.
+    * Dans l'onglet `Menu assignement`, on peut choisir dans quel pages on souahite afficher le module. On va le laisser pour toutes les pages.
+- Save and close et tester le front-end.
+    
 
 
-
+  
 
 
 
