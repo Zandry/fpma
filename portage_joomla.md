@@ -1629,6 +1629,39 @@ Faire en sorte que le module ne s'affiche que pour les page `Home`
 
 - Ensuite `Save and close` et tester.
 
+#### f. Inclure un module dans un article en utilisant `loadposition`
+Dans la section d'avant, nous avons créé un module avec des images en random. Ce module a été positionné à gauche (position-8). Nous souhaitons que ce module s'affiche en dessous du contenu de l'article avec un taille adaptée (à remarquer que dans Joomla, on définit par `content` les contenus des articles). Donc, on voudrait bien que le module s'affiche en dessous de notre `content`.
+
+Pour faire cela, nous avons besoin de prendre notre module et de l'afficher dans un article. Alors, normalement, les modules se placent à des positions de modules ( et que ces positions sont définis par le template, tel que nous l'avons déjà vu).
+
+Pour afficher un module dans un article, nous allons d'abord éditer notre article et mettre un petit bout de code dans l'article.
+Dans ce bout de code, je vais créer une position comme dans les templates tt ensuite, je vais revenir dans mon module manager pour affecter cette nouvelle position (que je viens de créer par code) à mon module `random image`.
+
+- Editez l'article `harnessing wind and sun for cleaner ... ` (C'est l'article qui est associé à notre Menu `Home`)
+- à la fin du paragraph (où là où on souhaite afficher le module, nous allons ajouter le code suivant:
+ ```c++
+ {loadposition newposition}
+ 
+ ```
+ - Save and close. Ensuite, ouvrez le `Module manager` et moifier la position de notre module `Random image`. A la place de `position-8`, taper le nom de la nouvelle position `newposition` dans l'emplacement (vous ne le trouverez pas en cherchant, il faut taper le nom de la position). Modifier la largeur de l'image à 750px car on le veut plus large.
+- Save and close et teste le `Home page`. rafraichir la page et on voit que les images changent bien de manière random.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
