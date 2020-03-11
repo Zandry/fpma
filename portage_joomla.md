@@ -1521,6 +1521,166 @@ Au contraire, nous allons le réactiver globalement et le mettre à `Yes` là o�
 
 Même si nous avons configuré l'options globalement, il est à remarquer que nous l'avons utilisé seulement pour les blogs.
 
+### 3.7 Les modules joomla
+
+#### a. Trouver les positions des modules dans un template joomla.
+
+Nous avons déjà commencé à travailler une fois sur les modules. En effet, dans les menus (cf 3.4), nous avons configuré un module pour aficher le menu footer ou le menu main. 
+
+Un module dans joomla est un élément qui permet d'afficher quelque chose dans la page à une position donné. La position est définie par le template lors de la création du template. 
+
+Ainsi, quand on utilise un template dans Joomla, il et important de savoir où se trouve les positions dans ce template. Pour cela, il existe une astuce (qu'on appelle `TP=1` mais qui a été désactivé dans Joomla 3). Pour l'utiliser, il faut l'activer. Nous allons voir comment.
+-Aller dans `Extensions> Template Manager` (on y retrouve les templates)
+ <img src="portage_joomla/template_no_preview.png"/>
+  
+  Attention: les deux templates sans encadrement en rouge sont des templates d'administration et non pas de site.
+- Cliquer sur le bouton `Options` et activer le bouton `Preview Module position`
+- Save and close et vérifiez ensuite que les preview sont disponibles pour les templates (les signes interdits encadrés en rouge sont tranformés en oeil bleu)
+- Pour avoir un preview des positions sur le template Protostar (que nous sommes en train d'utiliser), cliquer sur le petit oeil bleu à sa gauche
+
+<img src="portage_joomla/template_preview.png"/>
+
+En cliquant sur l'oeil bleu, cela nous ouvre un front-end mais avec une option dans l'url `tp=1` et avec comme contenu le front-end mélangé avec les positions disponibles.
+
+<img src="portage_joomla/view_template_position.png"/>
+
+
+#### b. Ajout d'un module de recherche 
+Une des choses que je souhaiterais ajouter dans mon site serait un module de recherche qui me permetterait d'avoir une zone de texte pour saisir un texte et de le rechercher sur le site.
+
+Dans Joomla nous avons deux types de recherche (qu'on va voir)
+
+- Allez dans le `Module manager` et cliquer sur le bouton vert `+New`
+  Remarquez que tous les fonctions sur les modules se trouveront dans le Module Manager. Il est à remarquer également que les modules permettent de rajouter des fonctionalités (par exemple recherche) à Joomla et surtout qu'il est possible d'installer des modules externes. Ce module de recherche par contre est interne à Joomla puisqu'il est fourni avec Joomla.
+- Dans la liste qui s'affiche ensuite, vous avez `Search` et `Smart search`. `Search` est la recherche qu'on connait tous   où on entre un texte et il recherche, tandis que `Smart search` serait un peu plus proche du moteur de recherche de       Google au sens où il fait des propositions selon le début des mots qu'on a tapé, .... Le `Smart search` peut avoir des     bugs qu'on l'installe avec plusieurs modules externes et donc il va juste chercher dans ce qui est dans Joomla et jamais 
+  dans les modules externes. (Si par exemple, vous installer des modules pour des calendriers comme JCal Pro, la recherche ne fonctionnera pas avec le contenu des calendriers). 
+  Pour cela, nous allons choisir `Search` qui est plus simple.
+- Dans la fenetre qui s'affiche, il faut:
+    * toujours donner un `title` à votre module mais on n'est pas obligé de l'afficher donc on peut modifier `Show title`.
+    * Il faut également choisir la position afin que le module s'affiche (nous allons choisir la position 0 - rappel que  
+      la position est définit dans l'image de la section `a.`).
+    * Divers options existent également dans l'onglet `Basic options` (par exemple `Box width` pour la largeur de la zone de recherche ou `Box text` pour le texte qui s'affiche initialement dans la zone de recherche. L'option `Search button` est un petit bouton après la zone de recherche  qu'on peut activer ou pas et on peut le positionner à droite ou à gauche de la zone de recherche. On peut aussi définir le texte sur le bouton par `Button text`). Nous allons mettre `Search button` à `Yes` et `Button text` à `Go!`
+    * D'autres options existent aussi dans `Advanced options` que nous allons voir plus tard.
+    * Dans l'onglet `Menu assignement`, on peut choisir dans quel pages on souahite afficher le module. On va le laisser pour toutes les pages.
+- Save and close et tester le front-end.
+    
+#### c. Creation d'un module HTML
+Kineteco doit mettre des témoignages (des testimonials comme nous en avons dans nos sites HTML/CSS) qu'il reçoit de ses clients et il doit les mettre à droite (à la place de la boite `Login` qu'on va enlever). 
+
+Pour cela, nous allons créer un `Custom HTML module` dans Joomla. (considérer ce type de module comme un petit article où on aura un espace pour mettre du contenu et le positionner là ou on veut).
+
+- Premièrement, nous allons dépublier le module `Login` pour qu'il ne s'affiche plus. Pour cela, aller dans `module manager` et cliquer sur le petit symbole vert à gauche du texte `Login form`. Il se transformera en une petite croix rouge. Cela signifie que le module a été dépublié et qu'il ne s'affichera plus dans le front-end.
+  
+- Ensuite, nous allons créer notre module HTML. Cliquer sur `+New` et choisir `Custom HTML` dans la liste.
+- Donner un titre `Testimonials`
+- Choisir la position et mettre `Right Position-7` (on rappelle le schéma des positions dans le template et on remarque que la position 7 est la position à droite sur le côté). Attention, il faut bien choisir les positions dans `Protostar`, car il affiche toutes les positions de tous les templates disponibles.
+- Dans `Basic options`, on peut mettre des images de fond (comme dans nos templates HTML/CSS) mais ici nous n'allons pas le faire. De même il existe plein de paramètres dans `Advanced Options` mais on verra cela plus tard.
+- Dans `Custom output`, nous avons une sorte d'éditeur d'articles. Nous allons copier/coller dedans le contenu du fichier `portage_joomla/Chapter 8/08_03/testimonials.txt`.
+<img src="portage_joomla/custom_html_module.png"/>
+
+- Dans l'onglet `menu assignement`, nous allons choisir `Only on the selected page` car on veut seulement afficher le module dans le `Home page`. Cliquer sur `None` et enfin cliquer sur `Home` dans le footer et dans le main menu.
+<img src="portage_joomla/only_on_selected_page.png"/>
+- Save and close et tester.
+
+#### d. Modification du module breadcrumb
+
+Le module breadcrumb est un module qui permet de voir où on est dans le site par rapport au sitemap. Il se trouve actuellement en dessous de nos contenus.
+
+<img src="portage_joomla/breadcrumb.png"/>
+
+Dans l'exemple de l'image ci-dessus, le breadcrumbs nous indique qu'on est parti du Homepage, pour passer par le menu Product et enfin arriver à K-Eco Mini Panel.
+
+Maintenant, nous souhaiterions que ce breadcrumb s'affiche en dessus des contenus (par exemple: en dessus des titres d'articles). De plus, je ne souhaite pas que ce breadcrumbs s'affiche dans le homepage puisqu'il serait juste réduit à un mot `Home`, donc pas la peine de l'avoir.
+
+Le breadcrumb est un module qui existe et donc nous allons modifier ses paramètres pour avoir tout cela.
+
+- Entrer dans le `module manager` et cliquer sur `Breadcrumbs`.
+- Pour l'instant je suis en position 2 (à vérifier dans le template affiché avec les positions tp=1 dans la section a. )
+- je voudrais le mettre à la `position 3` (top center). Donc je vais modifier la position. Attention à bien choisir les positions pour `protostar`.
+- Pour empêcher l'affichage dans la page `Home`, il faut aller dans `Menu assignement` et choisir `On all page except those selected` (les pages selectionnés n'auront pas le module). Cliquer alors sur `None`pour deselectionner tout et choisir ensuite `home` dans `Footer` et `main menu`.
+Remarque: On a déjà vu cela mais dans lequel, on a choisi l'autre option `Only on the selected page` (seule les pages selectionnés auront le module).
+- Save and close et tester le front-end. 
+
+<img src="portage_joomla/breadcrumbs2.png"/>
+
+Cependant, le titre ne nous interesse pas trop. On sait que c'est un `breadcrumbs`.
+
+Exercice: enlever ce titre (si vous ne réussissez pas, contactez-moi.)
+
+
+#### e. Module random image
+
+Nous allons ajouter à notre home page un module appelé `Random Image`. Ce modula aura pour rôle d'afficher au hasard des images pris à partir d'un répertoire à chaque fois que la page sera rafraîchie.
+
+- Créer un nouveau module à partir du `Module manager` et choisir `Random image`.
+- Donner un titre `Random Image` et cachez le titre.
+- Choisir la position `Left [position-8]`
+- Dans `Basic options`, on a la posibilité de choisir les types d'images, l'endroit où se trouvent les images la largeur et la longueur des images en pixel (si on souhaite les forcer à prendre une taille donnée).
+- Pour le moment, ne mettez rien dans `Basic options` et cliquer sur `Save & Close`.
+- Entrez dans le média manager et créer un répertoire appelé `random`. Cliquer sur le répertoire pour entrer dedans et cliquer sur le bouton vert `+Upload`. Choisir les images qui sont dans `portage_joomla/Chapter 8/08_05/` et cliquez sur le bouton bleu `start upload`. 
+- Comme on le sait, le répertoire sera donc créé avec le chemin `images/random`.
+- Revenons alors dans le `Module manager` et choisir notre module `Random image` et aller dans `Basic options`.
+- Saisir dans `Image folder`, le chemin de notre répertoire, `images/random`
+- Laisser `Link` vide
+- A remarquer la taille par défaut proposé par le module est de 32px de largeur et donc nous allons entrer dans `width`, la valeur de `200px`. Ne pas donner de `height` car cela force l'image a être déformé. Si on donne juste la largeur, l'image sera adaptée avec cette largeur.
+
+Exercice:
+Faire en sorte que le module ne s'affiche que pour les page `Home`
+
+- Ensuite `Save and close` et tester.
+
+#### f. Inclure un module dans un article en utilisant `loadposition`
+Dans la section d'avant, nous avons créé un module avec des images en random. Ce module a été positionné à gauche (position-8). Nous souhaitons que ce module s'affiche en dessous du contenu de l'article avec un taille adaptée (à remarquer que dans Joomla, on définit par `content` les contenus des articles). Donc, on voudrait bien que le module s'affiche en dessous de notre `content`.
+
+Pour faire cela, nous avons besoin de prendre notre module et de l'afficher dans un article. Alors, normalement, les modules se placent à des positions de modules ( et que ces positions sont définis par le template, tel que nous l'avons déjà vu).
+
+Pour afficher un module dans un article, nous allons d'abord éditer notre article et mettre un petit bout de code dans l'article.
+Dans ce bout de code, je vais créer une position comme dans les templates tt ensuite, je vais revenir dans mon module manager pour affecter cette nouvelle position (que je viens de créer par code) à mon module `random image`.
+
+- Editez l'article `harnessing wind and sun for cleaner ... ` (C'est l'article qui est associé à notre Menu `Home`)
+- à la fin du paragraph (où là où on souhaite afficher le module, nous allons ajouter le code suivant:
+ ```c++
+ {loadposition newposition}
+ 
+ ```
+ - Save and close. Ensuite, ouvrez le `Module manager` et moifier la position de notre module `Random image`. A la place de `position-8`, taper le nom de la nouvelle position `newposition` dans l'emplacement (vous ne le trouverez pas en cherchant, il faut taper le nom de la position). Modifier la largeur de l'image à 750px car on le veut plus large.
+- Save and close et teste le `Home page`. rafraichir la page et on voit que les images changent bien de manière random.
+
+
+
+#### g. Exploration des modules et activation de la version de Joomla
+(pour le moment, pas urgent, on le laisse pour une autre fois)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
