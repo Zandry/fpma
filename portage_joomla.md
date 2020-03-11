@@ -1608,6 +1608,26 @@ Cependant, le titre ne nous interesse pas trop. On sait que c'est un `breadcrumb
 Exercice: enlever ce titre (si vous ne réussissez pas, contactez-moi.)
 
 
+#### e. Module random image
+
+Nous allons ajouter à notre home page un module appelé `Random Image`. Ce modula aura pour rôle d'afficher au hasard des images pris à partir d'un répertoire à chaque fois que la page sera rafraîchie.
+
+- Créer un nouveau module à partir du `Module manager` et choisir `Random image`.
+- Donner un titre `Random Image` et cachez le titre.
+- Choisir la position `Left [position-8]`
+- Dans `Basic options`, on a la posibilité de choisir les types d'images, l'endroit où se trouvent les images la largeur et la longueur des images en pixel (si on souhaite les forcer à prendre une taille donnée).
+- Pour le moment, ne mettez rien dans `Basic options` et cliquer sur `Save & Close`.
+- Entrez dans le média manager et créer un répertoire appelé `random`. Cliquer sur le répertoire pour entrer dedans et cliquer sur le bouton vert `+Upload`. Choisir les images qui sont dans `portage_joomla/Chapter 8/08_05/` et cliquez sur le bouton bleu `start upload`. 
+- Comme on le sait, le répertoire sera donc créé avec le chemin `images/random`.
+- Revenons alors dans le `Module manager` et choisir notre module `Random image` et aller dans `Basic options`.
+- Saisir dans `Image folder`, le chemin de notre répertoire, `images/random`
+- Laisser `Link` vide
+- A remarquer la taille par défaut proposé par le module est de 32px de largeur et donc nous allons entrer dans `width`, la valeur de `200px`. Ne pas donner de `height` car cela force l'image a être déformé. Si on donne juste la largeur, l'image sera adaptée avec cette largeur.
+
+Exercice:
+Faire en sorte que le module ne s'affiche que pour les page `Home`
+
+- Ensuite `Save and close` et tester.
 
 
 
