@@ -1648,7 +1648,8 @@ Dans ce bout de code, je vais créer une position comme dans les templates tt en
 
 
 
-
+#### g. Exploration des modules et activation de la version de Joomla
+(pour le moment, pas urgent, on le laisse pour une autre fois)
 
 
 
