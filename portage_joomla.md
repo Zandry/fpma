@@ -1582,6 +1582,58 @@ Pour cela, nous allons créer un `Custom HTML module` dans Joomla. (considérer 
 <img src="portage_joomla/only_on_selected_page.png"/>
 - Save and close et tester.
 
+#### d. Modification du module breadcrumb
+
+Le module breadcrumb est un module qui permet de voir où on est dans le site par rapport au sitemap. Il se trouve actuellement en dessous de nos contenus.
+
+<img src="portage_joomla/breadcrumb.png"/>
+
+Dans l'exemple de l'image ci-dessus, le breadcrumbs nous indique qu'on est parti du Homepage, pour passer par le menu Product et enfin arriver à K-Eco Mini Panel.
+
+Maintenant, nous souhaiterions que ce breadcrumb s'affiche en dessus des contenus (par exemple: en dessus des titres d'articles). De plus, je ne souhaite pas que ce breadcrumbs s'affiche dans le homepage puisqu'il serait juste réduit à un mot `Home`, donc pas la peine de l'avoir.
+
+Le breadcrumb est un module qui existe et donc nous allons modifier ses paramètres pour avoir tout cela.
+
+- Entrer dans le `module manager` et cliquer sur `Breadcrumbs`.
+- Pour l'instant je suis en position 2 (à vérifier dans le template affiché avec les positions tp=1 dans la section a. )
+- je voudrais le mettre à la `position 3` (top center). Donc je vais modifier la position. Attention à bien choisir les positions pour `protostar`.
+- Pour empêcher l'affichage dans la page `Home`, il faut aller dans `Menu assignement` et choisir `On all page except those selected` (les pages selectionnés n'auront pas le module). Cliquer alors sur `None`pour deselectionner tout et choisir ensuite `home` dans `Footer` et `main menu`.
+Remarque: On a déjà vu cela mais dans lequel, on a choisi l'autre option `Only on the selected page` (seule les pages selectionnés auront le module).
+- Save and close et tester le front-end. 
+
+<img src="portage_joomla/breadcrumbs2.png"/>
+
+Cependant, le titre ne nous interesse pas trop. On sait que c'est un `breadcrumbs`.
+
+Exercice: enlever ce titre (si vous ne réussissez pas, contactez-moi.)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
