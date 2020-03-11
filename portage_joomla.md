@@ -1564,12 +1564,23 @@ Dans Joomla nous avons deux types de recherche (qu'on va voir)
     * Dans l'onglet `Menu assignement`, on peut choisir dans quel pages on souahite afficher le module. On va le laisser pour toutes les pages.
 - Save and close et tester le front-end.
     
+#### c. Creation d'un module HTML
+Kineteco doit mettre des témoignages (des testimonials comme nous en avons dans nos sites HTML/CSS) qu'il reçoit de ses clients et il doit les mettre à droite (à la place de la boite `Login` qu'on va enlever). 
 
+Pour cela, nous allons créer un `Custom HTML module` dans Joomla. (considérer ce type de module comme un petit article où on aura un espace pour mettre du contenu et le positionner là ou on veut).
 
+- Premièrement, nous allons dépublier le module `Login` pour qu'il ne s'affiche plus. Pour cela, aller dans `module manager` et cliquer sur le petit symbole vert à gauche du texte `Login form`. Il se transformera en une petite croix rouge. Cela signifie que le module a été dépublié et qu'il ne s'affichera plus dans le front-end.
   
+- Ensuite, nous allons créer notre module HTML. Cliquer sur `+New` et choisir `Custom HTML` dans la liste.
+- Donner un titre `Testimonials`
+- Choisir la position et mettre `Right Position-7` (on rappelle le schéma des positions dans le template et on remarque que la position 7 est la position à droite sur le côté). Attention, il faut bien choisir les positions dans `Protostar`, car il affiche toutes les positions de tous les templates disponibles.
+- Dans `Basic options`, on peut mettre des images de fond (comme dans nos templates HTML/CSS) mais ici nous n'allons pas le faire. De même il existe plein de paramètres dans `Advanced Options` mais on verra cela plus tard.
+- Dans `Custom output`, nous avons une sorte d'éditeur d'articles. Nous allons copier/coller dedans le contenu du fichier `portage_joomla/Chapter 8/08_03/testimonials.txt`.
+<img src="portage_joomla/custom_html_module.png"/>
 
-
-
+- Dans l'onglet `menu assignement`, nous allons choisir `Only on the selected page` car on veut seulement afficher le module dans le `Home page`. Cliquer sur `None` et enfin cliquer sur `Home` dans le footer et dans le main menu.
+<img src="portage_joomla/only_on_selected_page.png"/>
+- Save and close et tester.
 
 
 
