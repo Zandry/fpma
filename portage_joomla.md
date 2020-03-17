@@ -1738,6 +1738,23 @@ Pour cela, nous allons créer une liste de contact (plus précisémment, une lis
 - Compléter `Select Category` par le catégorie `The management`.
 - `Save & close` et vérifier les modifications dans le front-end.
 
+#### e. Mise en forme de contact list
+
+ Nous allons mettre en forme la liste de contact que nous venons de créer. 
+ Pour cela, allez dans le backend.
+ 
+ - Component > Contact > et clquez sur le bouton `Options` en dessus des contacts.
+<img src="portage_joomla/contact_config.png"/>
+- Allez dans l'ongler `List Layout` et configurez les options suivantes:
+    * `Display select` = `Hide` (pour le moment, je ne comprends pas car même à show, cet option ne s'affiche pas)
+    * `Table headings` = `Hide`
+    * `Position` à `show` (cette option affiche si la personne est un directeur ou un comptable...)
+    * `Email` est à `Hide` pour ne pas afficher le mail de la personne directement car les formulaires sont supposés leur envoyer un mail. Si vous mettez `Email`à `Show`, ici, le mail ne s'affichera pas tout de suite, il faut également mettre l'option `Email` à `Show` dans l'onglet `Contact`.
+    * Mettre `Phone`à `Show`.
+    * Mettre les options `Mobile`, `Fax`, `City or Suburbs`, `State or country`, `Country`
+    
+- Save et tester le front-end. 
+- Enfin, nous allons quand même ne pas afficher `Phone` dans les options (mettre l'otion à `Hide`) et le numéro de téléphone dans la page de contact list disparait.
 
 
 
