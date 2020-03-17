@@ -1652,14 +1652,20 @@ Dans ce bout de code, je vais créer une position comme dans les templates tt en
 (pour le moment, pas urgent, on le laisse pour une autre fois)
 
 
+### 3.7 Les components (composants) de  joomla
+
+#### a. Utilisation du contenu d'un component
+Un composant dans joomla est une extension de Joomla. C'est ce le composant qui affiche la partie principale d'un site joomla (dans notre cas, cette partie principale est l'article). Il y a seulement UN composant par page mais on peut avoir plusieurs modules.
+<img src="portage_joomla/component"/>
+Attention: il y a une faute dans cette image. le titre est un module et ne fait pas partie du component.
+
+Une autre différence importante entre module et component est aussi le fait qu'un composant doit être configuré et lié à un menu pour afficher un contenu sur le site. D'autre part, un module est affecté à une position et s'affiche indépendamment du menu.
+Chaque composant à une manière différente de se configurer ou de se connecter à un Menu. Un composant peut également inclure des modules.
 
 
+Dans le backend, les composants ont un menu spécial pour eux (le menu `Components`).
 
-
-
-
-
-
+En résumé, le composant est le contenu principale du site et les modules sont les petites choses éparpillés un peu partout autour.
 
 
 
