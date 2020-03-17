@@ -1716,8 +1716,27 @@ Ainsi quand on va remplir le formulaire et qu'on veut l'envoyer, il faut remplir
   En dessous de cette configuration, nous avons un lien pour configurer les clés.
 
 
+#### d. creation de liste de contact
 
+Pour le moment, le formulaire de contact est dirigé vers une adresse mail donnée de l'entreprise. Il peut arriver qu'on souhaite contacter un CEO ou un CFO, etc etc. 
+Pour cela, nous allons créer une liste de contact (plus précisémment, une liste de contact contenant 3 contacts)
 
+- Aller dans le backend `Component>Contact`
+- Créer un autre contact (comme nous l'avons déjà fait dans la section b.)
+- Utilisez le texte `portage_joomla/Chapter 9/09_05/contact.txt` et utilisez la première section pour le premier contact qu'on va créer. 
+- Uploader dans le media manager les 3 photos qui sont dans `portage_joomla/Chapter 9/09_05/`.
+- Cliquer sur `+New` et dans nom tapez `Sally Kerner` et catérgorie `The management`.
+- Passez ensuite dans `Contact details` et choisir `Image` et chosir l'image de `Sally`.
+- Dans `Position`, choisir `CFO` (information dans le fichier contact)
+<img src="portage_joomla/contact1"/>
+- Cliquez `Save & New` et créer les 2 autres contacts selon le contenu du fichier `contact.txt`.
+- Cliquez `Save & Close` quand vous avez fini de créer les 2 autres contacts. On devrait maintenant avoir 4 contacts.
+
+- Pour créer notre `Contact list`, allez dans `Menu > Main menu`.
+- Cliquer sur le menu `Contact` pour l'éditer.
+- Modifier la section `Select` et choisir `Contact > List contacts in a category`.
+- Compléter `Select Category` par le catégorie `The management`.
+- `Save & close` et vérifier les modifications dans le front-end.
 
 
 
