@@ -1667,13 +1667,39 @@ Dans le backend, les composants ont un menu spécial pour eux (le menu `Componen
 
 En résumé, le composant est le contenu principale du site et les modules sont les petites choses éparpillés un peu partout autour.
 
+#### b. Utilisation du composant `contact` (contact component)
 
+Actuellement, il n'y a aucun moyen pour les visiteurs de notre site d'avoir des éléments de contact pour se mettre en relation avec l'entreprise. 
+Heureusement, Joomla possède un composant `Contact`. Nous allons donc l'utiliser. 
 
+- Allez dans le backend `Components>Contact`. Vous y verrez deux sous-menus `Contact` et `Catégories` (ce ne sont pas les catégories associés aux articles mais associés aux contacts cette fois - deux choses différentes pour le même nom)
+- Comme pour les articles, nous allons d'abord créer une catégorie pour les contacts, pour respecter le processus CAM. Nous allons ensuite créer un contact et l'associer à un menu Contact.
+- Nous allons donc choisir l'option  `Catégorie` et cliquer sur `+New`. Nous allons créer une catégorie appelée `The management`.
+- Nous allons ensuite créer le contact, donc ce sera sous `Contact` et cliquer sur `+ New`. Nosu allons prendre le contenu dans le ficher `portage_joomla/Chapter 9/09_02/company address.txt` et nous allons commencer à remplir le contact.
+    * Titre: `KinetEco, Inc.`
+    * Category :`The management`
+Et cela est suffisant pour un premier temps.
+- Allez dans l'onglet `Contact details` et vous verrez ci-dessous les informations que j'ai rempli (à partir du fichier d'exercice).
+<img src="portage_joomla/contact_details"/>
+- Save and close
 
+Pour le moment, rien ne s'affiche encore sur le site web. Pourquoi? car ceci est un composant et un composant est soumis au CAM (Category Article Menu) mais on remplacera l'article par le Component.
+Nous avons créé une catégorie, ensuite le composant mais pas encore le Menu.
 
+- Créer alors un menu item dans le `Main menu`. Voici les informations utiles pour créer le `Menu item`
+* `Menu Item type` choisir contact puisque nous avons créé un composant `Contact`. Ensuite comme dans les articles, nous allons choisir `Single contact`.
+* `Select contact`, choisir le contact qu'on vient de créer, `KinetEco, Inc.`
+* `Menu title`: `Contact`
 
+Et c'est tout ce qui est utile.
+- Save and close et vous devriez avoir un nouveau menu `Contact` dans le front-end.
 
+Remarque:
+- Il n'est pas possible de rajouter ou d'enlever des éléments au formulaire du contact form fourni par Joomla. 
+Si on souhaite modifier le formulaire, il faut utiliser des modules externes (qu'on installe séparemment de Joomla). 
+Un exemple est `RSForm!Pro`(voir à www.rsjoomla.com).
 
+- Le mail ne fonctionne pas encore car le server mail n'est pas configuré
 
 
 
