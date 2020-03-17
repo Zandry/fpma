@@ -1699,7 +1699,21 @@ Remarque:
 Si on souhaite modifier le formulaire, il faut utiliser des modules externes (qu'on installe séparemment de Joomla). 
 Un exemple est `RSForm!Pro`(voir à www.rsjoomla.com).
 
-- Le mail ne fonctionne pas encore car le server mail n'est pas configuré
+- Le mail ne fonctionne pas encore car le server mail n'est pas configuré (nous allons le faire un peu plus tard)
+
+
+#### c. utilisation d'un Captcha
+
+Pour le moment, nous allons laisser cette partie de côté car ce n'est possible que pour un site déjà en ligne et actuellement, nous n'avons pas de nom de domaine.
+
+Un captcha permet de protéger notre formulaire contre les tentatives de spamming automatique ou les automatisations de remplissages de formulaire (si ce n'est pas compris, on peut en discuter).
+Ainsi quand on va remplir le formulaire et qu'on veut l'envoyer, il faut remplir une vérification.
+
+- Aller dans `Extensions>Plug-ins`
+  <img src="portage_joomla/captcha_config.png"/>
+  
+  Pour configurer le Captcha, nous avons besoins d'un couple `clé privée/clé public`.
+  En dessous de cette configuration, nous avons un lien pour configurer les clés.
 
 
 
