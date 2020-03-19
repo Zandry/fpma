@@ -1757,11 +1757,87 @@ Pour cela, nous allons créer une liste de contact (plus précisémment, une lis
 - Enfin, nous allons quand même ne pas afficher `Phone` dans les options (mettre l'otion à `Hide`) et le numéro de téléphone dans la page de contact list disparait.
 
 
+#### f. Utilisation du composant `Weblink`
+Un de nos partenaires souhaterait mettre une page sur notre site. Cette page contiendra des liens vers des pages de travail collaboratifs.
+
+Je vais donc rajouter un menu vers une page qu'on appelera `Links` et je vais claissifier ces liens dans `Solar links`et `Wind links`.
+
+Pour cela, Joomla possède un composant qui s'appelle `Weblinks`.
+
+Nous allons revenir dans le backend du site.
+- Menu component > Weblinks. Et exactment comme dans le composant `Contact`, nous avons également une catégorie dans `Weblinks`.
+- Comme dans les contacts, nous allons donc d'abord créer des catégories de liens et ensuite, nous créerons des liens dedans et enfin, pour l'afficher sur la page, nous allons créer un menu. 
+
+- Allez dans `Components>Weblinks>Categories`.
+- Créer une première catégorie appelé `Solar links` (on devrait maintenant savoir créer des catégories)
+- Ensuite créer une deuxième catégorie `Wind links`. Nous obtenons les catégories ci-dessous.
+ <img src="portage_joomla/weblinks_category.png"/>
+
+- Je vais maintenant créer mes weblinks (tout comme je crée des articles). Pour cela, je clique sur le bouton weblinks à gauche (voir affichage ci-dessus) et surtout je vais ouvrir le fichier `portage_joomla/Chapter 9/09_07/links.txt`. Le fichier contient les titres et URL des liens à mettre dans chacune des catégories que nous avons créés.
+(si pas clair me poser la question)
+ <img src="portage_joomla/weblinks_links.png"/>
+
+Maintenant, nous allons créer un Menu pour afficher la page de notre `weblink`.
+- Aller dans `Main menu`  et rajouter un nouveau `Menu item`.
+- Allez dans `Weblinks` et choisir `List all web links cateogories`
+- Choisir `Root` pour l'option `Top Level category`
+- Donner un `Title` au menu: `Links`.
+- Save & Close et tester dans le front-end.
+<img src="portage_joomla/weblinks_front.png"/>
+
+Cependant, la mise en forme n'est pas exceptionnelle (ex: le mot web links à côté de chaque lien quand on les clique, etc etc).
+Donc, je souhaiterais déjà mettre en forme ces weblinks mais aussi, je me rend compte que dans mon menu, `Links`
+arrive en dernier car c'est le dernier que j'ai rajouté. Je vais faire en sorte que `Contact` soit en dernier et `links` en avant dernier.
 
 
+Commençons par l'ordre d'affichage des `Menu items`. Nous avons déjà fait cela dans les menus, Revoir la section `3.4 j. Modification ordre des menu items dans un menu` ou la section `3.4 d2 ordre d'apparition des articles`. Je vous laisse donc faire.
+<img src="portage_joomla/weblinks_menu_order.png"/>
 
+Pour faire la mise en forme, nous allons:
+- revenir dans `Component > Weblinks` et cliquer sur le bouton `Options` sur la barre d'outil.
+  <img src="portage_joomla/weblinks_options.png"/>
+  
+  * L'option `Target` permet de définir si le lien s'ouvrir a dans la même fenetre ou dans une nouvelle fenetre ou même dans une fenetre détachée ou s'il sera `Modal` (Modal veut dire que si la nouvelle fenetre ouverte n'est pa fermée avant, on ne pourra pas accéder au navigateur). Ici nous allons choisir d'ouvrir dans une nouvelle fenetre car c'est ce qu'on a choisit dans la section où nous avons inséré une vidéo, donc choisir `Open in new window`.
+  
+  * Nous avons déjà vu également `Count clicks`. Cela permet de ne pas afficher les ccompteurs de hits. Nous allons le mettre à `Yes`.
+  <img src="portage_joomla/weblinks_counter_clicks.png"/>
+  
+  * `Text/Icon/Web Link Only` permet d'avoir une icône ou un texte à côté de chaque weblink. Comme on ne veut rien, on peut choisir `Web link only`.
+  
+  * Save et on rafraichit dans le front-end. L'affichage est mieux mais nous avons encore les éléments encadrés en rouge à enlever.
+  <img src="portage_joomla/weblink_configured.png"/>
+  
+  Pour enlever ces deux éléments, nous allons revenir dans le backend dans l'option du weblink (voir plus haut comment on rentre dans l'option du `Web link`)
+  - Ensuite allez dans l'onglet `List layout`.
+  - et mettre `Display select`, `Hits` à `Hide`.
+  - Save et rafraichir la page.
+    <img src="portage_joomla/hits_weblinks_tjs_la.png"/>
+    
+    Tout est OK comme je le veux mais mes hits sont toujours là :( . Cela signifie qu'il faudra les désactiver aussi ailleurs.
+    
+    La correction du  bug se fait comme suit:
+    Remplacer le code qui est dans ce fichier
+    
+    `docker_cours/www/01_05/components/com_weblinks/views/category/tmpl/default_items.php`
 
-
+    remplacer le code à la ligne 62 
+    ```php
+        <?php if ($this->params->get('list_show_hits', 1)) : ?>
+    ```
+    par 
+    
+    ```php
+    <?php if ($this->params->get('show_link_hits', 1)) : ?>
+    ```
+   Cette correction a pour effet de modifier autre chose et d'afficher des choses qui ne nous interesse pas dans les `catégories` des weblinks.
+   
+   <img src="portage_joomla/correction_bug_weblinks_effet_bord.png"/>
+   
+   Pour les enlever, nous allons dans les options des weblinks, Onglet `Categories` (pas `Category`) et tout en bas, on a une option `#Web links` qu'on va mettre à `Hide` et cela devrait régler ce problème.
+    
+    
+    
+  
 
 
 
