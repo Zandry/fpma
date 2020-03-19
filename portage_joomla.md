@@ -1834,8 +1834,33 @@ Pour faire la mise en forme, nous allons:
    <img src="portage_joomla/correction_bug_weblinks_effet_bord.png"/>
    
    Pour les enlever, nous allons dans les options des weblinks, Onglet `Categories` (pas `Category`) et tout en bas, on a une option `#Web links` qu'on va mettre à `Hide` et cela devrait régler ce problème.
-    
-    
+
+#### g. Le composant `redirect`
+Ce composant permet de tracker les erreurs d'URL que l'on peut taper.
+
+Supposons que nous allions à notre page `About`, nous obtenons alors l'url `http://localhost/01_05/index.php/about`.
+Maintenant, supposons que nous voudrions visiter sur ce lien la page solar et tapons dans la barre d'adresse 
+`http://localhost/01_05/index.php/solar`. Comme cette page n'existe pas, nous aurons une erreur 404 (page introuvable). (Remarque: Joomla nous affiche sur cette même page 404, un lien pour revenir vers la page d'accueil).
+
+Pour voir comment le composant traque les liens qui sont faux, nous allons dans `Components > Redirect` 
+Et là, on trouve toutes les erreurs d'URL que le site a déjà rencontré (c'est à dire les URL qui ont rendu une erreur 404).
+
+<img src="portage_joomla/erreur_urls.png"/>
+
+Ce que l'on peut faire de ces liens serait de dire: "Quand quelqu'un tape un lien `solar`, par exemple, alors je le redirigerai vers une page donnée" et pour cela, on va cliquer sur le lien qui contient `Solar` et on aura ceci:
+
+<img src="portage_joomla/redirect_parameters.png"/>
+
+Il nous faut juste définir `Destination URL *` et cela nous permettra de faire en sorte que la page s'ouvrira.
+Ici, nous allons définir comme destination, le solar blog : `http://localhost/01_05/index.php/news-info/solar-blog`. et il nous faut également activer `Status*`.
+
+- Save & Close et tester dans le front-end.
+
+Ce qu'on doit tester est que la prochaine fois qu'une personne saisira l'url `http://localhost/01_05/index.php/solar`, on ouvrira la page `http://localhost/01_05/index.php/news-info/solar-blog`.
+
+
+
+
     
   
 
