@@ -1652,34 +1652,217 @@ Dans ce bout de code, je vais créer une position comme dans les templates tt en
 (pour le moment, pas urgent, on le laisse pour une autre fois)
 
 
+### 3.7 Les components (composants) de  joomla
+
+#### a. Utilisation du contenu d'un component
+Un composant dans joomla est une extension de Joomla. C'est ce le composant qui affiche la partie principale d'un site joomla (dans notre cas, cette partie principale est l'article). Il y a seulement UN composant par page mais on peut avoir plusieurs modules.
+<img src="portage_joomla/component"/>
+Attention: il y a une faute dans cette image. le titre est un module et ne fait pas partie du component.
+
+Une autre différence importante entre module et component est aussi le fait qu'un composant doit être configuré et lié à un menu pour afficher un contenu sur le site. D'autre part, un module est affecté à une position et s'affiche indépendamment du menu.
+Chaque composant à une manière différente de se configurer ou de se connecter à un Menu. Un composant peut également inclure des modules.
+
+
+Dans le backend, les composants ont un menu spécial pour eux (le menu `Components`).
+
+En résumé, le composant est le contenu principale du site et les modules sont les petites choses éparpillés un peu partout autour.
+
+#### b. Utilisation du composant `contact` (contact component)
+
+Actuellement, il n'y a aucun moyen pour les visiteurs de notre site d'avoir des éléments de contact pour se mettre en relation avec l'entreprise. 
+Heureusement, Joomla possède un composant `Contact`. Nous allons donc l'utiliser. 
+
+- Allez dans le backend `Components>Contact`. Vous y verrez deux sous-menus `Contact` et `Catégories` (ce ne sont pas les catégories associés aux articles mais associés aux contacts cette fois - deux choses différentes pour le même nom)
+- Comme pour les articles, nous allons d'abord créer une catégorie pour les contacts, pour respecter le processus CAM. Nous allons ensuite créer un contact et l'associer à un menu Contact.
+- Nous allons donc choisir l'option  `Catégorie` et cliquer sur `+New`. Nous allons créer une catégorie appelée `The management`.
+- Nous allons ensuite créer le contact, donc ce sera sous `Contact` et cliquer sur `+ New`. Nosu allons prendre le contenu dans le ficher `portage_joomla/Chapter 9/09_02/company address.txt` et nous allons commencer à remplir le contact.
+    * Titre: `KinetEco, Inc.`
+    * Category :`The management`
+Et cela est suffisant pour un premier temps.
+- Allez dans l'onglet `Contact details` et vous verrez ci-dessous les informations que j'ai rempli (à partir du fichier d'exercice).
+<img src="portage_joomla/contact_details"/>
+- Save and close
+
+Pour le moment, rien ne s'affiche encore sur le site web. Pourquoi? car ceci est un composant et un composant est soumis au CAM (Category Article Menu) mais on remplacera l'article par le Component.
+Nous avons créé une catégorie, ensuite le composant mais pas encore le Menu.
+
+- Créer alors un menu item dans le `Main menu`. Voici les informations utiles pour créer le `Menu item`
+* `Menu Item type` choisir contact puisque nous avons créé un composant `Contact`. Ensuite comme dans les articles, nous allons choisir `Single contact`.
+* `Select contact`, choisir le contact qu'on vient de créer, `KinetEco, Inc.`
+* `Menu title`: `Contact`
+
+Et c'est tout ce qui est utile.
+- Save and close et vous devriez avoir un nouveau menu `Contact` dans le front-end.
+
+Remarque:
+- Il n'est pas possible de rajouter ou d'enlever des éléments au formulaire du contact form fourni par Joomla. 
+Si on souhaite modifier le formulaire, il faut utiliser des modules externes (qu'on installe séparemment de Joomla). 
+Un exemple est `RSForm!Pro`(voir à www.rsjoomla.com).
+
+- Le mail ne fonctionne pas encore car le server mail n'est pas configuré (nous allons le faire un peu plus tard)
+
+
+#### c. utilisation d'un Captcha
+
+Pour le moment, nous allons laisser cette partie de côté car ce n'est possible que pour un site déjà en ligne et actuellement, nous n'avons pas de nom de domaine.
+
+Un captcha permet de protéger notre formulaire contre les tentatives de spamming automatique ou les automatisations de remplissages de formulaire (si ce n'est pas compris, on peut en discuter).
+Ainsi quand on va remplir le formulaire et qu'on veut l'envoyer, il faut remplir une vérification.
+
+- Aller dans `Extensions>Plug-ins`
+  <img src="portage_joomla/captcha_config.png"/>
+  
+  Pour configurer le Captcha, nous avons besoins d'un couple `clé privée/clé public`.
+  En dessous de cette configuration, nous avons un lien pour configurer les clés.
+
+
+#### d. creation de liste de contact
+
+Pour le moment, le formulaire de contact est dirigé vers une adresse mail donnée de l'entreprise. Il peut arriver qu'on souhaite contacter un CEO ou un CFO, etc etc. 
+Pour cela, nous allons créer une liste de contact (plus précisémment, une liste de contact contenant 3 contacts)
+
+- Aller dans le backend `Component>Contact`
+- Créer un autre contact (comme nous l'avons déjà fait dans la section b.)
+- Utilisez le texte `portage_joomla/Chapter 9/09_05/contact.txt` et utilisez la première section pour le premier contact qu'on va créer. 
+- Uploader dans le media manager les 3 photos qui sont dans `portage_joomla/Chapter 9/09_05/`.
+- Cliquer sur `+New` et dans nom tapez `Sally Kerner` et catérgorie `The management`.
+- Passez ensuite dans `Contact details` et choisir `Image` et chosir l'image de `Sally`.
+- Dans `Position`, choisir `CFO` (information dans le fichier contact)
+<img src="portage_joomla/contact1"/>
+- Cliquez `Save & New` et créer les 2 autres contacts selon le contenu du fichier `contact.txt`.
+- Cliquez `Save & Close` quand vous avez fini de créer les 2 autres contacts. On devrait maintenant avoir 4 contacts.
+
+- Pour créer notre `Contact list`, allez dans `Menu > Main menu`.
+- Cliquer sur le menu `Contact` pour l'éditer.
+- Modifier la section `Select` et choisir `Contact > List contacts in a category`.
+- Compléter `Select Category` par le catégorie `The management`.
+- `Save & close` et vérifier les modifications dans le front-end.
+
+#### e. Mise en forme de contact list
+
+ Nous allons mettre en forme la liste de contact que nous venons de créer. 
+ Pour cela, allez dans le backend.
+ 
+ - Component > Contact > et clquez sur le bouton `Options` en dessus des contacts.
+<img src="portage_joomla/contact_config.png"/>
+- Allez dans l'ongler `List Layout` et configurez les options suivantes:
+    * `Display select` = `Hide` (pour le moment, je ne comprends pas car même à show, cet option ne s'affiche pas)
+    * `Table headings` = `Hide`
+    * `Position` à `show` (cette option affiche si la personne est un directeur ou un comptable...)
+    * `Email` est à `Hide` pour ne pas afficher le mail de la personne directement car les formulaires sont supposés leur envoyer un mail. Si vous mettez `Email`à `Show`, ici, le mail ne s'affichera pas tout de suite, il faut également mettre l'option `Email` à `Show` dans l'onglet `Contact`.
+    * Mettre `Phone`à `Show`.
+    * Mettre les options `Mobile`, `Fax`, `City or Suburbs`, `State or country`, `Country`
+    
+- Save et tester le front-end. 
+- Enfin, nous allons quand même ne pas afficher `Phone` dans les options (mettre l'otion à `Hide`) et le numéro de téléphone dans la page de contact list disparait.
+
+
+#### f. Utilisation du composant `Weblink`
+Un de nos partenaires souhaterait mettre une page sur notre site. Cette page contiendra des liens vers des pages de travail collaboratifs.
+
+Je vais donc rajouter un menu vers une page qu'on appelera `Links` et je vais claissifier ces liens dans `Solar links`et `Wind links`.
+
+Pour cela, Joomla possède un composant qui s'appelle `Weblinks`.
+
+Nous allons revenir dans le backend du site.
+- Menu component > Weblinks. Et exactment comme dans le composant `Contact`, nous avons également une catégorie dans `Weblinks`.
+- Comme dans les contacts, nous allons donc d'abord créer des catégories de liens et ensuite, nous créerons des liens dedans et enfin, pour l'afficher sur la page, nous allons créer un menu. 
+
+- Allez dans `Components>Weblinks>Categories`.
+- Créer une première catégorie appelé `Solar links` (on devrait maintenant savoir créer des catégories)
+- Ensuite créer une deuxième catégorie `Wind links`. Nous obtenons les catégories ci-dessous.
+ <img src="portage_joomla/weblinks_category.png"/>
+
+- Je vais maintenant créer mes weblinks (tout comme je crée des articles). Pour cela, je clique sur le bouton weblinks à gauche (voir affichage ci-dessus) et surtout je vais ouvrir le fichier `portage_joomla/Chapter 9/09_07/links.txt`. Le fichier contient les titres et URL des liens à mettre dans chacune des catégories que nous avons créés.
+(si pas clair me poser la question)
+ <img src="portage_joomla/weblinks_links.png"/>
+
+Maintenant, nous allons créer un Menu pour afficher la page de notre `weblink`.
+- Aller dans `Main menu`  et rajouter un nouveau `Menu item`.
+- Allez dans `Weblinks` et choisir `List all web links cateogories`
+- Choisir `Root` pour l'option `Top Level category`
+- Donner un `Title` au menu: `Links`.
+- Save & Close et tester dans le front-end.
+<img src="portage_joomla/weblinks_front.png"/>
+
+Cependant, la mise en forme n'est pas exceptionnelle (ex: le mot web links à côté de chaque lien quand on les clique, etc etc).
+Donc, je souhaiterais déjà mettre en forme ces weblinks mais aussi, je me rend compte que dans mon menu, `Links`
+arrive en dernier car c'est le dernier que j'ai rajouté. Je vais faire en sorte que `Contact` soit en dernier et `links` en avant dernier.
+
+
+Commençons par l'ordre d'affichage des `Menu items`. Nous avons déjà fait cela dans les menus, Revoir la section `3.4 j. Modification ordre des menu items dans un menu` ou la section `3.4 d2 ordre d'apparition des articles`. Je vous laisse donc faire.
+<img src="portage_joomla/weblinks_menu_order.png"/>
+
+Pour faire la mise en forme, nous allons:
+- revenir dans `Component > Weblinks` et cliquer sur le bouton `Options` sur la barre d'outil.
+  <img src="portage_joomla/weblinks_options.png"/>
+  
+  * L'option `Target` permet de définir si le lien s'ouvrir a dans la même fenetre ou dans une nouvelle fenetre ou même dans une fenetre détachée ou s'il sera `Modal` (Modal veut dire que si la nouvelle fenetre ouverte n'est pa fermée avant, on ne pourra pas accéder au navigateur). Ici nous allons choisir d'ouvrir dans une nouvelle fenetre car c'est ce qu'on a choisit dans la section où nous avons inséré une vidéo, donc choisir `Open in new window`.
+  
+  * Nous avons déjà vu également `Count clicks`. Cela permet de ne pas afficher les ccompteurs de hits. Nous allons le mettre à `Yes`.
+  <img src="portage_joomla/weblinks_counter_clicks.png"/>
+  
+  * `Text/Icon/Web Link Only` permet d'avoir une icône ou un texte à côté de chaque weblink. Comme on ne veut rien, on peut choisir `Web link only`.
+  
+  * Save et on rafraichit dans le front-end. L'affichage est mieux mais nous avons encore les éléments encadrés en rouge à enlever.
+  <img src="portage_joomla/weblink_configured.png"/>
+  
+  Pour enlever ces deux éléments, nous allons revenir dans le backend dans l'option du weblink (voir plus haut comment on rentre dans l'option du `Web link`)
+  - Ensuite allez dans l'onglet `List layout`.
+  - et mettre `Display select`, `Hits` à `Hide`.
+  - Save et rafraichir la page.
+    <img src="portage_joomla/hits_weblinks_tjs_la.png"/>
+    
+    Tout est OK comme je le veux mais mes hits sont toujours là :( . Cela signifie qu'il faudra les désactiver aussi ailleurs.
+    
+    La correction du  bug se fait comme suit:
+    Remplacer le code qui est dans ce fichier
+    
+    `docker_cours/www/01_05/components/com_weblinks/views/category/tmpl/default_items.php`
+
+    remplacer le code à la ligne 62 
+    ```php
+        <?php if ($this->params->get('list_show_hits', 1)) : ?>
+    ```
+    par 
+    
+    ```php
+    <?php if ($this->params->get('show_link_hits', 1)) : ?>
+    ```
+   Cette correction a pour effet de modifier autre chose et d'afficher des choses qui ne nous interesse pas dans les `catégories` des weblinks.
+   
+   <img src="portage_joomla/correction_bug_weblinks_effet_bord.png"/>
+   
+   Pour les enlever, nous allons dans les options des weblinks, Onglet `Categories` (pas `Category`) et tout en bas, on a une option `#Web links` qu'on va mettre à `Hide` et cela devrait régler ce problème.
+
+#### g. Le composant `redirect`
+Ce composant permet de tracker les erreurs d'URL que l'on peut taper.
+
+Supposons que nous allions à notre page `About`, nous obtenons alors l'url `http://localhost/01_05/index.php/about`.
+Maintenant, supposons que nous voudrions visiter sur ce lien la page solar et tapons dans la barre d'adresse 
+`http://localhost/01_05/index.php/solar`. Comme cette page n'existe pas, nous aurons une erreur 404 (page introuvable). (Remarque: Joomla nous affiche sur cette même page 404, un lien pour revenir vers la page d'accueil).
+
+Pour voir comment le composant traque les liens qui sont faux, nous allons dans `Components > Redirect` 
+Et là, on trouve toutes les erreurs d'URL que le site a déjà rencontré (c'est à dire les URL qui ont rendu une erreur 404).
+
+<img src="portage_joomla/erreur_urls.png"/>
+
+Ce que l'on peut faire de ces liens serait de dire: "Quand quelqu'un tape un lien `solar`, par exemple, alors je le redirigerai vers une page donnée" et pour cela, on va cliquer sur le lien qui contient `Solar` et on aura ceci:
+
+<img src="portage_joomla/redirect_parameters.png"/>
+
+Il nous faut juste définir `Destination URL *` et cela nous permettra de faire en sorte que la page s'ouvrira.
+Ici, nous allons définir comme destination, le solar blog : `http://localhost/01_05/index.php/news-info/solar-blog`. et il nous faut également activer `Status*`.
+
+- Save & Close et tester dans le front-end.
+
+Ce qu'on doit tester est que la prochaine fois qu'une personne saisira l'url `http://localhost/01_05/index.php/solar`, on ouvrira la page `http://localhost/01_05/index.php/news-info/solar-blog`.
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+  
 
 
 

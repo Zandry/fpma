@@ -1,0 +1,24 @@
+Sally Kerner
+CFO
+KinetEco, Inc.
+123 KinetEco Drive
+Los Angeles, CA 90025
+skerner@kinetecoinc.com
+888-000-1235
+
+June Su Woo
+Legal Counsel
+KinetEco, Inc.
+123 KinetEco Drive
+Los Angeles, CA 90025
+jsuwoo@kinetecoinc.com
+888-000-1236
+
+Jason Hemlock
+Principal Design Engineer
+KinetEco, Inc.
+123 KinetEco Drive
+Los Angeles, CA 90025
+jhemlock@kinetecoinc.com
+888-000-1237
+
